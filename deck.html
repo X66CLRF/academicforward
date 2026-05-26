@@ -108,20 +108,20 @@ section{
 <!-- 02 AGENDA -->
 <section class="vpad" data-screen-label="02 Agenda">
   <div class="lbl">ภาพรวมหลักสูตร</div>
-  <div class="h2 border-l-a" style="font-size:44px;">ตารางเวลา 120 นาที</div>
+  <div class="h2 border-l-a" style="font-size:44px;">ลำดับหัวข้อและ Deliverable</div>
   <table class="t">
     <thead><tr>
-      <th style="width:200px;">เวลา</th><th style="width:130px;">Module</th>
-      <th>หัวข้อ</th><th style="width:130px;">Demo</th>
-      <th style="width:150px;">ลงมือทำ</th><th>Deliverable</th>
+      <th style="width:130px;">Module</th>
+      <th>หัวข้อ</th>
+      <th>Deliverable</th>
     </tr></thead>
     <tbody>
-      <tr><td>00:00–00:10</td><td><span class="amber-pill">Pre</span></td><td>รู้จักตัวเองและเลือก Case Study</td><td>—</td><td>10 นาที</td><td>โจทย์วิจัย + โฟลเดอร์มิติ</td></tr>
-      <tr><td>00:10–00:30</td><td><span class="amber-pill">M 1</span></td><td>บทนำ & การสืบค้นขั้นสูง</td><td>12 นาที</td><td>8 นาที</td><td>คีย์เวิร์ด + PDF + BibTeX</td></tr>
-      <tr><td>00:30–00:50</td><td><span class="amber-pill">M 2</span></td><td>คัดกรอง ทลายกำแพงภาษา & จัดระเบียบ</td><td>10 นาที</td><td>10 นาที</td><td>โฟลเดอร์ Drive คัดสรร 100%</td></tr>
-      <tr><td>00:50–01:20</td><td><span class="amber-pill">M 3</span></td><td>วิเคราะห์เชิงลึก & สร้างสื่อด้วย NotebookLM</td><td>15 นาที</td><td>15 นาที</td><td>Mindmap + FAQ + Research Gap</td></tr>
-      <tr><td>01:20–01:55</td><td><span class="amber-pill">M 4</span></td><td>รังสรรค์งานเขียนระดับวิชาการ</td><td>15 นาที</td><td>20 นาที</td><td>ร่างบทที่ 2 Format ถูก 100%</td></tr>
-      <tr><td>01:55–02:00</td><td><span class="amber-pill">M 5</span></td><td>Verification Checklist & Agent Suite</td><td>5 นาที</td><td>10 นาที</td><td>Checklist + Agent พร้อมใช้</td></tr>
+      <tr><td><span class="amber-pill">Pre</span></td><td>รู้จักตัวเองและเลือก Case Study</td><td>โจทย์วิจัย + โฟลเดอร์มิติ + Agent เปิดพร้อม</td></tr>
+      <tr><td><span class="amber-pill">M 1</span></td><td>บทนำ & การสืบค้นขั้นสูง</td><td>คีย์เวิร์ด + PDF + BibTeX</td></tr>
+      <tr><td><span class="amber-pill">M 2</span></td><td>คัดกรอง ทลายกำแพงภาษา & จัดระเบียบ</td><td>โฟลเดอร์ Drive คัดสรร 100%</td></tr>
+      <tr><td><span class="amber-pill">M 3</span></td><td>วิเคราะห์เชิงลึก & สร้างสื่อด้วย NotebookLM</td><td>Mindmap + FAQ + Research Gap</td></tr>
+      <tr><td><span class="amber-pill">M 4</span></td><td>รังสรรค์งานเขียนระดับวิชาการ</td><td>ร่างบทที่ 2 Format ถูก 100%</td></tr>
+      <tr><td><span class="amber-pill">M 5</span></td><td>Verification Checklist & Agent Suite</td><td>Checklist + Agent พร้อมใช้ต่อที่บ้าน</td></tr>
     </tbody>
   </table>
   <div class="bar"></div>
@@ -142,10 +142,19 @@ section{
       <div style="font-size:24px;color:#78716c;line-height:1.4;">ThaiJO · TDC<br>EBSCO · Scholar</div>
     </div>
     <div style="display:flex;align-items:center;font-size:28px;color:var(--a);font-weight:800;padding:0 4px;flex-shrink:0;">→</div>
-    <div style="flex:1;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;">
-      <div style="font-size:34px;">📁</div>
-      <div style="font-size:24px;font-weight:800;color:white;line-height:1.3;">สร้างโฟลเดอร์<br>3 มิติ ก่อน</div>
-      <div style="font-size:24px;color:#78716c;line-height:1.4;">+ _UNSORTED<br>safety net</div>
+    <div style="flex:1.3;background:rgba(255,255,255,.07);border:2px solid #fbbf24;border-radius:12px;padding:14px 12px;display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="font-size:26px;">📁</div>
+        <div style="font-size:22px;font-weight:800;color:white;white-space:nowrap;">สร้างก่อนโหลด!</div>
+        <div style="margin-left:auto;background:var(--a);color:white;font-size:18px;font-weight:800;padding:2px 8px;border-radius:6px;white-space:nowrap;">5 มิติ</div>
+      </div>
+      <div style="font-family:monospace;font-size:19px;line-height:1.75;background:rgba(0,0,0,.3);border-radius:8px;padding:8px 10px;flex:1;">
+        <div style="color:#7dd3fc;">📁 01_[มิติ 1]</div>
+        <div style="color:#7dd3fc;">📁 02_[มิติ 2]</div>
+        <div style="color:#7dd3fc;">📁 03 – 05 …</div>
+        <div style="color:#fcd34d;font-weight:700;">📁 _UNSORTED</div>
+        <div style="color:#78716c;font-size:16px;padding-left:16px;">← safety net</div>
+      </div>
     </div>
     <div style="display:flex;align-items:center;font-size:28px;color:var(--a);font-weight:800;padding:0 4px;flex-shrink:0;">→</div>
     <div style="flex:1;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;">
@@ -187,7 +196,7 @@ section{
   </div>
   <!-- Converge -->
   <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 24px;">
-    <div style="font-size:30px;">🎨</div>
+    <div style="font-size:30px;">📝</div>
     <div style="font-size:24px;font-weight:700;color:white;white-space:nowrap;">Canvas (Gemini)</div>
     <div style="font-size:26px;color:var(--a);font-weight:800;padding:0 6px;">→</div>
     <div style="font-size:30px;">📄</div>
@@ -205,7 +214,7 @@ section{
 
 <!-- 03 PRE-WORKSHOP CONTENT -->
 <section class="vpad" data-screen-label="03 Pre-Workshop รู้จักตัวเอง">
-  <div class="lbl">Pre-Workshop · 10 นาที</div>
+  <div class="lbl">เริ่มจากนี้ก่อน — คุณคือใคร เป้าหมายคืออะไร</div>
   <div class="h2 border-l-a">รู้จักตัวเองก่อนสืบค้น</div>
   <div class="g3">
     <div class="card" style="border-top:5px solid #059669;">
@@ -232,37 +241,42 @@ section{
 
 <!-- 04 PRE-WORKSHOP ACTIVITY -->
 <section class="ws-section" data-screen-label="04 Workshop Pre เลือก Case Study">
-  <div class="ws-badge">🔴 Pre-Workshop Activity · 10 นาที</div>
+  <div class="ws-badge">🔴 Pre-Workshop Activity</div>
   <div class="h2" style="font-size:40px;">เลือกโจทย์วิจัยและตั้งโฟลเดอร์มิติความคิด</div>
-  <div class="g4">
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;">
     <div class="ws-card">
       <div style="font-size:32px;margin-bottom:10px;">🏫</div>
-      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:8px;">ครุศาสตร์ / มนุษยศาสตร์</div>
-      <div style="font-size:24px;color:var(--s6);line-height:1.6;">พฤติกรรมการเรียนรู้และการใช้ AI / สื่อสังคมออนไลน์</div>
+      <div style="font-size:22px;font-weight:700;color:var(--s8);margin-bottom:8px;">ครุศาสตร์ / มนุษยศาสตร์</div>
+      <div style="font-size:22px;color:var(--s6);line-height:1.6;">พฤติกรรมการใช้ AI ในการเรียนรู้</div>
     </div>
     <div class="ws-card">
       <div style="font-size:32px;margin-bottom:10px;">🩺</div>
-      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:8px;">วิทยาศาสตร์สุขภาพ</div>
-      <div style="font-size:24px;color:var(--s6);line-height:1.6;">พฤติกรรมสร้างเสริมสุขภาพ / ป้องกันบุหรี่ไฟฟ้า</div>
+      <div style="font-size:22px;font-weight:700;color:var(--s8);margin-bottom:8px;">วิทยาศาสตร์สุขภาพ</div>
+      <div style="font-size:22px;color:var(--s6);line-height:1.6;">พฤติกรรมสูบบุหรี่ไฟฟ้าในวัยรุ่น</div>
     </div>
     <div class="ws-card">
       <div style="font-size:32px;margin-bottom:10px;">💼</div>
-      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:8px;">สังคมศาสตร์ / บริหาร</div>
-      <div style="font-size:24px;color:var(--s6);line-height:1.6;">การตัดสินใจซื้อออนไลน์ และความฉลาดทางการเงิน</div>
+      <div style="font-size:22px;font-weight:700;color:var(--s8);margin-bottom:8px;">สังคมศาสตร์ / บริหาร</div>
+      <div style="font-size:22px;color:var(--s6);line-height:1.6;">ปัจจัยที่ส่งผลต่อการตัดสินใจซื้อออนไลน์</div>
     </div>
     <div class="ws-card">
       <div style="font-size:32px;margin-bottom:10px;">💻</div>
-      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:8px;">เทคโนโลยีสารสนเทศ</div>
-      <div style="font-size:24px;color:var(--s6);line-height:1.6;">ความตระหนักรู้ด้านความปลอดภัยทางไซเบอร์</div>
+      <div style="font-size:22px;font-weight:700;color:var(--s8);margin-bottom:8px;">เทคโนโลยีสารสนเทศ</div>
+      <div style="font-size:22px;color:var(--s6);line-height:1.6;">ความตระหนักรู้ด้านความปลอดภัยทางไซเบอร์</div>
+    </div>
+    <div class="ws-card">
+      <div style="font-size:32px;margin-bottom:10px;">💰</div>
+      <div style="font-size:22px;font-weight:700;color:var(--s8);margin-bottom:8px;">เศรษฐศาสตร์ / การเงิน</div>
+      <div style="font-size:22px;color:var(--s6);line-height:1.6;">ความฉลาดทางการเงินของนักศึกษา</div>
     </div>
   </div>
-  <div class="highlight">📁 สร้างโฟลเดอร์ <strong>Research_[หัวข้อ]</strong> พร้อมโฟลเดอร์ย่อย 3 มิติตามสาขาที่เลือก + <strong>_UNSORTED</strong></div>
+  <div class="highlight">📁 สร้างโฟลเดอร์ <strong>Research_[หัวข้อ]</strong> พร้อมโฟลเดอร์ย่อย <strong>5 มิติ</strong>ตามสาขาที่เลือก + <strong>_UNSORTED</strong></div>
 </section>
 
 <!-- NEW: VOTE SLIDE -->
 <section class="vpad" style="justify-content:space-between;" data-screen-label="NEW โหวตเลือกโจทย์">
   <div style="text-align:center;">
-    <div class="lbl" style="justify-content:center;display:flex;">Pre-Workshop · โหวตเลือกโจทย์ร่วมกัน</div>
+    <div class="lbl" style="justify-content:center;display:flex;">ตกลงกันก่อน — วันนี้เดินด้วยโจทย์อะไร?</div>
     <div class="h2" style="font-size:48px;margin-top:10px;">วันนี้เราจะใช้โจทย์ <span style="color:var(--a);">หัวข้อไหน?</span></div>
   </div>
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px;flex:1;">
@@ -318,11 +332,11 @@ section{
       <th>🌐 คีย์เวิร์ดอังกฤษ</th>
     </tr></thead>
     <tbody>
-      <tr><td style="font-weight:800;color:#1d4ed8;">01</td><td style="font-weight:700;">ทฤษฎีการยอมรับเทคโนโลยี</td><td>ทฤษฎีการยอมรับเทคโนโลยี · TAM · การใช้งาน</td><td>technology acceptance model · TAM · perceived usefulness</td></tr>
-      <tr><td style="font-weight:800;color:#059669;">02</td><td style="font-weight:700;">พฤติกรรมการใช้ AI จริง</td><td>พฤติกรรมการใช้ AI · ความถี่การใช้</td><td>AI usage behavior · frequency · user interaction</td></tr>
-      <tr><td style="font-weight:800;color:var(--ad);">03</td><td style="font-weight:700;">ผลสัมฤทธิ์ทางการเรียน</td><td>ผลสัมฤทธิ์ · คะแนน · ประสิทธิภาพการเรียน</td><td>learning achievement · academic performance · outcomes</td></tr>
+      <tr><td style="font-weight:800;color:#1d4ed8;">01</td><td style="font-weight:700;">ทฤษฎีการยอมรับเทคโนโลยี</td><td>ทฤษฎีการยอมรับเทคโนโลยี · TAM · ความง่ายในการใช้งาน</td><td>technology acceptance model · TAM · perceived ease of use</td></tr>
+      <tr><td style="font-weight:800;color:#059669;">02</td><td style="font-weight:700;">พฤติกรรมการใช้ AI จริง</td><td>พฤติกรรมการใช้ AI · รูปแบบการใช้งาน</td><td>AI usage behavior · usage pattern · user interaction</td></tr>
+      <tr><td style="font-weight:800;color:var(--ad);">03</td><td style="font-weight:700;">ผลสัมฤทธิ์ทางการเรียน</td><td>ผลสัมฤทธิ์ · ประสิทธิภาพการเรียนรู้ · ผลการเรียน</td><td>learning achievement · academic performance · academic outcomes</td></tr>
       <tr><td style="font-weight:800;color:#7c3aed;">04</td><td style="font-weight:700;">ทัศนคติและความเชื่อมั่น</td><td>ทัศนคติต่อ AI · ความเชื่อมั่นตนเอง</td><td>attitude toward AI · self-efficacy · digital confidence</td></tr>
-      <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">บริบทสถาบัน</td><td>นโยบาย AI · สภาพแวดล้อมการเรียน</td><td>institutional context · AI policy · learning environment</td></tr>
+      <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">บริบทสถาบัน</td><td>นโยบาย AI · สภาพแวดล้อมการเรียน</td><td>institutional context · AI policy · institutional support</td></tr>
     </tbody>
   </table>
   <div class="bar"></div>
@@ -345,11 +359,11 @@ section{
       <th>🌐 คีย์เวิร์ดอังกฤษ</th>
     </tr></thead>
     <tbody>
-      <tr><td style="font-weight:800;color:#dc2626;">01</td><td style="font-weight:700;">ผลกระทบสุขภาพกาย</td><td>ผลกระทบสุขภาพ · สารนิโคติน · ระบบทางเดินหายใจ</td><td>health impact · nicotine harm · respiratory effects</td></tr>
+      <tr><td style="font-weight:800;color:#dc2626;">01</td><td style="font-weight:700;">ผลกระทบสุขภาพกาย</td><td>ผลกระทบสุขภาพ · สารนิโคติน · ระบบทางเดินหายใจ</td><td>e-cigarette health effects · nicotine harm · respiratory effects</td></tr>
       <tr><td style="font-weight:800;color:#7c3aed;">02</td><td style="font-weight:700;">สุขภาพจิตและอารมณ์</td><td>สุขภาพจิต · ความเครียด · ภาวะซึมเศร้า</td><td>mental health · stress · depression · anxiety</td></tr>
-      <tr><td style="font-weight:800;color:var(--a);">03</td><td style="font-weight:700;">พลวัตครอบครัว</td><td>ปัจจัยครอบครัว · การเลี้ยงดู · การสื่อสาร</td><td>family factors · parenting · parent-child communication</td></tr>
+      <tr><td style="font-weight:800;color:var(--a);">03</td><td style="font-weight:700;">พลวัตครอบครัว</td><td>ปัจจัยครอบครัว · การเลี้ยงดู · การสื่อสารในครอบครัว</td><td>family factors · parenting · parent-child communication</td></tr>
       <tr><td style="font-weight:800;color:#059669;">04</td><td style="font-weight:700;">อิทธิพลกลุ่มเพื่อน</td><td>อิทธิพลกลุ่มเพื่อน · แรงกดดันทางสังคม</td><td>peer influence · peer pressure · social norms</td></tr>
-      <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">โปรแกรมการป้องกัน</td><td>โปรแกรมป้องกัน · การแทรกแซง · การรณรงค์</td><td>prevention program · intervention · health promotion</td></tr>
+      <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">โปรแกรมการป้องกัน</td><td>โปรแกรมป้องกันบุหรี่ไฟฟ้า · การแทรกแซงพฤติกรรม · การรณรงค์งดสูบในวัยรุ่น</td><td>prevention program · e-cigarette cessation · smoking intervention</td></tr>
     </tbody>
   </table>
   <div class="bar"></div>
@@ -375,8 +389,8 @@ section{
       <tr><td style="font-weight:800;color:#1d4ed8;">01</td><td style="font-weight:700;">ทฤษฎีพฤติกรรมผู้บริโภค</td><td>พฤติกรรมผู้บริโภค · ความตั้งใจซื้อ · ทฤษฎี TRA/TPB</td><td>consumer behavior · purchase intention · TRA · TPB</td></tr>
       <tr><td style="font-weight:800;color:#059669;">02</td><td style="font-weight:700;">คุณภาพเว็บไซต์ &amp; UX</td><td>ประสบการณ์ผู้ใช้ · คุณภาพเว็บ · ความง่ายในการใช้</td><td>website quality · user experience · UX · ease of use</td></tr>
       <tr><td style="font-weight:800;color:var(--a);">03</td><td style="font-weight:700;">ความไว้วางใจ &amp; ความปลอดภัย</td><td>ความไว้วางใจออนไลน์ · ความปลอดภัย · ความเป็นส่วนตัว</td><td>online trust · security · privacy · perceived risk</td></tr>
-      <tr><td style="font-weight:800;color:#7c3aed;">04</td><td style="font-weight:700;">รีวิว &amp; อิทธิพลสังคม</td><td>รีวิวสินค้า · บอกต่อ · อิทธิพลสื่อสังคม</td><td>product review · word of mouth · social influence · eWOM</td></tr>
-      <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">ปัจจัยประชากรศาสตร์</td><td>เพศ · อายุ · รายได้ · ระดับการศึกษา</td><td>demographics · gender · age · income · education level</td></tr>
+      <tr><td style="font-weight:800;color:#7c3aed;">04</td><td style="font-weight:700;">รีวิว &amp; อิทธิพลสังคม</td><td>รีวิวสินค้า · eWOM · อิทธิพลสื่อสังคม</td><td>product review · word of mouth · social influence · eWOM</td></tr>
+      <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">ปัจจัยประชากรศาสตร์</td><td>ปัจจัยประชากรศาสตร์ · ตัวแปรกำกับ · ลักษณะผู้บริโภค</td><td>demographic factors · moderating variables · consumer profile</td></tr>
     </tbody>
   </table>
   <div class="bar"></div>
@@ -401,8 +415,8 @@ section{
     <tbody>
       <tr><td style="font-weight:800;color:#dc2626;">01</td><td style="font-weight:700;">ประเภทภัยคุกคาม</td><td>การโจมตีไซเบอร์ · มัลแวร์ · ฟิชชิง</td><td>cyber attack · malware · phishing · ransomware</td></tr>
       <tr><td style="font-weight:800;color:var(--a);">02</td><td style="font-weight:700;">ความรู้และทัศนคติ</td><td>ความตระหนักรู้ · ทัศนคติ · การรับรู้ความเสี่ยง</td><td>cybersecurity awareness · attitude · risk perception</td></tr>
-      <tr><td style="font-weight:800;color:#059669;">03</td><td style="font-weight:700;">พฤติกรรมป้องกันจริง</td><td>พฤติกรรมป้องกัน · การตั้งรหัสผ่าน · การสำรองข้อมูล</td><td>protective behavior · password management · data backup</td></tr>
-      <tr><td style="font-weight:800;color:#7c3aed;">04</td><td style="font-weight:700;">นโยบายองค์กร</td><td>นโยบายความปลอดภัย · กฎระเบียบ · การฝึกอบรม</td><td>security policy · compliance · security training</td></tr>
+      <tr><td style="font-weight:800;color:#059669;">03</td><td style="font-weight:700;">พฤติกรรมป้องกันจริง</td><td>พฤติกรรมป้องกัน · ความปลอดภัยบัญชีผู้ใช้ · การสำรองข้อมูล</td><td>protective behavior · password management · data backup</td></tr>
+      <tr><td style="font-weight:800;color:#7c3aed;">04</td><td style="font-weight:700;">นโยบายองค์กร</td><td>นโยบายความปลอดภัย · กฎระเบียบ · การฝึกอบรมด้านความปลอดภัย</td><td>security policy · compliance · security awareness training</td></tr>
       <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">เครื่องมือและเทคโนโลยี</td><td>ซอฟต์แวร์ป้องกัน · ไฟร์วอลล์ · VPN</td><td>security software · firewall · VPN · encryption</td></tr>
     </tbody>
   </table>
@@ -426,7 +440,7 @@ section{
       <th>🌐 คีย์เวิร์ดอังกฤษ</th>
     </tr></thead>
     <tbody>
-      <tr><td style="font-weight:800;color:#1d4ed8;">01</td><td style="font-weight:700;">ความรู้ทางการเงินพื้นฐาน</td><td>ความรู้ทางการเงิน · การบัญชีเบื้องต้น · ดอกเบี้ย</td><td>financial knowledge · accounting basics · interest rate</td></tr>
+      <tr><td style="font-weight:800;color:#1d4ed8;">01</td><td style="font-weight:700;">ความรู้ทางการเงินพื้นฐาน</td><td>ความรู้ทางการเงิน · การบริหารเงินส่วนตัว · ทักษะการเงิน</td><td>financial knowledge · personal finance · financial literacy scale</td></tr>
       <tr><td style="font-weight:800;color:#059669;">02</td><td style="font-weight:700;">ทัศนคติต่อการออมและลงทุน</td><td>ทัศนคติการออม · แรงจูงใจลงทุน · เป้าหมายการเงิน</td><td>saving attitude · investment motivation · financial goal</td></tr>
       <tr><td style="font-weight:800;color:var(--a);">03</td><td style="font-weight:700;">พฤติกรรมการใช้จ่าย</td><td>พฤติกรรมการใช้จ่าย · การบริโภค · หนี้สิน</td><td>spending behavior · consumption · debt management</td></tr>
       <tr><td style="font-weight:800;color:#7c3aed;">04</td><td style="font-weight:700;">การวางแผนการเงิน</td><td>การวางแผนการเงิน · งบประมาณ · การออมระยะยาว</td><td>financial planning · budgeting · long-term saving</td></tr>
@@ -438,7 +452,7 @@ section{
 
 <!-- NEW: ทำไมต้องฐานพรีเมียม -->
 <section class="vpad" style="" data-screen-label="NEW ทำไมต้องฐานพรีเมียม">
-  <div class="lbl">ก่อน Module 1 · ทำความเข้าใจก่อนสืบค้น</div>
+  <div class="lbl">ก่อนจะเริ่มค้น — ทำไมถึงต้องฐานพรีเมียม?</div>
   <div class="h2 border-l-a" style="font-size:42px;">ทำไมไม่ถามแชท AI หรือ Google ตรงๆ เลย?</div>
   <table class="t" style="flex:1;">
     <thead><tr>
@@ -474,22 +488,109 @@ section{
       </tr>
       <tr>
         <td style="font-weight:800;font-size:28px;">สรุป</td>
-        <td style="background:#fef2f2;text-align:center;font-weight:800;font-size:30px;color:#dc2626;">❌ อาจารย์ไม่รับ</td>
-        <td style="background:#fffbeb;text-align:center;font-weight:800;font-size:30px;color:#d97706;">⚠️ ใช้ได้บางส่วน</td>
-        <td style="background:#ecfdf5;text-align:center;font-weight:800;font-size:30px;color:#059669;">✅ ผ่านอาจารย์</td>
+        <td style="background:#fef2f2;text-align:center;font-weight:800;font-size:30px;color:#dc2626;">❌ ไม่ผ่านมาตรฐาน</td>
+        <td style="background:#fffbeb;text-align:center;font-weight:800;font-size:30px;color:#d97706;">⚠️ คุณภาพไม่แน่นอน</td>
+        <td style="background:#ecfdf5;text-align:center;font-weight:800;font-size:30px;color:#059669;">✅ มาตรฐานวิชาการ</td>
       </tr>
     </tbody>
   </table>
   <div class="highlight" style="font-size:24px;">💡 <strong>หลักการ:</strong> AI ฉลาดแค่ไหน ก็ทำได้แค่ข้อมูลที่ให้มา — ใส่ขยะเข้า ได้ขยะออก · ใส่งานวิจัยคุณภาพ ได้งานวิจัยคุณภาพ</div>
   <div class="bar"></div>
 </section>
+
+<!-- NEW: สร้างโฟลเดอร์ -->
+<section class="vpad" style="gap:22px;" data-screen-label="NEW สร้างโฟลเดอร์ 5 มิติ">
+  <div class="lbl">ทำตอนนี้เลย — สร้างโฟลเดอร์ก่อนโหลดแรก</div>
+  <div class="h2 border-l-a" style="font-size:44px;">สร้างโฟลเดอร์ 5 มิติ ใน Google Drive — ทำตอนนี้เลย</div>
+  <div class="g2" style="gap:24px;flex:1;align-items:stretch;">
+    <!-- Left: Steps -->
+    <div class="card" style="display:flex;flex-direction:column;gap:14px;">
+      <div style="font-size:24px;font-weight:800;color:var(--s8);margin-bottom:4px;">📌 ขั้นตอน (ใช้เวลา ~3 นาที)</div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div>เปิด <strong>drive.google.com</strong> → คลิก <strong>+ ใหม่</strong> → โฟลเดอร์</div></div>
+        <div class="step"><div class="sn">2</div><div>ตั้งชื่อ <strong>Research_[หัวข้อที่โหวตเลือก]</strong> เช่น Research_AI_Learning</div></div>
+        <div class="step"><div class="sn">3</div><div>เปิดโฟลเดอร์ → สร้างโฟลเดอร์ย่อย <strong>5 โฟลเดอร์</strong> ตามมิติในสไลด์ Case Study</div></div>
+        <div class="step"><div class="sn">4</div><div>สร้างโฟลเดอร์พิเศษเพิ่มอีก 1 อัน ตั้งชื่อ <strong>_UNSORTED</strong></div></div>
+        <div class="step"><div class="sn">5</div><div>✅ ตรวจดู — ควรมีโฟลเดอร์ย่อยทั้งหมด <strong>6 อัน</strong> (5 มิติ + _UNSORTED)</div></div>
+      </div>
+    </div>
+    <!-- Right: Folder structure visual -->
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div class="card-a" style="flex:1;">
+        <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:14px;">📁 โครงสร้างที่ได้</div>
+        <div style="font-family:monospace;font-size:22px;line-height:2;background:var(--s9);border-radius:10px;padding:16px 20px;">
+          <div style="color:#fcd34d;font-weight:700;">📁 Research_[หัวข้อ]</div>
+          <div style="color:#7dd3fc;padding-left:24px;">📁 01_[มิติ 1 ตาม Case Study]</div>
+          <div style="color:#7dd3fc;padding-left:24px;">📁 02_[มิติ 2 ตาม Case Study]</div>
+          <div style="color:#7dd3fc;padding-left:24px;">📁 03_[มิติ 3 ตาม Case Study]</div>
+          <div style="color:#7dd3fc;padding-left:24px;">📁 04_[มิติ 4 ตาม Case Study]</div>
+          <div style="color:#7dd3fc;padding-left:24px;">📁 05_[มิติ 5 ตาม Case Study]</div>
+          <div style="color:#fb923c;padding-left:24px;font-weight:700;">📁 _UNSORTED</div>
+        </div>
+      </div>
+      <div class="highlight" style="font-size:23px;">💡 ชื่อโฟลเดอร์ย่อย 01–05 ดูได้จาก <strong>คอลัมน์ "📁 โฟลเดอร์มิติ"</strong> ในสไลด์ Case Study ที่เพิ่งผ่านมา</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: เปิด AGENT -->
+<section class="vpad" style="gap:20px;" data-screen-label="NEW เปิด Agent ไว้เลย">
+  <div class="lbl">ทำตอนนี้เลย — เปิดค้างไว้ตลอด 2 ชั่วโมง</div>
+  <div class="h2 border-l-a" style="font-size:44px;">เปิด Agent ของคุณก่อน Module 1 เริ่ม</div>
+  <div class="g2" style="gap:24px;flex:1;align-items:stretch;">
+    <!-- Left: pick + setup -->
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="card-a">
+        <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:12px;">① เลือก Agent ของคุณ</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="background:#ecfdf5;border:1.5px solid #86efac;border-radius:10px;padding:12px 18px;font-size:24px;color:#065f46;font-weight:700;">🎓 ป.ตรี → undergrad-agent.md</div>
+          <div style="background:var(--al);border:1.5px solid #fde68a;border-radius:10px;padding:12px 18px;font-size:24px;color:var(--ad);font-weight:700;">🎓🎓 ป.โท / ป.เอก → grad-agent.md</div>
+          <div style="background:#f5f3ff;border:1.5px solid #c4b5fd;border-radius:10px;padding:12px 18px;font-size:24px;color:#5b21b6;font-weight:700;">🔬 อาจารย์ / นักวิจัย → researcher-agent.md</div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:24px;font-weight:800;color:var(--s8);margin-bottom:12px;">② วิธีเปิด (2 ขั้นตอน)</div>
+        <div class="steps">
+          <div class="step"><div class="sn">1</div><div>Copy <strong>CORE-rules.md</strong> + <strong>[role]-agent.md</strong> ที่ตรงกับตัวเอง → วางใน Claude / Gemini / ChatGPT</div></div>
+          <div class="step"><div class="sn">2</div><div>AI จะถาม: <strong>เลือกโหมดงาน</strong> → <strong>มีข้อมูลพร้อมหรือยัง?</strong> → ตอบว่า "มีแล้ว" แล้วเริ่มได้เลย</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- Right: roadmap per module -->
+    <div class="card" style="display:flex;flex-direction:column;gap:14px;">
+      <div style="font-size:24px;font-weight:800;color:var(--s8);">Agent ช่วยอะไรได้บ้างวันนี้</div>
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:12px 16px;background:#fef9f0;border-radius:10px;border-left:4px solid var(--a);">
+          <div style="font-size:22px;font-weight:800;color:var(--ad);white-space:nowrap;">M 1</div>
+          <div style="font-size:23px;color:var(--s7);">ขยาย keyword · แปลคีย์เวิร์ดอังกฤษ · แนะนำฐานข้อมูลที่ใช่</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:12px 16px;background:#eff6ff;border-radius:10px;border-left:4px solid #3b82f6;">
+          <div style="font-size:22px;font-weight:800;color:#1d4ed8;white-space:nowrap;">M 2</div>
+          <div style="font-size:23px;color:var(--s7);">ขยาย keyword · แปลชื่อเปเปอร์ / Abstract · ช่วยตัดสิน ❓ ที่ไม่แน่ใจ</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:12px 16px;background:#f0fdf4;border-radius:10px;border-left:4px solid #059669;">
+          <div style="font-size:22px;font-weight:800;color:#065f46;white-space:nowrap;">M 3</div>
+          <div style="font-size:23px;color:var(--s7);">ตั้งคำถาม Research Gap · สังเคราะห์ข้ามเปเปอร์</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:12px 16px;background:#fdf4ff;border-radius:10px;border-left:4px solid #7c3aed;">
+          <div style="font-size:22px;font-weight:800;color:#5b21b6;white-space:nowrap;">M 4</div>
+          <div style="font-size:23px;color:var(--s7);">เขียนบท 2 ตามกฎ 4 ส่วน · APA 7th · Format มรนว. 2568</div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:12px 16px;background:#fef3c7;border-radius:10px;border-left:4px solid var(--a);">
+          <div style="font-size:22px;font-weight:800;color:var(--ad);white-space:nowrap;">หลังอบรม</div>
+          <div style="font-size:23px;color:var(--s7);">ใช้ต่อได้ทุกวัน — agent จำ context งานวิจัยของคุณ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 05 MODULE 1 HEADER -->
 <section class="mod-header" data-screen-label="05 Module 1 Header">
   <div class="mod-num">1</div>
   <div class="mod-body">
-    <div class="lbl" style="color:var(--a);">Module 1 · 20 นาที</div>
+    <div class="lbl" style="color:var(--a);">Module 1</div>
     <div class="h2w">บทนำและการสืบค้น<br>แหล่งข้อมูลวิชาการขั้นสูง</div>
-    <p style="font-size:26px;color:#a8a29e;line-height:1.6;">Demo 12 นาที · ลงมือทำ 8 นาที</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
       <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fcd34d;border:1px solid rgba(255,255,255,.2);">4 ฐานข้อมูลพรีเมียม</span>
       <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fcd34d;border:1px solid rgba(255,255,255,.2);">Google Scholar AI LAB</span>
@@ -502,7 +603,7 @@ section{
 
 <!-- 06 CORE-RULES + WHY -->
 <section class="vpad" data-screen-label="06 CORE-rules และทำไมต้องข้อมูลวิชาการ">
-  <div class="lbl">Module 1 · 1.0 · มาตรฐานแหล่งข้อมูล</div>
+  <div class="lbl">เริ่ม M1 — แหล่งไหนใช้ได้ แหล่งไหนห้ามใช้</div>
   <div class="h2 border-l-a" style="font-size:42px;">ทำไมต้องข้อมูลน่าเชื่อถือ? — แหล่งไหนใช้ได้ แหล่งไหนห้ามใช้</div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;flex:1;align-items:start;">
     <div class="card" style="border-top:5px solid #dc2626;">
@@ -527,7 +628,7 @@ section{
 
 <!-- 07 ภาพรวม 4 ฐานข้อมูล -->
 <section class="vpad" data-screen-label="07 ภาพรวม 4 ฐานข้อมูล">
-  <div class="lbl">Module 1 · ภาพรวมก่อนเริ่มค้น</div>
+  <div class="lbl">เปิด 4 แท็บนี้เลย — แต่ละฐานเหมาะกับงานอะไร</div>
   <div class="h2 border-l-a" style="font-size:42px;">4 ฐานข้อมูล — เหมาะกับงานประเภทใด?</div>
   <table class="t" style="flex:1;">
     <thead><tr>
@@ -712,7 +813,7 @@ section{
 
 <!-- 07f FILE NAMING -->
 <section class="vpad" style="gap:24px;" data-screen-label="07f ตั้งชื่อไฟล์">
-  <div class="lbl">Module 1 · ก่อนโหลดทุกครั้ง — สำคัญมาก</div>
+  <div class="lbl">ก่อนกด Download — ตั้งชื่อไฟล์ให้ถูกก่อน</div>
   <div class="h2 border-l-a" style="font-size:42px;">ตั้งชื่อไฟล์ให้ถูก → ย้ายเข้าโฟลเดอร์ได้ทันที</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1;align-items:start;">
     <div style="display:flex;flex-direction:column;gap:18px;">
@@ -745,7 +846,7 @@ section{
 
 <!-- 09 WORKSHOP M1 -->
 <section class="ws-section" data-screen-label="09 Workshop Module 1">
-  <div class="ws-badge">🔴 Workshop Module 1 · 15 นาที</div>
+  <div class="ws-badge">🔴 Workshop Module 1</div>
   <div class="h2" style="font-size:42px;">ลงมือสืบค้นเชิงลึกผ่าน 4 แหล่งข้อมูลหลัก</div>
   <div class="g2" style="gap:24px;flex:1;">
     <div style="display:flex;flex-direction:column;gap:16px;">
@@ -765,7 +866,7 @@ section{
         <div style="font-size:24px;color:var(--s7);line-height:1.75;">
           ✅ ได้ไฟล์ PDF อย่างน้อย <strong>3 ชิ้นต่อมิติ</strong><br>
           ✅ Export BibTeX / .RIS ครบทุกไฟล์<br>
-          ✅ อัปโหลดแยกเข้า <strong>3 โฟลเดอร์ย่อย</strong> ทันที<br>
+          ✅ อัปโหลดแยกเข้า <strong>5 โฟลเดอร์มิติ</strong> ทันที<br>
           ✅ ป.โท/เอก: มีเปเปอร์ภาษาอังกฤษ ≥ 3 ชิ้น
         </div>
       </div>
@@ -778,9 +879,8 @@ section{
 <section class="mod-header" data-screen-label="10 Module 2 Header">
   <div class="mod-num" style="background:#0369a1;">2</div>
   <div class="mod-body">
-    <div class="lbl" style="color:#38bdf8;">Module 2 · 20 นาที</div>
+    <div class="lbl" style="color:#38bdf8;">Module 2</div>
     <div class="h2w">ด่านคัดกรอง ทลายกำแพงภาษา<br>และจัดระเบียบใน Google Drive</div>
-    <p style="font-size:26px;color:#a8a29e;line-height:1.6;">Demo 10 นาที · ลงมือทำ 10 นาที</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
       <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#7dd3fc;border:1px solid rgba(255,255,255,.2);">Thematic Folder Structure</span>
       <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#7dd3fc;border:1px solid rgba(255,255,255,.2);">AI Companion Spark</span>
@@ -791,40 +891,49 @@ section{
   <div class="bar" style="background:#0369a1;"></div>
 </section>
 
-<!-- 11 THEMATIC FOLDER -->
-<section class="vpad" data-screen-label="11 Thematic Folder Structure">
-  <div class="lbl">Module 2 · เชื่อมต่อจาก Module 1</div>
-  <div class="h2 border-l-a" style="font-size:40px;">ไฟล์ที่โหลดมา → ย้ายเข้าโฟลเดอร์ตาม 5 มิติของโจทย์ที่เลือก</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1;align-items:start;">
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div class="card-a">
-        <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:10px;">📌 จาก Module 1 คุณมีแล้ว:</div>
-        <div style="font-size:24px;color:var(--s7);line-height:1.8;">
-          ✅ ไฟล์ PDF ตั้งชื่อถูก format แล้ว<br>
-          ✅ BibTeX / RIS ครบทุกไฟล์<br>
-          ✅ รู้แล้วว่าแต่ละไฟล์อยู่มิติไหน (จากชื่อไฟล์)<br><br>
-          <strong>ขั้นต่อไป:</strong> สร้างโฟลเดอร์ 5 มิติ → ย้ายไฟล์เข้าให้ถูกมิติ
-        </div>
-      </div>
-      <div class="card" style="font-family:monospace;font-size:24px;line-height:2.1;background:#1c1917;color:#d4c9b8;border-color:#3f3830;">
-        📁 Research_[โจทย์ที่โหวต]<br>
-        &nbsp;&nbsp;├── 📁 01_[มิติ 1]<br>
-        &nbsp;&nbsp;├── 📁 02_[มิติ 2]<br>
-        &nbsp;&nbsp;├── 📁 03_[มิติ 3]<br>
-        &nbsp;&nbsp;├── 📁 04_[มิติ 4]<br>
-        &nbsp;&nbsp;├── 📁 05_[มิติ 5]<br>
-        &nbsp;&nbsp;└── 📁 <span style="color:#fbbf24;">_UNSORTED</span> &nbsp;← safety net
+<!-- 11 M1→M2 BRIDGE -->
+<section class="vpad" data-screen-label="11 M1 → M2 Bridge">
+  <div class="lbl">ได้ไฟล์มาแล้ว — ถึงเวลาคัดกรอง</div>
+  <div class="h2 border-l-a" style="font-size:40px;">สิ่งที่คุณทำได้แล้ว vs สิ่งที่ Module 2 จะทำต่อ</div>
+  <div class="g2" style="gap:24px;flex:1;align-items:stretch;">
+    <!-- Left: what M1 gave us -->
+    <div class="card-a" style="display:flex;flex-direction:column;gap:16px;">
+      <div style="font-size:24px;font-weight:800;color:var(--ad);">✅ หลัง Module 1 — คุณมีแล้ว</div>
+      <div style="font-size:24px;color:var(--s7);line-height:2;">
+        📄 ไฟล์ PDF จาก 4 ฐานข้อมูล (≥ 3 ชิ้น/มิติ)<br>
+        📋 BibTeX / RIS ครบทุกไฟล์<br>
+        📁 โฟลเดอร์ 5 มิติ + <strong>_UNSORTED</strong> สร้างไว้แล้ว<br>
+        📂 ไฟล์อยู่ในโฟลเดอร์ตามที่คิดว่าถูก<br>
+        <span style="font-size:22px;color:var(--a);font-weight:700;">⚠️ "ตามที่คิดว่าถูก" — ยังไม่ได้คัดกรองจริง</span>
       </div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div style="font-size:24px;font-weight:800;color:var(--s8);">🔄 ย้ายไฟล์เข้าโฟลเดอร์ที่ถูก</div>
+    <!-- Right: what M2 will do -->
+    <div class="card" style="display:flex;flex-direction:column;gap:16px;border-top:5px solid #0369a1;">
+      <div style="font-size:24px;font-weight:800;color:#0369a1;">🎯 Module 2 จะทำ — 3 งาน</div>
       <div class="steps">
-        <div class="step"><div class="sn">1</div><div style="font-size:24px;">เปิด Google Drive → สร้างโฟลเดอร์หลัก + 5 โฟลเดอร์ย่อยตามมิติของโจทย์</div></div>
-        <div class="step"><div class="sn">2</div><div style="font-size:24px;">ดูชื่อไฟล์ → รู้ทันทีว่าอยู่มิติไหน → ย้ายเข้าโฟลเดอร์นั้น</div></div>
-        <div class="step"><div class="sn">3</div><div style="font-size:24px;">ไฟล์ที่ยังไม่แน่ใจ → ย้ายเข้า <strong>_UNSORTED</strong> ไว้ก่อน</div></div>
+        <div class="step">
+          <div class="sn" style="background:#0369a1;">1</div>
+          <div>
+            <div style="font-size:24px;font-weight:700;">คัดกรองยกโฟลเดอร์ด้วย Spark</div>
+            <div style="font-size:22px;color:var(--s6);">ส่ง Prompt → ได้ตาราง ✅ ❓ ❌ ทันที</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="sn" style="background:#0369a1;">2</div>
+          <div>
+            <div style="font-size:24px;font-weight:700;">จัดการผลการคัดกรอง</div>
+            <div style="font-size:22px;color:var(--s6);">✅ คงไว้ · ❓ ย้าย _UNSORTED · ❌ ลบ</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="sn" style="background:#0369a1;">3</div>
+          <div>
+            <div style="font-size:24px;font-weight:700;">สรุปรายไฟล์ด้วย Spark ขั้นที่ 2</div>
+            <div style="font-size:22px;color:var(--s6);">ได้บันทึกสรุปแต่ละเปเปอร์พร้อมอ้างอิง</div>
+          </div>
+        </div>
       </div>
-      <div class="highlight" style="font-size:24px;">⚠️ ห้ามลบถาวรทันที — ย้ายไปถังขยะแล้ว <strong>รอ 7 วัน</strong> ก่อน<br>AI อาจประเมินผิดพลาดได้เสมอ</div>
-      <image-slot id="drive-folder" placeholder="📸 แคป Screenshot: โฟลเดอร์ Google Drive จริง" shape="rounded" style="width:100%;height:160px;"></image-slot>
+      <div class="highlight" style="font-size:23px;">🏁 ผลลัพธ์: โฟลเดอร์สะอาด 100% พร้อมอัปโหลดเข้า NotebookLM</div>
     </div>
   </div>
   <div class="bar"></div>
@@ -832,7 +941,7 @@ section{
 
 <!-- 12 SPARK TWO-STEP -->
 <section class="vpad" data-screen-label="12 AI Companion Spark Two-Step Prompting">
-  <div class="lbl">Module 2 · 2.3 · Demo 4 นาที</div>
+  <div class="lbl">ดูก่อน — Spark คัดกรองยังไง (4 นาที)</div>
   <div class="h2 border-l-a" style="font-size:40px;">ทลายกำแพงภาษาด้วย AI Companion (Spark)</div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;align-items:start;">
     <div class="card" style="border-left:5px solid #059669;">
@@ -843,7 +952,16 @@ section{
       <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:12px;">🟡 Prompt ขั้นที่ 2 — สรุปเจาะรายไฟล์</div>
       <div style="background:var(--al);border-radius:10px;padding:16px 20px;font-size:24px;color:var(--s7);line-height:1.75;font-style:italic;">"สรุปผลวิจัยไฟล์นี้: (1) วัตถุประสงค์ (2) วิธีดำเนินการ / กลุ่มตัวอย่าง (3) ผลสำคัญและสถิติ (4) ข้อจำกัด — ภาษาไทยสละสลวย"</div>
     </div>
-    <image-slot id="spark-ui" placeholder="📸 แคป Screenshot: Spark sidebar ใน Google Drive" shape="rounded" style="width:100%;height:100%;min-height:220px;"></image-slot>
+    <div class="card" style="border-top:5px solid #7c3aed;display:flex;flex-direction:column;gap:12px;">
+      <div style="font-size:24px;font-weight:800;color:#7c3aed;">🔄 ถ้าไม่มี Spark — เปิด Chat ใหม่แยกต่างหาก</div>
+      <div style="background:#fef2f2;border-radius:8px;padding:8px 12px;font-size:22px;color:#dc2626;font-weight:700;">⚠️ ห้ามใช้ Agent ที่เปิดค้างไว้ — Agent นั้นมี context ว่า "มีงานพร้อมแล้ว" จะงงถ้าอัปโหลด PDF ที่ยังไม่ได้คัดกรอง</div>
+      <div class="steps" style="gap:10px;">
+        <div class="step"><div class="sn" style="background:#7c3aed;">1</div><div style="font-size:23px;">เปิด <strong>Chat ใหม่</strong> ใน Claude / Gemini / ChatGPT — แยกออกจาก Agent</div></div>
+        <div class="step"><div class="sn" style="background:#7c3aed;">2</div><div style="font-size:23px;">อัปโหลด PDF ทีละโฟลเดอร์ → ใช้ Prompt ขั้นที่ 1 → ได้ ✅ ❓ ❌</div></div>
+        <div class="step"><div class="sn" style="background:#7c3aed;">3</div><div style="font-size:23px;">ไฟล์ที่ผ่าน → ส่งทีละไฟล์ → Prompt ขั้นที่ 2 สรุปรายไฟล์</div></div>
+      </div>
+      <div style="background:#f5f3ff;border-radius:8px;padding:8px 12px;font-size:22px;color:#5b21b6;font-weight:600;">💡 Chat นี้ใช้เป็น "ด่านคัดกรอง" เท่านั้น — ปิดทิ้งหลังจบ M2</div>
+    </div>
   </div>
   <table class="t" style="font-size:24px;">
     <thead><tr><th>ผลประเมิน</th><th>การดำเนินการ</th></tr></thead>
@@ -858,7 +976,7 @@ section{
 
 <!-- 13 WORKSHOP M2 -->
 <section class="ws-section" data-screen-label="13 Workshop Module 2">
-  <div class="ws-badge">🔴 Workshop Module 2 · 15 นาที</div>
+  <div class="ws-badge">🔴 Workshop Module 2</div>
   <div class="h2" style="font-size:42px;">คัดกรองและสแกนด้วย Spark (Two-Step Prompting)</div>
   <div class="g2" style="gap:24px;flex:1;">
     <div class="ws-card">
@@ -888,9 +1006,8 @@ section{
 <section class="mod-header" data-screen-label="14 Module 3 Header">
   <div class="mod-num" style="background:#1e3a5f;">3</div>
   <div class="mod-body">
-    <div class="lbl" style="color:#93c5fd;">Module 3 · 30 นาที</div>
+    <div class="lbl" style="color:#93c5fd;">Module 3</div>
     <div class="h2w">สังเคราะห์เชิงลึกและสร้างสื่ออัจฉริยะ<br>ด้วย NotebookLM</div>
-    <p style="font-size:26px;color:#a8a29e;line-height:1.6;">Demo 15 นาที · ลงมือทำ 15 นาที</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
       <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#93c5fd;border:1px solid rgba(255,255,255,.2);">Research Synthesis</span>
       <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#93c5fd;border:1px solid rgba(255,255,255,.2);">Mindmap</span>
@@ -901,114 +1018,54 @@ section{
   <div class="bar" style="background:#1e3a5f;"></div>
 </section>
 
-<!-- 15 NOTEBOOKLM + SYNTHESIS -->
-<section class="vpad" data-screen-label="15 NotebookLM และ Research Synthesis">
-  <div class="lbl">Module 3 · 3.1–3.2 · Demo 7 นาที</div>
-  <div class="g2" style="gap:28px;flex:1;align-items:start;">
-    <div style="display:flex;flex-direction:column;gap:18px;">
-      <div class="h3 border-l-a">นำเข้าโฟลเดอร์ที่สะอาดแล้ว</div>
-      <div class="steps">
-        <div class="step"><div class="sn">1</div><div style="font-size:24px;">สร้าง Notebook ใหม่ใน NotebookLM</div></div>
-        <div class="step"><div class="sn">2</div><div style="font-size:24px;">เลือกแหล่ง <strong>"Google Drive Folder"</strong> → เลือกโฟลเดอร์ที่คลีนแล้ว</div></div>
-        <div class="step"><div class="sn">3</div><div style="font-size:24px;">ตรวจสอบ NotebookLM โหลดเอกสารครบทุกไฟล์แล้ว</div></div>
-      </div>
-      <div class="card-a">
-        <div style="font-size:24px;font-weight:700;color:var(--ad);margin-bottom:8px;">✨ จุดแข็งสำคัญ</div>
-        <div style="font-size:24px;color:var(--s7);line-height:1.7;">No Hallucination — ตอบด้วยข้อมูลจากเอกสารของคุณเท่านั้น พร้อม citation อ้างอิงหน้าจริง</div>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:18px;">
-      <div class="h3 border-l-a">Research Synthesis Prompt</div>
-      <div class="card" style="background:#1c1917;border-color:#3f3830;">
-        <div style="font-size:24px;color:#fcd34d;font-style:italic;line-height:1.8;">"จากงานวิจัยทั้งหมด จงวิเคราะห์และเปรียบเทียบข้อค้นพบด้าน <strong style="color:white;">[ระบุมิติ]</strong> โดยแสดงว่าผู้แต่งใดมีข้อค้นพบสอดคล้องกัน และประเด็นใดยังขัดแย้งกันอยู่"</div>
-      </div>
-      <div class="card" style="background:#1c1917;border-color:#3f3830;">
-        <div style="font-size:24px;color:#94a3b8;margin-bottom:8px;">Research Gap Prompt</div>
-        <div style="font-size:24px;color:#fcd34d;font-style:italic;line-height:1.8;">"จากเปเปอร์ทั้งหมด <strong style="color:white;">ช่องว่างของงานวิจัยคืออะไร?</strong>"</div>
-      </div>
-      <image-slot id="notebooklm-ui" placeholder="📸 แคป Screenshot: หน้า NotebookLM" shape="rounded" style="width:100%;height:190px;"></image-slot>
-    </div>
-  </div>
-  <div class="bar"></div>
-</section>
-
-<!-- 16 MINDMAP + FAQ -->
-<section class="vpad" data-screen-label="16 Mindmap FAQ และเมนูเสริม">
-  <div class="lbl">Module 3 · 3.3 · Must-Do + เมนูเสริม</div>
-  <div class="g2" style="gap:26px;flex:1;align-items:start;">
-    <div style="display:flex;flex-direction:column;gap:18px;">
-      <div class="h3 border-l-a" style="color:#059669;">⭐ Must-Do (ลงมือทำในห้อง)</div>
-      <div class="card" style="border-left:5px solid #059669;">
-        <div style="font-size:24px;font-weight:700;color:#065f46;margin-bottom:10px;">🗺️ Mind Map Structure</div>
-        <div style="font-size:24px;color:var(--s6);line-height:1.7;">สั่งสรุปหัวข้อหลัก-ย่อยและความเชื่อมโยงเป็นโครงสร้างกิ่งก้าน → ใช้เป็น <strong>กรอบแนวคิดการวิจัย</strong></div>
-      </div>
-      <div class="card" style="border-left:5px solid var(--a);">
-        <div style="font-size:24px;font-weight:700;color:var(--ad);margin-bottom:10px;">❓ FAQ Generator</div>
-        <div style="font-size:24px;color:var(--s6);line-height:1.7;">สร้างชุดคำถามที่อาจารย์/คณะกรรมการอาจถามใน <strong>Proposal Defense</strong></div>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:18px;">
-      <div class="h3 border-l-a">🎁 เมนูเสริม (ลองที่บ้าน)</div>
-      <div class="card">
-        <div style="font-size:24px;font-weight:700;margin-bottom:8px;">📊 Infographic Outline</div>
-        <div style="font-size:24px;color:var(--s6);line-height:1.6;">สร้างโครงร่างสำหรับ Canva — สถิติสำคัญ + สโลแกน 3 ส่วนหลัก</div>
-      </div>
-      <div class="card">
-        <div style="font-size:24px;font-weight:700;margin-bottom:8px;">📄 Briefing / Study Guide</div>
-        <div style="font-size:24px;color:var(--s6);line-height:1.6;">Executive Summary กระชับ เตรียมทบทวนก่อน Defense</div>
-      </div>
-      <div class="card" style="opacity:.75;">
-        <div style="font-size:24px;font-weight:700;margin-bottom:8px;">🎙️ Audio Overview (Podcast)</div>
-        <div style="font-size:24px;color:var(--s6);line-height:1.6;">⚠️ รองรับเฉพาะเปเปอร์ <strong>ภาษาอังกฤษ</strong> เท่านั้น</div>
-      </div>
-    </div>
-  </div>
-  <div class="bar"></div>
-</section>
-
 <!-- NEW: PATH A VS PATH B -->
 <section class="vpad" data-screen-label="NEW Path A vs Path B">
-  <div class="lbl">Module 3 · สองเส้นทางจาก NotebookLM</div>
+  <div class="lbl">ไฟล์สะอาดแล้ว — จะไป Path ไหน?</div>
   <div class="h2 border-l-a" style="font-size:42px;">เลือก Path ตามเป้าหมายของคุณ</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;flex:1;">
+    <!-- PATH A -->
     <div style="display:flex;flex-direction:column;background:white;border:2.5px solid #059669;border-radius:16px;overflow:hidden;">
-      <div style="background:#059669;color:white;padding:18px 26px;font-size:26px;font-weight:800;">🎨 Path A — สร้างสื่อ</div>
+      <div style="background:#059669;color:white;padding:16px 26px;display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:26px;font-weight:800;">🎨 Path A — สร้างสื่อ</div>
+        <div style="background:white;color:#059669;font-size:20px;font-weight:800;padding:4px 14px;border-radius:20px;white-space:nowrap;">🏁 จบที่ M3 นี้</div>
+      </div>
       <div style="padding:20px 26px;flex:1;display:flex;flex-direction:column;gap:12px;">
         <div style="font-size:24px;font-weight:700;color:var(--s8);">เหมาะกับ</div>
-        <div style="font-size:24px;color:var(--s6);">อาจารย์ · ผู้สร้างสื่อ · ป.ตรี ที่ต้องทำสื่อการสอน</div>
-        <div style="font-size:24px;font-weight:700;color:var(--s8);">ผลลัพธ์ที่ได้</div>
+        <div style="font-size:24px;color:var(--s6);">อาจารย์ · ผู้สร้างสื่อ · ทุกคนที่ต้องการสื่อ / คู่มือ / ตำรา</div>
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">ผลลัพธ์จาก NotebookLM → Export ออกได้เลย</div>
         <div style="font-size:24px;color:var(--s6);line-height:1.7;">🗺️ Mind Map โครงสร้างกิ่งก้าน<br>🎙️ Audio Overview (เปเปอร์ภาษาอังกฤษ)<br>📊 Infographic Outline → Canva<br>📄 Briefing / Study Guide</div>
-        <div style="font-size:24px;font-weight:700;color:var(--s8);">Export ไปที่</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;">
           <span style="background:#ecfdf5;border:1.5px solid #86efac;color:#065f46;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Canva</span>
           <span style="background:#ecfdf5;border:1.5px solid #86efac;color:#065f46;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Google Docs</span>
           <span style="background:#ecfdf5;border:1.5px solid #86efac;color:#065f46;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Word</span>
         </div>
       </div>
     </div>
+    <!-- PATH B -->
     <div style="display:flex;flex-direction:column;background:white;border:2.5px solid #1d4ed8;border-radius:16px;overflow:hidden;">
-      <div style="background:#1d4ed8;color:white;padding:18px 26px;font-size:26px;font-weight:800;">✍️ Path B — เขียนงานวิจัย</div>
+      <div style="background:#1d4ed8;color:white;padding:16px 26px;display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:26px;font-weight:800;">✍️ Path B — เขียนเอกสาร</div>
+        <div style="background:white;color:#1d4ed8;font-size:20px;font-weight:800;padding:4px 14px;border-radius:20px;white-space:nowrap;">→ ต่อ M4</div>
+      </div>
       <div style="padding:20px 26px;flex:1;display:flex;flex-direction:column;gap:12px;">
         <div style="font-size:24px;font-weight:700;color:var(--s8);">เหมาะกับ</div>
-        <div style="font-size:24px;color:var(--s6);">ป.โท · ป.เอก · นักวิจัย · อาจารย์ทำ Manuscript</div>
-        <div style="font-size:24px;font-weight:700;color:var(--s8);">วิธีใช้ (จำลองตัวอย่าง)</div>
-        <div style="font-size:24px;color:var(--s6);line-height:1.7;">1️⃣ NotebookLM → สังเคราะห์ + สรุปสาระ<br>2️⃣ เปิด Gemini → Canvas → วาง CORE + role-agent<br>3️⃣ AI กลายเป็น specialist มรนว. 2568<br>4️⃣ ทำงานจนจบ → ได้ร่างบทที่ 2</div>
-        <div style="font-size:24px;font-weight:700;color:var(--s8);">Export ไปที่</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <span style="background:#eff6ff;border:1.5px solid #93c5fd;color:#1d4ed8;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Canvas → copy</span>
-          <span style="background:#eff6ff;border:1.5px solid #93c5fd;color:#1d4ed8;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Google Docs</span>
-          <span style="background:#eff6ff;border:1.5px solid #93c5fd;color:#1d4ed8;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Word</span>
+        <div style="font-size:24px;color:var(--s6);">ทุกคนที่ต้องเขียนเอกสารวิชาการ — ป.ตรี ถึง นักวิจัย</div>
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">วิธีเชื่อม NotebookLM → Agent ที่ค้างไว้</div>
+        <div class="steps" style="gap:8px;">
+          <div class="step"><div class="sn" style="background:#1d4ed8;width:36px;height:36px;font-size:20px;margin-top:2px;">1</div><div style="font-size:23px;">Copy สรุปจาก NotebookLM — Mindmap / Research Gap / สาระสำคัญ</div></div>
+          <div class="step"><div class="sn" style="background:#1d4ed8;width:36px;height:36px;font-size:20px;margin-top:2px;">2</div><div style="font-size:23px;">ไปที่ <strong>Agent ที่เปิดค้างไว้</strong> → วางผลสรุปนั้นเข้าไป</div></div>
+          <div class="step"><div class="sn" style="background:#1d4ed8;width:36px;height:36px;font-size:20px;margin-top:2px;">3</div><div style="font-size:23px;">บอก Agent: <em style="color:var(--ad);">"ถึงขั้นเขียนแล้ว — นี่คือสรุปจาก NotebookLM"</em> → ทำต่อ M4</div></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="highlight" style="font-size:24px;">📌 ทั้ง 2 Path ไม่ได้แยกกัน — ทำ Path A ดูภาพรวมก่อน แล้วต่อ Path B เขียนลึก คือกลยุทธ์ที่ดีที่สุดสำหรับงานวิจัย</div>
+  <div class="highlight" style="font-size:24px;">📌 ไม่ว่าจะ Path ไหน — <strong>ทำ NotebookLM ก่อนเสมอ</strong> เพราะผลสรุปจากที่นี่คือวัตถุดิบที่ทุก Path ต้องการ</div>
   <div class="bar"></div>
 </section>
 
 <!-- NEW: 5 NOTEBOOKS STRUCTURE -->
 <section class="vpad" data-screen-label="NEW 5 Notebooks Structure">
-  <div class="lbl">Module 3 · หลักการสำคัญ</div>
+  <div class="lbl">ก่อนสร้าง Notebook — กฎที่ต้องรู้ก่อน</div>
   <div class="h2 border-l-a" style="font-size:40px;">1 หัวข้อ → แตก 5 มิติ → 5 Folders → 5 Notebooks → 5 Chats</div>
   <div style="background:var(--al);border:2px solid #fbbf24;border-radius:14px;padding:18px 28px;display:flex;align-items:center;gap:16px;">
     <div style="font-size:38px;">💼</div>
@@ -1064,9 +1121,74 @@ section{
   <div class="bar"></div>
 </section>
 
+<!-- 15 NOTEBOOKLM + SYNTHESIS -->
+<section class="vpad" data-screen-label="15 NotebookLM และ Research Synthesis">
+  <div class="lbl">ดูก่อน — สร้าง Notebook และดึง Insights ยังไง</div>
+  <div class="g2" style="gap:28px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="h3 border-l-a">นำเข้าโฟลเดอร์ที่สะอาดแล้ว</div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">สร้าง Notebook ใหม่ใน NotebookLM</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">เลือกแหล่ง <strong>"Google Drive Folder"</strong> → เลือกโฟลเดอร์ที่คลีนแล้ว</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">ตรวจสอบ NotebookLM โหลดเอกสารครบทุกไฟล์แล้ว</div></div>
+      </div>
+      <div class="card-a">
+        <div style="font-size:24px;font-weight:700;color:var(--ad);margin-bottom:8px;">✨ จุดแข็งสำคัญ</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.7;">No Hallucination — ตอบด้วยข้อมูลจากเอกสารของคุณเท่านั้น พร้อม citation อ้างอิงหน้าจริง</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="h3 border-l-a">Research Synthesis Prompt</div>
+      <div class="card" style="background:#1c1917;border-color:#3f3830;">
+        <div style="font-size:24px;color:#fcd34d;font-style:italic;line-height:1.8;">"จากงานวิจัยทั้งหมด จงวิเคราะห์และเปรียบเทียบข้อค้นพบด้าน <strong style="color:white;">[ระบุมิติ]</strong> โดยแสดงว่าผู้แต่งใดมีข้อค้นพบสอดคล้องกัน และประเด็นใดยังขัดแย้งกันอยู่"</div>
+      </div>
+      <div class="card" style="background:#1c1917;border-color:#3f3830;">
+        <div style="font-size:24px;color:#94a3b8;margin-bottom:8px;">Research Gap Prompt</div>
+        <div style="font-size:24px;color:#fcd34d;font-style:italic;line-height:1.8;">"จากเปเปอร์ทั้งหมด <strong style="color:white;">ช่องว่างของงานวิจัยคืออะไร?</strong>"</div>
+      </div>
+      <image-slot id="notebooklm-ui" placeholder="📸 แคป Screenshot: หน้า NotebookLM" shape="rounded" style="width:100%;height:190px;"></image-slot>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 16 MINDMAP + FAQ -->
+<section class="vpad" data-screen-label="16 Mindmap FAQ และเมนูเสริม">
+  <div class="lbl">ต้องทำก่อน — แล้วค่อยเลือกเมนูเสริมตามใจ</div>
+  <div class="g2" style="gap:26px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="h3 border-l-a" style="color:#059669;">⭐ Must-Do (ลงมือทำในห้อง)</div>
+      <div class="card" style="border-left:5px solid #059669;">
+        <div style="font-size:24px;font-weight:700;color:#065f46;margin-bottom:10px;">🗺️ Mind Map Structure</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">สั่งสรุปหัวข้อหลัก-ย่อยและความเชื่อมโยงเป็นโครงสร้างกิ่งก้าน → ใช้เป็น <strong>กรอบแนวคิดการวิจัย</strong></div>
+      </div>
+      <div class="card" style="border-left:5px solid var(--a);">
+        <div style="font-size:24px;font-weight:700;color:var(--ad);margin-bottom:10px;">❓ FAQ Generator</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">สร้างชุดคำถามที่อาจารย์/คณะกรรมการอาจถามใน <strong>Proposal Defense</strong></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="h3 border-l-a">🎁 เมนูเสริม (ลองที่บ้าน)</div>
+      <div class="card">
+        <div style="font-size:24px;font-weight:700;margin-bottom:8px;">📊 Infographic Outline</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.6;">สร้างโครงร่างสำหรับ Canva — สถิติสำคัญ + สโลแกน 3 ส่วนหลัก</div>
+      </div>
+      <div class="card">
+        <div style="font-size:24px;font-weight:700;margin-bottom:8px;">📄 Briefing / Study Guide</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.6;">Executive Summary กระชับ เตรียมทบทวนก่อน Defense</div>
+      </div>
+      <div class="card" style="opacity:.75;">
+        <div style="font-size:24px;font-weight:700;margin-bottom:8px;">🎙️ Audio Overview (Podcast)</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.6;">⚠️ รองรับเฉพาะเปเปอร์ <strong>ภาษาอังกฤษ</strong> เท่านั้น</div>
+      </div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
 <!-- 17 WORKSHOP M3 -->
 <section class="ws-section" data-screen-label="17 Workshop Module 3">
-  <div class="ws-badge">🔴 Workshop Module 3 · 25 นาที</div>
+  <div class="ws-badge">🔴 Workshop Module 3</div>
   <div class="h2" style="font-size:42px;">สร้าง NotebookLM 5 เล่ม ตาม  5 มิติ → สังเคราะห์และสร้างสื่อ</div>
   <div class="g2" style="gap:24px;flex:1;">
     <div class="ws-card">
@@ -1098,9 +1220,8 @@ section{
 <section class="mod-header" data-screen-label="18 Module 4 Header">
   <div class="mod-num" style="background:#78350f;">4</div>
   <div class="mod-body">
-    <div class="lbl" style="color:#fbbf24;">Module 4 · 35 นาที</div>
+    <div class="lbl" style="color:#fbbf24;">Module 4</div>
     <div class="h2w">รังสรรค์งานเขียนวิจัย<br>ตามมาตรฐาน มรนว. 2568</div>
-    <p style="font-size:26px;color:#a8a29e;line-height:1.6;">Demo 15 นาที · ลงมือทำ 20 นาที</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
       <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fbbf24;border:1px solid rgba(255,255,255,.2);">โครงสร้าง 4 ส่วน</span>
       <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fbbf24;border:1px solid rgba(255,255,255,.2);">TH Sarabun New</span>
@@ -1111,120 +1232,9 @@ section{
   <div class="bar" style="background:#78350f;"></div>
 </section>
 
-<!-- 18b HOW TO ATTACH AGENT -->
-<section class="vpad" style="gap:22px;" data-screen-label="18b วิธีแนบ Agent เข้า Gemini">
-  <div class="lbl">Module 4 · ก่อนเขียน — ตั้ง AI ให้รู้กฎก่อน</div>
-  <div class="h2 border-l-a" style="font-size:42px;">วิธีแนบ Agent เข้า Gemini — 3 ขั้นตอน</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;flex:1;align-items:start;">
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <div class="steps">
-        <div class="step"><div class="sn">1</div><div>เปิด <strong>gemini.google.com</strong> → เลือก <strong>Canvas</strong> (พื้นที่เขียนงาน)</div></div>
-        <div class="step"><div class="sn">2</div><div>คัดลอกเนื้อหา <strong>CORE-rules.md</strong> + <strong>[role]-agent.md</strong> ที่ตรงกับตัวเอง</div></div>
-        <div class="step"><div class="sn">3</div><div>วางทั้งหมดลงในช่องข้อความ → กด Enter → AI จะตอบรับและถามคุณ 3 ข้อ</div></div>
-      </div>
-      <div class="card-a">
-        <div style="font-size:24px;font-weight:700;color:var(--ad);margin-bottom:8px;">🎯 เลือก Agent ตามบทบาท</div>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="font-size:24px;background:#ecfdf5;border-radius:8px;padding:8px 16px;color:#065f46;">🎓 <strong>ป.ตรี</strong> → undergrad-agent.md</div>
-          <div style="font-size:24px;background:var(--al);border-radius:8px;padding:8px 16px;color:var(--ad);">🎓🎓 <strong>ป.โท / ป.เอก</strong> → grad-agent.md</div>
-          <div style="font-size:24px;background:#f5f3ff;border-radius:8px;padding:8px 16px;color:#5b21b6;">🔬 <strong>อาจารย์ / นักวิจัย</strong> → researcher-agent.md</div>
-        </div>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:14px;">
-      <div style="font-size:24px;font-weight:800;color:var(--s8);">AI จะถามคุณ 3 ข้อเสมอ:</div>
-      <div style="background:var(--s9);border-radius:14px;padding:22px 26px;font-family:monospace;display:flex;flex-direction:column;gap:14px;">
-        <div style="font-size:24px;color:#fcd34d;font-weight:700;">Gemini + Agent พร้อมแล้ว:</div>
-        <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:14px 18px;font-size:24px;color:#d4c9b8;line-height:1.8;">1️⃣ คุณชื่ออะไร / บทบาทคืออะไร?<br>2️⃣ หัวข้อวิจัย / ชื่อโปรเจกต์คืออะไร?<br>3️⃣ วันนี้ต้องการทำโหมดไหน?<br>&nbsp;&nbsp;&nbsp;&nbsp;🔬 งานวิจัย / 📚 สื่อ / 📋 คู่มือ / 📖 ตำรา</div>
-      </div>
-      <div class="highlight" style="font-size:24px;">✅ ตอบครบ 3 ข้อ → AI เริ่มทำงานเป็น specialist ตาม มรนว. 2568 ทันที</div>
-    </div>
-  </div>
-  <div class="bar"></div>
-</section>
-
-<!-- 18c AGENT CONVERSATION DEMO -->
-<section class="vpad" style="gap:20px;" data-screen-label="18c จำลองบทสนทนา 3 Agents">
-  <div class="lbl">Module 4 · เปรียบเทียบ 3 Agents — Tone ต่างกันอย่างไร?</div>
-  <div class="h2 border-l-a" style="font-size:40px;">จำลองบทสนทนา: ถามเรื่องเดียวกัน — Agent ตอบต่างกัน</div>
-  <div style="font-size:24px;background:var(--s2);border-radius:10px;padding:12px 24px;color:var(--s7);">📝 โจทย์เดียวกัน: <strong>"ช่วยเขียนย่อหน้าเรื่องอิทธิพลกลุ่มเพื่อนต่อพฤติกรรมสูบบุหรี่ไฟฟ้า"</strong></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;">
-    <!-- undergrad -->
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <div style="background:#059669;color:white;font-size:24px;font-weight:800;padding:10px 18px;border-radius:10px;">🎓 undergrad-agent</div>
-      <div style="background:#ecfdf5;border:1.5px solid #86efac;border-radius:10px;padding:14px 18px;font-size:24px;color:#065f46;line-height:1.7;">สวัสดีครับน้อง! 🌱<br>ก่อนเขียน พี่อยากให้น้องลองตอบ 3 ข้อนี้ก่อนนะครับ:<br><br>① น้องอ่านเปเปอร์จาก Notebook แล้วหรือยัง?<br>② ทฤษฎีหลักที่อาจารย์แนะนำคืออะไร?<br>③ วัตถุประสงค์ข้อไหนที่ย่อหน้านี้จะสนับสนุน?</div>
-      <div style="background:white;border:1.5px solid #e7e5e4;border-radius:10px;padding:12px 18px;font-size:24px;color:var(--s6);line-height:1.6;flex:1;">🎯 <strong>สไตล์:</strong> สอนให้คิด ไม่ทำแทน<br>พี่จะช่วย scaffold และตรวจ APA 7th ให้หลังน้องร่างมาแล้ว</div>
-    </div>
-    <!-- grad -->
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <div style="background:var(--a);color:white;font-size:24px;font-weight:800;padding:10px 18px;border-radius:10px;">🎓🎓 grad-agent</div>
-      <div style="background:var(--al);border:1.5px solid #fde68a;border-radius:10px;padding:14px 18px;font-size:24px;color:var(--ad);line-height:1.7;">ได้ครับ ขอข้อมูล 3 ข้อ:<br><br>① Thesis หรือ IS?<br>&nbsp;&nbsp;(กำหนดคำว่า "ผู้วิจัย" / "ผู้ศึกษา")<br>② Design ที่ใช้? (กลุ่มตัวอย่างกี่คน?)<br>③ งานวิจัยที่เกี่ยวข้องใน Notebook มีอะไรบ้าง?</div>
-      <div style="background:white;border:1.5px solid #e7e5e4;border-radius:10px;padding:12px 18px;font-size:24px;color:var(--s6);line-height:1.6;flex:1;">🎯 <strong>สไตล์:</strong> มืออาชีพ ตรงประเด็น<br>จะ draft โครงสร้าง 4 ส่วน + ตรวจ IS/Thesis term + Integrity reminder</div>
-    </div>
-    <!-- researcher -->
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <div style="background:#7c3aed;color:white;font-size:24px;font-weight:800;padding:10px 18px;border-radius:10px;">🔬 researcher-agent</div>
-      <div style="background:#f5f3ff;border:1.5px solid #c4b5fd;border-radius:10px;padding:14px 18px;font-size:24px;color:#5b21b6;line-height:1.7;">Target journal ครับ?<br>Peer influence มี meta-analysis<br>ล่าสุดหรือยัง?<br><br>Effect size (β) และ p-value ที่ได้จากข้อมูลจริง พร้อมระบุหรือยัง? จะใช้เป็น anchor ใน Discussion</div>
-      <div style="background:white;border:1.5px solid #e7e5e4;border-radius:10px;padding:12px 18px;font-size:24px;color:var(--s6);line-height:1.6;flex:1;">🎯 <strong>สไตล์:</strong> Peer ระดับเดียวกัน<br>Challenge เชิงสร้างสรรค์ + Draft ระดับ Scopus Q2</div>
-    </div>
-  </div>
-  <div class="bar"></div>
-</section>
-
-<!-- 18d OUTPUT TYPES -->
-<section class="vpad" style="gap:20px;" data-screen-label="18d ผลลัพธ์ 3 ประเภทจาก Agent">
-  <div class="lbl">Module 4 · ผลลัพธ์ที่ Agent สร้างได้</div>
-  <div class="h2 border-l-a" style="font-size:40px;">Agent ให้ผลลัพธ์ 3 ประเภท — เลือกใช้ตามบทที่ต้องการ</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;">
-    <!-- Type 1: ทฤษฎี -->
-    <div style="display:flex;flex-direction:column;gap:0;">
-      <div style="background:#1d4ed8;color:white;padding:12px 18px;border-radius:12px 12px 0 0;">
-        <div style="font-size:24px;font-weight:800;">📚 Type 1: ย่อหน้าทฤษฎี</div>
-        <div style="font-size:24px;opacity:.8;">บทที่ 2 — กรอบแนวคิด/ทฤษฎีหลัก</div>
-      </div>
-      <div style="background:#eff6ff;border:1.5px solid #93c5fd;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;font-size:24px;color:var(--s8);line-height:1.8;">
-        <div style="color:#1d4ed8;font-weight:700;margin-bottom:8px;">Prompt: "เขียนย่อหน้าอธิบายทฤษฎี TAM"</div>
-        <div style="background:white;border-radius:8px;padding:12px 16px;font-size:24px;color:var(--s7);line-height:1.75;border-left:4px solid #1d4ed8;">ทฤษฎีการยอมรับเทคโนโลยี (Technology Acceptance Model: TAM) พัฒนาโดย Davis (1989) อธิบายพฤติกรรมการยอมรับเทคโนโลยีสารสนเทศผ่าน 2 ตัวแปรหลัก ได้แก่ การรับรู้ประโยชน์ใช้สอย (Perceived Usefulness) และการรับรู้ความง่ายในการใช้ (Perceived Ease of Use)…</div>
-        <div style="margin-top:10px;font-size:24px;color:#1d4ed8;">→ นิยาม + ผู้พัฒนา + องค์ประกอบ + การนำไปใช้</div>
-      </div>
-    </div>
-    <!-- Type 2: งานวิจัย -->
-    <div style="display:flex;flex-direction:column;gap:0;">
-      <div style="background:var(--a);color:white;padding:12px 18px;border-radius:12px 12px 0 0;">
-        <div style="font-size:24px;font-weight:800;">🔬 Type 2: ย่อหน้างานวิจัย</div>
-        <div style="font-size:24px;opacity:.8;">บทที่ 2 — งานวิจัยที่เกี่ยวข้อง</div>
-      </div>
-      <div style="background:var(--al);border:1.5px solid #fde68a;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;font-size:24px;color:var(--s8);line-height:1.8;">
-        <div style="color:var(--ad);font-weight:700;margin-bottom:8px;">Prompt: "เขียนย่อหน้าสรุปงานวิจัยนี้"</div>
-        <div style="background:white;border-radius:8px;padding:10px 14px;font-size:24px;color:var(--s7);line-height:1.75;border-left:4px solid var(--a);">
-          <span style="background:#dbeafe;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:#1d4ed8;">นำ</span> สมศักดิ์ และคณะ (2566) ได้ศึกษา…
-          <span style="background:#ede9fe;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:#7c3aed;">วิธี</span> กลุ่มตัวอย่าง 320 คน…
-          <span style="background:#dcfce7;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:#059669;">ผล</span> β = .42, p &lt; .001…
-          <span style="background:#fef3c7;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:var(--ad);">เชื่อม</span> สอดคล้องกับการศึกษาครั้งนี้…
-        </div>
-        <div style="margin-top:10px;font-size:24px;color:var(--ad);">→ 4 ส่วน: นำ – วิธี – ผล – เชื่อม</div>
-      </div>
-    </div>
-    <!-- Type 3: สังเคราะห์ -->
-    <div style="display:flex;flex-direction:column;gap:0;">
-      <div style="background:#7c3aed;color:white;padding:12px 18px;border-radius:12px 12px 0 0;">
-        <div style="font-size:24px;font-weight:800;">🔀 Type 3: การสังเคราะห์</div>
-        <div style="font-size:24px;opacity:.8;">บทที่ 2 — เปรียบเทียบหลายงาน</div>
-      </div>
-      <div style="background:#f5f3ff;border:1.5px solid #c4b5fd;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;font-size:24px;color:var(--s8);line-height:1.8;">
-        <div style="color:#7c3aed;font-weight:700;margin-bottom:8px;">Prompt: "สังเคราะห์งานวิจัย 3 ชิ้นนี้"</div>
-        <div style="background:white;border-radius:8px;padding:10px 14px;font-size:24px;color:var(--s7);line-height:1.75;border-left:4px solid #7c3aed;">งานวิจัยส่วนใหญ่สอดคล้องว่า… (สมศักดิ์ และคณะ, 2566; Smith et al., 2023) อย่างไรก็ตาม Jones (2024) พบว่า… ช่องว่างที่ยังขาด คือ…</div>
-        <div style="margin-top:10px;font-size:24px;color:#7c3aed;">→ สอดคล้อง + ขัดแย้ง + Research Gap</div>
-      </div>
-    </div>
-  </div>
-  <div class="highlight" style="font-size:24px;">💡 <strong>วิธีใช้:</strong> นำ output จาก Agent ไปปรับสำนวน ≥ 50% → วางลง Google Docs / Canvas → ตรวจ APA 7th ก่อนส่ง</div>
-  <div class="bar"></div>
-</section>
-
 <!-- 19 PARAGRAPH STRUCTURE -->
 <section class="vpad" data-screen-label="19 โครงสร้างย่อหน้า 4 ส่วน">
-  <div class="lbl">Module 4 · กฎที่ Agent ใช้ — โครงสร้างย่อหน้า</div>
+  <div class="lbl">ก่อนบอก AI ให้เขียน — จำกฎ 4 ส่วนนี้ก่อน</div>
   <div class="h2 border-l-a" style="font-size:42px;">โครงสร้างย่อหน้าทบทวนวรรณกรรม — 4 ส่วน</div>
   <div class="g4">
     <div class="card" style="border-top:5px solid #1d4ed8;">
@@ -1258,7 +1268,7 @@ section{
 
 <!-- 20 FORMATTING + APA -->
 <section class="vpad" data-screen-label="20 Formatting Standards APA 7th">
-  <div class="lbl">Module 4 · กฎที่ Agent ใช้ — Formatting & APA</div>
+  <div class="lbl">นี่คือ Format และ APA 7th ที่ต้องใช้</div>
   <div class="h2 border-l-a" style="font-size:42px;">มาตรฐาน Formatting & APA 7th ที่ Agent ยึดถือ</div>
   <div class="g2" style="gap:26px;flex:1;align-items:start;">
     <div style="display:flex;flex-direction:column;gap:16px;">
@@ -1297,7 +1307,7 @@ section{
 
 <!-- 21 EXAMPLE PARAGRAPH -->
 <section class="vpad" data-screen-label="21 ตัวอย่างการเขียน">
-  <div class="lbl">Module 4 · ตัวอย่างเปรียบเทียบ ✅ vs ❌</div>
+  <div class="lbl">เทียบให้เห็น — ผิดตรงไหน ถูกตรงไหน</div>
   <div class="g2" style="gap:24px;flex:1;align-items:start;">
     <div style="display:flex;flex-direction:column;gap:14px;">
       <div style="display:flex;align-items:center;gap:12px;font-size:26px;font-weight:800;color:#dc2626;">❌ แบบที่ควรหลีกเลี่ยง</div>
@@ -1317,16 +1327,177 @@ section{
   <div class="bar"></div>
 </section>
 
+<!-- NEW UNIVERSAL PROMPT -->
+<section class="vpad" style="gap:20px;" data-screen-label="NEW Universal Prompt บท 2">
+  <div class="lbl">ก๊อบตรงนี้ — ปรับ 5 จุด → วาง Agent ได้เลย</div>
+  <div class="h2 border-l-a" style="font-size:40px;">Universal Prompt — ใช้ได้ทุกประเภทเอกสาร ทุกระดับ</div>
+  <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:24px;flex:1;align-items:start;">
+    <!-- Left: prompt template -->
+    <div style="background:#1c1917;border-radius:14px;padding:24px 28px;display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-size:22px;font-weight:700;color:#78716c;letter-spacing:.06em;">📋 PRE-PROMPT — ก๊อบทั้งบล็อก</div>
+        <div style="background:var(--a);color:white;font-size:20px;font-weight:800;padding:5px 18px;border-radius:20px;white-space:nowrap;">ก๊อบ → แก้ → วาง</div>
+      </div>
+      <div style="font-family:monospace;font-size:22px;line-height:2.1;color:#e2d9c8;">
+        <div>ช่วยเขียนเนื้อหาสำหรับ <span style="background:#1d4ed8;color:white;padding:2px 10px;border-radius:4px;font-weight:800;">[1]</span> ระดับ <span style="background:#059669;color:white;padding:2px 10px;border-radius:4px;font-weight:800;">[2]</span></div>
+        <div>หัวข้อ / มิติที่เขียน: <span style="background:#7c3aed;color:white;padding:2px 10px;border-radius:4px;font-weight:800;">[3]</span></div>
+        <div style="color:#78716c;margin-top:4px;">สรุปจาก NotebookLM:</div>
+        <div><span style="background:#d97706;color:white;padding:2px 10px;border-radius:4px;font-weight:800;">[4 วาง/แนบสรุปที่นี่]</span></div>
+        <div style="margin-top:6px;">สิ่งที่ต้องการ: <span style="background:#dc2626;color:white;padding:2px 10px;border-radius:4px;font-weight:800;">[5]</span></div>
+        <div style="font-size:20px;color:#a8a29e;padding-left:16px;">□ ย่อหน้าทฤษฎี — นิยาม + ผู้พัฒนา + องค์ประกอบ + การนำไปใช้</div>
+        <div style="font-size:20px;color:#a8a29e;padding-left:16px;">□ ย่อหน้างานวิจัย 4 ส่วน — นำ / วิธีการ / ผล / เชื่อมโยง</div>
+        <div style="font-size:20px;color:#a8a29e;padding-left:16px;">□ สังเคราะห์หลายงาน — สอดคล้อง + ขัดแย้ง + Research Gap</div>
+        <div style="margin-top:8px;border-top:1px solid rgba(255,255,255,.1);padding-top:10px;font-size:20px;color:#fcd34d;">ยึดกฎ: APA 7th + มรนว. 2568 + โครงสร้าง 4 ส่วน</div>
+        <div style="font-size:20px;color:#fcd34d;">ความยาว 150–250 คำ · แจ้งเตือนทุกจุดที่เสี่ยง Plagiarism</div>
+      </div>
+    </div>
+    <!-- Right: 5 slots legend -->
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div style="font-size:24px;font-weight:800;color:var(--s8);">แก้ 5 จุด — ใช้ได้ทันที</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="display:flex;align-items:flex-start;gap:12px;background:white;border:1.5px solid #93c5fd;border-radius:10px;padding:11px 16px;">
+          <div style="background:#1d4ed8;color:white;font-size:20px;font-weight:800;padding:3px 10px;border-radius:6px;white-space:nowrap;flex-shrink:0;">[1]</div>
+          <div><div style="font-size:23px;color:var(--s7);font-weight:700;">ประเภทเอกสาร</div><div style="font-size:21px;color:var(--s4);">Thesis / IS / บทความ / คู่มือ / ตำรา / SOP</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;background:white;border:1.5px solid #86efac;border-radius:10px;padding:11px 16px;">
+          <div style="background:#059669;color:white;font-size:20px;font-weight:800;padding:3px 10px;border-radius:6px;white-space:nowrap;flex-shrink:0;">[2]</div>
+          <div><div style="font-size:23px;color:var(--s7);font-weight:700;">ระดับผู้เขียน</div><div style="font-size:21px;color:var(--s4);">ป.ตรี / ป.โท / ป.เอก / อาจารย์ / นักวิจัย</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;background:white;border:1.5px solid #c4b5fd;border-radius:10px;padding:11px 16px;">
+          <div style="background:#7c3aed;color:white;font-size:20px;font-weight:800;padding:3px 10px;border-radius:6px;white-space:nowrap;flex-shrink:0;">[3]</div>
+          <div><div style="font-size:23px;color:var(--s7);font-weight:700;">มิติ / หัวข้อที่จะเขียน</div><div style="font-size:21px;color:var(--s4);">"ทฤษฎี TAM" / "อิทธิพลกลุ่มเพื่อน" / ฯลฯ</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;background:white;border:1.5px solid #fde68a;border-radius:10px;padding:11px 16px;">
+          <div style="background:#d97706;color:white;font-size:20px;font-weight:800;padding:3px 10px;border-radius:6px;white-space:nowrap;flex-shrink:0;">[4]</div>
+          <div><div style="font-size:23px;color:var(--s7);font-weight:700;">สรุปจาก NotebookLM</div><div style="font-size:21px;color:var(--s4);">Mindmap / Research Gap / สาระสำคัญรายมิติ</div></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;background:white;border:1.5px solid #fca5a5;border-radius:10px;padding:11px 16px;">
+          <div style="background:#dc2626;color:white;font-size:20px;font-weight:800;padding:3px 10px;border-radius:6px;white-space:nowrap;flex-shrink:0;">[5]</div>
+          <div><div style="font-size:23px;color:var(--s7);font-weight:700;">เลือกประเภทผลลัพธ์</div><div style="font-size:21px;color:var(--s4);">ทฤษฎี / งานวิจัย 4 ส่วน / สังเคราะห์หลายงาน</div></div>
+        </div>
+      </div>
+      <div class="highlight" style="font-size:22px;">💡 Prompt นี้ฝังกฎ APA 7th + มรนว. 2568 ไว้แล้ว — Agent ตรวจและแจ้งเตือนอัตโนมัติ ไม่ต้องจำเอง</div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 18b AGENT + M4 WRITING -->
+<section class="vpad" style="gap:22px;" data-screen-label="18b Agent กับงานเขียน M4">
+  <div class="lbl">ตอนนี้บอก AI ให้เขียนตามกฎที่เพิ่งเรียน</div>
+  <div class="h2 border-l-a" style="font-size:42px;">Agent ที่เปิดอยู่แล้ว — ตอนนี้ใช้กับงานเขียนบท 2</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="card-a">
+        <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:10px;">📌 บอก Agent ว่าถึงขั้นเขียนแล้ว</div>
+        <div style="background:var(--s9);border-radius:10px;padding:14px 18px;font-family:monospace;font-size:24px;color:#d4c9b8;line-height:1.8;">"ตอนนี้ถึงขั้นเขียนบทที่ 2 แล้ว<br>ขอเริ่มโหมดงานวิจัย — มิติที่จะเขียนคือ [มิติที่เลือก]<br>สรุปจาก NotebookLM ที่ได้ → [วาง/แนบ]"</div>
+      </div>
+      <div class="card">
+        <div style="font-size:24px;font-weight:800;color:var(--s8);margin-bottom:10px;">🎯 Agent จะตอบรับและเริ่ม</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.9;">
+          ✅ จำกฎ 4 ส่วน อยู่แล้ว<br>
+          ✅ รู้จัก APA 7th + Format มรนว. 2568<br>
+          ✅ เขียนตามระดับของคุณ (ป.ตรี / ป.โท / นักวิจัย)<br>
+          ✅ ตรวจ Integrity + แจ้งเตือนเองหากเสี่ยง
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="font-size:24px;font-weight:800;color:var(--s8);">ผลลัพธ์ที่ขอได้เลย:</div>
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+        <div style="background:#eff6ff;border:1.5px solid #93c5fd;border-radius:10px;padding:14px 18px;font-size:24px;color:#1d4ed8;line-height:1.7;">📚 <strong>ย่อหน้าทฤษฎี</strong><br><span style="color:var(--s6);">"เขียนย่อหน้าอธิบายทฤษฎี TAM"</span></div>
+        <div style="background:var(--al);border:1.5px solid #fde68a;border-radius:10px;padding:14px 18px;font-size:24px;color:var(--ad);line-height:1.7;">🔬 <strong>ย่อหน้างานวิจัย</strong><br><span style="color:var(--s6);">"เขียนย่อหน้าสรุปงานวิจัยนี้ — 4 ส่วน"</span></div>
+        <div style="background:#f5f3ff;border:1.5px solid #c4b5fd;border-radius:10px;padding:14px 18px;font-size:24px;color:#7c3aed;line-height:1.7;">🔀 <strong>สังเคราะห์หลายงาน</strong><br><span style="color:var(--s6);">"สังเคราะห์งานวิจัย 3 ชิ้นนี้ — หา Gap"</span></div>
+      </div>
+      <div class="highlight" style="font-size:24px;">✅ Agent เขียนแล้ว → ปรับสำนวน ≥ 50% → วาง Google Docs / Canvas</div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 18c AGENT CONVERSATION DEMO -->
+<section class="vpad" style="gap:20px;" data-screen-label="18c จำลองบทสนทนา 3 Agents">
+  <div class="lbl">3 Agent ต่างกันยังไง — เลือกตัวที่ใช่</div>
+  <div class="h2 border-l-a" style="font-size:40px;">จำลองบทสนทนา: ถามเรื่องเดียวกัน — Agent ตอบต่างกัน</div>
+  <div style="font-size:24px;background:var(--s2);border-radius:10px;padding:12px 24px;color:var(--s7);">📝 โจทย์เดียวกัน: <strong>"ช่วยเขียนย่อหน้าเรื่องอิทธิพลกลุ่มเพื่อนต่อพฤติกรรมสูบบุหรี่ไฟฟ้า"</strong></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="background:#059669;color:white;font-size:24px;font-weight:800;padding:10px 18px;border-radius:10px;">🎓 undergrad-agent</div>
+      <div style="background:#ecfdf5;border:1.5px solid #86efac;border-radius:10px;padding:14px 18px;font-size:24px;color:#065f46;line-height:1.7;">สวัสดีครับน้อง! 🌱<br>ก่อนเขียน พี่อยากให้น้องลองตอบ 3 ข้อนี้ก่อนนะครับ:<br><br>① น้องอ่านเปเปอร์จาก Notebook แล้วหรือยัง?<br>② ทฤษฎีหลักที่อาจารย์แนะนำคืออะไร?<br>③ วัตถุประสงค์ข้อไหนที่ย่อหน้านี้จะสนับสนุน?</div>
+      <div style="background:white;border:1.5px solid #e7e5e4;border-radius:10px;padding:12px 18px;font-size:24px;color:var(--s6);line-height:1.6;flex:1;">🎯 <strong>สไตล์:</strong> สอนให้คิด ไม่ทำแทน<br>พี่จะช่วย scaffold และตรวจ APA 7th ให้หลังน้องร่างมาแล้ว</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="background:var(--a);color:white;font-size:24px;font-weight:800;padding:10px 18px;border-radius:10px;">🎓🎓 grad-agent</div>
+      <div style="background:var(--al);border:1.5px solid #fde68a;border-radius:10px;padding:14px 18px;font-size:24px;color:var(--ad);line-height:1.7;">ได้ครับ ขอข้อมูล 3 ข้อ:<br><br>① Thesis หรือ IS?<br>&nbsp;&nbsp;(กำหนดคำว่า "ผู้วิจัย" / "ผู้ศึกษา")<br>② Design ที่ใช้? (กลุ่มตัวอย่างกี่คน?)<br>③ งานวิจัยที่เกี่ยวข้องใน Notebook มีอะไรบ้าง?</div>
+      <div style="background:white;border:1.5px solid #e7e5e4;border-radius:10px;padding:12px 18px;font-size:24px;color:var(--s6);line-height:1.6;flex:1;">🎯 <strong>สไตล์:</strong> มืออาชีพ ตรงประเด็น<br>จะ draft โครงสร้าง 4 ส่วน + ตรวจ IS/Thesis term + Integrity reminder</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="background:#7c3aed;color:white;font-size:24px;font-weight:800;padding:10px 18px;border-radius:10px;">🔬 researcher-agent</div>
+      <div style="background:#f5f3ff;border:1.5px solid #c4b5fd;border-radius:10px;padding:14px 18px;font-size:24px;color:#5b21b6;line-height:1.7;">Target journal ครับ?<br>Peer influence มี meta-analysis<br>ล่าสุดหรือยัง?<br><br>Effect size (β) และ p-value ที่ได้จากข้อมูลจริง พร้อมระบุหรือยัง? จะใช้เป็น anchor ใน Discussion</div>
+      <div style="background:white;border:1.5px solid #e7e5e4;border-radius:10px;padding:12px 18px;font-size:24px;color:var(--s6);line-height:1.6;flex:1;">🎯 <strong>สไตล์:</strong> Peer ระดับเดียวกัน<br>Challenge เชิงสร้างสรรค์ + Draft ระดับ Scopus Q2</div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 18d OUTPUT TYPES -->
+<section class="vpad" style="gap:20px;" data-screen-label="18d ผลลัพธ์ 3 ประเภทจาก Agent">
+  <div class="lbl">นี่คือสิ่งที่ Agent สร้างให้จริงๆ</div>
+  <div class="h2 border-l-a" style="font-size:40px;">Agent ให้ผลลัพธ์ 3 ประเภท — เลือกใช้ตามบทที่ต้องการ</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;">
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#1d4ed8;color:white;padding:12px 18px;border-radius:12px 12px 0 0;">
+        <div style="font-size:24px;font-weight:800;">📚 Type 1: ย่อหน้าทฤษฎี</div>
+        <div style="font-size:24px;opacity:.8;">บทที่ 2 — กรอบแนวคิด/ทฤษฎีหลัก</div>
+      </div>
+      <div style="background:#eff6ff;border:1.5px solid #93c5fd;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;font-size:24px;color:var(--s8);line-height:1.8;">
+        <div style="color:#1d4ed8;font-weight:700;margin-bottom:8px;">Prompt: "เขียนย่อหน้าอธิบายทฤษฎี TAM"</div>
+        <div style="background:white;border-radius:8px;padding:12px 16px;font-size:24px;color:var(--s7);line-height:1.75;border-left:4px solid #1d4ed8;">ทฤษฎีการยอมรับเทคโนโลยี (Technology Acceptance Model: TAM) พัฒนาโดย Davis (1989) อธิบายพฤติกรรมการยอมรับเทคโนโลยีสารสนเทศผ่าน 2 ตัวแปรหลัก ได้แก่ การรับรู้ประโยชน์ใช้สอย (Perceived Usefulness) และการรับรู้ความง่ายในการใช้ (Perceived Ease of Use)…</div>
+        <div style="margin-top:10px;font-size:24px;color:#1d4ed8;">→ นิยาม + ผู้พัฒนา + องค์ประกอบ + การนำไปใช้</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:var(--a);color:white;padding:12px 18px;border-radius:12px 12px 0 0;">
+        <div style="font-size:24px;font-weight:800;">🔬 Type 2: ย่อหน้างานวิจัย</div>
+        <div style="font-size:24px;opacity:.8;">บทที่ 2 — งานวิจัยที่เกี่ยวข้อง</div>
+      </div>
+      <div style="background:var(--al);border:1.5px solid #fde68a;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;font-size:24px;color:var(--s8);line-height:1.8;">
+        <div style="color:var(--ad);font-weight:700;margin-bottom:8px;">Prompt: "เขียนย่อหน้าสรุปงานวิจัยนี้"</div>
+        <div style="background:white;border-radius:8px;padding:10px 14px;font-size:24px;color:var(--s7);line-height:1.75;border-left:4px solid var(--a);">
+          <span style="background:#dbeafe;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:#1d4ed8;">นำ</span> สมศักดิ์ และคณะ (2566) ได้ศึกษา…
+          <span style="background:#ede9fe;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:#7c3aed;">วิธี</span> กลุ่มตัวอย่าง 320 คน…
+          <span style="background:#dcfce7;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:#059669;">ผล</span> β = .42, p &lt; .001…
+          <span style="background:#fef3c7;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:var(--ad);">เชื่อม</span> สอดคล้องกับการศึกษาครั้งนี้…
+        </div>
+        <div style="margin-top:10px;font-size:24px;color:var(--ad);">→ 4 ส่วน: นำ – วิธี – ผล – เชื่อม</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#7c3aed;color:white;padding:12px 18px;border-radius:12px 12px 0 0;">
+        <div style="font-size:24px;font-weight:800;">🔀 Type 3: การสังเคราะห์</div>
+        <div style="font-size:24px;opacity:.8;">บทที่ 2 — เปรียบเทียบหลายงาน</div>
+      </div>
+      <div style="background:#f5f3ff;border:1.5px solid #c4b5fd;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;font-size:24px;color:var(--s8);line-height:1.8;">
+        <div style="color:#7c3aed;font-weight:700;margin-bottom:8px;">Prompt: "สังเคราะห์งานวิจัย 3 ชิ้นนี้"</div>
+        <div style="background:white;border-radius:8px;padding:10px 14px;font-size:24px;color:var(--s7);line-height:1.75;border-left:4px solid #7c3aed;">งานวิจัยส่วนใหญ่สอดคล้องว่า… (สมศักดิ์ และคณะ, 2566; Smith et al., 2023) อย่างไรก็ตาม Jones (2024) พบว่า… ช่องว่างที่ยังขาด คือ…</div>
+        <div style="margin-top:10px;font-size:24px;color:#7c3aed;">→ สอดคล้อง + ขัดแย้ง + Research Gap</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight" style="font-size:24px;">💡 <strong>วิธีใช้:</strong> นำ output จาก Agent ไปปรับสำนวน ≥ 50% → วางลง Google Docs / Canvas → ตรวจ APA 7th ก่อนส่ง</div>
+  <div class="bar"></div>
+</section>
+
 <!-- 22 WORKSHOP M4 -->
 <section class="ws-section" data-screen-label="22 Workshop Module 4">
-  <div class="ws-badge">🔴 Workshop Module 4 · 25 นาที</div>
+  <div class="ws-badge">🔴 Workshop Module 4</div>
   <div class="h2" style="font-size:42px;">ใช้ Gemini + Agent เขียนย่อหน้าทบทวนวรรณกรรม</div>
   <div class="g2" style="gap:24px;flex:1;">
     <div class="ws-card">
       <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:14px;">📌 ขั้นตอน</div>
       <div class="steps">
         <div class="step"><div class="sn">1</div><div style="font-size:24px;">เปิด Mindmap จาก Notebook เล่มที่ 1 → เลือก 1 มิติที่จะเขียน</div></div>
-        <div class="step"><div class="sn">2</div><div style="font-size:24px;">เปิด Gemini → Canvas → วาง CORE + role-agent → ตอบ 3 ข้อ → เลือกโหมด "งานวิจัย"</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">เปิด Gemini → Canvas → วาง CORE + role-agent → <strong>เลือกโหมด "งานวิจัย"</strong> → ตอบข้อมูล 3 ข้อ</div></div>
         <div class="step"><div class="sn">3</div><div style="font-size:24px;">แนบสรุปจาก NotebookLM → สั่ง Agent เขียนย่อหน้า 4 ส่วน (APA 7th)</div></div>
         <div class="step"><div class="sn">4</div><div style="font-size:24px;">Copy ผลลัพธ์ → ปรับสำนวน ≥ 50% ใน Google Docs / Canvas</div></div>
         <div class="step"><div class="sn">5</div><div style="font-size:24px;">ตั้งฟอนต์ TH Sarabun New 16pt + ตรวจ APA 7th</div></div>
@@ -1350,7 +1521,7 @@ section{
 
 <!-- NEW: CANVAS EXPORT -->
 <section class="vpad" data-screen-label="NEW Canvas Export Word Docs">
-  <div class="lbl">สรุป Path B · วิธีส่งออกจาก Canvas</div>
+  <div class="lbl">เขียนเสร็จ — ส่งออกจาก Canvas ยังไง</div>
   <div class="h2 border-l-a" style="font-size:42px;">ก๊อปผลลัพธ์จาก Canvas → Word / Google Docs</div>
   <div style="display:grid;grid-template-columns:2fr 1fr;gap:28px;flex:1;align-items:start;">
     <div style="display:flex;flex-direction:column;gap:18px;">
@@ -1386,9 +1557,8 @@ section{
 <section class="mod-header" data-screen-label="23 Module 5 Header">
   <div class="mod-num">5</div>
   <div class="mod-body">
-    <div class="lbl" style="color:var(--a);">Module 5 · 15 นาที</div>
+    <div class="lbl" style="color:var(--a);">Module 5</div>
     <div class="h2w">ตรวจสอบ Validate งานเขียน<br>ก่อน Submit / ส่งอาจารย์</div>
-    <p style="font-size:26px;color:#a8a29e;line-height:1.6;">Demo 5 นาที · ลงมือทำ 10 นาที</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
       <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fcd34d;border:1px solid rgba(255,255,255,.2);">Verification Checklist</span>
       <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fcd34d;border:1px solid rgba(255,255,255,.2);">AI Disclosure</span>
@@ -1401,7 +1571,7 @@ section{
 
 <!-- 24 VERIFICATION + DISCLOSURE -->
 <section class="vpad" data-screen-label="24 Verification Checklist และ AI Disclosure">
-  <div class="lbl">Module 5 · 5.1–5.3</div>
+  <div class="lbl">ก่อนส่งงาน — เช็คลิสต์ตรวจด้วยตัวเอง</div>
   <div class="g2" style="gap:28px;flex:1;align-items:start;grid-template-columns:1.8fr 1fr;">
     <div style="display:flex;flex-direction:column;gap:16px;">
       <div class="h3 border-l-a">✅ Verification Checklist</div>
@@ -1428,7 +1598,7 @@ section{
 
 <!-- 25 VALIDATION WORKFLOW -->
 <section class="vpad" data-screen-label="25 Validation Workflow 5 ขั้น">
-  <div class="lbl">Module 5 · อิงตาม CORE-rules ส่วนที่ 9</div>
+  <div class="lbl">เช็คจุดเสี่ยงทุกอัน — ตามมาตรฐาน มรนว. 2568</div>
   <div class="h2 border-l-a" style="font-size:42px;">Verification Workflow — ตรวจงานเขียน 5 ขั้นตอน</div>
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;flex:1;">
     <div style="display:flex;flex-direction:column;gap:0;">
@@ -1473,7 +1643,7 @@ section{
 
 <!-- 26 WORKSHOP M5 -->
 <section class="ws-section" data-screen-label="26 Workshop Module 5">
-  <div class="ws-badge">🔴 Workshop Module 5 · 10 นาที</div>
+  <div class="ws-badge">🔴 Workshop Module 5</div>
   <div class="h2" style="font-size:42px;">ตรวจสอบ Validate งานที่เขียน 5 ขั้นตอน</div>
   <div class="g2" style="gap:24px;flex:1;">
     <div class="ws-card">
@@ -1484,6 +1654,7 @@ section{
         <div class="step"><div class="sn">3</div><div style="font-size:24px;">ตรวจรูปแบบ มรนว. 2568: เว้นวรรค · "และคณะ" · IS vs Thesis</div></div>
         <div class="step"><div class="sn">4</div><div style="font-size:24px;">ทดสอบ URL / DOI ทุกรายการ — ไม่มีจุด (.) ปิดท้าย</div></div>
         <div class="step"><div class="sn">5</div><div style="font-size:24px;">บันทึก Audit Report 🔴🟡🟢 — แก้จุด Critical ก่อน submit</div></div>
+        <div class="step"><div class="sn">6</div><div style="font-size:24px;">บอก <strong>Agent ที่เปิดอยู่แล้ว</strong>: "ตรวจ citation และรูปแบบ มรนว. 2568 ให้หน่อย" → รับ Audit Report จาก AI</div></div>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px;">
@@ -1494,12 +1665,82 @@ section{
           ✅ NotebookLM 5 เล่ม เชื่อม  5 Folder<br>
           ✅ Mindmap + FAQ + Research Gap<br>
           ✅ ย่อหน้าบทที่ 2 มาตรฐาน มรนว. 2568<br>
-          ✅ Verification Checklist ผ่าน 5 ขั้นครบ
+          ✅ Verification Checklist ผ่าน 5 ขั้นครบ<br>
+          ✅ Agent Suite พร้อมใช้ต่อที่บ้าน
         </div>
       </div>
       <div class="highlight" style="font-size:24px;text-align:center;">🎉 <strong>ยินดีด้วย!</strong> คุณมี Workflow วิจัยครบวงจร + AI ส่วนตัวพร้อมใช้ทุกวัน</div>
     </div>
   </div>
+</section>
+
+<!-- 27 บทส่งท้าย -->
+<section class="vpad" style="gap:20px;" data-screen-label="27 บทส่งท้าย Agent Suite">
+  <div class="lbl">บทส่งท้าย — พกกลับบ้านและใช้ต่อได้ทันที</div>
+  <div class="h2 border-l-a" style="font-size:42px;">Agent ที่ใช้วันนี้ — พกกลับบ้านและใช้งานได้ทันที</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;">
+    <div style="display:flex;flex-direction:column;background:white;border:2px solid #059669;border-radius:16px;overflow:hidden;">
+      <div style="background:#059669;color:white;padding:14px 22px;display:flex;align-items:center;gap:12px;">
+        <div style="font-size:30px;">🎓</div>
+        <div>
+          <div style="font-size:24px;font-weight:800;">undergrad-agent</div>
+          <div style="font-size:22px;opacity:.85;">นักศึกษา ป.ตรี</div>
+        </div>
+      </div>
+      <div style="padding:18px 22px;flex:1;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">โทนการพูด</div>
+        <div style="background:#ecfdf5;border-radius:8px;padding:10px 14px;font-size:24px;color:#065f46;font-style:italic;">"สวัสดีครับน้อง! 🌱<br>พี่ช่วยได้ทั้งงานวิจัย<br>และสร้างสื่อ/คู่มือ..."</div>
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">เหมาะกับ</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">รายงานวิจัย 5 บท<br>โครงงาน / ปริญญานิพนธ์<br>สื่อ / คู่มือ / ตำรา ป.ตรี</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;background:white;border:2px solid var(--a);border-radius:16px;overflow:hidden;">
+      <div style="background:var(--a);color:white;padding:14px 22px;display:flex;align-items:center;gap:12px;">
+        <div style="font-size:30px;">🎓🎓</div>
+        <div>
+          <div style="font-size:24px;font-weight:800;">grad-agent</div>
+          <div style="font-size:22px;opacity:.85;">นักศึกษา ป.โท / ป.เอก</div>
+        </div>
+      </div>
+      <div style="padding:18px 22px;flex:1;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">โทนการพูด</div>
+        <div style="background:var(--al);border-radius:8px;padding:10px 14px;font-size:24px;color:var(--ad);font-style:italic;">"ตรงประเด็น เป็น<br>thinking partner<br>ตั้งแต่ Proposal ถึง Defense"</div>
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">เหมาะกับ</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">Thesis / IS / Proposal<br>Training module<br>Research Protocol</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;background:white;border:2px solid #7c3aed;border-radius:16px;overflow:hidden;">
+      <div style="background:#7c3aed;color:white;padding:14px 22px;display:flex;align-items:center;gap:12px;">
+        <div style="font-size:30px;">🔬</div>
+        <div>
+          <div style="font-size:24px;font-weight:800;">researcher-agent</div>
+          <div style="font-size:22px;opacity:.85;">อาจารย์ / นักวิจัย</div>
+        </div>
+      </div>
+      <div style="padding:18px 22px;flex:1;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">โทนการพูด</div>
+        <div style="background:#f5f3ff;border-radius:8px;padding:10px 14px;font-size:24px;color:#5b21b6;font-style:italic;">"Peer collaborator<br>ตรงประเด็น ภาษาเทคนิค<br>ระดับ Scopus Q1-Q2"</div>
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">เหมาะกับ</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">Manuscript / Peer Review<br>Audit งานนักศึกษา<br>Policy Manual / SOP</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:20px;">
+    <div style="background:var(--s9);border-radius:12px;padding:18px 24px;display:flex;flex-direction:column;gap:14px;">
+      <div style="font-size:24px;font-weight:800;color:var(--a);">⚙️ ทุก Agent รองรับ 4 โหมดงาน</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div style="background:rgba(255,255,255,.07);border-radius:8px;padding:10px 14px;font-size:24px;color:#d4c9b8;">🔬 งานวิจัย<br><span style="font-size:22px;color:#78716c;">Thesis / IS / Manuscript</span></div>
+        <div style="background:rgba(255,255,255,.07);border-radius:8px;padding:10px 14px;font-size:24px;color:#d4c9b8;">📚 สื่อการเรียนรู้<br><span style="font-size:22px;color:#78716c;">Lesson Plan / Quiz / E-Learning</span></div>
+        <div style="background:rgba(255,255,255,.07);border-radius:8px;padding:10px 14px;font-size:24px;color:#d4c9b8;">📋 คู่มือปฏิบัติงาน<br><span style="font-size:22px;color:#78716c;">SOP / Research Protocol</span></div>
+        <div style="background:rgba(255,255,255,.07);border-radius:8px;padding:10px 14px;font-size:24px;color:#d4c9b8;">📖 ตำราการสอน<br><span style="font-size:22px;color:#78716c;">Course Reader / Textbook</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="highlight" style="font-size:24px;">📦 <strong>สิ่งที่คุณได้กลับบ้าน:</strong><br>ไฟล์ <strong>CORE-rules.md</strong> + <strong>[role]-agent.md</strong> → ใช้ซ้ำได้ทุกโปรเจกต์ ทุก AI Platform</div>
+      <div class="card-a" style="font-size:24px;color:var(--ad);line-height:1.7;">💡 ทุกครั้งที่เปิดงานใหม่ — วาง agent เข้า AI แล้วตอบ 3 ข้อ → ไม่ต้องจำกฎ มรนว. 2568 เองอีกต่อไป</div>
+    </div>
+  </div>
+  <div class="bar"></div>
 </section>
 
 </deck-stage>
