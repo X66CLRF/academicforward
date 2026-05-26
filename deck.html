@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เทคนิคการสืบค้นข้อมูลเพื่อจัดทำเอกสารวิชาการ พร้อม AI ส่วนตัว</title>
+<script src="deck-stage.js"></script>
+<script src="image-slot.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --a:#d97706; --ad:#b45309; --al:#fffbeb; --alm:#fef3c7;
+  --s9:#1c1917; --s8:#292524; --s7:#44403c; --s6:#57534e; --s4:#a8a29e; --s2:#e7e5e4;
+  --bg:#faf7f0; --bgs:#fffdfa; --bd:#ede7db;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+deck-stage{--ds-bg:#18150f;}
+section{
+  font-family:'Sarabun',sans-serif;
+  width:1920px;height:1080px;
+  background:var(--bgs);color:var(--s9);
+  position:relative;overflow:hidden;
+}
+/* shared layout helpers */
+.vpad{padding:64px 120px;display:flex;flex-direction:column;gap:28px;}
+.row{display:flex;gap:24px;}
+.col{display:flex;flex-direction:column;gap:16px;flex:1;}
+/* typography */
+.lbl{font-size:24px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--a);}
+.h1{font-size:72px;font-weight:800;line-height:1.12;color:white;}
+.h2{font-size:52px;font-weight:800;line-height:1.15;color:var(--s9);}
+.h2w{font-size:52px;font-weight:800;line-height:1.15;color:white;}
+.h3{font-size:36px;font-weight:700;color:var(--s8);line-height:1.2;}
+.h3a{font-size:36px;font-weight:700;color:var(--ad);line-height:1.2;}
+.body{font-size:26px;color:var(--s6);line-height:1.7;}
+.sm{font-size:24px;color:var(--s6);line-height:1.6;}
+/* cards */
+.card{background:white;border:1.5px solid var(--bd);border-radius:16px;padding:28px 32px;}
+.card-a{background:var(--al);border:2px solid #fde68a;border-radius:16px;padding:26px 30px;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+.g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:18px;}
+/* workshop */
+.ws-section{background:var(--al);padding:60px 120px;display:flex;flex-direction:column;gap:26px;}
+.ws-badge{display:inline-flex;align-items:center;gap:10px;background:var(--a);color:white;
+  font-size:24px;font-weight:800;padding:10px 28px;border-radius:8px;width:fit-content;white-space:nowrap;}
+.ws-card{background:white;border:2px solid #fbbf24;border-radius:16px;padding:26px 32px;flex:1;}
+/* module header */
+.mod-header{background:var(--s9);display:flex;align-items:stretch;}
+.mod-num{width:380px;flex-shrink:0;background:var(--a);display:flex;align-items:center;
+  justify-content:center;font-size:160px;font-weight:800;color:white;letter-spacing:-.02em;opacity:.95;}
+.mod-body{flex:1;padding:64px 80px;display:flex;flex-direction:column;justify-content:center;gap:20px;}
+/* step list */
+.steps{display:flex;flex-direction:column;gap:16px;}
+.step{display:flex;gap:18px;align-items:flex-start;font-size:26px;color:var(--s7);line-height:1.5;}
+.sn{flex-shrink:0;width:44px;height:44px;background:var(--a);color:white;font-weight:800;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-top:3px;}
+/* table */
+.t{width:100%;border-collapse:collapse;font-size:24px;}
+.t th{background:var(--s9);color:white;padding:14px 20px;text-align:left;font-weight:700;font-size:24px;}
+.t td{padding:13px 20px;border-bottom:1px solid var(--bd);color:var(--s7);}
+.t tr:nth-child(even) td{background:#faf7f0;}
+/* accents */
+.bar{position:absolute;bottom:0;left:0;right:0;height:8px;background:var(--a);}
+.dot{position:absolute;border-radius:50%;opacity:.07;background:white;}
+.amber-pill{display:inline-block;background:var(--alm);color:var(--ad);font-size:24px;
+  font-weight:700;padding:5px 16px;border-radius:8px;white-space:nowrap;}
+.tool-chip{background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.16);
+  color:#d4c9b8;font-size:24px;font-weight:600;padding:9px 22px;border-radius:40px;white-space:nowrap;}
+.highlight{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid #fbbf24;
+  border-radius:12px;padding:22px 30px;font-size:25px;color:var(--ad);font-weight:600;line-height:1.6;}
+.border-l-a{border-left:6px solid var(--a);padding-left:20px;}
+.check-item{display:flex;align-items:flex-start;gap:14px;font-size:24px;color:var(--s7);line-height:1.6;}
+/* step font-size overrides for better fit */
+.ws-section .step > div{font-size:24px !important;}
+</style>
+</head>
+<body>
+<deck-stage>
+
+<!-- 01 TITLE -->
+<section style="background:var(--s9);" data-screen-label="01 Title">
+  <div class="dot" style="width:700px;height:700px;right:-180px;top:-220px;"></div>
+  <div class="dot" style="width:350px;height:350px;left:60px;bottom:-100px;"></div>
+  <div class="vpad" style="justify-content:center;height:100%;">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <span class="tool-chip">🕐 120 นาที</span>
+      <span class="tool-chip">มาตรฐาน มรนว. 2568</span>
+      <span class="tool-chip">5 Modules</span>
+    </div>
+    <div class="lbl" style="margin-top:8px;">หลักสูตรพัฒนาทักษะการวิจัย · มหาวิทยาลัยราชภัฏนครสวรรค์</div>
+    <h1 class="h1">เทคนิคการสืบค้นข้อมูล<br>เพื่อจัดทำเอกสารวิชาการ<br>
+      <span style="color:var(--a);">พร้อม AI ส่วนตัว</span></h1>
+    <p style="font-size:26px;color:var(--s4);margin-top:4px;">สำหรับ นักศึกษา ป.ตรี / ป.โท / ป.เอก · อาจารย์ · นักวิจัย</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
+      <span class="tool-chip">Google Scholar AI LAB</span>
+      <span class="tool-chip">EBSCO Ultimate Search</span>
+      <span class="tool-chip">Google Drive + Spark</span>
+      <span class="tool-chip">NotebookLM</span>
+      <span class="tool-chip">Google Docs AI</span>
+      <span class="tool-chip">Agent Suite</span>
+    </div>
+  </div>
+  <image-slot id="university-logo" placeholder="โลโก้ มรนว." shape="circle" style="position:absolute;top:36px;right:100px;width:110px;height:110px;"></image-slot>
+  <div class="bar"></div>
+</section>
+
+<!-- 02 AGENDA -->
+<section class="vpad" data-screen-label="02 Agenda">
+  <div class="lbl">ภาพรวมหลักสูตร</div>
+  <div class="h2 border-l-a" style="font-size:44px;">ตารางเวลา 120 นาที</div>
+  <table class="t">
+    <thead><tr>
+      <th style="width:200px;">เวลา</th><th style="width:130px;">Module</th>
+      <th>หัวข้อ</th><th style="width:130px;">Demo</th>
+      <th style="width:150px;">ลงมือทำ</th><th>Deliverable</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>00:00–00:10</td><td><span class="amber-pill">Pre</span></td><td>รู้จักตัวเองและเลือก Case Study</td><td>—</td><td>10 นาที</td><td>โจทย์วิจัย + โฟลเดอร์มิติ</td></tr>
+      <tr><td>00:10–00:30</td><td><span class="amber-pill">M 1</span></td><td>บทนำ & การสืบค้นขั้นสูง</td><td>12 นาที</td><td>8 นาที</td><td>คีย์เวิร์ด + PDF + BibTeX</td></tr>
+      <tr><td>00:30–00:50</td><td><span class="amber-pill">M 2</span></td><td>คัดกรอง ทลายกำแพงภาษา & จัดระเบียบ</td><td>10 นาที</td><td>10 นาที</td><td>โฟลเดอร์ Drive คัดสรร 100%</td></tr>
+      <tr><td>00:50–01:20</td><td><span class="amber-pill">M 3</span></td><td>วิเคราะห์เชิงลึก & สร้างสื่อด้วย NotebookLM</td><td>15 นาที</td><td>15 นาที</td><td>Mindmap + FAQ + Research Gap</td></tr>
+      <tr><td>01:20–01:55</td><td><span class="amber-pill">M 4</span></td><td>รังสรรค์งานเขียนระดับวิชาการ</td><td>15 นาที</td><td>20 นาที</td><td>ร่างบทที่ 2 Format ถูก 100%</td></tr>
+      <tr><td>01:55–02:00</td><td><span class="amber-pill">M 5</span></td><td>Verification Checklist & Agent Suite</td><td>5 นาที</td><td>10 นาที</td><td>Checklist + Agent พร้อมใช้</td></tr>
+    </tbody>
+  </table>
+  <div class="bar"></div>
+</section>
+
+<!-- NEW: BIG PICTURE FLOW -->
+<section style="background:var(--s9);padding:50px 100px;display:flex;flex-direction:column;gap:24px;" data-screen-label="NEW Big Picture Flow">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="lbl" style="color:var(--a);">ภาพรวมก่อนเริ่ม</div>
+    <div style="height:2px;flex:1;background:rgba(255,255,255,.1);"></div>
+  </div>
+  <div class="h2w" style="font-size:40px;">Workflow ทั้งหมด — ตั้งแต่ค้นจนได้งาน</div>
+  <!-- Main flow: 5 nodes -->
+  <div style="display:flex;align-items:stretch;gap:4px;flex:1;">
+    <div style="flex:1;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <div style="font-size:34px;">🔍</div>
+      <div style="font-size:24px;font-weight:800;color:white;line-height:1.3;">4 ฐานข้อมูล<br>พรีเมียม</div>
+      <div style="font-size:24px;color:#78716c;line-height:1.4;">ThaiJO · TDC<br>EBSCO · Scholar</div>
+    </div>
+    <div style="display:flex;align-items:center;font-size:28px;color:var(--a);font-weight:800;padding:0 4px;flex-shrink:0;">→</div>
+    <div style="flex:1;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <div style="font-size:34px;">📁</div>
+      <div style="font-size:24px;font-weight:800;color:white;line-height:1.3;">สร้างโฟลเดอร์<br>3 มิติ ก่อน</div>
+      <div style="font-size:24px;color:#78716c;line-height:1.4;">+ _UNSORTED<br>safety net</div>
+    </div>
+    <div style="display:flex;align-items:center;font-size:28px;color:var(--a);font-weight:800;padding:0 4px;flex-shrink:0;">→</div>
+    <div style="flex:1;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <div style="font-size:34px;">⬇️</div>
+      <div style="font-size:24px;font-weight:800;color:white;line-height:1.3;">ค้น + โหลด<br>PDF + BibTeX</div>
+      <div style="font-size:24px;color:#78716c;line-height:1.4;">ใส่โฟลเดอร์<br>ที่ถูกทันที</div>
+    </div>
+    <div style="display:flex;align-items:center;font-size:28px;color:var(--a);font-weight:800;padding:0 4px;flex-shrink:0;">→</div>
+    <div style="flex:1;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <div style="font-size:34px;">🤖</div>
+      <div style="font-size:24px;font-weight:800;color:white;line-height:1.3;">Spark<br>คัดกรอง</div>
+      <div style="font-size:24px;color:#78716c;line-height:1.4;">Two-Step<br>Prompting</div>
+    </div>
+    <div style="display:flex;align-items:center;font-size:28px;color:var(--a);font-weight:800;padding:0 4px;flex-shrink:0;">→</div>
+    <div style="flex:1.2;background:rgba(217,119,6,.18);border:2px solid var(--a);border-radius:12px;padding:16px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <div style="font-size:34px;">📓</div>
+      <div style="font-size:24px;font-weight:800;color:white;line-height:1.3;">NotebookLM<br>วิเคราะห์</div>
+      <div style="font-size:24px;color:#fbbf24;line-height:1.4;">Mindmap · FAQ<br>Research Gap</div>
+    </div>
+  </div>
+  <!-- Fork -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div style="background:rgba(5,150,105,.12);border:2px solid #059669;border-radius:12px;padding:16px 22px;display:flex;align-items:center;gap:14px;">
+      <div style="font-size:36px;flex-shrink:0;">🎨</div>
+      <div>
+        <div style="font-size:24px;font-weight:800;letter-spacing:.12em;color:#6ee7b7;margin-bottom:2px;white-space:nowrap;">PATH A</div>
+        <div style="font-size:24px;font-weight:800;color:white;">NotebookLM → สร้างสื่อ</div>
+        <div style="font-size:24px;color:#a7f3d0;margin-top:3px;">Mindmap · Infographic · Audio → Canva · สื่อ / คู่มือ / ตำรา</div>
+      </div>
+    </div>
+    <div style="background:rgba(37,99,235,.12);border:2px solid #3b82f6;border-radius:12px;padding:16px 22px;display:flex;align-items:center;gap:14px;">
+      <div style="font-size:36px;flex-shrink:0;">✍️</div>
+      <div>
+        <div style="font-size:24px;font-weight:800;letter-spacing:.12em;color:#93c5fd;margin-bottom:2px;white-space:nowrap;">PATH B</div>
+        <div style="font-size:24px;font-weight:800;color:white;">Gemini + Agent Suite → เขียนงาน</div>
+        <div style="font-size:24px;color:#bfdbfe;margin-top:3px;">CORE + role-agent → บทที่ 2 มาตรฐาน มรนว. 2568</div>
+      </div>
+    </div>
+  </div>
+  <!-- Converge -->
+  <div style="display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 24px;">
+    <div style="font-size:30px;">🎨</div>
+    <div style="font-size:24px;font-weight:700;color:white;white-space:nowrap;">Canvas (Gemini)</div>
+    <div style="font-size:26px;color:var(--a);font-weight:800;padding:0 6px;">→</div>
+    <div style="font-size:30px;">📄</div>
+    <div style="font-size:24px;font-weight:700;color:white;white-space:nowrap;">Word / Google Docs</div>
+    <div style="font-size:26px;color:var(--a);font-weight:800;padding:0 6px;">→</div>
+    <div style="font-size:30px;">✅</div>
+    <div>
+      <div style="font-size:24px;font-weight:700;color:white;">Validate ด้วย AI Prompt Templates</div>
+      <div style="font-size:24px;color:#78716c;">ตรวจ Format APA · มรนว. 2568 · Citation-Bibliography สอดคล้อง</div>
+    </div>
+    <div style="margin-left:auto;background:rgba(217,119,6,.2);border:1.5px solid var(--a);border-radius:8px;padding:8px 18px;font-size:24px;color:#fcd34d;font-weight:700;white-space:nowrap;">ด่านสุดท้าย</div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 03 PRE-WORKSHOP CONTENT -->
+<section class="vpad" data-screen-label="03 Pre-Workshop รู้จักตัวเอง">
+  <div class="lbl">Pre-Workshop · 10 นาที</div>
+  <div class="h2 border-l-a">รู้จักตัวเองก่อนสืบค้น</div>
+  <div class="g3">
+    <div class="card" style="border-top:5px solid #059669;">
+      <div style="font-size:38px;margin-bottom:12px;">🎓</div>
+      <div class="h3" style="color:#065f46;font-size:28px;margin-bottom:10px;">ปริญญาตรี</div>
+      <div class="sm">เป้าหมาย: รายงาน 5 บท<br>ภาษา ไทย : อังกฤษ = <strong>70:30</strong><br>อ้างอิง ≥ 3–5 ชิ้น</div>
+      <div style="margin-top:14px;background:#ecfdf5;border-radius:8px;padding:10px 14px;font-size:24px;color:#065f46;font-weight:600;">ThaiJO · TDC · Scholar</div>
+    </div>
+    <div class="card" style="border-top:5px solid var(--a);">
+      <div style="font-size:38px;margin-bottom:12px;">🎓🎓</div>
+      <div class="h3" style="font-size:28px;margin-bottom:10px;">ป.โท / ป.เอก</div>
+      <div class="sm">เป้าหมาย: Thesis / IS<br>ภาษา ไทย : อังกฤษ = <strong>50:50</strong><br>อ้างอิง ≥ 5–10 ชิ้น · อังกฤษ ≥ 5</div>
+      <div style="margin-top:14px;background:var(--al);border-radius:8px;padding:10px 14px;font-size:24px;color:var(--ad);font-weight:600;">ครบ 4 แหล่งข้อมูลทุกครั้ง</div>
+    </div>
+    <div class="card" style="border-top:5px solid #7c3aed;">
+      <div style="font-size:38px;margin-bottom:12px;">🔬</div>
+      <div class="h3" style="color:#5b21b6;font-size:28px;margin-bottom:10px;">อาจารย์ / นักวิจัย</div>
+      <div class="sm">เป้าหมาย: Manuscript วารสาร<br>ภาษา: <strong>ตามเป้าหมายวารสาร</strong><br>อ้างอิง ≥ 10–15 ชิ้น</div>
+      <div style="margin-top:14px;background:#f5f3ff;border-radius:8px;padding:10px 14px;font-size:24px;color:#5b21b6;font-weight:600;">EBSCO · Scholar เน้นแนวคิดใหม่</div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 04 PRE-WORKSHOP ACTIVITY -->
+<section class="ws-section" data-screen-label="04 Workshop Pre เลือก Case Study">
+  <div class="ws-badge">🔴 Pre-Workshop Activity · 10 นาที</div>
+  <div class="h2" style="font-size:40px;">เลือกโจทย์วิจัยและตั้งโฟลเดอร์มิติความคิด</div>
+  <div class="g4">
+    <div class="ws-card">
+      <div style="font-size:32px;margin-bottom:10px;">🏫</div>
+      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:8px;">ครุศาสตร์ / มนุษยศาสตร์</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.6;">พฤติกรรมการเรียนรู้และการใช้ AI / สื่อสังคมออนไลน์</div>
+    </div>
+    <div class="ws-card">
+      <div style="font-size:32px;margin-bottom:10px;">🩺</div>
+      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:8px;">วิทยาศาสตร์สุขภาพ</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.6;">พฤติกรรมสร้างเสริมสุขภาพ / ป้องกันบุหรี่ไฟฟ้า</div>
+    </div>
+    <div class="ws-card">
+      <div style="font-size:32px;margin-bottom:10px;">💼</div>
+      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:8px;">สังคมศาสตร์ / บริหาร</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.6;">การตัดสินใจซื้อออนไลน์ และความฉลาดทางการเงิน</div>
+    </div>
+    <div class="ws-card">
+      <div style="font-size:32px;margin-bottom:10px;">💻</div>
+      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:8px;">เทคโนโลยีสารสนเทศ</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.6;">ความตระหนักรู้ด้านความปลอดภัยทางไซเบอร์</div>
+    </div>
+  </div>
+  <div class="highlight">📁 สร้างโฟลเดอร์ <strong>Research_[หัวข้อ]</strong> พร้อมโฟลเดอร์ย่อย 3 มิติตามสาขาที่เลือก + <strong>_UNSORTED</strong></div>
+</section>
+
+<!-- NEW: VOTE SLIDE -->
+<section class="vpad" style="justify-content:space-between;" data-screen-label="NEW โหวตเลือกโจทย์">
+  <div style="text-align:center;">
+    <div class="lbl" style="justify-content:center;display:flex;">Pre-Workshop · โหวตเลือกโจทย์ร่วมกัน</div>
+    <div class="h2" style="font-size:48px;margin-top:10px;">วันนี้เราจะใช้โจทย์ <span style="color:var(--a);">หัวข้อไหน?</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px;flex:1;">
+    <div class="card" style="border-top:6px solid #059669;text-align:center;padding:28px 20px;cursor:pointer;">
+      <div style="font-size:44px;margin-bottom:12px;">🏫</div>
+      <div style="font-size:24px;font-weight:800;color:var(--s8);margin-bottom:8px;">โจทย์ 1</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.5;">พฤติกรรม<br>การใช้ AI<br>ในการเรียนรู้</div>
+      <div style="margin-top:12px;background:#ecfdf5;border-radius:8px;padding:6px 12px;font-size:24px;color:#065f46;font-weight:700;">ครุศาสตร์</div>
+    </div>
+    <div class="card" style="border-top:6px solid #dc2626;text-align:center;padding:28px 20px;cursor:pointer;">
+      <div style="font-size:44px;margin-bottom:12px;">🩺</div>
+      <div style="font-size:24px;font-weight:800;color:var(--s8);margin-bottom:8px;">โจทย์ 2</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.5;">บุหรี่ไฟฟ้า<br>ในวัยรุ่น</div>
+      <div style="margin-top:12px;background:#fef2f2;border-radius:8px;padding:6px 12px;font-size:24px;color:#dc2626;font-weight:700;">สาธารณสุข</div>
+    </div>
+    <div class="card" style="border-top:6px solid var(--a);text-align:center;padding:28px 20px;cursor:pointer;">
+      <div style="font-size:44px;margin-bottom:12px;">💼</div>
+      <div style="font-size:24px;font-weight:800;color:var(--s8);margin-bottom:8px;">โจทย์ 3</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.5;">การตัดสินใจ<br>ซื้อออนไลน์</div>
+      <div style="margin-top:12px;background:var(--al);border-radius:8px;padding:6px 12px;font-size:24px;color:var(--ad);font-weight:700;">บริหาร</div>
+    </div>
+    <div class="card" style="border-top:6px solid #7c3aed;text-align:center;padding:28px 20px;cursor:pointer;">
+      <div style="font-size:44px;margin-bottom:12px;">💻</div>
+      <div style="font-size:24px;font-weight:800;color:var(--s8);margin-bottom:8px;">โจทย์ 4</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.5;">ความปลอดภัย<br>ทางไซเบอร์</div>
+      <div style="margin-top:12px;background:#f5f3ff;border-radius:8px;padding:6px 12px;font-size:24px;color:#5b21b6;font-weight:700;">IT</div>
+    </div>
+    <div class="card" style="border-top:6px solid #0369a1;text-align:center;padding:28px 20px;cursor:pointer;">
+      <div style="font-size:44px;margin-bottom:12px;">💰</div>
+      <div style="font-size:24px;font-weight:800;color:var(--s8);margin-bottom:8px;">โจทย์ 5</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.5;">ความฉลาด<br>ทางการเงิน</div>
+      <div style="margin-top:12px;background:#eff6ff;border-radius:8px;padding:6px 12px;font-size:24px;color:#0369a1;font-weight:700;">เศรษฐศาสตร์</div>
+    </div>
+  </div>
+  <div class="highlight" style="text-align:center;font-size:24px;">📢 โหวตแล้วพลิกไปสไลด์โจทย์ที่ชนะ → ดูคีย์เวิร์ดและโฟลเดอร์ที่จะใช้จริงในวันนี้</div>
+  <div class="bar"></div>
+</section>
+
+<!-- CASE STUDY 1 -->
+<section class="vpad" style="gap:20px;" data-screen-label="CASE 1 AI Learning">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="font-size:40px;">🏫</div>
+    <div>
+      <div class="lbl">โจทย์ 1 · ครุศาสตร์ / มนุษยศาสตร์</div>
+      <div class="h2" style="font-size:32px;margin-top:4px;line-height:1.2;">พฤติกรรมการใช้ AI ในการเรียนรู้ของนักศึกษา</div>
+    </div>
+  </div>
+  <table class="t" style="flex:1;">
+    <thead><tr>
+      <th style="width:60px;">#</th>
+      <th style="width:260px;">📁 โฟลเดอร์มิติ</th>
+      <th>🇹🇭 คีย์เวิร์ดไทย</th>
+      <th>🌐 คีย์เวิร์ดอังกฤษ</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="font-weight:800;color:#1d4ed8;">01</td><td style="font-weight:700;">ทฤษฎีการยอมรับเทคโนโลยี</td><td>ทฤษฎีการยอมรับเทคโนโลยี · TAM · การใช้งาน</td><td>technology acceptance model · TAM · perceived usefulness</td></tr>
+      <tr><td style="font-weight:800;color:#059669;">02</td><td style="font-weight:700;">พฤติกรรมการใช้ AI จริง</td><td>พฤติกรรมการใช้ AI · ความถี่การใช้</td><td>AI usage behavior · frequency · user interaction</td></tr>
+      <tr><td style="font-weight:800;color:var(--ad);">03</td><td style="font-weight:700;">ผลสัมฤทธิ์ทางการเรียน</td><td>ผลสัมฤทธิ์ · คะแนน · ประสิทธิภาพการเรียน</td><td>learning achievement · academic performance · outcomes</td></tr>
+      <tr><td style="font-weight:800;color:#7c3aed;">04</td><td style="font-weight:700;">ทัศนคติและความเชื่อมั่น</td><td>ทัศนคติต่อ AI · ความเชื่อมั่นตนเอง</td><td>attitude toward AI · self-efficacy · digital confidence</td></tr>
+      <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">บริบทสถาบัน</td><td>นโยบาย AI · สภาพแวดล้อมการเรียน</td><td>institutional context · AI policy · learning environment</td></tr>
+    </tbody>
+  </table>
+  <div class="bar"></div>
+</section>
+
+<!-- CASE STUDY 2 -->
+<section class="vpad" style="gap:20px;" data-screen-label="CASE 2 E-cigarette">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="font-size:40px;">🩺</div>
+    <div>
+      <div class="lbl">โจทย์ 2 · วิทยาศาสตร์สุขภาพ / สาธารณสุข</div>
+      <div class="h2" style="font-size:32px;margin-top:4px;line-height:1.2;">ปัจจัยที่ส่งผลต่อพฤติกรรมสูบบุหรี่ไฟฟ้าในวัยรุ่น</div>
+    </div>
+  </div>
+  <table class="t" style="flex:1;">
+    <thead><tr>
+      <th style="width:60px;">#</th>
+      <th style="width:260px;">📁 โฟลเดอร์มิติ</th>
+      <th>🇹🇭 คีย์เวิร์ดไทย</th>
+      <th>🌐 คีย์เวิร์ดอังกฤษ</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="font-weight:800;color:#dc2626;">01</td><td style="font-weight:700;">ผลกระทบสุขภาพกาย</td><td>ผลกระทบสุขภาพ · สารนิโคติน · ระบบทางเดินหายใจ</td><td>health impact · nicotine harm · respiratory effects</td></tr>
+      <tr><td style="font-weight:800;color:#7c3aed;">02</td><td style="font-weight:700;">สุขภาพจิตและอารมณ์</td><td>สุขภาพจิต · ความเครียด · ภาวะซึมเศร้า</td><td>mental health · stress · depression · anxiety</td></tr>
+      <tr><td style="font-weight:800;color:var(--a);">03</td><td style="font-weight:700;">พลวัตครอบครัว</td><td>ปัจจัยครอบครัว · การเลี้ยงดู · การสื่อสาร</td><td>family factors · parenting · parent-child communication</td></tr>
+      <tr><td style="font-weight:800;color:#059669;">04</td><td style="font-weight:700;">อิทธิพลกลุ่มเพื่อน</td><td>อิทธิพลกลุ่มเพื่อน · แรงกดดันทางสังคม</td><td>peer influence · peer pressure · social norms</td></tr>
+      <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">โปรแกรมการป้องกัน</td><td>โปรแกรมป้องกัน · การแทรกแซง · การรณรงค์</td><td>prevention program · intervention · health promotion</td></tr>
+    </tbody>
+  </table>
+  <div class="bar"></div>
+</section>
+
+<!-- CASE STUDY 3 -->
+<section class="vpad" style="gap:20px;" data-screen-label="CASE 3 Online Purchase">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="font-size:40px;">💼</div>
+    <div>
+      <div class="lbl">โจทย์ 3 · สังคมศาสตร์ / บริหารธุรกิจ</div>
+      <div class="h2" style="font-size:32px;margin-top:4px;line-height:1.2;">ปัจจัยที่ส่งผลต่อการตัดสินใจซื้อสินค้าออนไลน์</div>
+    </div>
+  </div>
+  <table class="t" style="flex:1;">
+    <thead><tr>
+      <th style="width:60px;">#</th>
+      <th style="width:260px;">📁 โฟลเดอร์มิติ</th>
+      <th>🇹🇭 คีย์เวิร์ดไทย</th>
+      <th>🌐 คีย์เวิร์ดอังกฤษ</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="font-weight:800;color:#1d4ed8;">01</td><td style="font-weight:700;">ทฤษฎีพฤติกรรมผู้บริโภค</td><td>พฤติกรรมผู้บริโภค · ความตั้งใจซื้อ · ทฤษฎี TRA/TPB</td><td>consumer behavior · purchase intention · TRA · TPB</td></tr>
+      <tr><td style="font-weight:800;color:#059669;">02</td><td style="font-weight:700;">คุณภาพเว็บไซต์ &amp; UX</td><td>ประสบการณ์ผู้ใช้ · คุณภาพเว็บ · ความง่ายในการใช้</td><td>website quality · user experience · UX · ease of use</td></tr>
+      <tr><td style="font-weight:800;color:var(--a);">03</td><td style="font-weight:700;">ความไว้วางใจ &amp; ความปลอดภัย</td><td>ความไว้วางใจออนไลน์ · ความปลอดภัย · ความเป็นส่วนตัว</td><td>online trust · security · privacy · perceived risk</td></tr>
+      <tr><td style="font-weight:800;color:#7c3aed;">04</td><td style="font-weight:700;">รีวิว &amp; อิทธิพลสังคม</td><td>รีวิวสินค้า · บอกต่อ · อิทธิพลสื่อสังคม</td><td>product review · word of mouth · social influence · eWOM</td></tr>
+      <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">ปัจจัยประชากรศาสตร์</td><td>เพศ · อายุ · รายได้ · ระดับการศึกษา</td><td>demographics · gender · age · income · education level</td></tr>
+    </tbody>
+  </table>
+  <div class="bar"></div>
+</section>
+
+<!-- CASE STUDY 4 -->
+<section class="vpad" style="gap:20px;" data-screen-label="CASE 4 Cybersecurity">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="font-size:40px;">💻</div>
+    <div>
+      <div class="lbl">โจทย์ 4 · เทคโนโลยีสารสนเทศ</div>
+      <div class="h2" style="font-size:32px;margin-top:4px;line-height:1.2;">ปัจจัยที่ส่งผลต่อความตระหนักรู้ด้านความปลอดภัยทางไซเบอร์</div>
+    </div>
+  </div>
+  <table class="t" style="flex:1;">
+    <thead><tr>
+      <th style="width:60px;">#</th>
+      <th style="width:260px;">📁 โฟลเดอร์มิติ</th>
+      <th>🇹🇭 คีย์เวิร์ดไทย</th>
+      <th>🌐 คีย์เวิร์ดอังกฤษ</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="font-weight:800;color:#dc2626;">01</td><td style="font-weight:700;">ประเภทภัยคุกคาม</td><td>การโจมตีไซเบอร์ · มัลแวร์ · ฟิชชิง</td><td>cyber attack · malware · phishing · ransomware</td></tr>
+      <tr><td style="font-weight:800;color:var(--a);">02</td><td style="font-weight:700;">ความรู้และทัศนคติ</td><td>ความตระหนักรู้ · ทัศนคติ · การรับรู้ความเสี่ยง</td><td>cybersecurity awareness · attitude · risk perception</td></tr>
+      <tr><td style="font-weight:800;color:#059669;">03</td><td style="font-weight:700;">พฤติกรรมป้องกันจริง</td><td>พฤติกรรมป้องกัน · การตั้งรหัสผ่าน · การสำรองข้อมูล</td><td>protective behavior · password management · data backup</td></tr>
+      <tr><td style="font-weight:800;color:#7c3aed;">04</td><td style="font-weight:700;">นโยบายองค์กร</td><td>นโยบายความปลอดภัย · กฎระเบียบ · การฝึกอบรม</td><td>security policy · compliance · security training</td></tr>
+      <tr><td style="font-weight:800;color:#0369a1;">05</td><td style="font-weight:700;">เครื่องมือและเทคโนโลยี</td><td>ซอฟต์แวร์ป้องกัน · ไฟร์วอลล์ · VPN</td><td>security software · firewall · VPN · encryption</td></tr>
+    </tbody>
+  </table>
+  <div class="bar"></div>
+</section>
+
+<!-- CASE STUDY 5 -->
+<section class="vpad" style="gap:20px;" data-screen-label="CASE 5 Financial Literacy">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="font-size:40px;">💰</div>
+    <div>
+      <div class="lbl">โจทย์ 5 · เศรษฐศาสตร์ / การเงิน</div>
+      <div class="h2" style="font-size:32px;margin-top:4px;line-height:1.2;">ปัจจัยที่ส่งผลต่อความฉลาดทางการเงินของนักศึกษา</div>
+    </div>
+  </div>
+  <table class="t" style="flex:1;">
+    <thead><tr>
+      <th style="width:60px;">#</th>
+      <th style="width:260px;">📁 โฟลเดอร์มิติ</th>
+      <th>🇹🇭 คีย์เวิร์ดไทย</th>
+      <th>🌐 คีย์เวิร์ดอังกฤษ</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="font-weight:800;color:#1d4ed8;">01</td><td style="font-weight:700;">ความรู้ทางการเงินพื้นฐาน</td><td>ความรู้ทางการเงิน · การบัญชีเบื้องต้น · ดอกเบี้ย</td><td>financial knowledge · accounting basics · interest rate</td></tr>
+      <tr><td style="font-weight:800;color:#059669;">02</td><td style="font-weight:700;">ทัศนคติต่อการออมและลงทุน</td><td>ทัศนคติการออม · แรงจูงใจลงทุน · เป้าหมายการเงิน</td><td>saving attitude · investment motivation · financial goal</td></tr>
+      <tr><td style="font-weight:800;color:var(--a);">03</td><td style="font-weight:700;">พฤติกรรมการใช้จ่าย</td><td>พฤติกรรมการใช้จ่าย · การบริโภค · หนี้สิน</td><td>spending behavior · consumption · debt management</td></tr>
+      <tr><td style="font-weight:800;color:#7c3aed;">04</td><td style="font-weight:700;">การวางแผนการเงิน</td><td>การวางแผนการเงิน · งบประมาณ · การออมระยะยาว</td><td>financial planning · budgeting · long-term saving</td></tr>
+      <tr><td style="font-weight:800;color:#dc2626;">05</td><td style="font-weight:700;">อิทธิพลครอบครัวและสังคม</td><td>อิทธิพลครอบครัว · การเลี้ยงดูทางการเงิน</td><td>family influence · financial socialization · peer norms</td></tr>
+    </tbody>
+  </table>
+  <div class="bar"></div>
+</section>
+
+<!-- NEW: ทำไมต้องฐานพรีเมียม -->
+<section class="vpad" style="" data-screen-label="NEW ทำไมต้องฐานพรีเมียม">
+  <div class="lbl">ก่อน Module 1 · ทำความเข้าใจก่อนสืบค้น</div>
+  <div class="h2 border-l-a" style="font-size:42px;">ทำไมไม่ถามแชท AI หรือ Google ตรงๆ เลย?</div>
+  <table class="t" style="flex:1;">
+    <thead><tr>
+      <th style="width:220px;">เกณฑ์</th>
+      <th style="background:#dc2626;text-align:center;">❌ แชท AI ตรงๆ</th>
+      <th style="background:#d97706;text-align:center;">⚠️ Google ทั่วไป</th>
+      <th style="background:#059669;text-align:center;">✅ 4 ฐานข้อมูล มรนว.</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:700;">Peer Review</td>
+        <td style="text-align:center;color:#dc2626;font-weight:700;">❌ ไม่มีเลย</td>
+        <td style="text-align:center;color:#d97706;font-weight:700;">⚠️ ไม่แน่นอน</td>
+        <td style="text-align:center;color:#059669;font-weight:700;">✅ ทุกชิ้น</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">Citation ปลอม</td>
+        <td style="text-align:center;color:#dc2626;">❌ Hallucinate ได้</td>
+        <td style="text-align:center;color:#d97706;">⚠️ ตรวจสอบเองบ้าง</td>
+        <td style="text-align:center;color:#059669;">✅ อ้างอิงได้ 100%</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">ผ่านมาตรฐาน มรนว.</td>
+        <td style="text-align:center;color:#dc2626;">❌ ไม่ผ่าน</td>
+        <td style="text-align:center;color:#d97706;">⚠️ บางส่วน</td>
+        <td style="text-align:center;color:#059669;">✅ ผ่าน 100%</td>
+      </tr>
+      <tr>
+        <td style="font-weight:700;">AI ทำงานต่อได้</td>
+        <td style="text-align:center;color:#dc2626;">❌ เสี่ยง</td>
+        <td style="text-align:center;color:#d97706;">⚠️ ไม่แน่ใจ</td>
+        <td style="text-align:center;color:#059669;">✅ ปลอดภัย</td>
+      </tr>
+      <tr>
+        <td style="font-weight:800;font-size:28px;">สรุป</td>
+        <td style="background:#fef2f2;text-align:center;font-weight:800;font-size:30px;color:#dc2626;">❌ อาจารย์ไม่รับ</td>
+        <td style="background:#fffbeb;text-align:center;font-weight:800;font-size:30px;color:#d97706;">⚠️ ใช้ได้บางส่วน</td>
+        <td style="background:#ecfdf5;text-align:center;font-weight:800;font-size:30px;color:#059669;">✅ ผ่านอาจารย์</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="highlight" style="font-size:24px;">💡 <strong>หลักการ:</strong> AI ฉลาดแค่ไหน ก็ทำได้แค่ข้อมูลที่ให้มา — ใส่ขยะเข้า ได้ขยะออก · ใส่งานวิจัยคุณภาพ ได้งานวิจัยคุณภาพ</div>
+  <div class="bar"></div>
+</section>
+<!-- 05 MODULE 1 HEADER -->
+<section class="mod-header" data-screen-label="05 Module 1 Header">
+  <div class="mod-num">1</div>
+  <div class="mod-body">
+    <div class="lbl" style="color:var(--a);">Module 1 · 20 นาที</div>
+    <div class="h2w">บทนำและการสืบค้น<br>แหล่งข้อมูลวิชาการขั้นสูง</div>
+    <p style="font-size:26px;color:#a8a29e;line-height:1.6;">Demo 12 นาที · ลงมือทำ 8 นาที</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fcd34d;border:1px solid rgba(255,255,255,.2);">4 ฐานข้อมูลพรีเมียม</span>
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fcd34d;border:1px solid rgba(255,255,255,.2);">Google Scholar AI LAB</span>
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fcd34d;border:1px solid rgba(255,255,255,.2);">EBSCO Ultimate Search</span>
+    </div>
+    <p style="font-size:24px;color:#78716c;margin-top:8px;">Deliverable: คีย์เวิร์ด + ไฟล์ PDF Peer-Reviewed + BibTeX</p>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 06 CORE-RULES + WHY -->
+<section class="vpad" data-screen-label="06 CORE-rules และทำไมต้องข้อมูลวิชาการ">
+  <div class="lbl">Module 1 · 1.0 · มาตรฐานแหล่งข้อมูล</div>
+  <div class="h2 border-l-a" style="font-size:42px;">ทำไมต้องข้อมูลน่าเชื่อถือ? — แหล่งไหนใช้ได้ แหล่งไหนห้ามใช้</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;flex:1;align-items:start;">
+    <div class="card" style="border-top:5px solid #dc2626;">
+      <div style="font-size:24px;font-weight:800;color:#dc2626;margin-bottom:14px;">❌ ห้ามใช้อ้างอิง</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.9;">Blog / เว็บทั่วไป<br>Wikipedia<br>โซเชียลมีเดีย<br>ข่าวออนไลน์<br>เอกสารไม่มีผู้แต่ง</div>
+    </div>
+    <div class="card" style="border-top:5px solid var(--a);">
+      <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:14px;">⚠️ ใช้ได้บางกรณี</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.9;">เว็บหน่วยงานรัฐ (สถิติ)<br>ราชกิจจานุเบกษา<br>WHO / UN / NSO<br>Annual Report องค์กร</div>
+    </div>
+    <div class="card" style="border-top:5px solid #059669;">
+      <div style="font-size:24px;font-weight:800;color:#065f46;margin-bottom:14px;">✅ ต้องใช้เสมอ</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.9;">หนังสือ / ตำรา (ทฤษฎีหลัก)<br>Journal Peer-Reviewed<br>วิทยานิพนธ์ Full Text<br>Proceedings วิชาการ</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <div class="highlight" style="font-size:24px;">📚 <strong>ทฤษฎีหลัก</strong> → หนังสือ / ตำรา <strong>เท่านั้น</strong><br>ห้ามใช้บทความหรือ Journal แทนตำรา</div>
+    <div class="highlight" style="font-size:24px;">🔬 <strong>งานวิจัยที่เกี่ยวข้อง</strong> → Journal วิชาการ Peer-Reviewed ≤ 5 ปี</div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 07 ภาพรวม 4 ฐานข้อมูล -->
+<section class="vpad" data-screen-label="07 ภาพรวม 4 ฐานข้อมูล">
+  <div class="lbl">Module 1 · ภาพรวมก่อนเริ่มค้น</div>
+  <div class="h2 border-l-a" style="font-size:42px;">4 ฐานข้อมูล — เหมาะกับงานประเภทใด?</div>
+  <table class="t" style="flex:1;">
+    <thead><tr>
+      <th style="width:220px;">ฐานข้อมูล</th>
+      <th style="text-align:center;">🔬 งานวิจัย<br>/ บทความ</th>
+      <th style="text-align:center;">📚 สื่อ<br>/ ตำรา</th>
+      <th style="text-align:center;">📋 คู่มือ<br>/ SOP</th>
+      <th style="text-align:center;">🎓 วิทยานิพนธ์<br>/ IS</th>
+      <th style="text-align:center;">🌐 ภาษา</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:800;color:#1d4ed8;">ThaiJO</td>
+        <td style="text-align:center;font-size:28px;">✅✅</td>
+        <td style="text-align:center;font-size:28px;">🟡</td>
+        <td style="text-align:center;font-size:28px;">—</td>
+        <td style="text-align:center;font-size:28px;">—</td>
+        <td style="text-align:center;font-weight:700;color:#1d4ed8;">ไทย</td>
+      </tr>
+      <tr>
+        <td style="font-weight:800;color:#7c3aed;">TDC / ThaiLIS</td>
+        <td style="text-align:center;font-size:28px;">✅</td>
+        <td style="text-align:center;font-size:28px;">—</td>
+        <td style="text-align:center;font-size:28px;">🟡</td>
+        <td style="text-align:center;font-size:28px;">✅✅</td>
+        <td style="text-align:center;font-weight:700;color:#7c3aed;">ไทย</td>
+      </tr>
+      <tr>
+        <td style="font-weight:800;color:#059669;">EBSCO Ultimate</td>
+        <td style="text-align:center;font-size:28px;">✅✅</td>
+        <td style="text-align:center;font-size:28px;">✅</td>
+        <td style="text-align:center;font-size:28px;">🟡</td>
+        <td style="text-align:center;font-size:28px;">✅</td>
+        <td style="text-align:center;font-weight:700;color:#059669;">อังกฤษ</td>
+      </tr>
+      <tr>
+        <td style="font-weight:800;color:var(--ad);">Google Scholar AI</td>
+        <td style="text-align:center;font-size:28px;">✅✅</td>
+        <td style="text-align:center;font-size:28px;">✅</td>
+        <td style="text-align:center;font-size:28px;">🟡</td>
+        <td style="text-align:center;font-size:28px;">✅</td>
+        <td style="text-align:center;font-weight:700;color:var(--ad);">ไทย + อังกฤษ</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="display:flex;gap:28px;font-size:24px;color:var(--s6);">
+    <span>✅✅ เหมาะมาก — แหล่งหลัก</span>
+    <span>✅ ใช้ได้ดี — แหล่งเสริม</span>
+    <span>🟡 ใช้ได้บางส่วน</span>
+    <span>— ไม่เหมาะ</span>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 07b ThaiJO -->
+<section class="vpad" style="gap:22px;" data-screen-label="07b ฐาน 1 ThaiJO">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="background:#1d4ed8;color:white;font-size:28px;font-weight:800;padding:10px 24px;border-radius:12px;white-space:nowrap;">ฐาน 1</div>
+    <div>
+      <div class="h2" style="font-size:42px;color:#1d4ed8;">ThaiJO — วารสารวิจัยไทย</div>
+      <div style="font-size:24px;color:var(--s6);">www.tci-thaijo.org &nbsp;·&nbsp; TCI กลุ่ม 1–2</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;align-items:start;">
+    <div class="card" style="border-top:5px solid #1d4ed8;">
+      <div style="font-size:24px;font-weight:800;color:#1d4ed8;margin-bottom:12px;">✅ เหมาะกับ</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.8;">✅✅ งานวิจัย / บทความวิชาการ<br>✅ สืบค้นทฤษฎีไทย<br>🟡 สื่อการสอน (บางฉบับ)<br>— วิทยานิพนธ์</div>
+    </div>
+    <div class="card" style="border-top:5px solid var(--a);">
+      <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:12px;">🔍 วิธีค้นหา</div>
+      <div class="steps" style="gap:10px;">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">พิมพ์คีย์เวิร์ดภาษาไทยในช่อง Search</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">กรอง: TCI กลุ่ม 1 หรือ กลุ่ม 2</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">เลือก Full Text เท่านั้น</div></div>
+      </div>
+    </div>
+    <div class="card" style="border-top:5px solid #059669;">
+      <div style="font-size:24px;font-weight:800;color:#065f46;margin-bottom:12px;">⬇️ Download + ตั้งชื่อ</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.8;">คลิก <strong>Full Text PDF</strong><br>ตั้งชื่อไฟล์:<br></div>
+      <div style="background:#eff6ff;border-radius:8px;padding:10px 14px;font-size:24px;font-family:monospace;color:#1d4ed8;margin-top:8px;">สมศักดิ์_2566_AI<br>_ThaiJO.pdf</div>
+    </div>
+  </div>
+  <image-slot id="thaijo-ui" placeholder="📸 แคป Screenshot: หน้า ThaiJO" shape="rounded" style="width:100%;height:120px;"></image-slot>
+  <div class="bar"></div>
+</section>
+
+<!-- 07c TDC -->
+<section class="vpad" style="gap:22px;" data-screen-label="07c ฐาน 2 TDC">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="background:#7c3aed;color:white;font-size:28px;font-weight:800;padding:10px 24px;border-radius:12px;white-space:nowrap;">ฐาน 2</div>
+    <div>
+      <div class="h2" style="font-size:42px;color:#7c3aed;">TDC / ThaiLIS — วิทยานิพนธ์ไทย</div>
+      <div style="font-size:24px;color:var(--s6);">tdc.thailis.or.th &nbsp;·&nbsp; วิทยานิพนธ์ + IS Full Text</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;align-items:start;">
+    <div class="card" style="border-top:5px solid #7c3aed;">
+      <div style="font-size:24px;font-weight:800;color:#5b21b6;margin-bottom:12px;">✅ เหมาะกับ</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.8;">✅✅ วิทยานิพนธ์ / IS<br>✅ ดูโครงสร้างบทที่ 2–3<br>🟡 คู่มือปฏิบัติงาน<br>— งานวิจัยนานาชาติ</div>
+    </div>
+    <div class="card" style="border-top:5px solid var(--a);">
+      <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:12px;">🔍 วิธีค้นหา</div>
+      <div class="steps" style="gap:10px;">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">พิมพ์หัวข้อวิจัยภาษาไทย</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">กรองระดับ: ป.โท / ป.เอก</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">เลือก Full Text Available</div></div>
+      </div>
+    </div>
+    <div class="card" style="border-top:5px solid #059669;">
+      <div style="font-size:24px;font-weight:800;color:#065f46;margin-bottom:12px;">⬇️ Download + ตั้งชื่อ</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.8;">คลิก <strong>Download Full Text</strong><br>ตั้งชื่อไฟล์:<br></div>
+      <div style="background:#f5f3ff;border-radius:8px;padding:10px 14px;font-size:24px;font-family:monospace;color:#5b21b6;margin-top:8px;">สมชาย_2567_IS<br>_บริหาร_TDC.pdf</div>
+    </div>
+  </div>
+  <image-slot id="tdc-ui" placeholder="📸 แคป Screenshot: หน้า TDC/ThaiLIS" shape="rounded" style="width:100%;height:120px;"></image-slot>
+  <div class="bar"></div>
+</section>
+
+<!-- 07d EBSCO -->
+<section class="vpad" style="gap:22px;" data-screen-label="07d ฐาน 3 EBSCO">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="background:#059669;color:white;font-size:28px;font-weight:800;padding:10px 24px;border-radius:12px;white-space:nowrap;">ฐาน 3</div>
+    <div>
+      <div class="h2" style="font-size:42px;color:#059669;">EBSCO Ultimate Search — นานาชาติ</div>
+      <div style="font-size:24px;color:var(--s6);">เข้าผ่าน VPN มรนว. &nbsp;·&nbsp; Premium Full Text</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;align-items:start;">
+    <div class="card" style="border-top:5px solid #059669;">
+      <div style="font-size:24px;font-weight:800;color:#065f46;margin-bottom:12px;">✅ เหมาะกับ</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.8;">✅✅ Journal นานาชาติ Peer-Reviewed<br>✅ ตำราวิชาการ (e-book)<br>✅ สื่อการเรียนรู้<br>✅ วิทยานิพนธ์ต่างชาติ</div>
+    </div>
+    <div class="card" style="border-top:5px solid var(--a);">
+      <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:12px;">🔍 วิธีค้นหา</div>
+      <div class="steps" style="gap:10px;">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">คีย์เวิร์ดภาษาอังกฤษ + Boolean</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">☑ Peer-Reviewed · ☑ Full Text</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">กรองปี: ≤ 5 ปีย้อนหลัง</div></div>
+      </div>
+    </div>
+    <div class="card" style="border-top:5px solid #059669;">
+      <div style="font-size:24px;font-weight:800;color:#065f46;margin-bottom:12px;">⬇️ Download + Export</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.8;">คลิก <strong>PDF Full Text</strong><br>คลิก <strong>Export → RIS/BibTeX</strong><br>ตั้งชื่อไฟล์:</div>
+      <div style="background:#ecfdf5;border-radius:8px;padding:10px 14px;font-size:24px;font-family:monospace;color:#065f46;margin-top:8px;">Smith_2023_AI<br>_learning_EBSCO.pdf</div>
+    </div>
+  </div>
+  <image-slot id="ebsco-ui" placeholder="📸 แคป Screenshot: หน้า EBSCO Ultimate Search" shape="rounded" style="width:100%;height:120px;"></image-slot>
+  <div class="bar"></div>
+</section>
+
+<!-- 07e Google Scholar -->
+<section class="vpad" style="gap:22px;" data-screen-label="07e ฐาน 4 Scholar">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="background:var(--a);color:white;font-size:28px;font-weight:800;padding:10px 24px;border-radius:12px;white-space:nowrap;">ฐาน 4</div>
+    <div>
+      <div class="h2" style="font-size:42px;color:var(--ad);">Google Scholar AI LAB — ครอบคลุม 2 ภาษา</div>
+      <div style="font-size:24px;color:var(--s6);">scholar.google.com &nbsp;·&nbsp; PDF Reader + AI Features</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;align-items:start;">
+    <div class="card" style="border-top:5px solid var(--a);">
+      <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:12px;">✨ AI Features</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.8;">🗺️ AI Smart Outline<br>🔗 Interactive Citations<br>📋 One-Click APA 7th<br>🤖 AI Overviews + Network</div>
+    </div>
+    <div class="card" style="border-top:5px solid var(--a);">
+      <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:12px;">🔍 Advanced Search</div>
+      <div class="steps" style="gap:10px;">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">Boolean: AND · OR · NOT</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">Wildcard: smok* · Exact: "..."</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">☑ Full Text · กรอง ≤ 5 ปี</div></div>
+      </div>
+    </div>
+    <div class="card" style="border-top:5px solid #059669;">
+      <div style="font-size:24px;font-weight:800;color:#065f46;margin-bottom:12px;">⬇️ Download + Export</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.8;">ไอคอน PDF → โหลดต่อเลย<br>คลิก <strong>Cite → BibTeX</strong><br>ตั้งชื่อไฟล์:</div>
+      <div style="background:var(--al);border-radius:8px;padding:10px 14px;font-size:24px;font-family:monospace;color:var(--ad);margin-top:8px;">Jones_2024_digital<br>_literacy_Scholar.pdf</div>
+    </div>
+  </div>
+  <image-slot id="scholar-ui" placeholder="📸 แคป Screenshot: หน้า Google Scholar AI LAB" shape="rounded" style="width:100%;height:120px;"></image-slot>
+  <div class="bar"></div>
+</section>
+
+<!-- 07f FILE NAMING -->
+<section class="vpad" style="gap:24px;" data-screen-label="07f ตั้งชื่อไฟล์">
+  <div class="lbl">Module 1 · ก่อนโหลดทุกครั้ง — สำคัญมาก</div>
+  <div class="h2 border-l-a" style="font-size:42px;">ตั้งชื่อไฟล์ให้ถูก → ย้ายเข้าโฟลเดอร์ได้ทันที</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="card" style="border-left:6px solid var(--a);">
+        <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:10px;">📐 Format มาตรฐาน</div>
+        <div style="background:var(--s9);border-radius:10px;padding:16px 20px;font-size:26px;font-family:monospace;color:#fcd34d;line-height:1.7;">[นามสกุล]_[ปี]_[คีย์เวิร์ด]_[ฐาน].pdf</div>
+      </div>
+      <div class="card" style="border-left:6px solid #1d4ed8;">
+        <div style="font-size:24px;font-weight:800;color:#1d4ed8;margin-bottom:10px;">🇹🇭 ตัวอย่างไทย</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.9;font-family:monospace;">สมศักดิ์_2566_AI_เรียนรู้_ThaiJO.pdf<br>สมชาย_2567_IS_บริหาร_TDC.pdf</div>
+      </div>
+      <div class="card" style="border-left:6px solid #059669;">
+        <div style="font-size:24px;font-weight:800;color:#065f46;margin-bottom:10px;">🌐 ตัวอย่างอังกฤษ</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.9;font-family:monospace;">Smith_2023_AI_learning_Scholar.pdf<br>Jones_2024_digital_literacy_EBSCO.pdf</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="highlight" style="font-size:24px;">💡 <strong>ทำไมต้องตั้งชื่อแบบนี้?</strong><br>ชื่อชัด → รู้ทันทีว่าอยู่มิติไหน → ลากเข้าโฟลเดอร์ถูกได้เลย → Spark อ่านชื่อแล้ว classify ได้แม่นขึ้น</div>
+      <div class="card" style="border-top:5px solid #dc2626;">
+        <div style="font-size:24px;font-weight:800;color:#dc2626;margin-bottom:10px;">❌ ห้ามตั้งชื่อแบบนี้</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.9;font-family:monospace;text-decoration:line-through;opacity:.7;">paper1.pdf<br>download(1).pdf<br>Untitled Document.pdf</div>
+      </div>
+      <div class="card-a">
+        <div style="font-size:24px;color:var(--ad);line-height:1.7;">📂 หลังตั้งชื่อเสร็จ → อัปโหลดเข้า Google Drive → ย้ายเข้าโฟลเดอร์มิติที่ถูกต้อง → พร้อมสำหรับ <strong>Module 2</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 09 WORKSHOP M1 -->
+<section class="ws-section" data-screen-label="09 Workshop Module 1">
+  <div class="ws-badge">🔴 Workshop Module 1 · 15 นาที</div>
+  <div class="h2" style="font-size:42px;">ลงมือสืบค้นเชิงลึกผ่าน 4 แหล่งข้อมูลหลัก</div>
+  <div class="g2" style="gap:24px;flex:1;">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="ws-card">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:12px;">📌 ขั้นตอนการทำ</div>
+        <div class="steps">
+          <div class="step"><div class="sn">1</div><div style="font-size:24px;">เปิด ThaiJO · ค้นด้วยคีย์เวิร์ดไทยของมิติที่เลือก</div></div>
+          <div class="step"><div class="sn">2</div><div style="font-size:24px;">เปิด TDC · ค้นวิทยานิพนธ์ Full Text ที่ตรงสาขา</div></div>
+          <div class="step"><div class="sn">3</div><div style="font-size:24px;">เปิด EBSCO · คีย์เวิร์ดอังกฤษ + ✅ Peer-Reviewed</div></div>
+          <div class="step"><div class="sn">4</div><div style="font-size:24px;">เปิด Google Scholar AI · Download PDF + Export BibTeX</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="ws-card">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:12px;">🎯 เป้าหมาย</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.75;">
+          ✅ ได้ไฟล์ PDF อย่างน้อย <strong>3 ชิ้นต่อมิติ</strong><br>
+          ✅ Export BibTeX / .RIS ครบทุกไฟล์<br>
+          ✅ อัปโหลดแยกเข้า <strong>3 โฟลเดอร์ย่อย</strong> ทันที<br>
+          ✅ ป.โท/เอก: มีเปเปอร์ภาษาอังกฤษ ≥ 3 ชิ้น
+        </div>
+      </div>
+      <div class="highlight" style="font-size:24px;">⏱ หากค้นไม่ทัน — สแกน QR Code รับไฟล์สำรองจากผู้สอน แล้วไปต่อ Module 2 ได้เลย</div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 MODULE 2 HEADER -->
+<section class="mod-header" data-screen-label="10 Module 2 Header">
+  <div class="mod-num" style="background:#0369a1;">2</div>
+  <div class="mod-body">
+    <div class="lbl" style="color:#38bdf8;">Module 2 · 20 นาที</div>
+    <div class="h2w">ด่านคัดกรอง ทลายกำแพงภาษา<br>และจัดระเบียบใน Google Drive</div>
+    <p style="font-size:26px;color:#a8a29e;line-height:1.6;">Demo 10 นาที · ลงมือทำ 10 นาที</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#7dd3fc;border:1px solid rgba(255,255,255,.2);">Thematic Folder Structure</span>
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#7dd3fc;border:1px solid rgba(255,255,255,.2);">AI Companion Spark</span>
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#7dd3fc;border:1px solid rgba(255,255,255,.2);">Two-Step Prompting</span>
+    </div>
+    <p style="font-size:24px;color:#78716c;margin-top:8px;">Deliverable: โฟลเดอร์ใน Google Drive ผ่านการคัดสรร 100%</p>
+  </div>
+  <div class="bar" style="background:#0369a1;"></div>
+</section>
+
+<!-- 11 THEMATIC FOLDER -->
+<section class="vpad" data-screen-label="11 Thematic Folder Structure">
+  <div class="lbl">Module 2 · เชื่อมต่อจาก Module 1</div>
+  <div class="h2 border-l-a" style="font-size:40px;">ไฟล์ที่โหลดมา → ย้ายเข้าโฟลเดอร์ตาม 5 มิติของโจทย์ที่เลือก</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="card-a">
+        <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:10px;">📌 จาก Module 1 คุณมีแล้ว:</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.8;">
+          ✅ ไฟล์ PDF ตั้งชื่อถูก format แล้ว<br>
+          ✅ BibTeX / RIS ครบทุกไฟล์<br>
+          ✅ รู้แล้วว่าแต่ละไฟล์อยู่มิติไหน (จากชื่อไฟล์)<br><br>
+          <strong>ขั้นต่อไป:</strong> สร้างโฟลเดอร์ 5 มิติ → ย้ายไฟล์เข้าให้ถูกมิติ
+        </div>
+      </div>
+      <div class="card" style="font-family:monospace;font-size:24px;line-height:2.1;background:#1c1917;color:#d4c9b8;border-color:#3f3830;">
+        📁 Research_[โจทย์ที่โหวต]<br>
+        &nbsp;&nbsp;├── 📁 01_[มิติ 1]<br>
+        &nbsp;&nbsp;├── 📁 02_[มิติ 2]<br>
+        &nbsp;&nbsp;├── 📁 03_[มิติ 3]<br>
+        &nbsp;&nbsp;├── 📁 04_[มิติ 4]<br>
+        &nbsp;&nbsp;├── 📁 05_[มิติ 5]<br>
+        &nbsp;&nbsp;└── 📁 <span style="color:#fbbf24;">_UNSORTED</span> &nbsp;← safety net
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="font-size:24px;font-weight:800;color:var(--s8);">🔄 ย้ายไฟล์เข้าโฟลเดอร์ที่ถูก</div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">เปิด Google Drive → สร้างโฟลเดอร์หลัก + 5 โฟลเดอร์ย่อยตามมิติของโจทย์</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">ดูชื่อไฟล์ → รู้ทันทีว่าอยู่มิติไหน → ย้ายเข้าโฟลเดอร์นั้น</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">ไฟล์ที่ยังไม่แน่ใจ → ย้ายเข้า <strong>_UNSORTED</strong> ไว้ก่อน</div></div>
+      </div>
+      <div class="highlight" style="font-size:24px;">⚠️ ห้ามลบถาวรทันที — ย้ายไปถังขยะแล้ว <strong>รอ 7 วัน</strong> ก่อน<br>AI อาจประเมินผิดพลาดได้เสมอ</div>
+      <image-slot id="drive-folder" placeholder="📸 แคป Screenshot: โฟลเดอร์ Google Drive จริง" shape="rounded" style="width:100%;height:160px;"></image-slot>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 12 SPARK TWO-STEP -->
+<section class="vpad" data-screen-label="12 AI Companion Spark Two-Step Prompting">
+  <div class="lbl">Module 2 · 2.3 · Demo 4 นาที</div>
+  <div class="h2 border-l-a" style="font-size:40px;">ทลายกำแพงภาษาด้วย AI Companion (Spark)</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;align-items:start;">
+    <div class="card" style="border-left:5px solid #059669;">
+      <div style="font-size:24px;font-weight:800;color:#059669;margin-bottom:12px;">🟢 Prompt ขั้นที่ 1 — ประเมินยกโฟลเดอร์</div>
+      <div style="background:#f0fdf4;border-radius:10px;padding:16px 20px;font-size:24px;color:var(--s7);line-height:1.75;font-style:italic;">"ในฐานะผู้ช่วยวิจัย โปรดตรวจสอบไฟล์ PDF ทั้งหมดในโฟลเดอร์ [ชื่อ] และประเมินว่าแต่ละไฟล์ตรงกับหัวข้อวิจัยหรือไม่ — แสดงตาราง: ชื่อไฟล์ / สรุปสาระสำคัญ (ไทย) / คำแนะนำ"</div>
+    </div>
+    <div class="card" style="border-left:5px solid var(--a);">
+      <div style="font-size:24px;font-weight:800;color:var(--ad);margin-bottom:12px;">🟡 Prompt ขั้นที่ 2 — สรุปเจาะรายไฟล์</div>
+      <div style="background:var(--al);border-radius:10px;padding:16px 20px;font-size:24px;color:var(--s7);line-height:1.75;font-style:italic;">"สรุปผลวิจัยไฟล์นี้: (1) วัตถุประสงค์ (2) วิธีดำเนินการ / กลุ่มตัวอย่าง (3) ผลสำคัญและสถิติ (4) ข้อจำกัด — ภาษาไทยสละสลวย"</div>
+    </div>
+    <image-slot id="spark-ui" placeholder="📸 แคป Screenshot: Spark sidebar ใน Google Drive" shape="rounded" style="width:100%;height:100%;min-height:220px;"></image-slot>
+  </div>
+  <table class="t" style="font-size:24px;">
+    <thead><tr><th>ผลประเมิน</th><th>การดำเนินการ</th></tr></thead>
+    <tbody>
+      <tr><td>✅ ตรงกับความต้องการ</td><td>คงไว้ในโฟลเดอร์มิตินั้น</td></tr>
+      <tr><td>❓ ไม่แน่ใจ / ยังไม่อ่านละเอียด</td><td>ย้ายเข้า <code>_UNSORTED</code> ตรวจสอบภายหลัง</td></tr>
+      <tr><td>❌ ไม่ตรงหรือไม่เกี่ยวข้อง</td><td>ย้ายไปถังขยะ — รอ 7 วันก่อนลบถาวร</td></tr>
+    </tbody>
+  </table>
+  <div class="bar"></div>
+</section>
+
+<!-- 13 WORKSHOP M2 -->
+<section class="ws-section" data-screen-label="13 Workshop Module 2">
+  <div class="ws-badge">🔴 Workshop Module 2 · 15 นาที</div>
+  <div class="h2" style="font-size:42px;">คัดกรองและสแกนด้วย Spark (Two-Step Prompting)</div>
+  <div class="g2" style="gap:24px;flex:1;">
+    <div class="ws-card">
+      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:14px;">📌 ขั้นตอน (ทำต่อเนื่องจาก M1)</div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">เปิดโฟลเดอร์ย่อยแต่ละอันบน Google Drive</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">เรียก AI Companion (Spark) แถบขวา → ใช้ Prompt ขั้นที่ 1</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">อ่านตารางผล → จัดการไฟล์ตาม 3 เกณฑ์ ✅ ❓ ❌</div></div>
+        <div class="step"><div class="sn">4</div><div style="font-size:24px;">เปิดไฟล์ที่ผ่าน → ใช้ Prompt ขั้นที่ 2 สรุปรายไฟล์</div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="ws-card">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:12px;">🎯 เป้าหมาย</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.75;">
+          ✅ โฟลเดอร์สะอาด — เหลือเฉพาะเปเปอร์ที่ตรงประเด็น<br>
+          ✅ ไฟล์ที่ไม่แน่ใจอยู่ใน <strong>_UNSORTED</strong><br>
+          ✅ มีบันทึกสรุปรายไฟล์อย่างน้อย 3 ชิ้น
+        </div>
+      </div>
+      <div class="highlight" style="font-size:24px;">🏁 <strong>ผลลัพธ์:</strong> วัตถุดิบคุณภาพสูง พร้อมอัปโหลดเข้า NotebookLM ใน Module 3</div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 MODULE 3 HEADER -->
+<section class="mod-header" data-screen-label="14 Module 3 Header">
+  <div class="mod-num" style="background:#1e3a5f;">3</div>
+  <div class="mod-body">
+    <div class="lbl" style="color:#93c5fd;">Module 3 · 30 นาที</div>
+    <div class="h2w">สังเคราะห์เชิงลึกและสร้างสื่ออัจฉริยะ<br>ด้วย NotebookLM</div>
+    <p style="font-size:26px;color:#a8a29e;line-height:1.6;">Demo 15 นาที · ลงมือทำ 15 นาที</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#93c5fd;border:1px solid rgba(255,255,255,.2);">Research Synthesis</span>
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#93c5fd;border:1px solid rgba(255,255,255,.2);">Mindmap</span>
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#93c5fd;border:1px solid rgba(255,255,255,.2);">FAQ Generator</span>
+    </div>
+    <p style="font-size:24px;color:#78716c;margin-top:8px;">Deliverable: Mindmap + FAQ + บันทึก Research Gap</p>
+  </div>
+  <div class="bar" style="background:#1e3a5f;"></div>
+</section>
+
+<!-- 15 NOTEBOOKLM + SYNTHESIS -->
+<section class="vpad" data-screen-label="15 NotebookLM และ Research Synthesis">
+  <div class="lbl">Module 3 · 3.1–3.2 · Demo 7 นาที</div>
+  <div class="g2" style="gap:28px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="h3 border-l-a">นำเข้าโฟลเดอร์ที่สะอาดแล้ว</div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">สร้าง Notebook ใหม่ใน NotebookLM</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">เลือกแหล่ง <strong>"Google Drive Folder"</strong> → เลือกโฟลเดอร์ที่คลีนแล้ว</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">ตรวจสอบ NotebookLM โหลดเอกสารครบทุกไฟล์แล้ว</div></div>
+      </div>
+      <div class="card-a">
+        <div style="font-size:24px;font-weight:700;color:var(--ad);margin-bottom:8px;">✨ จุดแข็งสำคัญ</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.7;">No Hallucination — ตอบด้วยข้อมูลจากเอกสารของคุณเท่านั้น พร้อม citation อ้างอิงหน้าจริง</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="h3 border-l-a">Research Synthesis Prompt</div>
+      <div class="card" style="background:#1c1917;border-color:#3f3830;">
+        <div style="font-size:24px;color:#fcd34d;font-style:italic;line-height:1.8;">"จากงานวิจัยทั้งหมด จงวิเคราะห์และเปรียบเทียบข้อค้นพบด้าน <strong style="color:white;">[ระบุมิติ]</strong> โดยแสดงว่าผู้แต่งใดมีข้อค้นพบสอดคล้องกัน และประเด็นใดยังขัดแย้งกันอยู่"</div>
+      </div>
+      <div class="card" style="background:#1c1917;border-color:#3f3830;">
+        <div style="font-size:24px;color:#94a3b8;margin-bottom:8px;">Research Gap Prompt</div>
+        <div style="font-size:24px;color:#fcd34d;font-style:italic;line-height:1.8;">"จากเปเปอร์ทั้งหมด <strong style="color:white;">ช่องว่างของงานวิจัยคืออะไร?</strong>"</div>
+      </div>
+      <image-slot id="notebooklm-ui" placeholder="📸 แคป Screenshot: หน้า NotebookLM" shape="rounded" style="width:100%;height:190px;"></image-slot>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 16 MINDMAP + FAQ -->
+<section class="vpad" data-screen-label="16 Mindmap FAQ และเมนูเสริม">
+  <div class="lbl">Module 3 · 3.3 · Must-Do + เมนูเสริม</div>
+  <div class="g2" style="gap:26px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="h3 border-l-a" style="color:#059669;">⭐ Must-Do (ลงมือทำในห้อง)</div>
+      <div class="card" style="border-left:5px solid #059669;">
+        <div style="font-size:24px;font-weight:700;color:#065f46;margin-bottom:10px;">🗺️ Mind Map Structure</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">สั่งสรุปหัวข้อหลัก-ย่อยและความเชื่อมโยงเป็นโครงสร้างกิ่งก้าน → ใช้เป็น <strong>กรอบแนวคิดการวิจัย</strong></div>
+      </div>
+      <div class="card" style="border-left:5px solid var(--a);">
+        <div style="font-size:24px;font-weight:700;color:var(--ad);margin-bottom:10px;">❓ FAQ Generator</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">สร้างชุดคำถามที่อาจารย์/คณะกรรมการอาจถามใน <strong>Proposal Defense</strong></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="h3 border-l-a">🎁 เมนูเสริม (ลองที่บ้าน)</div>
+      <div class="card">
+        <div style="font-size:24px;font-weight:700;margin-bottom:8px;">📊 Infographic Outline</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.6;">สร้างโครงร่างสำหรับ Canva — สถิติสำคัญ + สโลแกน 3 ส่วนหลัก</div>
+      </div>
+      <div class="card">
+        <div style="font-size:24px;font-weight:700;margin-bottom:8px;">📄 Briefing / Study Guide</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.6;">Executive Summary กระชับ เตรียมทบทวนก่อน Defense</div>
+      </div>
+      <div class="card" style="opacity:.75;">
+        <div style="font-size:24px;font-weight:700;margin-bottom:8px;">🎙️ Audio Overview (Podcast)</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.6;">⚠️ รองรับเฉพาะเปเปอร์ <strong>ภาษาอังกฤษ</strong> เท่านั้น</div>
+      </div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- NEW: PATH A VS PATH B -->
+<section class="vpad" data-screen-label="NEW Path A vs Path B">
+  <div class="lbl">Module 3 · สองเส้นทางจาก NotebookLM</div>
+  <div class="h2 border-l-a" style="font-size:42px;">เลือก Path ตามเป้าหมายของคุณ</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;flex:1;">
+    <div style="display:flex;flex-direction:column;background:white;border:2.5px solid #059669;border-radius:16px;overflow:hidden;">
+      <div style="background:#059669;color:white;padding:18px 26px;font-size:26px;font-weight:800;">🎨 Path A — สร้างสื่อ</div>
+      <div style="padding:20px 26px;flex:1;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">เหมาะกับ</div>
+        <div style="font-size:24px;color:var(--s6);">อาจารย์ · ผู้สร้างสื่อ · ป.ตรี ที่ต้องทำสื่อการสอน</div>
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">ผลลัพธ์ที่ได้</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">🗺️ Mind Map โครงสร้างกิ่งก้าน<br>🎙️ Audio Overview (เปเปอร์ภาษาอังกฤษ)<br>📊 Infographic Outline → Canva<br>📄 Briefing / Study Guide</div>
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">Export ไปที่</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <span style="background:#ecfdf5;border:1.5px solid #86efac;color:#065f46;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Canva</span>
+          <span style="background:#ecfdf5;border:1.5px solid #86efac;color:#065f46;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Google Docs</span>
+          <span style="background:#ecfdf5;border:1.5px solid #86efac;color:#065f46;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Word</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;background:white;border:2.5px solid #1d4ed8;border-radius:16px;overflow:hidden;">
+      <div style="background:#1d4ed8;color:white;padding:18px 26px;font-size:26px;font-weight:800;">✍️ Path B — เขียนงานวิจัย</div>
+      <div style="padding:20px 26px;flex:1;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">เหมาะกับ</div>
+        <div style="font-size:24px;color:var(--s6);">ป.โท · ป.เอก · นักวิจัย · อาจารย์ทำ Manuscript</div>
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">วิธีใช้ (จำลองตัวอย่าง)</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">1️⃣ NotebookLM → สังเคราะห์ + สรุปสาระ<br>2️⃣ เปิด Gemini → Canvas → วาง CORE + role-agent<br>3️⃣ AI กลายเป็น specialist มรนว. 2568<br>4️⃣ ทำงานจนจบ → ได้ร่างบทที่ 2</div>
+        <div style="font-size:24px;font-weight:700;color:var(--s8);">Export ไปที่</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <span style="background:#eff6ff;border:1.5px solid #93c5fd;color:#1d4ed8;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Canvas → copy</span>
+          <span style="background:#eff6ff;border:1.5px solid #93c5fd;color:#1d4ed8;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Google Docs</span>
+          <span style="background:#eff6ff;border:1.5px solid #93c5fd;color:#1d4ed8;font-size:24px;font-weight:700;padding:6px 16px;border-radius:8px;white-space:nowrap;">Word</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight" style="font-size:24px;">📌 ทั้ง 2 Path ไม่ได้แยกกัน — ทำ Path A ดูภาพรวมก่อน แล้วต่อ Path B เขียนลึก คือกลยุทธ์ที่ดีที่สุดสำหรับงานวิจัย</div>
+  <div class="bar"></div>
+</section>
+
+<!-- NEW: 5 NOTEBOOKS STRUCTURE -->
+<section class="vpad" data-screen-label="NEW 5 Notebooks Structure">
+  <div class="lbl">Module 3 · หลักการสำคัญ</div>
+  <div class="h2 border-l-a" style="font-size:40px;">1 หัวข้อ → แตก 5 มิติ → 5 Folders → 5 Notebooks → 5 Chats</div>
+  <div style="background:var(--al);border:2px solid #fbbf24;border-radius:14px;padding:18px 28px;display:flex;align-items:center;gap:16px;">
+    <div style="font-size:38px;">💼</div>
+    <div>
+      <div style="font-size:24px;color:var(--s6);">ตัวอย่างหัวข้อ (เปลี่ยนได้ตามโจทย์ที่โหวต)</div>
+      <div style="font-size:32px;font-weight:800;color:var(--ad);">การตัดสินใจซื้อสินค้าออนไลน์</div>
+    </div>
+    <div style="margin-left:auto;font-size:24px;color:var(--ad);font-weight:700;white-space:nowrap;">แตกเป็น 5 มิติ ↓</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;flex:1;">
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#1d4ed8;color:white;font-size:24px;font-weight:800;padding:10px 14px;border-radius:12px 12px 0 0;text-align:center;">มิติ 01</div>
+      <div style="background:white;border:1.5px solid #93c5fd;border-top:none;border-radius:0 0 12px 12px;padding:14px;flex:1;display:flex;flex-direction:column;gap:8px;">
+        <div style="font-size:24px;font-weight:700;color:#1d4ed8;line-height:1.3;">ทฤษฎีพฤติกรรม<br>ผู้บริโภค</div>
+        <div style="font-size:24px;color:var(--s6);">Consumer Theory</div>
+        <div style="margin-top:auto;background:#eff6ff;border-radius:8px;padding:8px;font-size:24px;font-family:monospace;color:#1d4ed8;">📁 01_Theory<br>📓 NB เล่มที่ 1<br>💬 แชทที่ 1</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#059669;color:white;font-size:24px;font-weight:800;padding:10px 14px;border-radius:12px 12px 0 0;text-align:center;">มิติ 02</div>
+      <div style="background:white;border:1.5px solid #86efac;border-top:none;border-radius:0 0 12px 12px;padding:14px;flex:1;display:flex;flex-direction:column;gap:8px;">
+        <div style="font-size:24px;font-weight:700;color:#059669;line-height:1.3;">คุณภาพเว็บไซต์<br>& UX</div>
+        <div style="font-size:24px;color:var(--s6);">Website Quality</div>
+        <div style="margin-top:auto;background:#ecfdf5;border-radius:8px;padding:8px;font-size:24px;font-family:monospace;color:#059669;">📁 02_UX<br>📓 NB เล่มที่ 2<br>💬 แชทที่ 2</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:var(--a);color:white;font-size:24px;font-weight:800;padding:10px 14px;border-radius:12px 12px 0 0;text-align:center;">มิติ 03</div>
+      <div style="background:white;border:1.5px solid #fde68a;border-top:none;border-radius:0 0 12px 12px;padding:14px;flex:1;display:flex;flex-direction:column;gap:8px;">
+        <div style="font-size:24px;font-weight:700;color:var(--ad);line-height:1.3;">ความไว้วางใจ<br>& ความปลอดภัย</div>
+        <div style="font-size:24px;color:var(--s6);">Trust & Security</div>
+        <div style="margin-top:auto;background:var(--al);border-radius:8px;padding:8px;font-size:24px;font-family:monospace;color:var(--ad);">📁 03_Trust<br>📓 NB เล่มที่ 3<br>💬 แชทที่ 3</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#7c3aed;color:white;font-size:24px;font-weight:800;padding:10px 14px;border-radius:12px 12px 0 0;text-align:center;">มิติ 04</div>
+      <div style="background:white;border:1.5px solid #c4b5fd;border-top:none;border-radius:0 0 12px 12px;padding:14px;flex:1;display:flex;flex-direction:column;gap:8px;">
+        <div style="font-size:24px;font-weight:700;color:#7c3aed;line-height:1.3;">รีวิว &<br>อิทธิพลสังคม</div>
+        <div style="font-size:24px;color:var(--s6);">Reviews & Social</div>
+        <div style="margin-top:auto;background:#f5f3ff;border-radius:8px;padding:8px;font-size:24px;font-family:monospace;color:#7c3aed;">📁 04_Social<br>📓 NB เล่มที่ 4<br>💬 แชทที่ 4</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#0369a1;color:white;font-size:24px;font-weight:800;padding:10px 14px;border-radius:12px 12px 0 0;text-align:center;">มิติ 05</div>
+      <div style="background:white;border:1.5px solid #7dd3fc;border-top:none;border-radius:0 0 12px 12px;padding:14px;flex:1;display:flex;flex-direction:column;gap:8px;">
+        <div style="font-size:24px;font-weight:700;color:#0369a1;line-height:1.3;">ปัจจัย<br>ประชากรศาสตร์</div>
+        <div style="font-size:24px;color:var(--s6);">Demographics</div>
+        <div style="margin-top:auto;background:#eff6ff;border-radius:8px;padding:8px;font-size:24px;font-family:monospace;color:#0369a1;">📁 05_Demo<br>📓 NB เล่มที่ 5<br>💬 แชทที่ 5</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight" style="font-size:24px;">⚠️ <strong>กฎสำคัญ:</strong> 1 มิติ = 1 Notebook เสมอ — ห้ามรวมทุกมิติใน Notebook เดียว AI จะสับสนข้อมูลและให้ผลที่ไม่แม่นยำ</div>
+  <div class="bar"></div>
+</section>
+
+<!-- 17 WORKSHOP M3 -->
+<section class="ws-section" data-screen-label="17 Workshop Module 3">
+  <div class="ws-badge">🔴 Workshop Module 3 · 25 นาที</div>
+  <div class="h2" style="font-size:42px;">สร้าง NotebookLM 5 เล่ม ตาม  5 มิติ → สังเคราะห์และสร้างสื่อ</div>
+  <div class="g2" style="gap:24px;flex:1;">
+    <div class="ws-card">
+      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:14px;">📌 ภารกิจ (ตามลำดับ)</div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">เปิด NotebookLM → สร้าง <strong>Notebook เล่มที่ 1</strong> → เชื่อม Drive Folder มิติที่ 1</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">ทำซ้ำ: สร้าง Notebook เล่มที่ 2–5 เชื่อม Folder มิติที่ 2–5 ตามลำดับ</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">เปิด Notebook เล่มที่ 1 → ป้อน Research Synthesis Prompt → บันทึก Research Gap</div></div>
+        <div class="step"><div class="sn">4</div><div style="font-size:24px;"><strong>ภารกิจที่ 1:</strong> สร้าง Mind Map โครงสร้างกิ่งก้านให้ Notebook เล่มที่ 1</div></div>
+        <div class="step"><div class="sn">5</div><div style="font-size:24px;"><strong>ภารกิจที่ 2:</strong> สร้าง FAQ ชุดคำถาม Proposal Defense</div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="ws-card">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:12px;">🎯 เป้าหมาย</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.85;">
+          ✅ NotebookLM <strong>5 เล่ม</strong> เชื่อม  5 Folder ครบ<br>
+          ✅ Mindmap อย่างน้อย <strong>1 ชุด</strong><br>
+          ✅ FAQ คำถาม Defense <strong>5 ข้อ</strong><br>
+          ✅ Research Gap <strong>1 ย่อหน้า</strong>
+        </div>
+      </div>
+      <div class="highlight" style="font-size:24px;">💡 หนึ่ง Notebook ต่อหนึ่ง Folder เสมอ — AI จะไม่สับสนโชร์ข้อมูลข้ามมิติ</div>
+    </div>
+  </div>
+</section>
+
+<!-- 18 MODULE 4 HEADER -->
+<section class="mod-header" data-screen-label="18 Module 4 Header">
+  <div class="mod-num" style="background:#78350f;">4</div>
+  <div class="mod-body">
+    <div class="lbl" style="color:#fbbf24;">Module 4 · 35 นาที</div>
+    <div class="h2w">รังสรรค์งานเขียนวิจัย<br>ตามมาตรฐาน มรนว. 2568</div>
+    <p style="font-size:26px;color:#a8a29e;line-height:1.6;">Demo 15 นาที · ลงมือทำ 20 นาที</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fbbf24;border:1px solid rgba(255,255,255,.2);">โครงสร้าง 4 ส่วน</span>
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fbbf24;border:1px solid rgba(255,255,255,.2);">TH Sarabun New</span>
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fbbf24;border:1px solid rgba(255,255,255,.2);">APA 7th Edition</span>
+    </div>
+    <p style="font-size:24px;color:#78716c;margin-top:8px;">Deliverable: ร่างเนื้อหาบทที่ 2 Format ถูกต้อง 100%</p>
+  </div>
+  <div class="bar" style="background:#78350f;"></div>
+</section>
+
+<!-- 18b HOW TO ATTACH AGENT -->
+<section class="vpad" style="gap:22px;" data-screen-label="18b วิธีแนบ Agent เข้า Gemini">
+  <div class="lbl">Module 4 · ก่อนเขียน — ตั้ง AI ให้รู้กฎก่อน</div>
+  <div class="h2 border-l-a" style="font-size:42px;">วิธีแนบ Agent เข้า Gemini — 3 ขั้นตอน</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div>เปิด <strong>gemini.google.com</strong> → เลือก <strong>Canvas</strong> (พื้นที่เขียนงาน)</div></div>
+        <div class="step"><div class="sn">2</div><div>คัดลอกเนื้อหา <strong>CORE-rules.md</strong> + <strong>[role]-agent.md</strong> ที่ตรงกับตัวเอง</div></div>
+        <div class="step"><div class="sn">3</div><div>วางทั้งหมดลงในช่องข้อความ → กด Enter → AI จะตอบรับและถามคุณ 3 ข้อ</div></div>
+      </div>
+      <div class="card-a">
+        <div style="font-size:24px;font-weight:700;color:var(--ad);margin-bottom:8px;">🎯 เลือก Agent ตามบทบาท</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="font-size:24px;background:#ecfdf5;border-radius:8px;padding:8px 16px;color:#065f46;">🎓 <strong>ป.ตรี</strong> → undergrad-agent.md</div>
+          <div style="font-size:24px;background:var(--al);border-radius:8px;padding:8px 16px;color:var(--ad);">🎓🎓 <strong>ป.โท / ป.เอก</strong> → grad-agent.md</div>
+          <div style="font-size:24px;background:#f5f3ff;border-radius:8px;padding:8px 16px;color:#5b21b6;">🔬 <strong>อาจารย์ / นักวิจัย</strong> → researcher-agent.md</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="font-size:24px;font-weight:800;color:var(--s8);">AI จะถามคุณ 3 ข้อเสมอ:</div>
+      <div style="background:var(--s9);border-radius:14px;padding:22px 26px;font-family:monospace;display:flex;flex-direction:column;gap:14px;">
+        <div style="font-size:24px;color:#fcd34d;font-weight:700;">Gemini + Agent พร้อมแล้ว:</div>
+        <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:14px 18px;font-size:24px;color:#d4c9b8;line-height:1.8;">1️⃣ คุณชื่ออะไร / บทบาทคืออะไร?<br>2️⃣ หัวข้อวิจัย / ชื่อโปรเจกต์คืออะไร?<br>3️⃣ วันนี้ต้องการทำโหมดไหน?<br>&nbsp;&nbsp;&nbsp;&nbsp;🔬 งานวิจัย / 📚 สื่อ / 📋 คู่มือ / 📖 ตำรา</div>
+      </div>
+      <div class="highlight" style="font-size:24px;">✅ ตอบครบ 3 ข้อ → AI เริ่มทำงานเป็น specialist ตาม มรนว. 2568 ทันที</div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 18c AGENT CONVERSATION DEMO -->
+<section class="vpad" style="gap:20px;" data-screen-label="18c จำลองบทสนทนา 3 Agents">
+  <div class="lbl">Module 4 · เปรียบเทียบ 3 Agents — Tone ต่างกันอย่างไร?</div>
+  <div class="h2 border-l-a" style="font-size:40px;">จำลองบทสนทนา: ถามเรื่องเดียวกัน — Agent ตอบต่างกัน</div>
+  <div style="font-size:24px;background:var(--s2);border-radius:10px;padding:12px 24px;color:var(--s7);">📝 โจทย์เดียวกัน: <strong>"ช่วยเขียนย่อหน้าเรื่องอิทธิพลกลุ่มเพื่อนต่อพฤติกรรมสูบบุหรี่ไฟฟ้า"</strong></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;">
+    <!-- undergrad -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="background:#059669;color:white;font-size:24px;font-weight:800;padding:10px 18px;border-radius:10px;">🎓 undergrad-agent</div>
+      <div style="background:#ecfdf5;border:1.5px solid #86efac;border-radius:10px;padding:14px 18px;font-size:24px;color:#065f46;line-height:1.7;">สวัสดีครับน้อง! 🌱<br>ก่อนเขียน พี่อยากให้น้องลองตอบ 3 ข้อนี้ก่อนนะครับ:<br><br>① น้องอ่านเปเปอร์จาก Notebook แล้วหรือยัง?<br>② ทฤษฎีหลักที่อาจารย์แนะนำคืออะไร?<br>③ วัตถุประสงค์ข้อไหนที่ย่อหน้านี้จะสนับสนุน?</div>
+      <div style="background:white;border:1.5px solid #e7e5e4;border-radius:10px;padding:12px 18px;font-size:24px;color:var(--s6);line-height:1.6;flex:1;">🎯 <strong>สไตล์:</strong> สอนให้คิด ไม่ทำแทน<br>พี่จะช่วย scaffold และตรวจ APA 7th ให้หลังน้องร่างมาแล้ว</div>
+    </div>
+    <!-- grad -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="background:var(--a);color:white;font-size:24px;font-weight:800;padding:10px 18px;border-radius:10px;">🎓🎓 grad-agent</div>
+      <div style="background:var(--al);border:1.5px solid #fde68a;border-radius:10px;padding:14px 18px;font-size:24px;color:var(--ad);line-height:1.7;">ได้ครับ ขอข้อมูล 3 ข้อ:<br><br>① Thesis หรือ IS?<br>&nbsp;&nbsp;(กำหนดคำว่า "ผู้วิจัย" / "ผู้ศึกษา")<br>② Design ที่ใช้? (กลุ่มตัวอย่างกี่คน?)<br>③ งานวิจัยที่เกี่ยวข้องใน Notebook มีอะไรบ้าง?</div>
+      <div style="background:white;border:1.5px solid #e7e5e4;border-radius:10px;padding:12px 18px;font-size:24px;color:var(--s6);line-height:1.6;flex:1;">🎯 <strong>สไตล์:</strong> มืออาชีพ ตรงประเด็น<br>จะ draft โครงสร้าง 4 ส่วน + ตรวจ IS/Thesis term + Integrity reminder</div>
+    </div>
+    <!-- researcher -->
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="background:#7c3aed;color:white;font-size:24px;font-weight:800;padding:10px 18px;border-radius:10px;">🔬 researcher-agent</div>
+      <div style="background:#f5f3ff;border:1.5px solid #c4b5fd;border-radius:10px;padding:14px 18px;font-size:24px;color:#5b21b6;line-height:1.7;">Target journal ครับ?<br>Peer influence มี meta-analysis<br>ล่าสุดหรือยัง?<br><br>Effect size (β) และ p-value ที่ได้จากข้อมูลจริง พร้อมระบุหรือยัง? จะใช้เป็น anchor ใน Discussion</div>
+      <div style="background:white;border:1.5px solid #e7e5e4;border-radius:10px;padding:12px 18px;font-size:24px;color:var(--s6);line-height:1.6;flex:1;">🎯 <strong>สไตล์:</strong> Peer ระดับเดียวกัน<br>Challenge เชิงสร้างสรรค์ + Draft ระดับ Scopus Q2</div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 18d OUTPUT TYPES -->
+<section class="vpad" style="gap:20px;" data-screen-label="18d ผลลัพธ์ 3 ประเภทจาก Agent">
+  <div class="lbl">Module 4 · ผลลัพธ์ที่ Agent สร้างได้</div>
+  <div class="h2 border-l-a" style="font-size:40px;">Agent ให้ผลลัพธ์ 3 ประเภท — เลือกใช้ตามบทที่ต้องการ</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1;">
+    <!-- Type 1: ทฤษฎี -->
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#1d4ed8;color:white;padding:12px 18px;border-radius:12px 12px 0 0;">
+        <div style="font-size:24px;font-weight:800;">📚 Type 1: ย่อหน้าทฤษฎี</div>
+        <div style="font-size:24px;opacity:.8;">บทที่ 2 — กรอบแนวคิด/ทฤษฎีหลัก</div>
+      </div>
+      <div style="background:#eff6ff;border:1.5px solid #93c5fd;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;font-size:24px;color:var(--s8);line-height:1.8;">
+        <div style="color:#1d4ed8;font-weight:700;margin-bottom:8px;">Prompt: "เขียนย่อหน้าอธิบายทฤษฎี TAM"</div>
+        <div style="background:white;border-radius:8px;padding:12px 16px;font-size:24px;color:var(--s7);line-height:1.75;border-left:4px solid #1d4ed8;">ทฤษฎีการยอมรับเทคโนโลยี (Technology Acceptance Model: TAM) พัฒนาโดย Davis (1989) อธิบายพฤติกรรมการยอมรับเทคโนโลยีสารสนเทศผ่าน 2 ตัวแปรหลัก ได้แก่ การรับรู้ประโยชน์ใช้สอย (Perceived Usefulness) และการรับรู้ความง่ายในการใช้ (Perceived Ease of Use)…</div>
+        <div style="margin-top:10px;font-size:24px;color:#1d4ed8;">→ นิยาม + ผู้พัฒนา + องค์ประกอบ + การนำไปใช้</div>
+      </div>
+    </div>
+    <!-- Type 2: งานวิจัย -->
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:var(--a);color:white;padding:12px 18px;border-radius:12px 12px 0 0;">
+        <div style="font-size:24px;font-weight:800;">🔬 Type 2: ย่อหน้างานวิจัย</div>
+        <div style="font-size:24px;opacity:.8;">บทที่ 2 — งานวิจัยที่เกี่ยวข้อง</div>
+      </div>
+      <div style="background:var(--al);border:1.5px solid #fde68a;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;font-size:24px;color:var(--s8);line-height:1.8;">
+        <div style="color:var(--ad);font-weight:700;margin-bottom:8px;">Prompt: "เขียนย่อหน้าสรุปงานวิจัยนี้"</div>
+        <div style="background:white;border-radius:8px;padding:10px 14px;font-size:24px;color:var(--s7);line-height:1.75;border-left:4px solid var(--a);">
+          <span style="background:#dbeafe;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:#1d4ed8;">นำ</span> สมศักดิ์ และคณะ (2566) ได้ศึกษา…
+          <span style="background:#ede9fe;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:#7c3aed;">วิธี</span> กลุ่มตัวอย่าง 320 คน…
+          <span style="background:#dcfce7;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:#059669;">ผล</span> β = .42, p &lt; .001…
+          <span style="background:#fef3c7;border-radius:4px;padding:1px 5px;font-size:22px;font-weight:700;color:var(--ad);">เชื่อม</span> สอดคล้องกับการศึกษาครั้งนี้…
+        </div>
+        <div style="margin-top:10px;font-size:24px;color:var(--ad);">→ 4 ส่วน: นำ – วิธี – ผล – เชื่อม</div>
+      </div>
+    </div>
+    <!-- Type 3: สังเคราะห์ -->
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#7c3aed;color:white;padding:12px 18px;border-radius:12px 12px 0 0;">
+        <div style="font-size:24px;font-weight:800;">🔀 Type 3: การสังเคราะห์</div>
+        <div style="font-size:24px;opacity:.8;">บทที่ 2 — เปรียบเทียบหลายงาน</div>
+      </div>
+      <div style="background:#f5f3ff;border:1.5px solid #c4b5fd;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;font-size:24px;color:var(--s8);line-height:1.8;">
+        <div style="color:#7c3aed;font-weight:700;margin-bottom:8px;">Prompt: "สังเคราะห์งานวิจัย 3 ชิ้นนี้"</div>
+        <div style="background:white;border-radius:8px;padding:10px 14px;font-size:24px;color:var(--s7);line-height:1.75;border-left:4px solid #7c3aed;">งานวิจัยส่วนใหญ่สอดคล้องว่า… (สมศักดิ์ และคณะ, 2566; Smith et al., 2023) อย่างไรก็ตาม Jones (2024) พบว่า… ช่องว่างที่ยังขาด คือ…</div>
+        <div style="margin-top:10px;font-size:24px;color:#7c3aed;">→ สอดคล้อง + ขัดแย้ง + Research Gap</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight" style="font-size:24px;">💡 <strong>วิธีใช้:</strong> นำ output จาก Agent ไปปรับสำนวน ≥ 50% → วางลง Google Docs / Canvas → ตรวจ APA 7th ก่อนส่ง</div>
+  <div class="bar"></div>
+</section>
+
+<!-- 19 PARAGRAPH STRUCTURE -->
+<section class="vpad" data-screen-label="19 โครงสร้างย่อหน้า 4 ส่วน">
+  <div class="lbl">Module 4 · กฎที่ Agent ใช้ — โครงสร้างย่อหน้า</div>
+  <div class="h2 border-l-a" style="font-size:42px;">โครงสร้างย่อหน้าทบทวนวรรณกรรม — 4 ส่วน</div>
+  <div class="g4">
+    <div class="card" style="border-top:5px solid #1d4ed8;">
+      <div style="font-size:28px;margin-bottom:8px;">1️⃣</div>
+      <div style="font-size:24px;font-weight:700;color:#1d4ed8;margin-bottom:8px;">นำ (Introduce)</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.65;">เกริ่นหัวข้อและผู้แต่ง</div>
+      <div style="margin-top:12px;background:#eff6ff;border-radius:8px;padding:10px 14px;font-size:24px;color:#1d4ed8;font-style:italic;line-height:1.6;">"พฤติกรรมการสูบบุหรี่ส่งผลต่อสุขภาพหลายมิติ (สมศักดิ์ และคณะ, 2566)"</div>
+    </div>
+    <div class="card" style="border-top:5px solid #7c3aed;">
+      <div style="font-size:28px;margin-bottom:8px;">2️⃣</div>
+      <div style="font-size:24px;font-weight:700;color:#7c3aed;margin-bottom:8px;">วิธีการ (Methodology)</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.65;">รูปแบบวิจัย กลุ่มตัวอย่าง</div>
+      <div style="margin-top:12px;background:#f5f3ff;border-radius:8px;padding:10px 14px;font-size:24px;color:#5b21b6;font-style:italic;line-height:1.6;">"ใช้รูปแบบกึ่งทดลอง กลุ่มตัวอย่าง 120 คน อายุ 18–25 ปี"</div>
+    </div>
+    <div class="card" style="border-top:5px solid #059669;">
+      <div style="font-size:28px;margin-bottom:8px;">3️⃣</div>
+      <div style="font-size:24px;font-weight:700;color:#059669;margin-bottom:8px;">ผล (Findings)</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.65;">ผลสำคัญ + สถิติ</div>
+      <div style="margin-top:12px;background:#ecfdf5;border-radius:8px;padding:10px 14px;font-size:24px;color:#065f46;font-style:italic;line-height:1.6;">"อัตราเลิกสูบสูงกว่ากลุ่มควบคุมอย่างมีนัยสำคัญ (p &lt; .05)"</div>
+    </div>
+    <div class="card" style="border-top:5px solid var(--a);">
+      <div style="font-size:28px;margin-bottom:8px;">4️⃣</div>
+      <div style="font-size:24px;font-weight:700;color:var(--ad);margin-bottom:8px;">เชื่อมโยง (Connect)</div>
+      <div style="font-size:24px;color:var(--s6);line-height:1.65;">สนับสนุน/ท้าทาย/ต่อยอดงานเรา</div>
+      <div style="margin-top:12px;background:var(--al);border-radius:8px;padding:10px 14px;font-size:24px;color:var(--ad);font-style:italic;line-height:1.6;">"ผลนี้สนับสนุนการออกแบบโปรแกรมแทรกแซงกลุ่มวัยรุ่นในงานวิจัยชิ้นนี้"</div>
+    </div>
+  </div>
+  <div class="highlight">💡 ไม่จำเป็นต้องเปิดทุกย่อหน้าด้วย "นักวิจัย X ได้ศึกษา..." — สลับรูปแบบ: เปิดด้วย <strong>แนวคิด</strong> หรือ <strong>ปัญหา</strong> เพื่อความหลากหลาย</div>
+  <div class="bar"></div>
+</section>
+
+<!-- 20 FORMATTING + APA -->
+<section class="vpad" data-screen-label="20 Formatting Standards APA 7th">
+  <div class="lbl">Module 4 · กฎที่ Agent ใช้ — Formatting & APA</div>
+  <div class="h2 border-l-a" style="font-size:42px;">มาตรฐาน Formatting & APA 7th ที่ Agent ยึดถือ</div>
+  <div class="g2" style="gap:26px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="h3" style="font-size:28px;">📄 Google Docs Setup</div>
+      <table class="t" style="font-size:24px;">
+        <tbody>
+          <tr><td style="font-weight:700;color:var(--s8);">ฟอนต์</td><td>TH Sarabun New — ทั้งเล่ม</td></tr>
+          <tr><td style="font-weight:700;color:var(--s8);">หัวข้อบท</td><td>18 pt ตัวหนา</td></tr>
+          <tr><td style="font-weight:700;color:var(--s8);">เนื้อหา</td><td>16 pt ตัวธรรมดา</td></tr>
+        </tbody>
+      </table>
+      <div class="card-a">
+        <div style="font-size:24px;font-weight:700;color:var(--ad);margin-bottom:10px;">🔄 AI Integrity</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.7;">ปรับสำนวนภาษาจาก NotebookLM อย่างน้อย <strong>50%</strong> ก่อนนำลง Docs เพื่อป้องกัน Plagiarism</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="h3" style="font-size:28px;">📖 In-text Citation Rules</div>
+      <table class="t" style="font-size:24px;">
+        <thead><tr><th>กรณี</th><th>รูปแบบที่ถูก</th></tr></thead>
+        <tbody>
+          <tr><td>ผู้แต่ง 1 คน</td><td>(สมศักดิ์, 2566) / (Smith, 2021)</td></tr>
+          <tr><td>ผู้แต่ง 2 คน</td><td>(สมศักดิ์ และ สมชาย, 2566)</td></tr>
+          <tr><td>ผู้แต่ง 3+ คน</td><td><strong>(สมศักดิ์ และคณะ, 2566) ตั้งแต่ครั้งแรก</strong></td></tr>
+          <tr><td>แหล่งทุติยภูมิ</td><td>ใช้เฉพาะเมื่อหาต้นฉบับไม่ได้ — ระบุ "อ้างใน"</td></tr>
+        </tbody>
+      </table>
+      <div class="card" style="border-left:5px solid #dc2626;">
+        <div style="font-size:24px;color:#dc2626;font-weight:700;margin-bottom:6px;">⚠️ ข้อควรระวัง IS vs. Thesis</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.6;">IS → ใช้ <strong>"การศึกษา / ผู้ศึกษา"</strong> เท่านั้น<br>ห้ามเขียนว่า "การวิจัย / ผู้วิจัย" เด็ดขาด</div>
+      </div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 21 EXAMPLE PARAGRAPH -->
+<section class="vpad" data-screen-label="21 ตัวอย่างการเขียน">
+  <div class="lbl">Module 4 · ตัวอย่างเปรียบเทียบ ✅ vs ❌</div>
+  <div class="g2" style="gap:24px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;align-items:center;gap:12px;font-size:26px;font-weight:800;color:#dc2626;">❌ แบบที่ควรหลีกเลี่ยง</div>
+      <div style="background:#fef2f2;border:2px solid #fca5a5;border-radius:12px;padding:22px 28px;font-size:24px;color:#7f1d1d;line-height:1.8;font-style:italic;">"วัยรุ่นสูบเพราะเพื่อนชวน อ้างอิงจากงานของ สมศักดิ์ มิตรไมตรี, สมชาย รักดี และสมหญิง สุขใจ (2023) และงานของ Smith, J., Johnson, A., Williams, S. and Brown, T. (2021)"</div>
+      <div style="font-size:24px;color:#dc2626;">• ไม่มีโครงสร้าง 4 ส่วน · การอ้างอิง 3+ คนผิดรูปแบบ</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;align-items:center;gap:12px;font-size:26px;font-weight:800;color:#059669;">✅ แบบผ่านเกณฑ์ มรนว. 2568</div>
+      <div style="background:#f0fdf4;border:2px solid #86efac;border-radius:12px;padding:22px 28px;font-size:24px;color:var(--s8);line-height:1.9;">
+        <span style="background:#dbeafe;border-radius:4px;padding:2px 6px;font-weight:700;color:#1d4ed8;">นำ</span> พฤติกรรมการสูบบุหรี่ไฟฟ้าในกลุ่มวัยรุ่นมีแนวโน้มเพิ่มขึ้น โดยมีอิทธิพลจากกลุ่มเพื่อน (สมศักดิ์ และคณะ, 2566)
+        <span style="background:#ede9fe;border-radius:4px;padding:2px 6px;font-weight:700;color:#7c3aed;">วิธี</span> ใช้แบบสำรวจกลุ่มตัวอย่างนักเรียน 320 คน
+        <span style="background:#dcfce7;border-radius:4px;padding:2px 6px;font-weight:700;color:#059669;">ผล</span> กลุ่มเพื่อนมีอิทธิพล (β = .42, p &lt; .001) สอดคล้องกับ Smith et al. (2021)
+        <span style="background:#fef3c7;border-radius:4px;padding:2px 6px;font-weight:700;color:var(--ad);">เชื่อม</span> ยืนยันความสำคัญของการออกแบบโปรแกรมแทรกแซงที่มุ่งเป้าพลวัตกลุ่มเพื่อน
+      </div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 22 WORKSHOP M4 -->
+<section class="ws-section" data-screen-label="22 Workshop Module 4">
+  <div class="ws-badge">🔴 Workshop Module 4 · 25 นาที</div>
+  <div class="h2" style="font-size:42px;">ใช้ Gemini + Agent เขียนย่อหน้าทบทวนวรรณกรรม</div>
+  <div class="g2" style="gap:24px;flex:1;">
+    <div class="ws-card">
+      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:14px;">📌 ขั้นตอน</div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">เปิด Mindmap จาก Notebook เล่มที่ 1 → เลือก 1 มิติที่จะเขียน</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">เปิด Gemini → Canvas → วาง CORE + role-agent → ตอบ 3 ข้อ → เลือกโหมด "งานวิจัย"</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">แนบสรุปจาก NotebookLM → สั่ง Agent เขียนย่อหน้า 4 ส่วน (APA 7th)</div></div>
+        <div class="step"><div class="sn">4</div><div style="font-size:24px;">Copy ผลลัพธ์ → ปรับสำนวน ≥ 50% ใน Google Docs / Canvas</div></div>
+        <div class="step"><div class="sn">5</div><div style="font-size:24px;">ตั้งฟอนต์ TH Sarabun New 16pt + ตรวจ APA 7th</div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="ws-card">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:12px;">🎯 Checklist ก่อนส่ง</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.85;">
+          ☑ มีโครงสร้าง 4 ส่วนครบ<br>
+          ☑ 3+ ผู้แต่ง ใช้ "และคณะ" / "et al."<br>
+          ☑ IS: ใช้ "การศึกษา / ผู้ศึกษา"<br>
+          ☑ ปรับสำนวนจาก AI ≥ 50%<br>
+          ☑ มี citation ครบทุกประโยคที่มาจากงานวิจัย
+        </div>
+      </div>
+      <div class="highlight" style="font-size:24px;">🏁 Deliverable: ไฟล์ Google Docs 1 ย่อหน้า Format ถูกต้อง 100% พร้อมรายการบรรณานุกรม</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: CANVAS EXPORT -->
+<section class="vpad" data-screen-label="NEW Canvas Export Word Docs">
+  <div class="lbl">สรุป Path B · วิธีส่งออกจาก Canvas</div>
+  <div class="h2 border-l-a" style="font-size:42px;">ก๊อปผลลัพธ์จาก Canvas → Word / Google Docs</div>
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:28px;flex:1;align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="h3 border-l-a">Canvas (Gemini) คืออะไร?</div>
+      <div class="card-a">
+        <div style="font-size:24px;color:var(--s7);line-height:1.75;">Canvas คือ "สมุดงาน" ใน Gemini — AI เขียนเนื้อหาลงพื้นที่นี้แบบ real-time คุณแก้ไขได้ในหน้าเดียวกัน และ export ออกมาง่ายๆ ด้วยปุ่ม Share</div>
+      </div>
+      <div class="h3 border-l-a">ขั้นตอน Export</div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div>เปิด Canvas → คลิกปุ่ม <strong>Share</strong> (มุมขวาบน)</div></div>
+        <div class="step"><div class="sn">2</div><div>เลือก <strong>Copy to Google Docs</strong> หรือ <strong>Download as .docx</strong></div></div>
+        <div class="step"><div class="sn">3</div><div>เปิดใน Google Docs → ตั้ง Font: <strong>TH Sarabun New</strong> 16pt</div></div>
+        <div class="step"><div class="sn">4</div><div>ตรวจ APA 7th + มรนว. ด้วย <strong>AI Prompt Templates</strong></div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="h3 border-l-a">2 ช่องทาง Export</div>
+      <div class="card" style="border-top:5px solid #059669;">
+        <div style="font-size:24px;font-weight:800;color:#065f46;margin-bottom:10px;">📄 Google Docs</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">Share → Copy to Google Docs<br>✅ ทำงานต่อออนไลน์ได้ทันที<br>✅ แชร์อาจารย์ที่ปรึกษาได้เลย<br>✅ ปุ่ม Share ส่งต่อได้ทุกที่</div>
+      </div>
+      <div class="card" style="border-top:5px solid #1d4ed8;">
+        <div style="font-size:24px;font-weight:800;color:#1d4ed8;margin-bottom:10px;">📝 Microsoft Word</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">Share → Download as .docx<br>✅ เปิดใน Word ได้ทันที<br>✅ ใส่ Template format มหาลัยได้<br>✅ ส่งอาจารย์ผ่าน Email / LMS</div>
+      </div>
+      <image-slot id="canvas-export" placeholder="📸 แคป Screenshot: ปุ่ม Share ใน Canvas" shape="rounded" style="width:100%;height:130px;"></image-slot>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 23 MODULE 5 HEADER -->
+<section class="mod-header" data-screen-label="23 Module 5 Header">
+  <div class="mod-num">5</div>
+  <div class="mod-body">
+    <div class="lbl" style="color:var(--a);">Module 5 · 15 นาที</div>
+    <div class="h2w">ตรวจสอบ Validate งานเขียน<br>ก่อน Submit / ส่งอาจารย์</div>
+    <p style="font-size:26px;color:#a8a29e;line-height:1.6;">Demo 5 นาที · ลงมือทำ 10 นาที</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fcd34d;border:1px solid rgba(255,255,255,.2);">Verification Checklist</span>
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fcd34d;border:1px solid rgba(255,255,255,.2);">AI Disclosure</span>
+      <span class="amber-pill" style="background:rgba(255,255,255,.1);color:#fcd34d;border:1px solid rgba(255,255,255,.2);">Audit Report</span>
+    </div>
+    <p style="font-size:24px;color:#78716c;margin-top:8px;">Deliverable: Checklist ครบ + รู้จักวิธีใช้ Agent ที่บ้าน</p>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 24 VERIFICATION + DISCLOSURE -->
+<section class="vpad" data-screen-label="24 Verification Checklist และ AI Disclosure">
+  <div class="lbl">Module 5 · 5.1–5.3</div>
+  <div class="g2" style="gap:28px;flex:1;align-items:start;grid-template-columns:1.8fr 1fr;">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="h3 border-l-a">✅ Verification Checklist</div>
+      <div class="card" style="display:flex;flex-direction:column;gap:20px;">
+          <div style="font-size:26px;color:var(--s7);">☑ &nbsp;Citation ↔ บรรณานุกรม สอดคล้อง 100%</div>
+          <div style="border-top:1px dashed var(--bd);"></div>
+          <div style="font-size:26px;color:var(--s7);">☑ &nbsp;ไม่มีรายการกำพร้าในบรรณานุกรม</div>
+          <div style="border-top:1px dashed var(--bd);"></div>
+          <div style="font-size:26px;color:var(--s7);">☑ &nbsp;IS ใช้ "ผู้ศึกษา" ห้ามสลับ "ผู้วิจัย"</div>
+          <div style="border-top:1px dashed var(--bd);"></div>
+          <div style="font-size:26px;color:var(--s7);">☑ &nbsp;URL / DOI ห้ามปิดท้ายด้วยจุด (.)</div>
+        </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="h3 border-l-a">🔍 AI Disclosure — จรรยาบรรณวิจัย</div>
+      <div class="card-a">
+        <div style="font-size:24px;color:var(--s7);line-height:1.75;margin-bottom:14px;">ระบุการใช้ AI ตัวช่วยวิจัยในหน้า <strong>กิตติกรรมประกาศ (Acknowledgements)</strong> เพื่อความโปร่งใสทางวิชาการ</div>
+        <div style="background:white;border-radius:10px;padding:16px 20px;font-size:24px;color:var(--s7);font-style:italic;line-height:1.75;border:1px solid #fde68a;">"งานวิจัยนี้ใช้ AI (NotebookLM, Google Spark) เป็นเครื่องมือช่วยสังเคราะห์วรรณกรรม โดยผู้วิจัย/ผู้ศึกษาเป็นผู้ตัดสินใจ ตรวจสอบ และเรียบเรียงเนื้อหาทั้งหมดด้วยตนเอง"</div>
+      </div>
+    </div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 25 VALIDATION WORKFLOW -->
+<section class="vpad" data-screen-label="25 Validation Workflow 5 ขั้น">
+  <div class="lbl">Module 5 · อิงตาม CORE-rules ส่วนที่ 9</div>
+  <div class="h2 border-l-a" style="font-size:42px;">Verification Workflow — ตรวจงานเขียน 5 ขั้นตอน</div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;flex:1;">
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#1d4ed8;color:white;font-size:24px;font-weight:800;padding:12px 16px;border-radius:12px 12px 0 0;text-align:center;">ขั้นที่ 1</div>
+      <div style="background:white;border:1.5px solid #93c5fd;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:24px;font-weight:800;color:#1d4ed8;">ความสอดคล้อง</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">Cross-check<br>Citation ↔ Bibliography<br>✓ ไม่มี citation กำพร้า<br>✓ ไม่มีบรรณานุกรมที่ไม่ถูกอ้าง</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#059669;color:white;font-size:24px;font-weight:800;padding:12px 16px;border-radius:12px 12px 0 0;text-align:center;">ขั้นที่ 2</div>
+      <div style="background:white;border:1.5px solid #86efac;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:24px;font-weight:800;color:#059669;">ชื่อ–ปี</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">สะกดชื่อใน citation = bibliography<br>✓ พ.ศ. (ไทย) / ค.ศ. (EN) ถูกต้อง<br>✓ ชื่อสถาบันทางการ</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:var(--a);color:white;font-size:24px;font-weight:800;padding:12px 16px;border-radius:12px 12px 0 0;text-align:center;">ขั้นที่ 3</div>
+      <div style="background:white;border:1.5px solid #fde68a;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:24px;font-weight:800;color:var(--ad);">รูปแบบ มรนว.</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">✓ เว้นวรรค 1 เคาะหลัง , . ;<br>✓ "และคณะ" / "et al." ตั้งแต่ครั้งแรก<br>✓ IS ใช้ "ผู้ศึกษา" เสมอ</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#7c3aed;color:white;font-size:24px;font-weight:800;padding:12px 16px;border-radius:12px 12px 0 0;text-align:center;">ขั้นที่ 4</div>
+      <div style="background:white;border:1.5px solid #c4b5fd;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:24px;font-weight:800;color:#7c3aed;">URL / DOI</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">✓ ทดสอบลิงก์ใช้งานได้<br>✓ ไม่มีจุด (.) ปิดท้าย<br>✓ ไม่มี 404 / 403</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="background:#dc2626;color:white;font-size:24px;font-weight:800;padding:12px 16px;border-radius:12px 12px 0 0;text-align:center;">ขั้นที่ 5</div>
+      <div style="background:white;border:1.5px solid #fca5a5;border-top:none;border-radius:0 0 12px 12px;padding:16px;flex:1;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:24px;font-weight:800;color:#dc2626;">Audit Report</div>
+        <div style="font-size:24px;color:var(--s6);line-height:1.7;">สรุปจุดที่พบ<br>+ ระดับความรุนแรง<br>🔴 Critical → แก้ก่อน submit<br>🟡 Major · 🟢 Minor</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight" style="font-size:24px;">🤖 <strong>ใช้ Agent ช่วย Validate ได้:</strong> วาง CORE + role-agent แล้วถาม "ตรวจ citation และรูปแบบ มรนว. 2568 ให้หน่อย" → AI จะ audit และรายงานเป็น Severity table ให้ทันที</div>
+  <div class="bar"></div>
+</section>
+
+<!-- 26 WORKSHOP M5 -->
+<section class="ws-section" data-screen-label="26 Workshop Module 5">
+  <div class="ws-badge">🔴 Workshop Module 5 · 10 นาที</div>
+  <div class="h2" style="font-size:42px;">ตรวจสอบ Validate งานที่เขียน 5 ขั้นตอน</div>
+  <div class="g2" style="gap:24px;flex:1;">
+    <div class="ws-card">
+      <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:14px;">📌 ขั้นตอน Verification Workflow</div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div style="font-size:24px;">เปิดงานจาก Module 4 → ครอส-ชเค็ค Citation ↔ Bibliography ทุกรายการ</div></div>
+        <div class="step"><div class="sn">2</div><div style="font-size:24px;">ตรวจสะกดชื่อผู้แต่ง ปี และช่วง พ.ศ./ค.ศ. ได้ถูกต้อง</div></div>
+        <div class="step"><div class="sn">3</div><div style="font-size:24px;">ตรวจรูปแบบ มรนว. 2568: เว้นวรรค · "และคณะ" · IS vs Thesis</div></div>
+        <div class="step"><div class="sn">4</div><div style="font-size:24px;">ทดสอบ URL / DOI ทุกรายการ — ไม่มีจุด (.) ปิดท้าย</div></div>
+        <div class="step"><div class="sn">5</div><div style="font-size:24px;">บันทึก Audit Report 🔴🟡🟢 — แก้จุด Critical ก่อน submit</div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="ws-card">
+        <div style="font-size:24px;font-weight:700;color:var(--s8);margin-bottom:12px;">🏁 Deliverables ครบหลักสูตร</div>
+        <div style="font-size:24px;color:var(--s7);line-height:1.85;">
+          ✅ PDF + BibTeX ≥ 3 ชิ้นต่อมิติ<br>
+          ✅ NotebookLM 5 เล่ม เชื่อม  5 Folder<br>
+          ✅ Mindmap + FAQ + Research Gap<br>
+          ✅ ย่อหน้าบทที่ 2 มาตรฐาน มรนว. 2568<br>
+          ✅ Verification Checklist ผ่าน 5 ขั้นครบ
+        </div>
+      </div>
+      <div class="highlight" style="font-size:24px;text-align:center;">🎉 <strong>ยินดีด้วย!</strong> คุณมี Workflow วิจัยครบวงจร + AI ส่วนตัวพร้อมใช้ทุกวัน</div>
+    </div>
+  </div>
+</section>
+
+</deck-stage>
+</body>
+</html>
