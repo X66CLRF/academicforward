@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>เทคนิคการสืบค้นข้อมูลเพื่อจัดทำเอกสารวิชาการ พร้อม AI ส่วนตัว</title>
+<title>Beyond the Search Bar: ข้ามขีดจำกัดการสืบค้น สู่การเขียนเอกสารวิชาการด้วยพลัง AI</title>
 <script src="deck-stage.js"></script>
 <script src="image-slot.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -73,6 +73,45 @@ section{
 .check-item{display:flex;align-items:flex-start;gap:14px;font-size:24px;color:var(--s7);line-height:1.6;}
 /* step font-size overrides for better fit */
 .ws-section .step > div{font-size:24px !important;}
+
+/* ── Print / PDF export ──────────────────────────────────────────────
+   Lock slide geometry in light DOM so the browser never needs the
+   shadow-DOM CSS variable --deck-design-w (which can resolve to empty
+   across the shadow boundary and leave sections at width:auto).         */
+@media print {
+  html, body {
+    width: 1920px !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: none !important;
+  }
+  deck-stage {
+    display: block !important;
+    width: 1920px !important;
+    max-width: none !important;
+    overflow: visible !important;
+  }
+  section {
+    position: relative !important;
+    width: 1920px !important;
+    height: 1080px !important;
+    max-width: 1920px !important;
+    overflow: hidden !important;
+    page-break-after: always;
+    break-after: page;
+    break-inside: avoid;
+  }
+  section:last-child,
+  section[data-deck-last-visible] {
+    page-break-after: auto;
+    break-after: auto;
+  }
+  section[data-deck-skip] {
+    display: none !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -89,8 +128,9 @@ section{
       <span class="tool-chip">5 Modules</span>
     </div>
     <div class="lbl" style="margin-top:8px;">หลักสูตรพัฒนาทักษะการวิจัย · มหาวิทยาลัยราชภัฏนครสวรรค์</div>
-    <h1 class="h1">เทคนิคการสืบค้นข้อมูล<br>เพื่อจัดทำเอกสารวิชาการ<br>
-      <span style="color:var(--a);">พร้อม AI ส่วนตัว</span></h1>
+    <h1 class="h1">Beyond the Search Bar<br>
+      <span style="color:var(--a);">ข้ามขีดจำกัดการสืบค้น</span><br>
+      <span style="font-size:52px;font-weight:800;line-height:1.2;">สู่การเขียนเอกสารวิชาการด้วยพลัง AI</span></h1>
     <p style="font-size:26px;color:var(--s4);margin-top:4px;">สำหรับ นักศึกษา ป.ตรี / ป.โท / ป.เอก · อาจารย์ · นักวิจัย</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;">
       <span class="tool-chip">Google Scholar AI LAB</span>
@@ -1138,7 +1178,11 @@ section{
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:18px;">
-      <div class="h3 border-l-a">Research Synthesis Prompt</div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <div class="h3 border-l-a">Research Synthesis Prompt</div>
+        <span style="background:#1e3a5f;color:#93c5fd;font-size:20px;font-weight:700;padding:4px 14px;border-radius:20px;white-space:nowrap;">📓 NotebookLM</span>
+        <span style="background:#1a2e1a;color:#6ee7b7;font-size:20px;font-weight:700;padding:4px 14px;border-radius:20px;white-space:nowrap;">✨ Gemini + Agent</span>
+      </div>
       <div class="card" style="background:#1c1917;border-color:#3f3830;">
         <div style="font-size:24px;color:#fcd34d;font-style:italic;line-height:1.8;">"จากงานวิจัยทั้งหมด จงวิเคราะห์และเปรียบเทียบข้อค้นพบด้าน <strong style="color:white;">[ระบุมิติ]</strong> โดยแสดงว่าผู้แต่งใดมีข้อค้นพบสอดคล้องกัน และประเด็นใดยังขัดแย้งกันอยู่"</div>
       </div>
@@ -1689,5 +1733,296 @@ section{
 </section>
 
 </deck-stage>
+
+<!-- ═══════════════════════════════════════════════════
+     PRINT / EXPORT PDF PANEL
+     ─ Floating button (bottom-right, hidden at @media print)
+     ─ Side drawer: group checkboxes → per-slide checkboxes → Print
+═══════════════════════════════════════════════════ -->
+<style>
+  /* Floating trigger */
+  #print-fab {
+    position: fixed; bottom: 28px; right: 28px; z-index: 2147484000;
+    display: flex; align-items: center; gap: 10px;
+    background: #d97706; color: #fff;
+    font-family: 'Sarabun', sans-serif; font-size: 17px; font-weight: 700;
+    padding: 12px 22px; border-radius: 40px; border: none; cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,.35);
+    transition: background .15s;
+  }
+  #print-fab:hover { background: #b45309; }
+
+  /* Overlay backdrop */
+  #print-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,.5); z-index: 2147483900;
+    align-items: flex-start; justify-content: flex-end;
+  }
+  #print-overlay.open { display: flex; }
+
+  /* Drawer */
+  #print-panel {
+    width: 360px; height: 100vh; overflow-y: auto;
+    background: #1c1917; color: #e7e5e4;
+    font-family: 'Sarabun', sans-serif;
+    display: flex; flex-direction: column;
+    box-shadow: -8px 0 32px rgba(0,0,0,.5);
+  }
+  #print-panel header {
+    position: sticky; top: 0; z-index: 2;
+    background: #292524; padding: 16px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid #3f3830;
+  }
+  #print-panel header h2 {
+    font-size: 18px; font-weight: 800; color: #fcd34d; margin: 0;
+  }
+  #print-panel header button {
+    background: transparent; border: none; color: #a8a29e;
+    font-size: 22px; cursor: pointer; line-height: 1; padding: 0 4px;
+  }
+  #print-panel header button:hover { color: #fff; }
+
+  /* Group */
+  .pg-group { border-bottom: 1px solid #3f3830; }
+  .pg-group-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 20px; cursor: pointer;
+    background: transparent; border: none; width: 100%; text-align: left;
+    color: #e7e5e4; font-family: 'Sarabun', sans-serif;
+    font-size: 15px; font-weight: 700;
+  }
+  .pg-group-header:hover { background: rgba(255,255,255,.04); }
+  .pg-group-header input[type=checkbox] { width: 16px; height: 16px; accent-color: #d97706; flex-shrink: 0; cursor: pointer; }
+  .pg-group-header .pg-count { margin-left: auto; font-size: 12px; color: #78716c; }
+  .pg-slides { padding: 4px 12px 10px 36px; display: flex; flex-direction: column; gap: 2px; }
+  .pg-slide-row {
+    display: flex; align-items: center; gap: 9px;
+    padding: 5px 8px; border-radius: 6px; cursor: pointer;
+    font-size: 13.5px; color: #a8a29e;
+  }
+  .pg-slide-row:hover { background: rgba(255,255,255,.05); color: #e7e5e4; }
+  .pg-slide-row input[type=checkbox] { width: 14px; height: 14px; accent-color: #d97706; flex-shrink: 0; cursor: pointer; }
+  .pg-slide-row .pg-num { font-size: 11px; color: #57534e; min-width: 22px; text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* Footer */
+  #print-panel footer {
+    position: sticky; bottom: 0;
+    background: #292524; border-top: 1px solid #3f3830;
+    padding: 14px 20px; display: flex; flex-direction: column; gap: 10px;
+  }
+  #print-panel footer .sel-info { font-size: 13px; color: #78716c; text-align: center; }
+  #print-panel footer .sel-info strong { color: #fcd34d; }
+  #btn-do-print {
+    background: #d97706; color: #fff; border: none; border-radius: 10px;
+    font-family: 'Sarabun', sans-serif; font-size: 16px; font-weight: 800;
+    padding: 12px; cursor: pointer; width: 100%;
+  }
+  #btn-do-print:hover { background: #b45309; }
+  #btn-do-print:disabled { background: #44403c; color: #78716c; cursor: not-allowed; }
+  #btn-select-all, #btn-deselect-all {
+    flex: 1; padding: 7px; border-radius: 8px; border: 1px solid #3f3830;
+    background: transparent; color: #a8a29e; font-family: 'Sarabun', sans-serif;
+    font-size: 13px; cursor: pointer;
+  }
+  #btn-select-all:hover, #btn-deselect-all:hover { border-color: #d97706; color: #fcd34d; }
+
+  /* Hide print UI at print time */
+  @media print {
+    #print-fab, #print-overlay { display: none !important; }
+  }
+</style>
+
+<!-- Floating button -->
+<button id="print-fab" onclick="openPrintPanel()">🖨️ Export PDF</button>
+
+<!-- Panel overlay -->
+<div id="print-overlay" onclick="closePrintPanelIfBackdrop(event)">
+  <div id="print-panel">
+    <header>
+      <h2>🖨️ เลือก Slide → Export PDF</h2>
+      <button onclick="closePrintPanel()" title="ปิด">✕</button>
+    </header>
+    <div id="pg-body" style="flex:1;"></div>
+    <footer>
+      <div style="display:flex;gap:8px;">
+        <button id="btn-select-all" onclick="setAllSlides(true)">✅ เลือกทั้งหมด</button>
+        <button id="btn-deselect-all" onclick="setAllSlides(false)">☐ ยกเลิกทั้งหมด</button>
+      </div>
+      <div class="sel-info" id="pg-sel-info">เลือก <strong id="pg-count">–</strong> จาก <strong id="pg-total">–</strong> slides</div>
+      <button id="btn-do-print" onclick="doExportPdf()">🖨️ Save as PDF (เปิดหน้าต่าง Print)</button>
+    </footer>
+  </div>
+</div>
+
+<script>
+(function () {
+  /* ── Slide groups ── define which slides fall under which section ── */
+  const GROUPS = [
+    { label: '🎯 Intro & เกริ่นนำ', keys: ['01 Title','02 Agenda','NEW Big Picture Flow'] },
+    { label: '👤 Pre-Workshop', keys: ['03 Pre-Workshop','04 Workshop Pre','NEW โหวตเลือกโจทย์'] },
+    { label: '📚 Case Studies (เลือกใช้โจทย์เดียว)', keys: ['CASE 1','CASE 2','CASE 3','CASE 4','CASE 5'] },
+    { label: '⚙️ Setup: โฟลเดอร์ & Agent', keys: ['NEW ทำไมต้องฐาน','NEW สร้างโฟลเดอร์','NEW เปิด Agent'] },
+    { label: '🔍 Module 1 — สืบค้น', keys: ['05 Module 1','06 CORE','07 ภาพรวม','07b','07c','07d','07e','07f','09 Workshop Module 1'] },
+    { label: '🤖 Module 2 — คัดกรอง', keys: ['10 Module 2','11 M1','12 AI Companion','13 Workshop Module 2'] },
+    { label: '📓 Module 3 — NotebookLM', keys: ['14 Module 3','NEW Path A','NEW 5 Note','15 NotebookLM','16 Mindmap','17 Workshop Module 3'] },
+    { label: '✍️ Module 4 — งานเขียน', keys: ['18 Module 4','19 โครงสร้าง','20 Format','21 ตัวอย่าง','18b Agent','18c จำลอง','18d ผลลัพธ์','22 Workshop Module 4','NEW Canvas'] },
+    { label: '✅ Module 5 — Verification', keys: ['23 Module 5','24 Verification','25 Validation','26 Workshop Module 5'] },
+    { label: '🎓 บทส่งท้าย', keys: ['27 บทส่งท้าย'] },
+  ];
+
+  let slides = [];      // Array of { el, label, origSkip }
+  let checkboxMap = {}; // label → checkbox el
+
+  function matchGroup(label, keys) {
+    return keys.some(k => label.startsWith(k) || label.includes(k));
+  }
+
+  function buildPanel() {
+    const stage = document.querySelector('deck-stage');
+    if (!stage) return;
+    const sections = Array.from(stage.querySelectorAll('section[data-screen-label]'));
+
+    /* strip leading "NN " from label for display */
+    slides = sections.map(el => ({
+      el,
+      label: el.getAttribute('data-screen-label') || '',
+      origSkip: el.hasAttribute('data-deck-skip'),
+    }));
+
+    /* Build group map */
+    const grouped = GROUPS.map(g => ({ ...g, slides: [] }));
+    const ungrouped = { label: '📄 อื่นๆ', slides: [] };
+
+    slides.forEach((s, i) => {
+      const g = grouped.find(g => matchGroup(s.label, g.keys));
+      if (g) g.slides.push({ ...s, idx: i });
+      else ungrouped.slides.push({ ...s, idx: i });
+    });
+    if (ungrouped.slides.length) grouped.push(ungrouped);
+
+    const body = document.getElementById('pg-body');
+    body.innerHTML = '';
+    checkboxMap = {};
+
+    grouped.forEach(group => {
+      if (!group.slides.length) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'pg-group';
+
+      /* Group header with master checkbox */
+      const hdr = document.createElement('button');
+      hdr.className = 'pg-group-header';
+      const masterCb = document.createElement('input');
+      masterCb.type = 'checkbox';
+      masterCb.checked = true;
+      const lbl = document.createElement('span');
+      lbl.textContent = group.label;
+      const cnt = document.createElement('span');
+      cnt.className = 'pg-count';
+      cnt.textContent = group.slides.length + ' slides';
+      hdr.append(masterCb, lbl, cnt);
+
+      const slideList = document.createElement('div');
+      slideList.className = 'pg-slides';
+
+      const childCbs = [];
+
+      group.slides.forEach(s => {
+        const row = document.createElement('label');
+        row.className = 'pg-slide-row';
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = !s.origSkip;
+        const num = document.createElement('span');
+        num.className = 'pg-num';
+        num.textContent = '#' + (s.idx + 1);
+        const txt = document.createElement('span');
+        txt.textContent = s.label.replace(/^\d+\s+/, '');
+        row.append(cb, num, txt);
+        slideList.appendChild(row);
+        checkboxMap[s.label] = cb;
+        childCbs.push({ cb, s });
+        cb.addEventListener('change', () => { syncMaster(masterCb, childCbs); updateCount(); });
+      });
+
+      /* Master checkbox toggles all children */
+      masterCb.addEventListener('change', () => {
+        childCbs.forEach(({ cb }) => { cb.checked = masterCb.checked; });
+        updateCount();
+      });
+
+      function syncMaster(master, children) {
+        const all = children.every(({ cb }) => cb.checked);
+        const none = children.every(({ cb }) => !cb.checked);
+        master.indeterminate = !all && !none;
+        master.checked = all;
+      }
+
+      wrap.append(hdr, slideList);
+      body.appendChild(wrap);
+    });
+
+    updateCount();
+  }
+
+  function updateCount() {
+    let sel = 0;
+    Object.values(checkboxMap).forEach(cb => { if (cb.checked) sel++; });
+    document.getElementById('pg-count').textContent = sel;
+    document.getElementById('pg-total').textContent = slides.length;
+    document.getElementById('btn-do-print').disabled = sel === 0;
+  }
+
+  window.setAllSlides = function (on) {
+    Object.values(checkboxMap).forEach(cb => { cb.checked = on; });
+    /* sync master indeterminates */
+    document.querySelectorAll('#pg-body .pg-group-header input').forEach(m => {
+      m.checked = on; m.indeterminate = false;
+    });
+    updateCount();
+  };
+
+  window.openPrintPanel = function () {
+    buildPanel();
+    document.getElementById('print-overlay').classList.add('open');
+  };
+
+  window.closePrintPanel = function () {
+    document.getElementById('print-overlay').classList.remove('open');
+  };
+
+  window.closePrintPanelIfBackdrop = function (e) {
+    if (e.target === document.getElementById('print-overlay')) closePrintPanel();
+  };
+
+  window.doExportPdf = function () {
+    /* Apply skip state from checkboxes */
+    slides.forEach(s => {
+      const cb = checkboxMap[s.label];
+      const include = cb ? cb.checked : true;
+      if (include) s.el.removeAttribute('data-deck-skip');
+      else s.el.setAttribute('data-deck-skip', '');
+    });
+
+    closePrintPanel();
+
+    /* Small delay so DOM settles before browser opens print */
+    setTimeout(() => {
+      window.print();
+      /* After print dialog closes, restore original skip state */
+      const restore = () => {
+        slides.forEach(s => {
+          if (s.origSkip) s.el.setAttribute('data-deck-skip', '');
+          else s.el.removeAttribute('data-deck-skip');
+        });
+        window.removeEventListener('afterprint', restore);
+      };
+      window.addEventListener('afterprint', restore);
+    }, 80);
+  };
+})();
+</script>
+
 </body>
 </html>
