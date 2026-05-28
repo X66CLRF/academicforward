@@ -1,4 +1,4 @@
-# CORE Rules — มาตรฐานการเขียนวิจัย NSRU B.E. 2568 (APA 7th)
+# CORE Rules — มาตรฐานการเขียนวิจัย NSRU 2568 (APA 7th)
 
 > **ไฟล์นี้คือฐานความรู้กลาง (Knowledge Base)** ที่ทั้งกลุ่มผู้ใช้ใช้ร่วมกัน  
 > ไฟล์ role-specific (undergrad/grad/researcher) จะอ้างอิงกฎจากที่นี่  
