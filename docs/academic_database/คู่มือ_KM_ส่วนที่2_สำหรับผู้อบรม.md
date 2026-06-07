@@ -8,13 +8,15 @@
 
 | ฐานข้อมูล | 🇹🇭 แนวคิด/คำค้นภาษาไทย | 🇬🇧 คีย์เวิร์ดภาษาอังกฤษสำหรับคัดลอกไปค้นจริง (Copy-Pasteable) |
 | :--- | :--- | :--- |
-| 1\. IEL (IEEE/IET) | เครือข่าย 5G / สถาปัตยกรรม 6G / อินเทอร์เน็ตของสรรพสิ่ง | "5G network architecture" OR "6G wireless communication" OR "Internet of Things" |
+| 1\. IEL (IEEE/IET) | เครือข่าย 5G / มาตรฐาน IEEE / อินเทอร์เน็ตของสรรพสิ่ง | "5G network architecture" OR "Internet of Things" OR "IEEE standard" |
 | 2\. Springer Nature | เทคโนโลยีชีวภาพ / วิศวกรรมพันธุศาสตร์ / การตัดแต่งยีนด้วยคริสเปอร์ | "Biotechnology" OR "Genetic engineering" OR "CRISPR gene editing" |
 | 3\. ACS | วัสดุศาสตร์นาโน / สารประกอบเคมี / เคมีโพลิเมอร์ | "Nanomaterials" OR "Chemical compounds" OR "Polymer chemistry" |
-| 4\. Emerald Management | การเปลี่ยนผ่านดิจิทัล / การบริหารการเปลี่ยนแปลง / กลยุทธ์ผู้นำ | "Digital Transformation" OR "Change Management" OR "Leadership Strategy" |
+| 4\. Emerald Management | การเปลี่ยนผ่านดิจิทัล / การบริหารการเปลี่ยนแปลง / กลยุทธ์ผู้นำ | "Digital Transformation" AND "case study" OR "Change Management" AND "case study" (หรือใช้ Advanced Search → กรอง Document Type = **Case Study** เพื่อให้ได้กรณีศึกษาจริง) |
 | 5\. ScienceDirect | ปัญญาประดิษฐ์ / การเรียนรู้ของเครื่อง / โครงข่ายประสาทเทียม | "Artificial Intelligence" OR "Machine Learning" OR "Neural Networks" |
 | 6\. Academic Search Ultimate | วิทยาศาสตร์สิ่งแวดล้อม / การเปลี่ยนแปลงสภาพภูมิอากาศ / ความยั่งยืน | "Environmental Science" OR "Climate Change" OR "Sustainability" |
 | 7\. Engineering Source | วิศวกรรมยานยนต์ / ยานยนต์ไฟฟ้า / กระบวนการผลิตอุตสาหกรรม | "Automotive Engineering" OR "Electric Vehicles" OR "Manufacturing Process" |
-| 8\. ASTSU | ความปลอดภัยทางไซเบอร์ / ความปลอดภัยข้อมูล / ความปลอดภัยระบบคลาวด์ | "Cybersecurity" OR "Information Security" OR "Cloud Computing Security" |
-| 9\. EBSCO Discovery Service (EDS) | ระเบียบวิธีวิจัย / การวิเคราะห์ข้อมูล / การวิจัยเชิงคุณภาพ | "Research Methodology" OR "Data Analysis" OR "Qualitative Research" |
-| 10\. CU e-Book Library | การจัดการความรู้ / การพัฒนาองค์กร (ค้นหาตัวเล่มภาษาไทย) | "การจัดการความรู้" OR "Knowledge Management" OR "การบริหารองค์กร" |
+| 8\. ASTSU (Applied Science & Technology Source Ultimate) | ความปลอดภัยทางไซเบอร์ / ความปลอดภัยข้อมูล / ความปลอดภัยระบบคลาวด์ | "Cybersecurity" OR "Information Security" OR "Cloud Computing Security" |
+| 9\. EBSCO Discovery Service (EDS) | หัวข้อสหวิทยาการ / ค้นข้ามหลายฐานพร้อมกัน / เปรียบเทียบงานวิจัยหลายสาขา | "Health AND Education" OR "Technology AND Society" OR "Climate Change AND Policy" (ใช้ AND เชื่อมคำจาก 2 สาขาเพื่อดึงงานวิจัยสหวิทยาการ) |
+| 10\. CU e-Book Library | การจัดการเรียนการสอน / หลักการบริหารองค์กร / พื้นฐานวิชาเฉพาะสาขา | "การบริหารจัดการ" OR "หลักการตลาด" OR "เศรษฐศาสตร์เบื้องต้น" (ค้นด้วยชื่อวิชาหรือหัวข้อตำราที่ต้องการ) |
+| 11\. TDC (Thai Digital Collection) | นวัตกรรมดิจิทัล / สุขภาวะชุมชน / การเรียนรู้ตลอดชีวิต | "การเปลี่ยนผ่านดิจิทัล" OR "ปัญญาประดิษฐ์" OR "ความยั่งยืน" (ค้นด้วยหัวข้อที่สนใจเป็นภาษาไทย) |
+| 12\. ThaiJO (Thai Journals Online) | การศึกษาและนวัตกรรมการสอน / สาธารณสุขชุมชน / เทคโนโลยีและสังคม | "นวัตกรรมการศึกษา" OR "การจัดการเรียนรู้" OR "สุขภาวะ" (ค้นด้วยหัวข้อบทความที่ต้องการเป็นภาษาไทย) |
