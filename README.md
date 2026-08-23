@@ -1,12 +1,12 @@
 ﻿# 🤖 AcademicForward — AI Agent & Knowledge Framework Hub
 
-ศูนย์รวมสถาปัตยกรรม AI Agent, กฎมาตรฐานวิจัย (มรนว. 2568 + APA 7th Edition), ชุดผลิตตำราเรียน, และเครื่องมือสนับสนุนการศึกษา ยุคใหม่
+ศูนย์รวมสถาปัตยกรรม AI Agent, กฎมาตรฐานวิจัย (มรนว. 2568 + APA 7th Edition), ชุดผลิตตำราเรียน, และเครื่องมือสนับสนุนการศึกษายุคใหม่
 
 ---
 
 ## 🧭 แผนผังเส้นทางการใช้งาน (3 Main Tracks)
 
-```
+```text
 academicforward/
 ├── 🎓 Academic/              # สำหรับงานวิจัย วิทยานิพนธ์ และตำราเรียน
 ├── 🎮 Classroom/             # สำหรับอาจารย์ สื่อการสอน สไลด์ และเกมในห้องเรียน
@@ -19,23 +19,27 @@ academicforward/
 
 ออกแบบมาสำหรับนักศึกษา (ป.ตรี/โท/เอก), นักวิจัย และอาจารย์ผู้เขียนตำรา
 
-* ⚡ **[Academic/Zero-Bloat-Workflow.md](Academic/Zero-Bloat-Workflow.md)** — **(แนะนำสำหรับสายฟรี)** คู่มือทำงานวิจัยแบบไม่ให้ Context บวม เร็วขึ้น 5 เท่า และฟรี 100%
+* ⚡ **[zero-bloat-workflow.md](Academic/zero-bloat-workflow.md)** — **(แนะนำสำหรับสายฟรี)** คู่มือทำงานวิจัยแบบไม่ให้ Context บวม เร็วขึ้น 5 เท่า และฟรี 100%
 
 ### 🔬 Research Agents ([Academic/Research-Agents/](Academic/Research-Agents))
-* ⚡ **[CORE-Lite.md](Academic/Research-Agents/CORE-Lite.md)** — กฎเหล็ก 4 ข้อฉบับกระชับ (~800 Tokens) สำหรับใส่ System Prompt / โมเดลบัญชีฟรี
-* 📌 **[1.CORE-rules-full.md](Academic/Research-Agents/1.CORE-rules-full.md)** — กฎและมาตรฐานกลางฉบับเต็ม (มรนว. 2568 + APA 7th)
+* ⚡ **[core-rules-lite.md](Academic/Research-Agents/core-rules-lite.md)** — กฎเหล็ก 4 ข้อฉบับกระชับ (~800 Tokens) สำหรับใส่ System Prompt / โมเดลบัญชีฟรี
+* 📌 **[core-rules-full.md](Academic/Research-Agents/core-rules-full.md)** — กฎและมาตรฐานกลางฉบับเต็ม (มรนว. 2568 + APA 7th)
+* 🚀 **[quickstart-guide.md](Academic/Research-Agents/quickstart-guide.md)** — คู่มือเริ่มต้นใช้งานรวดเร็ว
+* 📖 **[architecture-guide.md](Academic/Research-Agents/architecture-guide.md)** — คู่มือสถาปัตยกรรมและรายละเอียดระบบ
 * 🎓 **[undergrad-agent.md](Academic/Research-Agents/undergrad-agent.md)** — เอเจนต์โค้ชสำหรับนักศึกษาปริญญาตรี (รายงาน 5 บท)
 * 🔬 **[grad-agent.md](Academic/Research-Agents/grad-agent.md)** — เอเจนต์ที่ปรึกษาบัณฑิตศึกษา (Thesis / IS / Proposal)
 * 🧪 **[researcher-agent.md](Academic/Research-Agents/researcher-agent.md)** — เอเจนต์ Peer Review ตรวจและวิเคราะห์ Manuscript
-* 📚 **[JIT-APA7-Formatter.md](Academic/Research-Agents/JIT-APA7-Formatter.md)** — ตัวจัดบรรณานุกรมอัตโนมัติตอนจบบท (Just-In-Time)
+* 📚 **[jit-apa7-formatter.md](Academic/Research-Agents/jit-apa7-formatter.md)** — ตัวจัดบรรณานุกรมอัตโนมัติตอนจบบท (Just-In-Time)
 
 ### 📚 Textbook Suite ([Academic/Textbook-Agent/](Academic/Textbook-Agent))
+* 📖 **[README.md](Academic/Textbook-Agent/README.md)** — ภาพรวมกระบวนการสร้างตำรา 4 ขั้นตอน
 * 🗂️ **[structure-agent.md](Academic/Textbook-Agent/structure-agent.md)** — ขั้น 0 วางโครงสร้างเล่ม ผลลัพธ์การเรียนรู้ (CLO) และคีย์เวิร์ด
 * ✍️ **[textbook-agent.md](Academic/Textbook-Agent/textbook-agent.md)** — ขั้น 3 เรียบเรียงเนื้อหาตำราทีละหัวข้อย่อยแบบร้อยแก้วต่อเนื่อง
 
 ### 🌐 Database Guides ([Academic/Database-Guides/](Academic/Database-Guides))
 * 🔍 **[academic-search-keywords.md](Academic/Database-Guides/academic-search-keywords.md)** — คลังสะพานเชื่อมคำค้นภาษาไทย ↔ คีย์เวิร์ดสากล
 * 💡 **[academic-database-prompts.md](Academic/Database-Guides/academic-database-prompts.md)** — ชุดคำสั่ง Prompt สำหรับสืบค้นฐานข้อมูลวิชาการ
+* 📄 **[research-synthesis-guide-2569.pdf](Academic/Database-Guides/research-synthesis-guide-2569.pdf)** — เอกสารสังเคราะห์และเรียบเรียงข้อมูลงานวิจัย
 
 ---
 
@@ -43,7 +47,7 @@ academicforward/
 
 เครื่องมือสำหรับอาจารย์และผู้สอนเพื่อสร้างสรรค์ห้องเรียนยุคใหม่
 
-* 🚀 **[interactive-slide-hub.md](Classroom/interactive-slide-hub.md)** — Suite รวมระบบสไลด์ 16:9 + กระดานเล่นเกมแบบปลดล็อกด่าน + ใบงาน A4 Print-ready และ Design Tokens ในไฟล์เดียว
+* 🚀 **[slide-hub-agent.md](Classroom/slide-hub-agent.md)** — Suite รวมระบบสไลด์ 16:9 + กระดานเล่นเกมแบบปลดล็อกด่าน + ใบงาน A4 Print-ready และ Design Tokens ในไฟล์เดียว
 * 📝 **[pr-agent.md](Classroom/pr-agent.md)** — เอเจนต์ช่วยร่างข้อความประชาสัมพันธ์ สื่อสาร และจัดกิจกรรม
 
 ---
@@ -65,4 +69,4 @@ academicforward/
 
 ---
 
-> *อัปเดตล่าสุด: สิงหาคม 2569 (v6.0 — Zero-Bloat Edition)*
+> *มาตรฐานการตั้งชื่อ: Kebab-Case Naming Standard (`lower-kebab-case`)*
