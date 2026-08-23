@@ -2,8 +2,8 @@
 
 ศูนย์รวมสถาปัตยกรรม AI Agent และเครื่องมือวิชาการ มรนว. 2568 (APA 7th Edition) จัดระเบียบตาม **Action (สิ่งที่ต้องการทำ)**
 
-[![Version](https://img.shields.io/badge/Version-v6.0_Action--Driven-blue.svg)](Writing/core-rules-lite.md)
-[![Standard](https://img.shields.io/badge/Standard-NSRU_2568_%7C_APA_7th-success.svg)](Writing/core-rules-full.md)
+[![Version](https://img.shields.io/badge/Version-v6.0_All--in--One-blue.svg)](Writing/README.md)
+[![Standard](https://img.shields.io/badge/Standard-NSRU_2568_%7C_APA_7th-success.svg)](Writing/0-core-rules-full.md)
 [![Updated](https://img.shields.io/badge/Updated-August_2026-orange.svg)](#-ตารางเวอร์ชันและประวัติการปรับปรุง-master-release-matrix)
 
 ---
@@ -12,7 +12,7 @@
 
 ```text
 academicforward/
-├── ✍️ Writing/       # สกิลสำหรับ "เขียน" (วิจัย 5 บท, วิทยานิพนธ์, Manuscript, ตำรา, บรรณานุกรม)
+├── ✍️ Writing/       # สกิลสำหรับ "เขียน" (เลข 1-5 เลือกไฟล์เดียวจบตามระดับ ป.ตรี/โท-เอก/ตำรา)
 ├── 🎨 Designing/     # สกิลสำหรับ "ออกแบบ" (สไลด์การสอน, โครงสร้างตำรา, ไดอะแกรม Flowchart)
 ├── 🔍 Searching/     # สกิลสำหรับ "สืบค้น" (คลังคำค้นหาฐานข้อมูลไทย-เทศ, พรอมท์สืบค้น)
 ├── 📢 Publishing/    # สกิลสำหรับ "เผยแพร่ & โพสต์" (แต่งโพสต์ Facebook/Social ARITC NSRU)
@@ -25,13 +25,12 @@ academicforward/
 
 | Action | ไฟล์ / ชุดเครื่องมือ | เวอร์ชัน | หน้าที่หลัก |
 | :--- | :--- | :---: | :--- |
-| ✍️ **Writing** | [Writing/core-rules-lite.md](Writing/core-rules-lite.md) | `v1.0` | ⚡ กฎเหล็กฉบับเบาหวิว (~800 Tokens) สำหรับใส่แชทฟรี |
-| ✍️ **Writing** | [Writing/core-rules-full.md](Writing/core-rules-full.md) | `v5.6` | 📌 กฎมาตรฐานกลางฉบับเต็ม มรนว. 2568 (APA 7th) |
-| ✍️ **Writing** | [Writing/undergrad-research-agent.md](Writing/undergrad-research-agent.md) | `v5.6` | 🎓 เขียนรายงานวิจัย ป.ตรี (5 บท) |
-| ✍️ **Writing** | [Writing/grad-research-agent.md](Writing/grad-research-agent.md) | `v5.6` | 🔬 เขียนวิทยานิพนธ์ / IS / Proposal ป.โท-เอก |
-| ✍️ **Writing** | [Writing/researcher-manuscript-agent.md](Writing/researcher-manuscript-agent.md) | `v5.6` | 🧪 ตรวจและเขียน Manuscript ตีพิมพ์วารสาร |
-| ✍️ **Writing** | [Writing/textbook-writer-agent.md](Writing/textbook-writer-agent.md) | `v5.8` | ✍️ เขียนเนื้อหาตำราเรียนแบบร้อยแก้วต่อเนื่อง |
-| ✍️ **Writing** | [Writing/jit-apa7-formatter.md](Writing/jit-apa7-formatter.md) | `v1.0` | 📚 คำสั่งจัดฟอร์แมตบรรณานุกรมอัตโนมัติ (Just-In-Time) |
+| ✍️ **Writing** | [Writing/1-undergrad-research.md](Writing/1-undergrad-research.md) | `v6.0` | 🎓 **[ป.ตรี]** เขียนรายงานวิจัย 5 บท (All-in-One ในไฟล์เดียว) |
+| ✍️ **Writing** | [Writing/2-grad-research.md](Writing/2-grad-research.md) | `v6.0` | 🔬 **[ป.โท/เอก]** ผู้ช่วยทำ Thesis / IS / Proposal (All-in-One) |
+| ✍️ **Writing** | [Writing/3-researcher-manuscript.md](Writing/3-researcher-manuscript.md) | `v6.0` | 🧪 **[นักวิจัย]** ตรวจและเขียน Manuscript ตีพิมพ์วารสาร |
+| ✍️ **Writing** | [Writing/4-textbook-writer.md](Writing/4-textbook-writer.md) | `v6.0` | ✍️ **[เขียนตำรา]** เขียนเนื้อหาตำราเรียนแบบร้อยแก้วต่อเนื่อง |
+| ✍️ **Writing** | [Writing/5-apa7-formatter.md](Writing/5-apa7-formatter.md) | `v1.0` | 📚 **[จบบท]** คำสั่งจัดฟอร์แมตบรรณานุกรมอัตโนมัติ |
+| ✍️ **Writing** | [Writing/0-core-rules-full.md](Writing/0-core-rules-full.md) | `v5.6` | 📌 **[คู่มือเต็ม]** มาตรฐานกลาง มรนว. 2568 (APA 7th) |
 | 🎨 **Designing** | [Designing/slide-hub-agent.md](Designing/slide-hub-agent.md) | `v2.0` | 🚀 ออกแบบสไลด์ 16:9 + บอร์ดเกม + ใบงาน A4 |
 | 🎨 **Designing** | [Designing/textbook-structure-agent.md](Designing/textbook-structure-agent.md) | `v1.6` | 🗂️ ออกแบบโครงสร้างเล่มตำรา & CLO & คีย์เวิร์ด |
 | 🎨 **Designing** | [Designing/flowchart-diagram-agent.md](Designing/flowchart-diagram-agent.md) | `v1.0` | 📊 ออกแบบ Flowchart, Diagram และ Mermaid Architecture |
@@ -44,4 +43,4 @@ academicforward/
 
 ---
 
-> *อัปเดตล่าสุด: 23 สิงหาคม 2569 | มาตรฐาน: Flat Action-Oriented Architecture (`.md` Standard)*
+> *อัปเดตล่าสุด: 23 สิงหาคม 2569 | มาตรฐาน: Numbered All-in-One Architecture*
