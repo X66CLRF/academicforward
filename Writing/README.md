@@ -6,12 +6,12 @@
 
 ## 📂 สารบัญไฟล์ชุดเขียน (เลือกไฟล์เดียวจบตามระดับของคุณ)
 
-| เลขนำหน้า | ไฟล์ | เหมาะสำหรับ | สิ่งที่รวมอยู่ในไฟล์ |
-| :---: | :--- | :--- | :--- |
-| **1** | 🎓 **[1-undergrad-research.md](1-undergrad-research.md)** | นักศึกษา ป.ตรี | กฎ มรนว. + เมนูลัดบท 2, 4–5 + บรรณานุกรมในตัว |
-| **2** | 🔬 **[2-grad-research.md](2-grad-research.md)** | นักศึกษา ป.โท / ป.เอก | กฎ มรนว. + ผู้ช่วยทำ Thesis/IS + บรรณานุกรมในตัว |
-| **3** | 🧪 **[3-researcher-manuscript.md](3-researcher-manuscript.md)** | อาจารย์ / นักวิจัย | ตรวจ Manuscript TCI/Scopus + Severity Rubric + IMRaD |
-| **4** | ✍️ **[4-textbook-writer.md](4-textbook-writer.md)** | คณาจารย์ผู้เขียนตำรา | เขียนตำรา + โครงภาพเวกเตอร์ + คุมเลนส์ตำราชุด + ภาคผนวก ก |
+| เลขนำหน้า | ไฟล์ | เหมาะสำหรับ | สิ่งที่รวมอยู่ในไฟล์ | 📥 ดาวน์โหลดตรง |
+| :---: | :--- | :--- | :--- | :---: |
+| **1** | 🎓 **[1-undergrad-research.md](1-undergrad-research.md)** | นักศึกษา ป.ตรี | กฎ มรนว. + บล็อกผู้แต่ง + โครง 4 ส่วน + เมนูลัดบท 2, 4–5 + บรรณานุกรมในตัว | [📥 ดาวน์โหลด .md](https://github.com/X66CLRF/academicforward/releases/download/v6.0/1-undergrad-research.md) |
+| **2** | 🔬 **[2-grad-research.md](2-grad-research.md)** | นักศึกษา ป.โท / ป.เอก | กฎ มรนว. + ผู้ช่วยทำ Thesis/IS + Thematic Synthesis + แจกคีย์เวิร์ด Scopus/TCI | [📥 ดาวน์โหลด .md](https://github.com/X66CLRF/academicforward/releases/download/v6.0/2-grad-research.md) |
+| **3** | 🧪 **[3-researcher-manuscript.md](3-researcher-manuscript.md)** | อาจารย์ / นักวิจัย | ตรวจ Manuscript (🔴/🟡/🟢) + ยกร่าง IMRaD + Synthesis Matrix สกัด Gap | [📥 ดาวน์โหลด .md](https://github.com/X66CLRF/academicforward/releases/download/v6.0/3-researcher-manuscript.md) |
+| **4** | ✍️ **[4-textbook-writer.md](4-textbook-writer.md)** | คณาจารย์ผู้เขียนตำรา | เขียนตำรา + โครงภาพเวกเตอร์ + คุมเลนส์ตำราชุด + ภาคผนวก ก + ดัชนีคำค้น | [📥 ดาวน์โหลด .md](https://github.com/X66CLRF/academicforward/releases/download/v6.0/4-textbook-writer.md) |
 
 ---
 
