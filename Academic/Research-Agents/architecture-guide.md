@@ -10,9 +10,9 @@
 | ไฟล์ | บทบาท | ครอบคลุม |
 |------|-------|---------|
 | `core-rules-full.md` | 📚 ฐานความรู้กลาง | มาตรฐาน มรนว. 2568 + APA 7th — ต้องแนบทุกครั้ง |
-| `undergrad-agent.md` | 🎓 นักศึกษา ป.ตรี | งานวิจัย · สื่อการเรียนรู้ · คู่มือ (**ไม่มีโหมดตำรา** — นอกขอบเขต ป.ตรี) |
-| `grad-agent.md` | 🎓🎓 นักศึกษา ป.โท/เอก | วิทยานิพนธ์ · IS · สื่อฝึกอบรม · SOP · ตำรา |
-| `researcher-agent.md` | 🔬 นักวิจัย/อาจารย์ | Manuscript · Course Design · นโยบาย · Lab Manual · ตำรา |
+| `undergrad-research-agent.md` | 🎓 นักศึกษา ป.ตรี | งานวิจัย · สื่อการเรียนรู้ · คู่มือ (**ไม่มีโหมดตำรา** — นอกขอบเขต ป.ตรี) |
+| `grad-research-agent.md` | 🎓🎓 นักศึกษา ป.โท/เอก | วิทยานิพนธ์ · IS · สื่อฝึกอบรม · SOP · ตำรา |
+| `researcher-manuscript-agent.md` | 🔬 นักวิจัย/อาจารย์ | Manuscript · Course Design · นโยบาย · Lab Manual · ตำรา |
 | `../Textbook-Agent/textbook-agent.md` | 📖 เขียนตำราฉบับเต็ม (ทุก role) — **ย้ายไปชุด Textbook-Agent แล้ว** | ทีละหัวข้อย่อย · ระบบภาพ+Prompt Log · Bibliography_Log ✓/⚠ · บัตรสถานะข้าม session — พัฒนาจาก C-000 v3.3 |
 | `quickstart-guide.md` | 🌟 คู่มือผู้เรียน | อ่าน 5 นาที: ทำอะไรได้ ได้ประโยชน์อะไร เริ่มยังไง — **แจกคู่กับ bundle เสมอ** |
 | `3.README.md` | 📖 คู่มือนี้ (ผู้ดูแลชุด) | โครงสร้างระบบ + เวอร์ชัน + แจกจ่าย + เทส |
@@ -87,16 +87,16 @@
 
 | คุณคือ... | งานที่ต้องการ | ใช้ไฟล์นี้ |
 |-----------|-------------|-----------|
-| นักศึกษา ป.ตรี | รายงานวิจัย / ปริญญานิพนธ์ | `undergrad-agent.md` |
-| นักศึกษา ป.ตรี | สื่อการสอน / worksheet / quiz | `undergrad-agent.md` |
-| นักศึกษา ป.ตรี | คู่มือปฏิบัติงาน (โครงการ/ชมรม) | `undergrad-agent.md` |
-| นักศึกษา ป.โท/เอก | วิทยานิพนธ์ / IS / Proposal | `grad-agent.md` |
-| นักศึกษา ป.โท/เอก | สื่อฝึกอบรม / E-Learning script | `grad-agent.md` |
-| นักศึกษา ป.โท/เอก | SOP / Research Protocol | `grad-agent.md` |
-| อาจารย์ / นักวิจัย | Manuscript / Journal article | `researcher-agent.md` |
-| อาจารย์ / นักวิจัย | Course Design / Backward Design | `researcher-agent.md` |
-| อาจารย์ / นักวิจัย | นโยบาย / คู่มือสถาบัน | `researcher-agent.md` |
-| อาจารย์ / นักวิจัย | ตำราการสอนระดับบัณฑิต | `researcher-agent.md` |
+| นักศึกษา ป.ตรี | รายงานวิจัย / ปริญญานิพนธ์ | `undergrad-research-agent.md` |
+| นักศึกษา ป.ตรี | สื่อการสอน / worksheet / quiz | `undergrad-research-agent.md` |
+| นักศึกษา ป.ตรี | คู่มือปฏิบัติงาน (โครงการ/ชมรม) | `undergrad-research-agent.md` |
+| นักศึกษา ป.โท/เอก | วิทยานิพนธ์ / IS / Proposal | `grad-research-agent.md` |
+| นักศึกษา ป.โท/เอก | สื่อฝึกอบรม / E-Learning script | `grad-research-agent.md` |
+| นักศึกษา ป.โท/เอก | SOP / Research Protocol | `grad-research-agent.md` |
+| อาจารย์ / นักวิจัย | Manuscript / Journal article | `researcher-manuscript-agent.md` |
+| อาจารย์ / นักวิจัย | Course Design / Backward Design | `researcher-manuscript-agent.md` |
+| อาจารย์ / นักวิจัย | นโยบาย / คู่มือสถาบัน | `researcher-manuscript-agent.md` |
+| อาจารย์ / นักวิจัย | ตำราการสอนระดับบัณฑิต | `researcher-manuscript-agent.md` |
 
 ### ⚠️ ข้อห้าม
 
@@ -110,7 +110,7 @@
 
 เมื่อคุณเปิด chat ด้วย agent ที่ถูกต้อง AI จะแสดงเมนูให้เลือกโหมด (grad/researcher = 4 โหมด, undergrad = 3 โหมด):
 
-### undergrad-agent.md
+### undergrad-research-agent.md
 
 | โหมด | ใช้สำหรับ | ตัวอย่างผลลัพธ์ |
 |------|---------|--------------|
@@ -120,7 +120,7 @@
 
 > ℹ️ ป.ตรี มี **3 โหมด** — ไม่มีโหมดตำราการสอน (นอกขอบเขตระดับ ป.ตรี)
 
-### grad-agent.md
+### grad-research-agent.md
 
 | โหมด | ใช้สำหรับ | ตัวอย่างผลลัพธ์ |
 |------|---------|--------------|
@@ -129,7 +129,7 @@
 | 📋 **คู่มือวิจัย** | SOP, Research Protocol | SOP พร้อม version control table |
 | 📖 **ตำราวิชาการ** | ตำราระดับบัณฑิต | บทพร้อม Bloom's Taxonomy table |
 
-### researcher-agent.md
+### researcher-manuscript-agent.md
 
 | โหมด | ใช้สำหรับ | ตัวอย่างผลลัพธ์ |
 |------|---------|--------------|
@@ -267,7 +267,7 @@ CORE-rules.md ประกอบด้วย:
 ```
 ┌─ สมองของผู้ช่วย — ฝังใน Gemini "Gem" ครั้งเดียว ─┐   ┌─ คลังของนักศึกษา (โตขึ้นเรื่อย ๆ) ─┐
 │ core-rules-full.md   = กฎ มรนว.+APA กลาง            │   │ Google Drive   = ต้นฉบับ PDF ถาวร   │
-│ grad-agent.md     = บทบาท+ขั้นตอนทำงาน           │ + │ NotebookLM     = ที่วิเคราะห์รายหัวข้อ │
+│ grad-research-agent.md     = บทบาท+ขั้นตอนทำงาน           │ + │ NotebookLM     = ที่วิเคราะห์รายหัวข้อ │
 │ (วางใน Gem Instructions → save → จบ)             │   │ (แนบเข้าแชทรายหัวข้อที่กำลังทำ)      │
 └─────────────────────────────────────────────┘   └──────────────────────────────────────┘
         ↓ นักศึกษาเปิดแชทจาก Gem = สมองติดมาเอง + เขียนจากเอกสารจริงในคลังเท่านั้น
@@ -306,17 +306,17 @@ CORE-rules.md ประกอบด้วย:
 ```
 📦 bundle-undergrad.zip
 ├── core-rules-full.md
-├── undergrad-agent.md
+├── undergrad-research-agent.md
 └── quickstart-guide.md        ← คู่มือผู้เรียน (อ่านก่อนใช้)
 
 📦 bundle-grad.zip
 ├── core-rules-full.md
-├── grad-agent.md
+├── grad-research-agent.md
 └── quickstart-guide.md
 
 📦 bundle-researcher.zip
 ├── core-rules-full.md
-├── researcher-agent.md
+├── researcher-manuscript-agent.md
 └── quickstart-guide.md
 ```
 
@@ -327,9 +327,9 @@ CORE-rules.md ประกอบด้วย:
 ```
 📦 bundle-full.zip
 ├── core-rules-full.md
-├── undergrad-agent.md
-├── grad-agent.md
-├── researcher-agent.md
+├── undergrad-research-agent.md
+├── grad-research-agent.md
+├── researcher-manuscript-agent.md
 ├── ../Textbook-Agent/textbook-agent.md   (แยกชุดแล้ว)
 ├── quickstart-guide.md
 └── 3.README.md
@@ -477,4 +477,5 @@ CORE-rules.md ประกอบด้วย:
 **สำหรับ**: ห้องสมุด สำนักวิทยบริการและเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏนครสวรรค์ (มรนว.)  
 **เวอร์ชัน**: v5.6 — B.E. 2568  
 **License**: ใช้ภายในมหาวิทยาลัย, แก้ไขได้ตามต้องการ
+
 

@@ -134,8 +134,8 @@ AI ที่ถูกตั้งค่าให้รู้จัก **กฎ�
 ไฟล์ที่ 2: [ระดับคุณ]-agent.md  ← ป.ตรี = undergrad / ป.โท-เอก = grad / อาจารย์ = researcher
 ```
 
-1. **Gemini (Gem) — วิธีหลักของ workshop นี้**: เปิด Gemini → เมนู **Gems** → **New Gem** → ตั้งชื่อ (เช่น "ผู้ช่วยวิทยานิพนธ์ มรนว.") → ในช่อง **Instructions** วางเนื้อหา `core-rules-full.md (หรือ core-rules-lite.md)` ก่อน ตามด้วย `grad-agent.md` → Save
-   - **ช่องวางไม่พอ** (CORE เป็นไฟล์ยาว) → เก็บ `grad-agent.md` ไว้ในช่อง Instructions แล้วแนบ `core-rules-full.md (หรือ core-rules-lite.md)` เป็น **Knowledge** ของ Gem — ห้ามลบกฎบางส่วนออกเพื่อให้พอ
+1. **Gemini (Gem) — วิธีหลักของ workshop นี้**: เปิด Gemini → เมนู **Gems** → **New Gem** → ตั้งชื่อ (เช่น "ผู้ช่วยวิทยานิพนธ์ มรนว.") → ในช่อง **Instructions** วางเนื้อหา `core-rules-full.md (หรือ core-rules-lite.md)` ก่อน ตามด้วย `grad-research-agent.md` → Save
+   - **ช่องวางไม่พอ** (CORE เป็นไฟล์ยาว) → เก็บ `grad-research-agent.md` ไว้ในช่อง Instructions แล้วแนบ `core-rules-full.md (หรือ core-rules-lite.md)` เป็น **Knowledge** ของ Gem — ห้ามลบกฎบางส่วนออกเพื่อให้พอ
    - **ทำครั้งเดียว ใช้ได้ตลอด** — ทุกแชทใหม่ที่เปิดจาก Gem ตัวนี้ สมองติดมาอัตโนมัติ ไม่ต้องแนบไฟล์กฎซ้ำอีกเลย (ต่างจากแชทธรรมดาที่ต้องวางไฟล์ทุกครั้ง ลืมวาง = AI ไม่รู้กฎ)
    - เมื่อกฎอัปเดตเวอร์ชันใหม่ → กลับไปแก้ Instructions ของ Gem ที่เดียว
    - หรือ **Claude.ai**: สร้าง Project → Set project instructions → วาง 2 ไฟล์แบบเดียวกัน / **ChatGPT**: Create a GPT → วางใน Instructions
@@ -152,4 +152,5 @@ AI ที่ถูกตั้งค่าให้รู้จัก **กฎ�
 ---
 
 **ชุดเอกสาร**: ใช้คู่กับ `core-rules-full.md (หรือ core-rules-lite.md)` + agent ตามระดับของคุณ | รายละเอียดระบบ: `architecture-guide.md`
+
 

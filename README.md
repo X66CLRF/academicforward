@@ -8,9 +8,9 @@
 
 ```text
 academicforward/
-├── 🎓 Academic/              # สำหรับงานวิจัย วิทยานิพนธ์ และตำราเรียน
-├── 🎮 Classroom/             # สำหรับอาจารย์ สื่อการสอน สไลด์ และเกมในห้องเรียน
-└── 🛠️ Dev-Tools/              # สำหรับนักพัฒนา โค้ด สถาปัตยกรรม และความปลอดภัย
+├── 🎓 Academic/              # สำหรับงานวิจัย วิทยานิพนธ์ ตำราเรียน และฐานข้อมูล
+├── 🎮 Classroom/             # สำหรับอาจารย์ สื่อการสอน สไลด์ และโพสต์โซเชียลหอสมุด
+└── 🛠️ Dev-Tools/              # สำหรับนักพัฒนา โค้ด สถาปัตยกรรม โปรไฟล์ และความปลอดภัย
 ```
 
 ---
@@ -26,15 +26,15 @@ academicforward/
 * 📌 **[core-rules-full.md](Academic/Research-Agents/core-rules-full.md)** — กฎและมาตรฐานกลางฉบับเต็ม (มรนว. 2568 + APA 7th)
 * 🚀 **[quickstart-guide.md](Academic/Research-Agents/quickstart-guide.md)** — คู่มือเริ่มต้นใช้งานรวดเร็ว
 * 📖 **[architecture-guide.md](Academic/Research-Agents/architecture-guide.md)** — คู่มือสถาปัตยกรรมและรายละเอียดระบบ
-* 🎓 **[undergrad-agent.md](Academic/Research-Agents/undergrad-agent.md)** — เอเจนต์โค้ชสำหรับนักศึกษาปริญญาตรี (รายงาน 5 บท)
-* 🔬 **[grad-agent.md](Academic/Research-Agents/grad-agent.md)** — เอเจนต์ที่ปรึกษาบัณฑิตศึกษา (Thesis / IS / Proposal)
-* 🧪 **[researcher-agent.md](Academic/Research-Agents/researcher-agent.md)** — เอเจนต์ Peer Review ตรวจและวิเคราะห์ Manuscript
+* 🎓 **[undergrad-research-agent.md](Academic/Research-Agents/undergrad-research-agent.md)** — เอเจนต์โค้ชสำหรับนักศึกษาปริญญาตรี (รายงานวิจัย 5 บท)
+* 🔬 **[grad-research-agent.md](Academic/Research-Agents/grad-research-agent.md)** — เอเจนต์ที่ปรึกษาบัณฑิตศึกษา (Thesis / IS / Proposal)
+* 🧪 **[researcher-manuscript-agent.md](Academic/Research-Agents/researcher-manuscript-agent.md)** — เอเจนต์ Peer Review ตรวจและวิเคราะห์ Manuscript วารสาร
 * 📚 **[jit-apa7-formatter.md](Academic/Research-Agents/jit-apa7-formatter.md)** — ตัวจัดบรรณานุกรมอัตโนมัติตอนจบบท (Just-In-Time)
 
 ### 📚 Textbook Suite ([Academic/Textbook-Agent/](Academic/Textbook-Agent))
 * 📖 **[README.md](Academic/Textbook-Agent/README.md)** — ภาพรวมกระบวนการสร้างตำรา 4 ขั้นตอน
-* 🗂️ **[structure-agent.md](Academic/Textbook-Agent/structure-agent.md)** — ขั้น 0 วางโครงสร้างเล่ม ผลลัพธ์การเรียนรู้ (CLO) และคีย์เวิร์ด
-* ✍️ **[textbook-agent.md](Academic/Textbook-Agent/textbook-agent.md)** — ขั้น 3 เรียบเรียงเนื้อหาตำราทีละหัวข้อย่อยแบบร้อยแก้วต่อเนื่อง
+* 🗂️ **[textbook-structure-agent.md](Academic/Textbook-Agent/textbook-structure-agent.md)** — ขั้น 0 วางโครงสร้างเล่ม ผลลัพธ์การเรียนรู้ (CLO) และคีย์เวิร์ด
+* ✍️ **[textbook-writer-agent.md](Academic/Textbook-Agent/textbook-writer-agent.md)** — ขั้น 3 เรียบเรียงเนื้อหาตำราทีละหัวข้อย่อยแบบร้อยแก้วต่อเนื่อง
 
 ### 🌐 Database Guides ([Academic/Database-Guides/](Academic/Database-Guides))
 * 🔍 **[academic-search-keywords.md](Academic/Database-Guides/academic-search-keywords.md)** — คลังสะพานเชื่อมคำค้นภาษาไทย ↔ คีย์เวิร์ดสากล
@@ -45,20 +45,20 @@ academicforward/
 
 ## 📂 2. 🎮 Classroom Track ([Classroom/](Classroom))
 
-เครื่องมือสำหรับอาจารย์และผู้สอนเพื่อสร้างสรรค์ห้องเรียนยุคใหม่
+เครื่องมือสำหรับอาจารย์และงานสื่อสารองค์กร/หอสมุด
 
 * 🚀 **[slide-hub-agent.md](Classroom/slide-hub-agent.md)** — Suite รวมระบบสไลด์ 16:9 + กระดานเล่นเกมแบบปลดล็อกด่าน + ใบงาน A4 Print-ready และ Design Tokens ในไฟล์เดียว
-* 📝 **[pr-agent.md](Classroom/pr-agent.md)** — เอเจนต์ช่วยร่างข้อความประชาสัมพันธ์ สื่อสาร และจัดกิจกรรม
+* 📱 **[arit-social-post-agent.md](Classroom/arit-social-post-agent.md)** — เอเจนต์ร่างโพสต์ Facebook/Social Media ของสำนักวิทยบริการและเทคโนโลยีสารสนเทศ (ARIT NSRU / หอสมุดกลาง)
 
 ---
 
 ## 📂 3. 🛠️ Dev & Utility Track ([Dev-Tools/](Dev-Tools))
 
-เครื่องมือและสคริปต์อัตโนมัติสำหรับนักพัฒนาและผู้ดูแลระบบ
+เครื่องมือ สคริปต์อัตโนมัติ และแม่แบบบริบทการทำงานส่วนตัว
 
-* 💻 **[code-agent.md](Dev-Tools/code-agent.md)** — ผู้เชี่ยวชาญการเขียนโค้ด วิเคราะห์ระบบ และแก้ไขบั๊ก
-* 📊 **[flowchart-agent.md](Dev-Tools/flowchart-agent.md)** — ออกแบบ Diagram, Flowchart และ Architecture
-* 👤 **[general-profile-agent.md](Dev-Tools/general-profile-agent.md)** — โปรไฟล์เอเจนต์สำหรับตอบคำถามทั่วไป
+* 👤 **[user-master-profile.md](Dev-Tools/user-master-profile.md)** — แม่แบบบันทึกโปรไฟล์ ความชอบ และสมองสำรองคุมโครงการส่วนตัว
+* 💻 **[code-developer-agent.md](Dev-Tools/code-developer-agent.md)** — ผู้เชี่ยวชาญการเขียนโค้ด วิเคราะห์ระบบ และแก้ไขบั๊ก
+* 📊 **[flowchart-diagram-agent.md](Dev-Tools/flowchart-diagram-agent.md)** — ออกแบบ Diagram, Flowchart และ Architecture
 * 🛡️ **[wp-security-audit-guide.md](Dev-Tools/wp-security-audit-guide.md)** — คู่มือตรวจสอบความปลอดภัย WordPress
 * 🔒 **[skills/gdrive-permission-restriction](Dev-Tools/skills/gdrive-permission-restriction)** — Antigravity Skill ควบคุมสิทธิ์การดาวน์โหลดไฟล์ใน Google Drive
 
@@ -69,4 +69,4 @@ academicforward/
 
 ---
 
-> *มาตรฐานการตั้งชื่อ: Kebab-Case Naming Standard (`lower-kebab-case`)*
+> *มาตรฐานการตั้งชื่อ: Precise Kebab-Case Standard (`[domain]-[role/task]-[type].md`)*
