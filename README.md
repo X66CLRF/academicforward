@@ -2,7 +2,7 @@
 
 ศูนย์รวมสถาปัตยกรรม AI Agent และเครื่องมือส่งเสริมการศึกษา งานวิจัย และการสนับสนุนการทำงานวิชาการ (มรนว. 2568 / APA 7th Edition)
 
-[![Version](https://img.shields.io/badge/Version-v6.0_Action--Driven-blue.svg)](Writing/README.md)
+[![Version](https://img.shields.io/badge/Version-v6.0_Universal-blue.svg)](Writing/README.md)
 [![Standard](https://img.shields.io/badge/Standard-NSRU_2568_%7C_APA_7th-success.svg)](Writing/0-core-rules-full.md)
 [![Updated](https://img.shields.io/badge/Updated-August_2026-orange.svg)](#-ตารางเวอร์ชันและประวัติการปรับปรุง-master-release-matrix)
 
@@ -16,7 +16,7 @@ academicforward/
 ├── 🎨 Designing/     # สกิลสำหรับ "ออกแบบ" (สไลด์การสอน, โครงสร้างตำรา, ไดอะแกรม Flowchart)
 ├── 🔍 Searching/     # สกิลสำหรับ "สืบค้น" (คลังคำค้นหาฐานข้อมูลไทย-เทศ, พรอมท์สืบค้น)
 ├── 📢 Publishing/    # สกิลสำหรับ "เผยแพร่ & โพสต์" (แต่งโพสต์ Facebook/Social ARITC NSRU)
-└── 💻 Automation/    # สกิลสำหรับ "จัดการระบบ & สนับสนุนงาน" (สคริปต์ GDrive, โปรไฟล์สมองสำรอง)
+└── 💻 Automation/    # สกิลสำหรับ "จัดการระบบ & สนับสนุนงาน" (สคริปต์ล็อกสิทธิ์ GDrive แบบ Batch)
 ```
 
 ---
@@ -36,9 +36,8 @@ academicforward/
 | 🔍 **Searching** | [Searching/academic-search-keywords.md](Searching/academic-search-keywords.md) | `v2.0` | 🔍 **นักศึกษา / นักวิจัย** — คลังสะพานคำค้นภาษาไทย ↔ อังกฤษ 12 ฐานข้อมูล |
 | 🔍 **Searching** | [Searching/academic-database-prompts.md](Searching/academic-database-prompts.md) | `v2.0` | 💡 **นักศึกษา / อาจารย์** — ชุดคำสั่ง Prompt สกัดความรู้และสรุปเปเปอร์ |
 | 📢 **Publishing** | [Publishing/aritc-social-post-agent.md](Publishing/aritc-social-post-agent.md) | `v2.0` | 📱 **เจ้าหน้าที่ / ประชาสัมพันธ์** — แต่งโพสต์ Facebook สื่อสารองค์กร |
-| 💻 **Automation** | [Automation/user-master-profile.md](Automation/user-master-profile.md) | `v2.0` | 👤 **ทุกกลุ่ม** — แม่แบบบันทึกโปรไฟล์ & สมองสำรองคุมโครงการ |
 | 🔒 **Automation** | [Automation/gdrive-permission-agent.md](Automation/gdrive-permission-agent.md) | `v2.0` | 🔒 **อาจารย์ / เจ้าหน้าที่** — สคริปต์ควบคุมสิทธิ์ดาวน์โหลดไฟล์ Google Drive |
 
 ---
 
-> *อัปเดตล่าสุด: 23 สิงหาคม 2569 | มาตรฐาน: Universal AcademicForward Framework*
+> *อัปเดตล่าสุด: 23 สิงหาคม 2569 | มาตรฐาน: Universal AcademicForward Framework (100% Audited)*
