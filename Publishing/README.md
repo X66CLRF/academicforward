@@ -1,2 +1,11 @@
-﻿# 📢 Publishing Suite — งานสื่อสารและประชาสัมพันธ์องค์กร
-- 📱 **[aritc-social-post-agent.md](aritc-social-post-agent.md)** — เอเจนต์ร่างโพสต์ Facebook/Social Media ของสำนักวิทยบริการและเทคโนโลยีสารสนเทศ (ARITC NSRU / หอสมุดกลาง)
+﻿# 📢 Publishing Suite — เครื่องมือสื่อสารองค์กร & ประชาสัมพันธ์ (PR Agent)
+
+> **สำหรับ**: เจ้าหน้าที่ประชาสัมพันธ์ และบุคลากรสำนักวิทยบริการและเทคโนโลยีสารสนเทศ (ARITC NSRU)
+
+---
+
+## 📂 สารบัญไฟล์ในหมวดนี้:
+
+| ไฟล์ | ชื่อเรียก | ฟังก์ชันหลัก |
+| :--- | :--- | :--- |
+| 📱 **[aritc-social-post-agent.md](aritc-social-post-agent.md)** (หรือ **[pr-agent.md](pr-agent.md)**) | **PR ARITC Agent** | แปลงข้อมูลกิจกรรมดิบเป็นโพสต์ Facebook สื่อสารองค์กร พร้อมระบบเว้นวรรค Braille Space (`⠀`) |
