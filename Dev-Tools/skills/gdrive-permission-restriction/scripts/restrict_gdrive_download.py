@@ -66,7 +66,8 @@ def get_access_token(refresh_token):
         return res.get("access_token")
 
 def find_folder_id(folder_name_or_path):
-    dbs = glob.glob(r'C:\Users\Burt\AppData\Local\Google\DriveFS\*\metadata_sqlite_db')
+    local_app_data = os.environ.get('LOCALAPPDATA', os.path.expanduser('~\\AppData\\Local'))
+    dbs = glob.glob(os.path.join(local_app_data, 'Google', 'DriveFS', '*', 'metadata_sqlite_db'))
     target_basename = os.path.basename(os.path.normpath(folder_name_or_path))
     for db_path in dbs:
         try:

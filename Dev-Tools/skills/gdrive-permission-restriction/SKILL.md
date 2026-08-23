@@ -26,7 +26,7 @@ Use this skill when:
 Run the provided helper script with the target Google Drive folder path or name:
 
 ```powershell
-python "C:\Users\Burt\.gemini\config\skills\gdrive-permission-restriction\scripts\restrict_gdrive_download.py" "G:\My Drive\<Folder_Path>"
+python "scripts/restrict_gdrive_download.py" "G:\My Drive\<Folder_Path>"
 ```
 
 ### 2. Script Actions Overview
