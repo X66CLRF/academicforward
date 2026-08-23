@@ -35,7 +35,7 @@ academicforward/
 | 🌐 **Database** | [Database-Guides/academic-search-keywords.md](Academic/Database-Guides/academic-search-keywords.md) | `v2.0` | 23 ส.ค. 2569 | 🟢 พร้อมใช้งาน |
 | 🌐 **Database** | [Database-Guides/academic-database-prompts.md](Academic/Database-Guides/academic-database-prompts.md) | `v2.0` | 23 ส.ค. 2569 | 🟢 พร้อมใช้งาน |
 | 🎮 **Classroom** | [Classroom/slide-hub-agent.md](Classroom/slide-hub-agent.md) | `v2.0` | 23 ส.ค. 2569 | 🟢 พร้อมใช้งาน |
-| 📱 **Classroom** | [Classroom/arit-social-post-agent.md](Classroom/arit-social-post-agent.md) | `v2.0` | 23 ส.ค. 2569 | 🟢 พร้อมใช้งาน (เพจ ARIT) |
+| 📱 **Classroom** | [Classroom/ARITCc-social-post-agent.md](Classroom/ARITCc-social-post-agent.md) | `v2.0` | 23 ส.ค. 2569 | 🟢 พร้อมใช้งาน (เพจ ARITC) |
 | 🛠️ **Dev-Tools** | [Dev-Tools/user-master-profile.md](Dev-Tools/user-master-profile.md) | `v2.0` | 23 ส.ค. 2569 | 🟢 พร้อมใช้งาน |
 | 🛠️ **Dev-Tools** | [Dev-Tools/code-developer-agent.md](Dev-Tools/code-developer-agent.md) | `v1.0` | 12 มิ.ย. 2569 | 🟢 พร้อมใช้งาน |
 | 🛠️ **Dev-Tools** | [Dev-Tools/flowchart-diagram-agent.md](Dev-Tools/flowchart-diagram-agent.md) | `v1.0` | 7 มิ.ย. 2569 | 🟢 พร้อมใช้งาน |
@@ -53,7 +53,7 @@ academicforward/
 
 ### 2. 🎮 [Classroom Track (สื่อการสอน & สื่อสารองค์กร)](Classroom/)
 * 🚀 **[slide-hub-agent.md](Classroom/slide-hub-agent.md)** — Suite รวมระบบสไลด์ 16:9 + กระดานเล่นเกมแบบปลดล็อกด่าน + ใบงาน A4 Print-ready
-* 📱 **[arit-social-post-agent.md](Classroom/arit-social-post-agent.md)** — เอเจนต์ร่างโพสต์ Facebook/Social Media ของสำนักวิทยบริการฯ (ARIT NSRU)
+* 📱 **[ARITCc-social-post-agent.md](Classroom/ARITCc-social-post-agent.md)** — เอเจนต์ร่างโพสต์ Facebook/Social Media ของสำนักวิทยบริการฯ (ARITC NSRU)
 
 ### 3. 🛠️ [Dev & Utility Track (เครื่องมือระบบ & โปรไฟล์)](Dev-Tools/)
 * 👤 **[user-master-profile.md](Dev-Tools/user-master-profile.md)** — แม่แบบบันทึกโปรไฟล์ ความชอบ และสมองสำรองคุมโครงการส่วนตัว
@@ -68,3 +68,4 @@ academicforward/
 ---
 
 > *ปรับปรุงล่าสุด: 23 สิงหาคม 2569 | มาตรฐาน: Kebab-Case Standard + Zero-Bloat Edition*
+
