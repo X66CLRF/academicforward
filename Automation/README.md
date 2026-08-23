@@ -1,4 +1,9 @@
-﻿# 💻 Automation Suite — เครื่องมืออัตโนมัติและสถาปัตยกรรมระบบ
-- 👤 **[user-master-profile.md](user-master-profile.md)** — แม่แบบบันทึกโปรไฟล์ ความชอบ และสมองสำรองคุมโครงการส่วนตัว
-- 💻 **[code-developer-agent.md](code-developer-agent.md)** — ผู้เชี่ยวชาญการเขียนโค้ด วิเคราะห์ระบบ และแก้ไขบั๊ก
-- 🔒 **[gdrive-permission-agent.md](gdrive-permission-agent.md)** — เอเจนต์และสคริปต์ควบคุมสิทธิ์ดาวน์โหลด/พิมพ์ไฟล์ Google Drive
+﻿# 💻 Automation Suite — เครื่องมืออัตโนมัติและสถาปัตยกรรมสนับสนุนการทำงาน
+
+> รวมเครื่องมือและเอเจนต์ที่ช่วยเพิ่มประสิทธิภาพการทำงานส่วนบุคคลและจัดการสิทธิ์ไฟล์ในสถาบันการศึกษา
+
+---
+
+## 📂 สารบัญเครื่องมือ
+- 👤 **[user-master-profile.md](user-master-profile.md)** — แม่แบบบันทึกโปรไฟล์ ความจำโครงการ และบริบทส่วนตัวสำหรับคุม AI ทุกโปรเจกต์
+- 🔒 **[gdrive-permission-agent.md](gdrive-permission-agent.md)** — สคริปต์อัตโนมัติควบคุมและล็อกสิทธิ์ดาวน์โหลด/คัดลอกไฟล์ใน Google Drive แบบกลุ่ม
