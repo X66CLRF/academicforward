@@ -1,58 +1,68 @@
-# 🤖 Agents Directory & Resource Index
+﻿# 🤖 AcademicForward — AI Agent & Knowledge Framework Hub
 
-คลังข้อมูลและ Agent Prompts สำหรับการทำงาน จัดระเบียบตามหมวดหมู่ดังนี้
-
----
-
-## 📂 โครงสร้างหมวดหมู่ (Folder Directory)
-
-### 💻 1. System & Utility Agents ([System-Agents/](System-Agents))
-Agent Prompts สำหรับงานเขียนโค้ด Diagram พรีเซนเตชัน และงานสื่อสารทั่วไป
-- 🛠️ [code-agent.md](System-Agents/code-agent.md) — ผู้เชี่ยวชาญการเขียนโค้ด วิเคราะห์ระบบ และแก้ไขบั๊ก
-- 📊 [flowchart-agent.md](System-Agents/flowchart-agent.md) — ออกแบบ Diagram, Flowchart และ Architecture
-- 👤 [general-profile-agent.md](System-Agents/general-profile-agent.md) — โปรไฟล์ Agent พื้นฐานสำหรับคำถามทั่วไป
-- 📝 [pr-agent.md](System-Agents/pr-agent.md) — งานสื่อสาร ข้อความประชาสัมพันธ์ และงานเขียน PR
-- 🎨 [present-agent.md](System-Agents/present-agent.md) — เตรียมเนื้อหาและสไลด์การนำเสนอ
-- 📐 [design-agent.md](System-Agents/design-agent.md) — ออกแบบและจัดสไตล์สไลด์ HTML (Color Tokens, UI Components)
+ศูนย์รวมสถาปัตยกรรม AI Agent, กฎมาตรฐานวิจัย (มรนว. 2568 + APA 7th Edition), ชุดผลิตตำราเรียน, และเครื่องมือสนับสนุนการศึกษา ยุคใหม่
 
 ---
 
-### 🎓 2. Education & Research Agents ([Research-Agents/](Research-Agents))
-Agent Prompts ด้านการศึกษาและงานวิจัยทุกระดับ — ใช้ `1.CORE-rules.md` ร่วมกันเป็นฐาน
-- 📌 [1.CORE-rules.md](Research-Agents/1.CORE-rules.md) — กฎและมาตรฐานกลางของชุด (มรนว. 2568 + APA 7th) แนบทุกครั้ง
-- 🚀 [2.QUICKSTART.md](Research-Agents/2.QUICKSTART.md) — คู่มือเริ่มต้นใช้งานรวดเร็ว
-- 📖 [3.README.md](Research-Agents/3.README.md) — คู่มือผู้ดูแลชุด โครงสร้างและเวอร์ชัน
-- 🎓 [undergrad-agent.md](Research-Agents/undergrad-agent.md) — งานระดับปริญญาตรี
-- 🔬 [grad-agent.md](Research-Agents/grad-agent.md) — วิทยานิพนธ์และงานบัณฑิตศึกษา (ป.โท / ป.เอก)
-- 🧪 [researcher-agent.md](Research-Agents/researcher-agent.md) — วิเคราะห์บทความวิจัยและการเขียนเปเปอร์
+## 🧭 แผนผังเส้นทางการใช้งาน (3 Main Tracks)
+
+```
+academicforward/
+├── 🎓 Academic/              # สำหรับงานวิจัย วิทยานิพนธ์ และตำราเรียน
+├── 🎮 Classroom/             # สำหรับอาจารย์ สื่อการสอน สไลด์ และเกมในห้องเรียน
+└── 🛠️ Dev-Tools/              # สำหรับนักพัฒนา โค้ด สถาปัตยกรรม และความปลอดภัย
+```
 
 ---
 
-### 📚 3. Textbook Agents ([Textbook-Agent/](Textbook-Agent))
-ชุดแยกสำหรับงานเขียนตำราเรียนฉบับเต็ม — กระบวนการ 4 ขั้น ตั้งแต่ออกแบบโครงจนเขียนจบเล่ม
-- 📖 [README.md](Textbook-Agent/README.md) — ภาพรวมกระบวนการและไฟล์ที่สะสมระหว่างทาง
-- 🗂️ [structure-agent.md](Textbook-Agent/structure-agent.md) — ขั้น 0 ออกแบบโครงเล่มและคีย์เวิร์ดสืบค้น
-- ✍️ [textbook-agent.md](Textbook-Agent/textbook-agent.md) — ขั้น 3 เขียนเนื้อหาทีละหัวข้อย่อยจนจบเล่ม
+## 📂 1. 🎓 Academic Track ([Academic/](Academic))
 
-> แยกออกจาก Research-Agents เมื่อ 26 กรกฎาคม 2569 — ยังยืมแม่แบบ APA และกฎกันอ้างอิงปลอมจาก `1.CORE-rules.md`
+ออกแบบมาสำหรับนักศึกษา (ป.ตรี/โท/เอก), นักวิจัย และอาจารย์ผู้เขียนตำรา
 
----
+* ⚡ **[Academic/Zero-Bloat-Workflow.md](Academic/Zero-Bloat-Workflow.md)** — **(แนะนำสำหรับสายฟรี)** คู่มือทำงานวิจัยแบบไม่ให้ Context บวม เร็วขึ้น 5 เท่า และฟรี 100%
 
-### 📜 4. Framework & System Rules ([Framework-Rules/](Framework-Rules))
-โฟลเดอร์นี้ **ยังว่าง** — กฎกลางที่ใช้งานจริงอยู่ที่ [Research-Agents/1.CORE-rules.md](Research-Agents/1.CORE-rules.md)
+### 🔬 Research Agents ([Academic/Research-Agents/](Academic/Research-Agents))
+* ⚡ **[CORE-Lite.md](Academic/Research-Agents/CORE-Lite.md)** — กฎเหล็ก 4 ข้อฉบับกระชับ (~800 Tokens) สำหรับใส่ System Prompt / โมเดลบัญชีฟรี
+* 📌 **[1.CORE-rules-full.md](Academic/Research-Agents/1.CORE-rules-full.md)** — กฎและมาตรฐานกลางฉบับเต็ม (มรนว. 2568 + APA 7th)
+* 🎓 **[undergrad-agent.md](Academic/Research-Agents/undergrad-agent.md)** — เอเจนต์โค้ชสำหรับนักศึกษาปริญญาตรี (รายงาน 5 บท)
+* 🔬 **[grad-agent.md](Academic/Research-Agents/grad-agent.md)** — เอเจนต์ที่ปรึกษาบัณฑิตศึกษา (Thesis / IS / Proposal)
+* 🧪 **[researcher-agent.md](Academic/Research-Agents/researcher-agent.md)** — เอเจนต์ Peer Review ตรวจและวิเคราะห์ Manuscript
+* 📚 **[JIT-APA7-Formatter.md](Academic/Research-Agents/JIT-APA7-Formatter.md)** — ตัวจัดบรรณานุกรมอัตโนมัติตอนจบบท (Just-In-Time)
 
----
+### 📚 Textbook Suite ([Academic/Textbook-Agent/](Academic/Textbook-Agent))
+* 🗂️ **[structure-agent.md](Academic/Textbook-Agent/structure-agent.md)** — ขั้น 0 วางโครงสร้างเล่ม ผลลัพธ์การเรียนรู้ (CLO) และคีย์เวิร์ด
+* ✍️ **[textbook-agent.md](Academic/Textbook-Agent/textbook-agent.md)** — ขั้น 3 เรียบเรียงเนื้อหาตำราทีละหัวข้อย่อยแบบร้อยแก้วต่อเนื่อง
 
-### 📁 5. Documents & Specialized Guides ([Documents-Guides/](Documents-Guides) & [docs/](docs))
-- 🛡️ [wp-security-audit-guide.md](Documents-Guides/wp-security-audit-guide.md) — คู่มือตรวจสอบความปลอดภัย WordPress
-- 📄 [2569-การสังเคราะห์ และเรียบเรียงข้อมูลงานวิจัย.pdf](Documents-Guides/2569-การสังเคราะห์%20และเรียบเรียงข้อมูลงานวิจัย.pdf) — เอกสารสรุปงานวิจัยประจำปี 2569
-- 📚 [docs/academic_database/](docs/academic_database/) — คลังสะพานเชื่อมคำค้นและชุดคำสั่งสืบค้นฐานข้อมูลวิชาการ มรนว. 2568
-
----
-
-### 🧩 6. Skills ([skills/](skills))
-- 🔒 [skills/gdrive-permission-restriction](skills/gdrive-permission-restriction) — Antigravity Skill สำหรับตั้งค่าจำกัดสิทธิ์การดาวน์โหลด/คัดลอกไฟล์ใน Google Drive
+### 🌐 Database Guides ([Academic/Database-Guides/](Academic/Database-Guides))
+* 🔍 **[academic-search-keywords.md](Academic/Database-Guides/academic-search-keywords.md)** — คลังสะพานเชื่อมคำค้นภาษาไทย ↔ คีย์เวิร์ดสากล
+* 💡 **[academic-database-prompts.md](Academic/Database-Guides/academic-database-prompts.md)** — ชุดคำสั่ง Prompt สำหรับสืบค้นฐานข้อมูลวิชาการ
 
 ---
 
-> *ปรับปรุงล่าสุด: สิงหาคม 2569*
+## 📂 2. 🎮 Classroom Track ([Classroom/](Classroom))
+
+เครื่องมือสำหรับอาจารย์และผู้สอนเพื่อสร้างสรรค์ห้องเรียนยุคใหม่
+
+* 🚀 **[interactive-slide-hub.md](Classroom/interactive-slide-hub.md)** — Suite รวมระบบสไลด์ 16:9 + กระดานเล่นเกมแบบปลดล็อกด่าน + ใบงาน A4 Print-ready และ Design Tokens ในไฟล์เดียว
+* 📝 **[pr-agent.md](Classroom/pr-agent.md)** — เอเจนต์ช่วยร่างข้อความประชาสัมพันธ์ สื่อสาร และจัดกิจกรรม
+
+---
+
+## 📂 3. 🛠️ Dev & Utility Track ([Dev-Tools/](Dev-Tools))
+
+เครื่องมือและสคริปต์อัตโนมัติสำหรับนักพัฒนาและผู้ดูแลระบบ
+
+* 💻 **[code-agent.md](Dev-Tools/code-agent.md)** — ผู้เชี่ยวชาญการเขียนโค้ด วิเคราะห์ระบบ และแก้ไขบั๊ก
+* 📊 **[flowchart-agent.md](Dev-Tools/flowchart-agent.md)** — ออกแบบ Diagram, Flowchart และ Architecture
+* 👤 **[general-profile-agent.md](Dev-Tools/general-profile-agent.md)** — โปรไฟล์เอเจนต์สำหรับตอบคำถามทั่วไป
+* 🛡️ **[wp-security-audit-guide.md](Dev-Tools/wp-security-audit-guide.md)** — คู่มือตรวจสอบความปลอดภัย WordPress
+* 🔒 **[skills/gdrive-permission-restriction](Dev-Tools/skills/gdrive-permission-restriction)** — Antigravity Skill ควบคุมสิทธิ์การดาวน์โหลดไฟล์ใน Google Drive
+
+---
+
+## 📜 4. Framework Rules ([Framework-Rules/](Framework-Rules))
+* 📄 **[Framework-Rules/README.md](Framework-Rules/README.md)** — พื้นที่สำรองสำหรับ Global System Rules ในอนาคต
+
+---
+
+> *อัปเดตล่าสุด: สิงหาคม 2569 (v6.0 — Zero-Bloat Edition)*
