@@ -8,4 +8,4 @@
 
 | ไฟล์ | ชื่อเรียก | ฟังก์ชันหลัก |
 | :--- | :--- | :--- |
-| 📱 **[aritc-social-post-agent.md](aritc-social-post-agent.md)** (หรือ **[pr-agent.md](pr-agent.md)**) | **PR ARITC Agent** | แปลงข้อมูลกิจกรรมดิบเป็นโพสต์ Facebook สื่อสารองค์กร พร้อมระบบเว้นวรรค Braille Space (`⠀`) |
+| 📱 **[aritc-social-post-agent.md](aritc-social-post-agent.md)** | **PR ARITC Agent (v2.4)** | แต่งโพสต์ Facebook 7 รูปแบบ + เว้นวรรค Braille Space (`⠀`) + คำบรรยายภาพอัลบั้ม + Color Palette & Prompt AI |
