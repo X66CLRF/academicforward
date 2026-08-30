@@ -30,7 +30,9 @@ academicforward/
 | ✍️ **Writing** | [Writing/2-grad-research.md](Writing/2-grad-research.md) | `v6.0` | 🔬 **นักศึกษา ป.โท/เอก** — Thesis / IS / Proposal + Thematic Synthesis + closed-world | [📥 ดาวน์โหลด .md](https://github.com/X66CLRF/academicforward/releases/download/v6.0/2-grad-research.md) |
 | ✍️ **Writing** | [Writing/3-researcher-manuscript.md](Writing/3-researcher-manuscript.md) | `v6.0` | 🧪 **อาจารย์ / นักวิจัย** — ตรวจ Reviewer (🔴/🟡/🟢) + ยกร่าง IMRaD + Synthesis Matrix | [📥 ดาวน์โหลด .md](https://github.com/X66CLRF/academicforward/releases/download/v6.0/3-researcher-manuscript.md) |
 | ✍️ **Writing** | [Writing/4-textbook-writer.md](Writing/4-textbook-writer.md) | `v6.1` | ✍️ **คณาจารย์ผู้เขียนตำรา** — เขียนตำรา + โครงภาพเวกเตอร์ + คุมเลนส์ตำราชุด + ภาคผนวก ก | [📥 ดาวน์โหลด .md](https://github.com/X66CLRF/academicforward/releases/download/v6.0/4-textbook-writer.md) |
+| ✍️ **Writing** | [Writing/5-prose-cleaner.md](Writing/5-prose-cleaner.md) | `v1.0` | 🧼 **ทุกคนที่มีร่างอยู่แล้ว** — ขัดสำนวนแปล + ด่านศัพท์เฉพาะ + กวาดศัพท์ทั้งเล่ม + ด่านตรวจก่อนส่ง | [📖 เปิดไฟล์](Writing/5-prose-cleaner.md) |
 | 📖 **Reference** | [Writing/nsru-2568-manual-reference.md](Writing/nsru-2568-manual-reference.md) | `v5.6` | 📌 **คู่มืออ้างอิงกลาง** — กฎวิจัย มรนว. 2568 ฉบับเต็ม (สำหรับเปิดอ่าน ไม่ต้องอัปโหลด) | [📖 เปิดอ่านคู่มือ](Writing/nsru-2568-manual-reference.md) |
+| 📖 **Reference** | [Writing/thai-academic-language-guard.md](Writing/thai-academic-language-guard.md) | `v1.0` | 🧬 **คู่มือภาษาไทยวิชาการต้นฉบับ** — ตารางกับดักคำแปล + กฎวงเล็บอังกฤษ + ด่านคุมความซ้ำ | [📖 เปิดอ่านคู่มือ](Writing/thai-academic-language-guard.md) |
 | 🎨 **Designing** | [Designing/slide-hub-agent.md](Designing/slide-hub-agent.md) | `v2.0` | 🚀 **อาจารย์ / ผู้สอน** — ออกแบบสไลด์ 16:9 + บอร์ดเกม + ใบงาน A4 | [📖 เปิดไฟล์](Designing/slide-hub-agent.md) |
 | 🎨 **Designing** | [Designing/textbook-structure-agent.md](Designing/textbook-structure-agent.md) | `v1.6` | 🗂️ **ผู้พัฒนาหลักสูตร** — วางโครงสร้างเล่มตำรา & CLO & คีย์เวิร์ด | [📖 เปิดไฟล์](Designing/textbook-structure-agent.md) |
 | 🎨 **Designing** | [Designing/flowchart-diagram-agent.md](Designing/flowchart-diagram-agent.md) | `v2.0` | 📊 **ทุกกลุ่ม** — ออกแบบ Flowchart, Diagram และ Mermaid Architecture | [📖 เปิดไฟล์](Designing/flowchart-diagram-agent.md) |
@@ -47,6 +49,7 @@ academicforward/
 1. **Strict Closed-World Guardrail:** สังเคราะห์เนื้อหาจากเอกสารจริงในคลัง (NotebookLM / PDF) ห้ามกุชื่อหรืออ้างอิงปลอม 100%
 2. **Anti-Fabrication:** ห้ามสร้างข้อมูลหรือผลสถิติเท็จ ผู้วิจัยเป็นผู้เก็บข้อมูลและรันสถิติจริง AI มีหน้าที่ช่วยแปลผลตารางตามมาตรฐาน APA 7th
 3. **No Plagiarism / Text-Spinning:** มุ่งเน้นการสังเคราะห์เชิงวิพากษ์ (Critical Synthesis) ไม่สนับสนุนการตัดแปะเพื่อเลี่ยงการตรวจจับ
+4. **No Detector Evasion / No Score Promise:** ไม่มีเทคนิคหลบเครื่องตรวจในคลังนี้ (โยกคำ สลับคำ แทนอักขระ ปั่นคำ) เพราะจัดอยู่ในกลุ่ม AI-bypassed ที่เครื่องตรวจแยกจับไว้เป็นหมวดเฉพาะ และห้ามรับปากตัวเลขผลตรวจทุกกรณี
 
 ---
 
