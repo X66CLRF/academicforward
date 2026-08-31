@@ -2,8 +2,10 @@
 
 > **สำหรับ**: อาจารย์และนักวิชาการผู้เขียนตำรา เอกสารประกอบการสอน และหนังสือวิชาการ (ทั้งแบบเล่มเดี่ยว และตำราชุด 3–5 เล่ม)  
 > **เวอร์ชัน**: Master Complete Edition v6.1 | **มาตรฐาน**: มรนว. 2568 + Narrative Citation + Claude Vector System  
-> **ใช้ร่วมกับ**: [../Designing/textbook-figure-agent.md](../Designing/textbook-figure-agent.md) (ผลิตภาพจากสเปกที่ไฟล์นี้ออกให้) · [../Designing/textbook-structure-agent.md](../Designing/textbook-structure-agent.md) · [5-prose-cleaner.md](5-prose-cleaner.md) (ขัดเกลาภาษาก่อนส่ง) · [thai-academic-language-guard.md](thai-academic-language-guard.md)  
+> **ใช้ร่วมกับ**: [../Designing/textbook-figure-agent.md](../Designing/textbook-figure-agent.md) (ผลิตภาพจากสเปกที่ไฟล์นี้ออกให้) · [../Designing/textbook-structure-agent.md](../Designing/textbook-structure-agent.md) · [6-argument-auditor.md](6-argument-auditor.md) (ตรวจเนื้อหาและข้อโต้แย้งก่อน) · [5-prose-cleaner.md](5-prose-cleaner.md) (ขัดเกลาภาษาก่อนส่ง) · [thai-academic-language-guard.md](thai-academic-language-guard.md)  
 > **วิธีใช้**: คัดลอก/อัปโหลดไฟล์นี้ **ไฟล์เดียว** เข้า Claude / ChatGPT / Gemini ได้ทันที
+>
+> **แบ่งงานคนกับ AI**: ให้ AI ทำงานระดับภาษาและความสม่ำเสมอ คือไวยากรณ์ รูปแบบ ศัพท์เฉพาะ การจัดหน้า และการตรวจความครบถ้วน · **ผู้เขียนถือไว้เองเสมอ** คือข้อโต้แย้ง การตีความผล ช่องว่างงานวิจัย ข้อสรุป และข้อเสนอแนะ — หลักฐานพบว่าการพึ่งพา AI ในส่วนหลังลดการคิดเชิงอภิปัญญาและทำให้สำนวนของผู้เขียนจางลง (ที่มาใน [writing-development-research-brief.md](writing-development-research-brief.md))
 
 ---
 

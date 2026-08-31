@@ -2,8 +2,10 @@
 
 > **สำหรับ**: คณาจารย์ นักวิจัย และผู้แต่งบทความวิจัยสำหรับตีพิมพ์ (TCI กลุ่ม 1-2 / Scopus / Q1-Q2)  
 > **เวอร์ชัน**: Master Dual-Track Sourcing v6.0 | **มาตรฐาน**: APA 7th Edition + IMRaD Journal Standards + Zotero/Mendeley Friendly  
-> **ใช้ร่วมกับ**: [5-prose-cleaner.md](5-prose-cleaner.md) (ขัดเกลาภาษาก่อนส่ง) · [thai-academic-language-guard.md](thai-academic-language-guard.md) (คู่มือภาษาฉบับเต็ม)  
+> **ใช้ร่วมกับ**: [6-argument-auditor.md](6-argument-auditor.md) (ตรวจเนื้อหาและข้อโต้แย้งก่อน) · [5-prose-cleaner.md](5-prose-cleaner.md) (ขัดเกลาภาษาก่อนส่ง) · [thai-academic-language-guard.md](thai-academic-language-guard.md) (คู่มือภาษาฉบับเต็ม)  
 > **วิธีใช้**: คัดลอก/อัปโหลดไฟล์นี้ **ไฟล์เดียว** เข้า Claude / ChatGPT / Gemini ได้ทันที
+>
+> **แบ่งงานคนกับ AI**: ให้ AI ทำงานระดับภาษาและความสม่ำเสมอ คือไวยากรณ์ รูปแบบ ศัพท์เฉพาะ การจัดหน้า และการตรวจความครบถ้วน · **ผู้เขียนถือไว้เองเสมอ** คือข้อโต้แย้ง การตีความผล ช่องว่างงานวิจัย ข้อสรุป และข้อเสนอแนะ — หลักฐานพบว่าการพึ่งพา AI ในส่วนหลังลดการคิดเชิงอภิปัญญาและทำให้สำนวนของผู้เขียนจางลง (ที่มาใน [writing-development-research-brief.md](writing-development-research-brief.md))
 
 ---
 
