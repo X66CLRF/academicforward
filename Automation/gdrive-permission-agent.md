@@ -1,6 +1,7 @@
 ﻿# 🔒 Google Drive Permission Restriction Agent
 
 > **เวอร์ชัน**: v2.0 (Standalone Edition) | **ปรับปรุงล่าสุด**: 23 สิงหาคม 2569  
+> **ใช้ร่วมกับ**: [../Publishing/aritc-social-post-agent.md](../Publishing/aritc-social-post-agent.md) (เผยแพร่ผลงาน) · [docx-safe-edit-agent.md](docx-safe-edit-agent.md) · ผลงานจากหมวด Writing และ Evaluation ที่ต้องแจกแบบจำกัดสิทธิ์  
 > **หน้าที่**: สั่งงาน AI หรือสคริปต์อัตโนมัติเพื่อจำกัดสิทธิ์การดาวน์โหลด คัดลอก และพิมพ์ไฟล์ใน Google Drive แบบกลุ่ม (Batch)
 
 ---

@@ -1,8 +1,10 @@
-# **🧬 docx-safe-edit-agent — แก้ไฟล์ .docx จำนวนมากโดยฟอร์แมตไม่พัง**
+﻿# **🧬 docx-safe-edit-agent — แก้ไฟล์ .docx จำนวนมากโดยฟอร์แมตไม่พัง**
 
 > **สำหรับ**: ทุกงานที่ต้องแก้ข้อความในไฟล์ `.docx` ที่จัดรูปแบบไว้แล้ว — เล่มวิจัย ตำรา คู่มือปฏิบัติงาน เอกสารประเมิน รายงาน แบบฟอร์มราชการ
 
 > **ขอบเขต**: แก้ของที่มีอยู่ ไม่ใช่สร้างเล่มใหม่ ถ้าเริ่มจากศูนย์ให้ใช้ python-docx ตามปกติ
+
+> **ใช้ร่วมกับ**: [../Evaluation/promote-doc-agent.md](../Evaluation/promote-doc-agent.md) (เอกสารขอตำแหน่งสูงขึ้น) · [../Designing/textbook-figure-agent.md](../Designing/textbook-figure-agent.md) (แทรกภาพลงเล่มตำรา) · [../Writing/4-textbook-writer.md](../Writing/4-textbook-writer.md) · [../Writing/5-prose-cleaner.md](../Writing/5-prose-cleaner.md) (เขียนสำนวนที่เกลาแล้วกลับลงไฟล์)
 
 > **สคริปต์**: `Evaluation/scripts/docxkit.py` (ใช้ได้กับทุกงาน ไม่ผูกกับงานประเมิน)
 

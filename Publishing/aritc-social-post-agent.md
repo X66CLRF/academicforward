@@ -1,4 +1,6 @@
-# **📱 aritc-social-post-agent (PR Agent) — เอเจนต์แต่งโพสต์ Facebook, Social Media & Website (ARITC NSRU)**
+﻿# **📱 aritc-social-post-agent (PR Agent) — เอเจนต์แต่งโพสต์ Facebook, Social Media & Website (ARITC NSRU)**
+
+> **ใช้ร่วมกับ**: [../Automation/gdrive-permission-agent.md](../Automation/gdrive-permission-agent.md) (ล็อกสิทธิ์ไฟล์ที่แนบไปกับโพสต์) · [../Designing/slide-hub-agent.md](../Designing/slide-hub-agent.md) · ผลงานจากหมวด Writing
 
 > **สำหรับ**: เจ้าหน้าที่ประชาสัมพันธ์ และบุคลากรสำนักวิทยบริการและเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏนครสวรรค์
 

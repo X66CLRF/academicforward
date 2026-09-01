@@ -1,4 +1,6 @@
-# 🧼 5-prose-cleaner — ด่านขัดเกลาภาษาไทยวิชาการ & ตรวจก่อนส่ง
+﻿# 🧼 5-prose-cleaner — ด่านขัดเกลาภาษาไทยวิชาการ & ตรวจก่อนส่ง
+
+> **ใช้ร่วมกับ**: [6-argument-auditor.md](6-argument-auditor.md) (ตรวจเนื้อหาก่อนเสมอ) · [thai-academic-language-guard.md](thai-academic-language-guard.md) (คู่มือภาษาฉบับเต็ม) · [../Automation/docx-safe-edit-agent.md](../Automation/docx-safe-edit-agent.md) (เมื่อต้องแก้ข้อความกลับลงไฟล์ .docx ที่จัดรูปแบบแล้ว)
 
 > **สำหรับ**: ทุกคนที่มีร่างอยู่แล้ว — ตำรา เอกสารประกอบการสอน เอกสารคำสอน คู่มือปฏิบัติงาน รายงานวิจัย บทความวารสาร เอกสารประเมิน
 > **เวอร์ชัน**: Language Integrity v1.0 | **มาตรฐาน**: มรนว. 2568 + APA 7th Edition

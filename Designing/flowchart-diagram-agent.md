@@ -1,6 +1,7 @@
 ﻿# 📊 flowchart-diagram-agent — ผู้ช่วยออกแบบ Diagram & Flowchart (Mermaid)
 
 > **สำหรับ**: นักศึกษา นักวิจัย และนักพัฒนา ที่ต้องการสร้างผังงาน (Flowchart), สถาปัตยกรรมระบบ (Architecture), หรือ กรอบแนวคิดวิจัย  
+> **ใช้ร่วมกับ**: [../Writing/1-undergrad-research.md](../Writing/1-undergrad-research.md) · [../Writing/2-grad-research.md](../Writing/2-grad-research.md) (กรอบแนวคิดวิจัย) · [../Writing/4-textbook-writer.md](../Writing/4-textbook-writer.md) · [textbook-figure-agent.md](textbook-figure-agent.md) (ผังที่ต้องลงเล่มจริง) · [slide-hub-agent.md](slide-hub-agent.md)  
 > **เวอร์ชัน**: v2.0 | **มาตรฐาน**: Mermaid.js + ฟอนต์ TH Sarabun New / สากล
 
 ---

@@ -1,5 +1,7 @@
 ﻿# 🎮 Interactive Slide & Classroom Play Hub Suite
 
+> **ใช้ร่วมกับ**: [textbook-structure-agent.md](textbook-structure-agent.md) (โครงเนื้อหาก่อนทำสไลด์) · [flowchart-diagram-agent.md](flowchart-diagram-agent.md) (ผังในสไลด์) · [../Writing/4-textbook-writer.md](../Writing/4-textbook-writer.md)
+
 > **เอกสารคู่มือและ Agent ประจำชุดสำหรับการออกแบบสื่อการสอนเชิงปฏิสัมพันธ์ (Classroom Play Hub & Slides)**
 > รวมทั้งส่วนของ **Engine โครงสร้างเนื้อหา/เกม** และ **Design System (Color Tokens, Typography, Layout)** ไว้ในที่เดียว
 

@@ -45,6 +45,42 @@ academicforward/
 
 ---
 
+---
+
+## 🔗 คอมโบสกิล — หยิบไฟล์ไหนต่อไฟล์ไหน
+
+> สกิลแต่ละไฟล์ทำงานเดี่ยวได้ครบในตัว แต่ **งานจริงมักเป็นสายยาว** ตารางนี้บอกลำดับที่ใช้ได้ผลจริง หยิบเฉพาะขั้นที่ต้องใช้ก็ได้ ไม่ต้องครบสาย
+
+| # | คอมโบ | ลำดับการหยิบไฟล์ |
+| :---: | :--- | :--- |
+| 1 | 🎓 **วิจัย ป.ตรี / ป.โท-เอก** | `academic-search-keywords` → `academic-database-prompts` → **`1-undergrad-research`** หรือ **`2-grad-research`** → `6-argument-auditor` → `5-prose-cleaner` → `flowchart-diagram-agent` (กรอบแนวคิด/ผังขั้นตอน) |
+| 2 | 🧪 **บทความตีพิมพ์วารสาร** | `academic-search-keywords` → **`3-researcher-manuscript`** → `6-argument-auditor` → `5-prose-cleaner` |
+| 3 | ✍️ **เขียนตำรา (สายยาวสุด)** | `textbook-structure-agent` → **`4-textbook-writer`** → `textbook-figure-agent` → `docx-safe-edit-agent` (แทรกภาพ/แก้เล่มโดยฟอร์แมตไม่พัง) → `6-argument-auditor` → `5-prose-cleaner` |
+| 4 | 📋 **ขอกำหนดตำแหน่งสูงขึ้น** | **`promote-doc-agent`** + `docx-safe-edit-agent` (กลไกแก้ไฟล์ + ยืมเล่มเป็นเทมเพลท) → `5-prose-cleaner` (ขัดสำนวนช่องบันทึกร่องรอยคุณภาพ) |
+| 5 | 🎮 **สอน / นำเสนอ** | `textbook-structure-agent` (โครงเนื้อหา) → **`slide-hub-agent`** → `flowchart-diagram-agent` |
+| 6 | 📢 **เผยแพร่ผลงาน** | ผลงานจากคอมโบ 1–4 → **`aritc-social-post-agent`** → `gdrive-permission-agent` (ล็อกสิทธิ์ไฟล์ที่แจก) |
+
+### 🧭 ลำดับด่านตรวจ — ห้ามสลับ
+
+```mermaid
+flowchart LR
+    A["ร่างเสร็จ"] --> B["6-argument-auditor<br/>ตรวจเนื้อหา ข้อโต้แย้ง หลักฐาน"]
+    B --> C["5-prose-cleaner<br/>ขัดสำนวน ตรวจก่อนส่ง"]
+    C --> D["ส่งกรรมการ /<br/>บรรณาธิการ / สำนักพิมพ์"]
+```
+
+**ตรวจเนื้อหาก่อน แล้วค่อยเกลาภาษาเสมอ** เพราะการเกลาภาษาย่อหน้าที่สุดท้ายต้องเขียนใหม่ทั้งย่อหน้าคือการเสียเวลาเปล่า
+
+### 📖 ไฟล์อ้างอิงกลาง — เปิดคู่ได้ทุกคอมโบ ไม่ต้องอัปโหลด
+
+| ไฟล์ | ใช้ตอนไหน |
+| :--- | :--- |
+| [`Writing/nsru-2568-manual-reference.md`](Writing/nsru-2568-manual-reference.md) | กฎรูปแบบ มรนว. 2568 + APA 7th — เปิดเทียบตอนจัดรูปเล่มและบรรณานุกรม |
+| [`Writing/thai-academic-language-guard.md`](Writing/thai-academic-language-guard.md) | กับดักคำแปล กฎวงเล็บอังกฤษ ความซ้ำของคำ — เปิดคู่ทุกงานเขียนภาษาไทย |
+| [`Automation/docx-safe-edit-agent.md`](Automation/docx-safe-edit-agent.md) | เมื่อถึงขั้นแก้ไฟล์ `.docx` ที่จัดรูปแบบไว้แล้ว — ทุกคอมโบที่ส่งงานเป็นไฟล์ Word |
+
+---
+
 ## 🛡️ จริยธรรมและความถูกต้องทางวิชาการ (Academic & Ethical Integrity)
 ทุก Agent ในคลังนี้ถูกออกแบบตามแนวปฏิบัติของ **กระทรวง อว. (2567)** และ **COPE (Committee on Publication Ethics)**:
 1. **Strict Closed-World Guardrail:** สังเคราะห์เนื้อหาจากเอกสารจริงในคลัง (NotebookLM / PDF) ห้ามกุชื่อหรืออ้างอิงปลอม 100%

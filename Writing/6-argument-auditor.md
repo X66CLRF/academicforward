@@ -1,4 +1,6 @@
-# 🧠 6-argument-auditor — ด่านตรวจระดับเนื้อหา ข้อโต้แย้ง และหลักฐาน
+﻿# 🧠 6-argument-auditor — ด่านตรวจระดับเนื้อหา ข้อโต้แย้ง และหลักฐาน
+
+> **ใช้ร่วมกับ**: [5-prose-cleaner.md](5-prose-cleaner.md) (ขัดภาษา **หลัง** ผ่านด่านนี้) · [1-undergrad-research.md](1-undergrad-research.md) · [2-grad-research.md](2-grad-research.md) · [3-researcher-manuscript.md](3-researcher-manuscript.md) · [4-textbook-writer.md](4-textbook-writer.md)
 
 > **สำหรับ**: ทุกคนที่มีร่างครบแล้ว — รายงานวิจัย 5 บท วิทยานิพนธ์ ดุษฎีนิพนธ์ บทความวารสาร ตำรา เอกสารประเมิน
 > **เวอร์ชัน**: Argument Integrity v1.0 | **มาตรฐาน**: มรนว. 2568 + APA 7th Edition
