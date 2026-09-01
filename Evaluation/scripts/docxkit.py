@@ -162,3 +162,32 @@ def replace_range(xml, start_text, end_text, items, protos):
     old = ''.join(paras[i:j])
     new = ''.join(puttext(protos[k], t) for k, t in items)
     return xml.replace(old, new, 1), j - i, len(items)
+
+
+def puttext_rich(xml, segments):
+    """วางข้อความหลายช่วงในย่อหน้าเดียว โดยคุมตัวหนารายช่วง
+    segments = [(ข้อความ, bold True/False), ...]
+    โคลน run แรกของย่อหน้าเป็นต้นแบบทุกช่วง ฟอนต์/ขนาด/ภาษาจึงเหมือนเดิมทุกประการ"""
+    runs = re.findall(r'<w:r\b(?![a-zA-Z])(?:(?!</w:r>).)*</w:r>', xml, re.S)
+    proto = next((r for r in runs if T_RE.search(r)), None)
+    if proto is None:
+        return xml
+
+    def make(text, bold):
+        r = proto
+        rpr = re.search(r'<w:rPr>.*?</w:rPr>', r, re.S)
+        if rpr:
+            body = rpr.group(0)[len('<w:rPr>'):-len('</w:rPr>')]
+            body = re.sub(r'<w:b/>|<w:bCs/>|<w:b\s[^>]*/>|<w:bCs\s[^>]*/>', '', body)
+            if bold:
+                body = '<w:b/><w:bCs/>' + body
+            r = r.replace(rpr.group(0), '<w:rPr>' + body + '</w:rPr>', 1)
+        elif bold:
+            r = r.replace('<w:r>', '<w:r><w:rPr><w:b/><w:bCs/></w:rPr>', 1)
+        # เขียนข้อความลง <w:t> ตัวแรกของ run ล้างที่เหลือ
+        return puttext(r, text)
+
+    new_runs = ''.join(make(t, b) for t, b in segments if t)
+    first = xml.index(runs[0])
+    last = xml.index(runs[-1]) + len(runs[-1])
+    return xml[:first] + new_runs + xml[last:]
