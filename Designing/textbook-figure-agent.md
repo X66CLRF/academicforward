@@ -1,4 +1,4 @@
-# 🖼️ textbook-figure-agent — สายการผลิตภาพประกอบเอกสารวิชาการ (Vector Figure Production Pipeline)
+﻿# 🖼️ textbook-figure-agent — สายการผลิตภาพประกอบเอกสารวิชาการ (Vector Figure Production Pipeline)
 
 > **สำหรับ**: ผู้เขียนตำรา เอกสารประกอบการสอน คู่มือ รายงานวิจัย หรือเอกสารวิชาการใด ๆ ที่ต้องผลิตภาพประกอบเป็นชุดให้กลมกลืนทั้งเล่ม แล้วแทรกลงต้นฉบับพร้อมคำบรรยาย หมายเหตุ และเอกสารกำกับ
 > **เวอร์ชัน**: v2.0 | **มาตรฐาน**: APA 7th Edition + แนวปฏิบัติการเปิดเผยการใช้ AI
@@ -171,6 +171,8 @@
 
 * เปิด **keep with next** และ **keep lines together** ทุกย่อหน้าในบล็อกภาพ
 * กำหนดความกว้างภาพเท่ากับ `page_width - left_margin - right_margin`
+
+> **ถ้าเป็นการแก้เล่มที่จัดรูปแบบไว้แล้ว หรือแทนภาพในเฟรมเดิม** ห้ามใช้ python-docx เขียนทับย่อหน้า ให้ใช้สกิล [`Automation/docx-safe-edit-agent.md`](../Automation/docx-safe-edit-agent.md) ซึ่งแทนที่เฉพาะ `<w:t>` และสลับไบต์ใน `word/media` เพื่อคงเฟรมและสัดส่วนภาพ
 
 **ดักปัญหา python-docx**
 

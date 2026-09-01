@@ -40,6 +40,7 @@ academicforward/
 | 🔍 **Searching** | [Searching/academic-search-keywords.md](Searching/academic-search-keywords.md) | `v2.0` | 🔍 **นักศึกษา / นักวิจัย** — คลังสะพานคำค้นภาษาไทย ↔ อังกฤษ 12 ฐานข้อมูล | [📖 เปิดไฟล์](Searching/academic-search-keywords.md) |
 | 🔍 **Searching** | [Searching/academic-database-prompts.md](Searching/academic-database-prompts.md) | `v2.0` | 💡 **นักศึกษา / อาจารย์** — ชุดคำสั่ง Prompt สกัดความรู้และสรุปเปเปอร์ | [📖 เปิดไฟล์](Searching/academic-database-prompts.md) |
 | 📢 **Publishing** | [Publishing/aritc-social-post-agent.md](Publishing/aritc-social-post-agent.md) | `v2.0` | 📱 **เจ้าหน้าที่ / ประชาสัมพันธ์** — แต่งโพสต์ Facebook สื่อสารองค์กร ARITC NSRU | [📖 เปิดไฟล์](Publishing/aritc-social-post-agent.md) |
+| 💻 **Automation** | [Automation/docx-safe-edit-agent.md](Automation/docx-safe-edit-agent.md) | `v1.0` | 🧬 **ทุกคนที่ต้องแก้ไฟล์ .docx ที่จัดรูปแบบแล้ว** — แทนที่ข้อความโดยฟอร์แมตไม่พัง + backup อัตโนมัติ + แทนรูปคงเฟรม/สัดส่วน + ยืมเล่มคนอื่นเป็นเทมเพลท | [📖 เปิดไฟล์](Automation/docx-safe-edit-agent.md) |
 | 🔒 **Automation** | [Automation/gdrive-permission-agent.md](Automation/gdrive-permission-agent.md) | `v2.0` | 🔒 **อาจารย์ / เจ้าหน้าที่** — สคริปต์ควบคุมสิทธิ์ดาวน์โหลดไฟล์ Google Drive | [📖 เปิดไฟล์](Automation/gdrive-permission-agent.md) |
 
 ---
