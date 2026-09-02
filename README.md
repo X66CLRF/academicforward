@@ -1,4 +1,4 @@
-﻿# 🤖 AcademicForward — AI Agent & Knowledge Framework Hub
+﻿﻿# 🤖 AcademicForward — AI Agent & Knowledge Framework Hub
 
 ศูนย์รวมสถาปัตยกรรม AI Agent และเครื่องมือส่งเสริมการศึกษา งานวิจัย และการสนับสนุนการทำงานวิชาการ (มรนว. 2568 / APA 7th Edition / มาตรฐาน อว. 2567)
 
@@ -13,9 +13,10 @@
 
 ```text
 academicforward/
-├── ✍️ Writing/       # สกิลสำหรับ "เขียน" (ป.ตรี, ป.โท/เอก, นักวิจัย, ผู้เขียนตำรา — เลือกไฟล์ 1-4 ไฟล์เดียวจบ)
+├── ✍️ Writing/       # สกิลสำหรับ "เขียน" (ป.ตรี, ป.โท/เอก, นักวิจัย, ผู้เขียนตำรา — เลือกไฟล์ 1-4 ไฟล์เดียวจบ + ไฟล์ 6 ตรวจเนื้อหา และไฟล์ 5 ขัดภาษา)
 ├── 🎨 Designing/     # สกิลสำหรับ "ออกแบบ" (สไลด์การสอน, โครงสร้างตำรา, ไดอะแกรม Flowchart)
 ├── 🔍 Searching/     # สกิลสำหรับ "สืบค้น" (คลังคำค้นหาฐานข้อมูลไทย-เทศ, พรอมท์สืบค้น)
+├── 📋 Evaluation/    # สกิลสำหรับ "ขอตำแหน่งสูงขึ้น" (เอกสารประเมินสายสนับสนุน + สคริปต์ .docx + เทมเพลตตารางหลักฐาน)
 ├── 📢 Publishing/    # สกิลสำหรับ "เผยแพร่ & โพสต์" (แต่งโพสต์ Facebook/Social ARITC NSRU)
 └── 💻 Automation/    # สกิลสำหรับ "จัดการระบบ & สนับสนุนงาน" (สคริปต์ล็อกสิทธิ์ GDrive แบบ Batch)
 ```
@@ -31,19 +32,20 @@ academicforward/
 | ✍️ **Writing** | [Writing/3-researcher-manuscript.md](Writing/3-researcher-manuscript.md) | `v6.0` | 🧪 **อาจารย์ / นักวิจัย** — ตรวจ Reviewer (🔴/🟡/🟢) + ยกร่าง IMRaD + Synthesis Matrix | [📥 ดาวน์โหลด .md](https://github.com/X66CLRF/academicforward/releases/download/v6.0/3-researcher-manuscript.md) |
 | ✍️ **Writing** | [Writing/4-textbook-writer.md](Writing/4-textbook-writer.md) | `v6.1` | ✍️ **คณาจารย์ผู้เขียนตำรา** — เขียนตำรา + โครงภาพเวกเตอร์ + คุมเลนส์ตำราชุด + ภาคผนวก ก | [📥 ดาวน์โหลด .md](https://github.com/X66CLRF/academicforward/releases/download/v6.0/4-textbook-writer.md) |
 | ✍️ **Writing** | [Writing/5-prose-cleaner.md](Writing/5-prose-cleaner.md) | `v1.0` | 🧼 **ทุกคนที่มีร่างอยู่แล้ว** — ขัดสำนวนแปล + ด่านศัพท์เฉพาะ + กวาดศัพท์ทั้งเล่ม + ด่านตรวจก่อนส่ง | [📖 เปิดไฟล์](Writing/5-prose-cleaner.md) |
+| ✍️ **Writing** | [Writing/6-argument-auditor.md](Writing/6-argument-auditor.md) | `v1.0` | 🧠 **ทุกคนที่มีร่างครบแล้ว** — แผนผังข้ออ้าง–หลักฐาน + ช่องว่างงานวิจัย + เส้นเชื่อมวัตถุประสงค์–ผล–อภิปราย + ด่านอ้างเกิน (ใช้ **ก่อน** ไฟล์ 5) | [📖 เปิดไฟล์](Writing/6-argument-auditor.md) |
 | 📖 **Reference** | [Writing/nsru-2568-manual-reference.md](Writing/nsru-2568-manual-reference.md) | `v5.6` | 📌 **คู่มืออ้างอิงกลาง** — กฎวิจัย มรนว. 2568 ฉบับเต็ม (สำหรับเปิดอ่าน ไม่ต้องอัปโหลด) | [📖 เปิดอ่านคู่มือ](Writing/nsru-2568-manual-reference.md) |
 | 📖 **Reference** | [Writing/thai-academic-language-guard.md](Writing/thai-academic-language-guard.md) | `v1.0` | 🧬 **คู่มือภาษาไทยวิชาการต้นฉบับ** — ตารางกับดักคำแปล + กฎวงเล็บอังกฤษ + ด่านคุมความซ้ำ | [📖 เปิดอ่านคู่มือ](Writing/thai-academic-language-guard.md) |
+| 📖 **Reference** | [Writing/writing-development-research-brief.md](Writing/writing-development-research-brief.md) | `2026-08-31` | 🔬 **บันทึกรีเสิร์ชเบื้องหลังกฎชุดเขียน** — ความแม่นยำเครื่องตรวจ AI + นโยบายวารสาร/สำนักพิมพ์ + หลักฐานพัฒนางานเขียน (ระบุระดับความเชื่อถือรายข้อ) | [📖 เปิดอ่านบันทึก](Writing/writing-development-research-brief.md) |
 | 🎨 **Designing** | [Designing/slide-hub-agent.md](Designing/slide-hub-agent.md) | `v2.0` | 🚀 **อาจารย์ / ผู้สอน** — ออกแบบสไลด์ 16:9 + บอร์ดเกม + ใบงาน A4 | [📖 เปิดไฟล์](Designing/slide-hub-agent.md) |
 | 🎨 **Designing** | [Designing/textbook-structure-agent.md](Designing/textbook-structure-agent.md) | `v1.6` | 🗂️ **ผู้พัฒนาหลักสูตร** — วางโครงสร้างเล่มตำรา & CLO & คีย์เวิร์ด | [📖 เปิดไฟล์](Designing/textbook-structure-agent.md) |
 | 🎨 **Designing** | [Designing/flowchart-diagram-agent.md](Designing/flowchart-diagram-agent.md) | `v2.0` | 📊 **ทุกกลุ่ม** — ออกแบบ Flowchart, Diagram และ Mermaid Architecture | [📖 เปิดไฟล์](Designing/flowchart-diagram-agent.md) |
 | 🎨 **Designing** | [Designing/textbook-figure-agent.md](Designing/textbook-figure-agent.md) | `v2.0` | 🖼️ **คณาจารย์ผู้เขียนตำรา** — ผลิตภาพประกอบเวกเตอร์ภาษาไทยทั้งเล่ม + แทรกลง Word + ภาคผนวก ก | [📖 เปิดไฟล์](Designing/textbook-figure-agent.md) |
 | 🔍 **Searching** | [Searching/academic-search-keywords.md](Searching/academic-search-keywords.md) | `v2.0` | 🔍 **นักศึกษา / นักวิจัย** — คลังสะพานคำค้นภาษาไทย ↔ อังกฤษ 12 ฐานข้อมูล | [📖 เปิดไฟล์](Searching/academic-search-keywords.md) |
 | 🔍 **Searching** | [Searching/academic-database-prompts.md](Searching/academic-database-prompts.md) | `v2.0` | 💡 **นักศึกษา / อาจารย์** — ชุดคำสั่ง Prompt สกัดความรู้และสรุปเปเปอร์ | [📖 เปิดไฟล์](Searching/academic-database-prompts.md) |
+| 📋 **Evaluation** | [Evaluation/promote-doc-agent.md](Evaluation/promote-doc-agent.md) | `v1.0` | 📋 **บุคลากรสายสนับสนุน (ชำนาญการ / ชำนาญการพิเศษ)** — ถ้อยคำเกณฑ์ ๑๒ สมรรถนะ × ๕ ระดับ + จับคู่หลักฐาน + ออกเลขเอกสารแนบ + เช็คลิสต์ปิดเล่ม | [📖 เปิดไฟล์](Evaluation/promote-doc-agent.md) |
 | 📢 **Publishing** | [Publishing/aritc-social-post-agent.md](Publishing/aritc-social-post-agent.md) | `v2.0` | 📱 **เจ้าหน้าที่ / ประชาสัมพันธ์** — แต่งโพสต์ Facebook สื่อสารองค์กร ARITC NSRU | [📖 เปิดไฟล์](Publishing/aritc-social-post-agent.md) |
 | 💻 **Automation** | [Automation/docx-safe-edit-agent.md](Automation/docx-safe-edit-agent.md) | `v1.0` | 🧬 **ทุกคนที่ต้องแก้ไฟล์ .docx ที่จัดรูปแบบแล้ว** — แทนที่ข้อความโดยฟอร์แมตไม่พัง + backup อัตโนมัติ + แทนรูปคงเฟรม/สัดส่วน + ยืมเล่มคนอื่นเป็นเทมเพลท | [📖 เปิดไฟล์](Automation/docx-safe-edit-agent.md) |
 | 🔒 **Automation** | [Automation/gdrive-permission-agent.md](Automation/gdrive-permission-agent.md) | `v2.0` | 🔒 **อาจารย์ / เจ้าหน้าที่** — สคริปต์ควบคุมสิทธิ์ดาวน์โหลดไฟล์ Google Drive | [📖 เปิดไฟล์](Automation/gdrive-permission-agent.md) |
-
----
 
 ---
 
@@ -77,6 +79,7 @@ flowchart LR
 | :--- | :--- |
 | [`Writing/nsru-2568-manual-reference.md`](Writing/nsru-2568-manual-reference.md) | กฎรูปแบบ มรนว. 2568 + APA 7th — เปิดเทียบตอนจัดรูปเล่มและบรรณานุกรม |
 | [`Writing/thai-academic-language-guard.md`](Writing/thai-academic-language-guard.md) | กับดักคำแปล กฎวงเล็บอังกฤษ ความซ้ำของคำ — เปิดคู่ทุกงานเขียนภาษาไทย |
+| [`Writing/writing-development-research-brief.md`](Writing/writing-development-research-brief.md) | บันทึกรีเสิร์ชเบื้องหลังกฎในชุดเขียน — เปิดเมื่ออยากรู้ว่ากฎข้อไหนมาจากหลักฐานอะไร และเชื่อถือได้แค่ไหน |
 | [`Automation/docx-safe-edit-agent.md`](Automation/docx-safe-edit-agent.md) | เมื่อถึงขั้นแก้ไฟล์ `.docx` ที่จัดรูปแบบไว้แล้ว — ทุกคอมโบที่ส่งงานเป็นไฟล์ Word |
 
 ---
