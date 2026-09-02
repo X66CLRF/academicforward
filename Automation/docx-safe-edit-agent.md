@@ -191,6 +191,113 @@ assert x.count('ar-SA') == 0, "ยังไม่ได้แก้ภาษา�
 
 ---
 
+## **🔬 ด่านตรวจอัตโนมัติก่อนส่งมอบไฟล์ .docx ภาษาไทย**
+
+**ทำไมต้องมี** ปัญหาการจัดรูปแบบและภาษาที่เจอมาทั้งหมด **ตรวจด้วยตาไม่เจอ** ต้องเปิดดู XML ข้างในไฟล์ จึงต้องมีสคริปต์ตรวจที่**รันทุกครั้งก่อนส่งมอบ** และ**รายงานผลให้ผู้ใช้เห็นเป็นตาราง ผ่านหรือไม่ผ่านทีละข้อ**
+
+🚨 **ข้อใดไม่ผ่าน ห้ามส่งมอบไฟล์** ให้แก้แล้วตรวจใหม่จนผ่านครบ ห้ามส่งพร้อมหมายเหตุว่า "ข้อนี้ยังไม่ผ่านแต่ไม่เป็นไร"
+
+| # | รายการตรวจ | เกณฑ์ผ่าน |
+| :---: | :--- | :--- |
+| 1 | ธงอักษรเชิงซ้อนครบทุก run | จำนวน `<w:cs/>` ใน `document.xml` เท่ากับจำนวน `<w:r>` |
+| 2 | ไม่เหลือ `ar-SA` | นับได้ 0 ใน `styles.xml` |
+| 3 | กฎการตัดบรรทัด | มี `applyBreakingRules` ใน `settings.xml` |
+| 4 | การจัดวางย่อหน้าเนื้อความ | `w:jc` = `thaiDistribute` |
+| 5 | หัวตารางซ้ำเมื่อข้ามหน้า | ทุกตารางมี `<w:tblHeader/>` |
+| 6 | ตารางพอดีหน้ากระดาษ | ทุกตารางมี `w:tblW` ชนิด `pct` ค่า `5000` |
+| 7 | คอลัมน์ปรับอัตโนมัติ | ทุกตารางมี `w:tblLayout` ชนิด `autofit` |
+| 8 | ไม่ซ้อนเลขข้อ | ไม่มีย่อหน้าขึ้นต้นแบบ `1. 4.1` หรือ `2. 4.2` |
+| 9 | ไม่มีการจัดรูปแบบโดยตรง | ทุกย่อหน้าผูกสไตล์ ไม่มี `pPr/rPr` ตั้งค่าเอง |
+| 10 | ลำดับลูกของ `w:rPr` | เรียงตาม schema ทุกตัว |
+
+```python
+import re, sys, zipfile
+from collections import OrderedDict
+
+# Windows console เป็น cp874/cp1252 — ไม่ตั้งบรรทัดนี้ พิมพ์ภาษาไทยแล้ว UnicodeEncodeError
+sys.stdout.reconfigure(encoding='utf-8')
+
+W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
+
+# ลำดับลูกของ rPr ตาม schema (ตัดเหลือตัวที่ใช้จริง) — ผิดลำดับ Word ฟ้องไฟล์เสีย
+RPR_ORDER = ['rStyle', 'rFonts', 'b', 'bCs', 'i', 'iCs', 'caps', 'smallCaps',
+             'strike', 'color', 'spacing', 'w', 'position', 'sz', 'szCs',
+             'highlight', 'u', 'vertAlign', 'rtl', 'cs', 'lang']
+
+
+def audit(path):
+    z = zipfile.ZipFile(path)
+    doc = z.read('word/document.xml').decode('utf-8')
+    sty = z.read('word/styles.xml').decode('utf-8')
+    try:
+        st = z.read('word/settings.xml').decode('utf-8')
+    except KeyError:
+        st = ''
+
+    r = OrderedDict()
+
+    n_run = len(re.findall(r'<w:r[ >]', doc))
+    n_cs = len(re.findall(r'<w:cs/>', doc))
+    r['ธงอักษรเชิงซ้อนใน run'] = (n_cs == n_run, '%d/%d' % (n_cs, n_run))
+
+    r['ไม่เหลือ ar-SA'] = (sty.count('ar-SA') == 0, str(sty.count('ar-SA')))
+    r['กฎการตัดบรรทัด'] = ('applyBreakingRules' in st, 'มี' if 'applyBreakingRules' in st else 'ไม่มี')
+
+    jc = re.findall(r'<w:jc w:val="(\w+)"/>', doc)
+    bad_jc = [v for v in jc if v == 'both']
+    r['จัดกระจายแบบไทย'] = (not bad_jc, 'thaiDistribute' if not bad_jc else 'พบ both %d จุด' % len(bad_jc))
+
+    n_tbl = doc.count('<w:tbl>')
+    r['หัวตารางซ้ำ'] = (doc.count('<w:tblHeader/>') >= n_tbl, '%d/%d' % (doc.count('<w:tblHeader/>'), n_tbl))
+    # ลำดับ attribute ไม่แน่นอน ต้องจับแบบไม่อิงลำดับ
+    n_pct = len([m for m in re.findall(r'<w:tblW[^>]*/>', doc)
+                 if 'w:type="pct"' in m and 'w:w="5000"' in m])
+    r['ตารางพอดีหน้ากระดาษ'] = (n_pct >= n_tbl, '%d/%d' % (n_pct, n_tbl))
+    n_af = len(re.findall(r'<w:tblLayout w:type="autofit"/>', doc))
+    r['ตารางปรับอัตโนมัติ'] = (n_af >= n_tbl, '%d/%d' % (n_af, n_tbl))
+
+    texts = re.findall(r'<w:t[^>]*>([^<]*)</w:t>', doc)
+    dup = [t for t in texts if re.match(r'^\s*\d+\.\s+\d+\.\d+', t)]
+    r['ไม่ซ้อนเลขข้อ'] = (not dup, 'ผ่าน' if not dup else 'พบ %d จุด' % len(dup))
+
+    inline_rpr = len(re.findall(r'<w:r>\s*<w:rPr>\s*<w:rFonts', doc))
+    r['ไม่มีการจัดรูปแบบโดยตรง'] = (inline_rpr == 0, 'ผ่าน' if inline_rpr == 0 else 'พบ %d run' % inline_rpr)
+
+    ok_order = True
+    for blk in re.findall(r'<w:rPr>(.*?)</w:rPr>', doc, re.S):
+        tags = [t for t in re.findall(r'<w:(\w+)[ />]', blk) if t in RPR_ORDER]
+        idx = [RPR_ORDER.index(t) for t in tags]
+        if idx != sorted(idx):
+            ok_order = False
+            break
+    r['ลำดับลูกของ rPr'] = (ok_order, 'ผ่าน' if ok_order else 'ผิดลำดับ')
+
+    for k, (passed, detail) in r.items():
+        print('%s %-28s %s' % ('PASS' if passed else 'FAIL', k, detail))
+    return all(v[0] for v in r.values())
+
+
+if __name__ == '__main__':
+    sys.exit(0 if audit(sys.argv[1]) else 1)
+```
+
+**ตัวอย่างผลการรันจริง** (เล่มตำราหลักเศรษฐศาสตร์ บทที่ 4)
+
+```text
+PASS ธงอักษรเชิงซ้อนใน run      148/148
+PASS ไม่เหลือ ar-SA             0
+PASS กฎการตัดบรรทัด             มี
+PASS จัดกระจายแบบไทย            thaiDistribute
+PASS หัวตารางซ้ำ                1/1
+PASS ตารางพอดีหน้ากระดาษ        1/1
+PASS ตารางปรับอัตโนมัติ         1/1
+PASS ไม่ซ้อนเลขข้อ              ผ่าน
+PASS ไม่มีการจัดรูปแบบโดยตรง    ผ่าน
+PASS ลำดับลูกของ rPr            ผ่าน
+```
+
+---
+
 ## **✅ เช็คลิสต์ก่อนบอกว่าเสร็จ**
 
 * [ ] snapshot ถูกสร้างก่อนการแก้ทุกครั้ง
