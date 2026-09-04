@@ -14,7 +14,7 @@
 ```text
 academicforward/
 ├── ✍️ Writing/       # สกิลสำหรับ "เขียน" (ป.ตรี, ป.โท/เอก, นักวิจัย, ผู้เขียนตำรา — เลือกไฟล์ 1-4 ไฟล์เดียวจบ + ไฟล์ 6 ตรวจเนื้อหา และไฟล์ 5 ขัดภาษา)
-├── 🎨 Designing/     # สกิลสำหรับ "ออกแบบ" (สไลด์การสอน, โครงสร้างตำรา, ไดอะแกรม Flowchart)
+├── 🎨 Designing/     # สกิลสำหรับ "ออกแบบ" (สไลด์การสอน, โครงสร้างตำรา, ไดอะแกรม Flowchart, ผังกระบวนการ WP/WI)
 ├── 🔍 Searching/     # สกิลสำหรับ "สืบค้น" (คลังคำค้นหาฐานข้อมูลไทย-เทศ, พรอมท์สืบค้น)
 ├── 📋 Evaluation/    # สกิลสำหรับ "ขอตำแหน่งสูงขึ้น" (เอกสารประเมินสายสนับสนุน + สคริปต์ .docx + เทมเพลตตารางหลักฐาน)
 ├── 📢 Publishing/    # สกิลสำหรับ "เผยแพร่ & โพสต์" (แต่งโพสต์ Facebook/Social ARITC NSRU)
@@ -38,7 +38,8 @@ academicforward/
 | 📖 **Reference** | [Writing/writing-development-research-brief.md](Writing/writing-development-research-brief.md) | `2026-08-31` | 🔬 **บันทึกรีเสิร์ชเบื้องหลังกฎชุดเขียน** — ความแม่นยำเครื่องตรวจ AI + นโยบายวารสาร/สำนักพิมพ์ + หลักฐานพัฒนางานเขียน (ระบุระดับความเชื่อถือรายข้อ) | [📖 เปิดอ่านบันทึก](Writing/writing-development-research-brief.md) |
 | 🎨 **Designing** | [Designing/slide-hub-agent.md](Designing/slide-hub-agent.md) | `v2.0` | 🚀 **อาจารย์ / ผู้สอน** — ออกแบบสไลด์ 16:9 + บอร์ดเกม + ใบงาน A4 | [📖 เปิดไฟล์](Designing/slide-hub-agent.md) |
 | 🎨 **Designing** | [Designing/textbook-structure-agent.md](Designing/textbook-structure-agent.md) | `v1.6` | 🗂️ **ผู้พัฒนาหลักสูตร** — วางโครงสร้างเล่มตำรา & CLO & คีย์เวิร์ด | [📖 เปิดไฟล์](Designing/textbook-structure-agent.md) |
-| 🎨 **Designing** | [Designing/flowchart-diagram-agent.md](Designing/flowchart-diagram-agent.md) | `v2.0` | 📊 **ทุกกลุ่ม** — ออกแบบ Flowchart, Diagram และ Mermaid Architecture | [📖 เปิดไฟล์](Designing/flowchart-diagram-agent.md) |
+| 🎨 **Designing** | [Designing/flowchart-diagram-agent.md](Designing/flowchart-diagram-agent.md) | `v3.1` | 📊 **ทุกกลุ่ม** — Flowchart / Diagram / Architecture + กรอบแนวคิดวิจัย + PRISMA + กติกา ISO 5807 + render ด้วย `mmdc` | [📖 เปิดไฟล์](Designing/flowchart-diagram-agent.md) |
+| 🎨 **Designing** | [Designing/wp-wi-flowchart-agent.md](Designing/wp-wi-flowchart-agent.md) | `v1.0` | 🏛️ **สายสนับสนุน / งานประกันคุณภาพ** — ผังกระบวนการชุด WP/WI/SOP + กฎผังตรงกับตารางขั้นตอน + เช็คลิสต์ปิดชุด ๑๐ ข้อ (เปิดคู่ `flowchart-diagram-agent`) | [📖 เปิดไฟล์](Designing/wp-wi-flowchart-agent.md) |
 | 🎨 **Designing** | [Designing/textbook-figure-agent.md](Designing/textbook-figure-agent.md) | `v2.0` | 🖼️ **คณาจารย์ผู้เขียนตำรา** — ผลิตภาพประกอบเวกเตอร์ภาษาไทยทั้งเล่ม + แทรกลง Word + ภาคผนวก ก | [📖 เปิดไฟล์](Designing/textbook-figure-agent.md) |
 | 🔍 **Searching** | [Searching/academic-search-keywords.md](Searching/academic-search-keywords.md) | `v2.0` | 🔍 **นักศึกษา / นักวิจัย** — คลังสะพานคำค้นภาษาไทย ↔ อังกฤษ 12 ฐานข้อมูล | [📖 เปิดไฟล์](Searching/academic-search-keywords.md) |
 | 🔍 **Searching** | [Searching/academic-database-prompts.md](Searching/academic-database-prompts.md) | `v2.0` | 💡 **นักศึกษา / อาจารย์** — ชุดคำสั่ง Prompt สกัดความรู้และสรุปเปเปอร์ | [📖 เปิดไฟล์](Searching/academic-database-prompts.md) |
@@ -63,6 +64,7 @@ academicforward/
 | 4 | 📋 **ขอกำหนดตำแหน่งสูงขึ้น** | **`promote-doc-agent`** + `docx-safe-edit-agent` (กลไกแก้ไฟล์ + ยืมเล่มเป็นเทมเพลท) → `5-prose-cleaner` (ขัดสำนวนช่องบันทึกร่องรอยคุณภาพ) |
 | 5 | 🎮 **สอน / นำเสนอ** | `textbook-structure-agent` (โครงเนื้อหา) → **`slide-hub-agent`** → `flowchart-diagram-agent` |
 | 6 | 📢 **เผยแพร่ผลงาน** | ผลงานจากคอมโบ 1–4 → **`aritc-social-post-agent`** → `gdrive-permission-agent` (ล็อกสิทธิ์ไฟล์ที่แจก) |
+| 7 | 🏛️ **ทำ/แก้ชุดเอกสารคุณภาพ JD-WP-WI** | **`wp-wi-flowchart-agent`** + `flowchart-diagram-agent` (เปิดคู่ วาดผังทั้งชุด) → `docx-safe-edit-agent` (แก้ถ้อยคำในเล่ม + แทนรูปผัง) → `promote-doc-agent` (ถ้าใช้เป็นหลักฐานขอตำแหน่ง) |
 
 ### 🧭 ลำดับด่านตรวจ — ห้ามสลับ
 
@@ -94,7 +96,9 @@ flowchart LR
 | โครงสร้างเล่มและ CLO | `textbook-structure-agent` | ก่อนเริ่มเขียน |
 | **ชุดสีและธีมของภาพ** | `textbook-figure-agent` | ที่เดียวเท่านั้น ไฟล์อื่นห้ามบันทึกรหัสสี |
 | สเปกและการผลิตภาพประกอบ | `textbook-figure-agent` | ไฟล์สายเขียนออกสเปก ไฟล์นี้ผลิต |
-| ผังกระบวนการและไดอะแกรม | `flowchart-diagram-agent` | — |
+| ผังกระบวนการและไดอะแกรม | `flowchart-diagram-agent` | กติกา Mermaid ทั้งหมดอยู่ที่นี่ที่เดียว |
+| **ผังชุดเอกสารคุณภาพ WP/WI/SOP** | `wp-wi-flowchart-agent` | กฎเฉพาะชุดเอกสาร เปิดคู่ `flowchart-diagram-agent` เสมอ |
+| **แทนรูปในไฟล์ `.docx` เดิม** | `docx-safe-edit-agent` | ไฟล์อื่นห้ามเขียนวิธีแทนรูปซ้ำ |
 | คำค้นและการสืบค้นฐานข้อมูล | `academic-search-keywords` + `academic-database-prompts` | ใช้คู่กันเสมอ |
 | ขอตำแหน่งสูงขึ้น **สายสนับสนุน** | `promote-doc-agent` | ๑๒ สมรรถนะ × ๕ ระดับ |
 

@@ -108,6 +108,47 @@ k.puttext_rich(paragraph_xml, [('วลีนำ', True), (' เนื้อค�
 
 **ก่อนแทนต้องทำบัญชีสล็อตก่อน** (`Evaluation/scripts/slots.py`) ออกไฟล์ TSV ที่มี จำนวนรูปต่อบล็อก · ขนาดเฟรมรายรูปเป็นนิ้ว · แนวนอน/แนวตั้ง · จุดครอบตัด · ชื่อไฟล์ media · คำบรรยายเดิม แล้วจับคู่ด้วย **จำนวนรูป + แนวรูป + สัดส่วน พร้อมกัน** เพราะบล็อก ๓ รูปมีทั้งแบบ "นอนกว้างบน + ตั้งคู่ล่าง" และ "ตั้งสูงสามใบเรียง" ซึ่งใช้แทนกันไม่ได้
 
+### เมื่อรูปใหม่สัดส่วนต่างจากเดิมมาก (ผังงานที่แก้เนื้อหาแล้ว)
+
+ภาพชุดที่ **generate ใหม่ทุกครั้งที่แก้เนื้อหา** เช่นผังงาน Mermaid จะมีสัดส่วนเปลี่ยนเองเมื่อจำนวนโหนดเปลี่ยน `contain` จะเหลือขอบขาวกินพื้นที่จนภาพเล็กเกินอ่าน
+
+กรณีนี้ยอมแตะ XML ได้ **เฉพาะ `<wp:extent>` เท่านั้น** โดยคงความสูงเดิมไว้แล้วคำนวณความกว้างใหม่จากสัดส่วนจริง
+
+```python
+import docx, io
+from PIL import Image
+from docx.shared import Inches
+
+MAX_W = 6.27                                   # A4 ขอบ ๑ นิ้ว — คำนวณจากเอกสารจริงเสมอ
+d = docx.Document(DOCX); part = d.part
+
+for i, sh in enumerate(d.inline_shapes):
+    blob  = open(f"chart-{i+1}.png", "rb").read()
+    ratio = (lambda im: im.size[1] / im.size[0])(Image.open(io.BytesIO(blob)))
+
+    rId = sh._inline.graphic.graphicData.pic.blipFill.blip.embed
+    part.related_parts[rId]._blob = blob       # สลับไบต์ คง rId เดิม
+
+    h = sh.height.inches                       # คงความสูงเดิม
+    w = h / ratio                              # กว้างใหม่ตามสัดส่วนจริง ไม่ยืด
+    if w > MAX_W:
+        w, h = MAX_W, MAX_W * ratio
+    sh.width, sh.height = Inches(round(w, 3)), Inches(round(h, 3))
+
+d.save(DOCX)
+```
+
+**เงื่อนไขที่ต้องครบก่อนใช้วิธีนี้**
+
+1. รูปเป็น **inline** ไม่ใช่ floating ที่มี `<wp:anchor>` — floating ต้องทำมือ
+2. รูปไม่มี `<a:srcRect>` ครอบตัด — ถ้ามี การเปลี่ยน extent จะทำให้จุดครอบเพี้ยน
+3. **นามสกุลไฟล์ใหม่ต้องตรงกับของเดิม** (เดิม `.png` ต้องส่ง `.png`) เพราะ content-type ผูกกับ part เดิม
+4. ลำดับ `inline_shapes` = ลำดับที่รูปปรากฏในเอกสาร **ต้องตรวจให้ตรงกับลำดับภาพใหม่ก่อนรัน** อย่าเชื่อว่าตรงเอง
+5. ปิดไฟล์ใน Word ก่อน ไม่งั้นได้ `Permission denied`
+6. หลังบันทึกต้องตรวจ `zipfile.ZipFile(f).testzip()` ได้ `None` และเปิดด้วย Word จริงหนึ่งรอบ
+
+**ถ้าเงื่อนไข ๑–๒ ไม่ผ่าน ให้กลับไปใช้ `contain` แล้วยอมขอบขาว** ปลอดภัยกว่าเสี่ยงเฟรมพัง
+
 ---
 
 ## **📄 ยืมเล่มของคนอื่นมาเป็นเทมเพลท**
