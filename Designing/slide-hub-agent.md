@@ -159,12 +159,13 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 **สไลด์ Expertise ของวิทยากร (บังคับทุกงาน — หน้าเดียว หน้า 2 ต่อจากปก)**
 * แบบ speaker bio ของฝรั่ง = **รายการสกิล** ไม่ใช่รายการงานที่เคยไป/ผลงาน/ปี · **หน้าเดียวพอ** (2 หน้าเยอะไป)
 * ป้ายเล็ก `Expertise` · หัวเรื่อง **ความเชี่ยวชาญ** เท่านั้น (ห้ามสโลแกน/ภาษาพูด เช่น "ค้นเก่ง · ใช้ AI เป็น" · ห้ามหัวเรื่องยาวแบบ "ถนัดด้าน… และ…เพื่อการ…")
-* รูปวิทยากรเต็มตัวในแผงซ้าย (230px) · ขวา **3 การ์ด × 4 สกิล เท่ากันทุกใบ** (หัวการ์ด = ชื่อกลุ่มอังกฤษสั้นบรรทัดเดียว · แต่ละสกิล = ชื่ออังกฤษตัวหนาบรรทัดเดียว + คำอธิบายสั้น) · ไม่ใส่แถบใบรับรอง (อยู่บนปกแล้ว)
+* **ไม่ใส่รูปวิทยากร** (รูปมีบนปกและหน้าปิดท้ายแล้ว อย่าใส่บ่อย) — แผงซ้าย 230px เป็นกราฟิกเรขาคณิต: วงกลมขาว 140px + ไอคอน `map` (โครงข่าย) + ป้ายชื่อ · ขวา **3 การ์ด × 4 สกิล เท่ากันทุกใบ** (หัวการ์ด = ชื่อกลุ่มอังกฤษสั้นบรรทัดเดียว · แต่ละสกิล = ชื่ออังกฤษตัวหนาบรรทัดเดียว + คำอธิบายสั้น) · ไม่ใส่แถบใบรับรอง (อยู่บนปกแล้ว)
 * **คำอธิบายสกิล = คำทางการ/ศัพท์วิชาชีพ** (ชื่อเครื่องมือคั่นด้วย · หรือคำนามไทยทางการ) · ห้ามภาษาพูด เช่น "Deploy เอง" "ทำเองได้" "เก่ง"
-  * **Library Science:** Database Searching (CINAHL · ScienceDirect · TCI · ThaiLIS) · Search Strategy (Boolean Operators · Subject Headings) · Thesis Formatting (รูปแบบวิทยานิพนธ์ตามคู่มือมหาวิทยาลัย) · Library Systems (ระบบห้องสมุดอัตโนมัติ · Metadata)
+  * **Library Science:** Database Searching (CINAHL · ScienceDirect · TCI · ThaiLIS) · Search Strategy (Boolean Operators · Subject Headings) · Thesis Formatting (รูปแบบวิทยานิพนธ์ตามคู่มือมหาวิทยาลัย) · Electronic Resources (ฐานข้อมูล · E-Book · สถิติการใช้งาน)
   * **AI in Education:** AI-assisted Research (การสังเคราะห์ข้อมูลจากแหล่งที่เชื่อถือได้) · Prompt Engineering (การออกแบบคำสั่งเพื่อการเรียนรู้) · Instructional Design (สื่อการสอน · ใบงาน · กิจกรรมเกม) · Google for Education (Google Workspace · ห้องเรียนออนไลน์)
   * **Digital Technology:** Web Application Development (React · TypeScript · Bun) · Server Administration (Windows Server · MySQL · Deployment — หลักฐาน `GitHub\dev-start.ps1`) · UX/UI & Graphic Design (ส่วนติดต่อผู้ใช้และสื่อกราฟิก) · Digital Media Production (ภาพนิ่ง · วิดีโอ · โสตทัศนูปกรณ์)
-* **ห้ามใส่:** Citation & Referencing / APA 7th (ไม่ใช่สกิลของผู้ใช้)
+* **ห้ามใส่:** Citation & Referencing / APA 7th · Library Systems / OPAC / ระบบห้องสมุดอัตโนมัติ (ไม่ใช่สายของผู้ใช้)
+* ชื่อสกิลใช้คำกลาง ๆ ที่ครอบงานจริง ไม่เจาะระบบใดระบบหนึ่ง
 * โค้ดต้นแบบ: บล็อก `/* 2 speaker` ใน `slides\2026-09-nursing-db-notebooklm\deck.html` (คัดลอกไปใช้ + เพิ่มไอคอน db/notebook/cog ที่ขาด และ `.tile.t` ถ้าแม่แบบไม่มี)
 * สกิลใหม่ → ผู้ใช้บอกแล้วแก้ที่นี่ก่อน แล้วค่อยใส่สไลด์
 
