@@ -17,7 +17,7 @@
 | 6 | ใบงาน (ถ้าข้อ 2 บอกใช่) | `worksheet.html` ธีม/ฟอนต์เดียวกับสไลด์ → PDF A4 · **ไม่ขึ้น NoteBoard** (จะอยู่ LibPlay) | เช็กลิสต์ข้อ 2 |
 | 7 | ตั้งชื่อไฟล์แจก | `<ชื่อเรื่อง> - สไลด์.pdf` · `<ชื่อเรื่อง> - ใบงาน.pdf` ไม่มีเลขเวอร์ชัน (3.4) | — |
 | 8 | ขึ้น NoteBoard (มีเน็ต) | `lesson.json` (PDF สไลด์ + ลิงก์สำคัญเท่านั้น) → `publish-lesson.ts` (ข้อ 5) → บอกผู้ใช้กด Enter ใน dev tool | ได้รหัสห้อง · ห้องไม่รก |
-| 9 | รายงาน | path PDF · รหัสห้อง · **สิ่งที่แต่งเพิ่มเอง** (โจทย์/ตัวอย่างที่ไม่ได้มาจาก source) ให้ผู้ใช้ตรวจ | — |
+| 9 | รายงาน + ชุด LibPlay | ตรวจว่ามี `deck.html` · `worksheet.html` · `game.json` · `lesson.json` ครบ (ข้อ 6) · path PDF · รหัสห้อง · **สิ่งที่แต่งเพิ่มเอง** ให้ผู้ใช้ตรวจ | ชุดครบ |
 
 ไม่มีเน็ต (เช่น เรือนจำ) → จบที่ขั้น 7 · ไม่สร้างห้อง เว้นผู้ใช้สั่ง
 
@@ -164,7 +164,7 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 ### 3.5 ที่ทำงาน (บังคับ — ห้ามใช้ Google Drive)
 * ทุกงานอยู่ที่ `C:\Users\Burt\Documents\slides\` (ชั่วคราว — เมื่อ LibPlay เสร็จ ผู้ใช้จะสั่งย้ายเข้า LibPlay)
   * `assets\` รูปวิทยากร + โลโก้ (ใช้ร่วมทุกงาน)
-  * `<YYYY-MM-slug>\` → `source.txt` (เนื้อหาจากผู้ใช้) · `deck.html` · `worksheet.html` · `lesson.json` · `<ชื่อเรื่อง> - สไลด์.pdf` · `<ชื่อเรื่อง> - ใบงาน.pdf`
+  * `<YYYY-MM-slug>\` → `source.txt` (เนื้อหาจากผู้ใช้) · `deck.html` · `worksheet.html` · `game.json` · `lesson.json` · `<ชื่อเรื่อง> - สไลด์.pdf` · `<ชื่อเรื่อง> - ใบงาน.pdf` (**ชุดครบ = ข้อ 6**)
   * `_archive\` ฉบับเก่า
 * เนื้อหามาทางแชต (บันทึกเป็น `source.txt` เอง) หรือ path ไฟล์ในเครื่อง
 * ห้ามบันทึก / อ่าน / แชร์ไฟล์ส่งมอบผ่าน Google Drive · ไฟล์ขึ้นเว็บผ่านข้อ 5 เท่านั้น
@@ -264,3 +264,36 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 * ห้ามใช้ `externalInjection` (ปิดแล้ว ต้องมี token ผู้จัด)
 * ห้ามแก้ `.env` / config บน server · ห้ามแตะระบบล็อกอิน
 * งานไม่มีเน็ต (เรือนจำ) ไม่ต้องสร้างห้อง เว้นผู้ใช้สั่ง
+
+---
+
+## 6. ชุดบทเรียนสำหรับ LibPlay (เก็บทุกงาน — ย้ายเข้าเมื่อ LibPlay เสร็จ)
+
+> LibPlay แบ่ง 2 ส่วน **บทเรียน** (สไลด์ + ใบงาน) และ **เกม** — ทุกชิ้น **จับคู่กัน** เหมือน HTML hub ดั้งเดิมของผู้ใช้ (ถอดแบบไว้แล้วใน `libplay/frontend/src/features/notebooklm/`: SlideDeck · Handouts · GameBoard)
+> NoteBoard = ห้องให้ผู้เรียนเข้าเห็นสไลด์ + โพสต์ · เกมและใบงานไม่ขึ้น NoteBoard
+
+**ทุกโฟลเดอร์งานต้องมีครบ 3 ชิ้นที่จับคู่กัน**
+
+| ไฟล์ | ส่วนใน LibPlay | ตรงกับ (ถอดแบบ) |
+|---|---|---|
+| `deck.html` | บทเรียน → สไลด์ | `SlideDeck` / `data/slides.ts` |
+| `worksheet.html` | บทเรียน → ใบงาน | `Handouts` / `topics.ts handout` |
+| `game.json` | เกม | `GameBoard` / `topics.ts challenges` |
+| `lesson.json` | ห้อง NoteBoard (+ `board.code` หลังสร้าง) | activity ขั้น `noteboard` |
+
+**game.json**
+```json
+{
+  "status": "draft | empty | approved",
+  "mission": "ชื่อภารกิจ",
+  "pairsWith": {"deck": "deck.html", "worksheet": "worksheet.html"},
+  "challenges": [
+    {"stage": "ด่านที่ 1", "title": "...", "tool": "...", "slides": [3,4], "prompt": "...", "win": "+10"},
+    {"stage": "BOSS", "boss": true, "title": "...", "slides": [9], "prompt": "...", "win": "+50"}
+  ]
+}
+```
+* `slides` = เลขหน้าสไลด์ที่ด่านนั้นใช้ (จับคู่บทเรียน ↔ เกม)
+* source มีโจทย์เกม → ยกตรงตัว `status: approved`
+* source ไม่มี → `status: empty` แล้ว **ถามผู้ใช้** ว่าจะให้ร่างไหม · ร่างเอง = `draft` และแจ้งในรายงานขั้น 9
+* ใบงานกับเกมต้องอ้างเนื้อหาในสไลด์ชุดเดียวกันเท่านั้น
