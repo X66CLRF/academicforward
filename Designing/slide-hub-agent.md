@@ -47,7 +47,7 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 - [ ] มีหน้าปิดท้าย "จำ 3 ข้อนี้ไว้" + อีเมลองค์กร · ไม่มีเบอร์/ช่องทางส่วนตัว
 - [ ] เนื้อหาจาก source ครบทุกข้อ · โน้ตผู้พูดที่บอกว่า "ไม่ใส่เฉลย" ต้องไม่มีเฉลยบนสไลด์
 - [ ] **ถ้อยคำเป็นของผู้ใช้** (ข้อ 3.6) — ไม่มีสโลแกนที่แต่งเอง · ตรวจข้อความที่เพิ่มเองด้วย `Writing/5-prose-cleaner.md` โหมด 1
-- [ ] ชื่อไฟล์แจกไม่มีเลขเวอร์ชัน · ฉบับเก่าอยู่ใน `_archive\`
+- [ ] ชื่อไฟล์แจกและ `<title>` ไม่มีเลขเวอร์ชัน · ฉบับเก่าอยู่ใน `_archive\`
 
 ---
 
@@ -133,7 +133,7 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
   * IC3 Digital Literacy
   * Gemini Certified Faculty (2026)
   * Gemini Certified Educator (2026)
-  * Google Certified Educator Level 1 (2025)
+  * Google Certified Educator Level 1 & 2 (L1 2025)
 * รูปวิทยากร: กรอบสี่เหลี่ยมมุมมนข้างชื่อ เห็นทั้งตัว (ไฟล์ดูหัวข้อ "ไฟล์ประจำ" ด้านล่าง)
 * โลโก้ ARITC (PNG ใส) มุมขวาบน
 
