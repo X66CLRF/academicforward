@@ -118,6 +118,25 @@
 
 **ฟอนต์ต้องติดตั้งระดับ system** ไม่งั้น headless Chromium มองไม่เห็น ภาพจะออกเป็นฟอนต์อื่นเงียบ ๆ โดยไม่มี error
 
+> ⚠️ **ติดตั้งแล้วก็ยังพลาดได้** — เจอจริงบน Windows: ติดตั้ง TH Sarabun New ครบ แต่ `mmdc` ยังไปใช้ Leelawadee แทน (ตัวหนา อ่านเหมือนภาพเบลอ ไม่เข้ากับเนื้อความในเล่ม) **วิธีที่ได้ผลแน่นอนคือฝังฟอนต์เป็น base64 ผ่าน `-C`**
+>
+> ```python
+> import base64
+> f = base64.b64encode(open(r'C:\Windows\Fonts\THSarabunNew.ttf','rb').read()).decode()
+> open('font.css','w').write("@font-face{font-family:'TH Sarabun New';"
+>     f"src:url(data:font/ttf;base64,{f}) format('truetype')}}")
+> ```
+> ```bash
+> mmdc -i chart.mmd -o chart.png -s 4 -b white -C font.css
+> ```
+> ตรวจด้วยตา: เรนเดอร์ข้อความทดสอบเทียบกับฟอนต์จริง (PIL `ImageFont.truetype`) ถ้าหน้าตาไม่เหมือน = ยังเป็นฟอนต์สำรอง
+
+**ฟอนต์ไทยตระกูล TH ตัวเล็กกว่าฟอนต์ทั่วไปที่ px เท่ากัน** ใช้ `fontSize` ราว `28px` (ไม่ใช่ 16–18px) แล้วคำนวณขนาดจริงในเล่ม: `pt ≈ fontSize × ความสูงภาพในเล่ม(pt) ÷ ความสูงภาพ(px ที่ scale 1)` เป้าหมาย 14–18pt ใกล้เนื้อความ
+
+**ภาษาไทยไม่มีช่องว่างระหว่างคำ** Mermaid จะตัดบรรทัดกลางคำ (เช่น "ผู้ / เชี่ยวชาญ") ให้ตั้ง `'flowchart': {'wrappingWidth': 480}` แล้วตัดบรรทัดเองด้วย `<br/>` ตรงรอยต่อวลี
+
+**ลดความสูงผัง** เพื่อให้ตัวหนังสือในเล่มใหญ่ขึ้น: `'nodeSpacing': 30, 'rankSpacing': 35, 'padding': 12`
+
 ```bash
 # Windows (Git Bash)
 ls /c/Windows/Fonts/ | grep -i sarabun
@@ -143,7 +162,8 @@ mmdc -i chart.mmd -o chart.svg -b transparent
 ```
 
 - ใช้ **SVG** เมื่อปลายทางรองรับ (Word 2016+, InDesign, เว็บ) — เวกเตอร์ ซูมไม่แตก พิมพ์คม
-- ใช้ **PNG** เมื่อปลายทางไม่รองรับ SVG เพิ่ม `-s 3` ให้ความละเอียด 3 เท่า
+- ใช้ **PNG** เมื่อปลายทางไม่รองรับ SVG เพิ่ม `-s 4` ให้คมพอพิมพ์ — **SVG ของ Mermaid ที่ใช้ `htmlLabels` มี `foreignObject` ซึ่ง Word แสดงข้อความไม่ได้** ลง Word จึงใช้ PNG
+- ลง Word แล้วภาพยังเบลอ: Word บีบอัดรูปตอนบันทึก/ส่งออก PDF ให้ใส่ `<w:doNotAutoCompressPictures/>` ใน `word/settings.xml`
 - `-b transparent` ให้พื้นหลังโปร่ง กลืนกับสีกระดาษ
 - **ถ้ามีผังใดพัง `mmdc` จะหยุดทั้งชุด** อ่านบรรทัด `Parse error` หาโหนดที่ผิด (มักเป็นอักขระพิเศษไม่ได้ครอบเครื่องหมายคำพูด) แก้แล้วรันใหม่ทั้งไฟล์
 - ผลลัพธ์เรียงตามลำดับหัวข้อในไฟล์ต้นทาง **ต้องตรวจว่าลำดับตรงกับที่ตั้งใจก่อนนำไปใช้** อย่าเชื่อลำดับโดยไม่ตรวจ
