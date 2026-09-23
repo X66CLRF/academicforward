@@ -190,6 +190,10 @@ const HUB = {
 `G:\My Drive\อบรม\scam-deck-v2.html` (ธีม soft-blue · Sarabun · แผงกราฟิกเรขาคณิต · UI จำลอง · สลับเลย์เอาต์) — ใช้เป็นแม่แบบโค้ด CSS/helper แทนการเขียนใหม่ทุกครั้ง
 
 ### 3.4 ผลลัพธ์ที่ส่งมอบ
+**ชื่อไฟล์แจกจ่าย** (ผู้เรียน/ห้อง NoteBoard เห็น) — สวย อ่านง่าย **ห้ามมีเลขเวอร์ชัน** (v2, final, _new)
+* รูปแบบ: `<ชื่อเรื่อง> - สไลด์.pdf` · `<ชื่อเรื่อง> - ใบงาน.pdf` (เว้นวรรคปกติ ขีดกลางมีวรรครอบ ไม่ใช้ _)
+* ไฟล์ทำงาน (html, json) ใช้ชื่ออังกฤษสั้นได้ · ฉบับเก่าย้ายเข้า `_archive/` ห้ามทิ้งไว้ปนกับไฟล์แจก
+
 * **สไลด์ PDF 16:9** (ฝังฟอนต์ ใช้ offline ได้) — พิมพ์จาก HTML ด้วย Edge/Chrome headless `@page{size:1280px 720px}`
 * **ใบงาน PDF A4** — เฉพาะเมื่อสถานที่มีห้องคอม/ต้องทำกิจกรรม
 * HTML ต้นฉบับเก็บไว้แก้ไข ไม่ใช่ตัวส่งมอบ
@@ -249,8 +253,8 @@ const HUB = {
   "columns": [{"id":"content","title":"เนื้อหา"},{"id":"game","title":"กิจกรรม / เกม"},
               {"id":"help","title":"ลิงก์ที่เกี่ยวข้อง"},{"id":"submit","title":"ส่งงาน"}],
   "notes": [
-    {"column":"content","file":"...สไลด์.pdf","text":"สไลด์ประกอบการอบรม (PDF)","pin":true},
-    {"column":"content","file":"...ใบงาน.pdf","text":"ใบงาน A4 (PDF)"},
+    {"column":"content","file":"...<ชื่อเรื่อง> - สไลด์.pdf","text":"สไลด์ประกอบการอบรม (PDF)","pin":true},
+    {"column":"content","file":"...<ชื่อเรื่อง> - ใบงาน.pdf","text":"ใบงาน A4 (PDF)"},
     {"column":"content","text":"จำ 3 ข้อนี้ไว้ ...","pin":true},
     {"column":"game","text":"ด่านที่ 1 ...","color":"green","pin":true},
     {"column":"help","text":"...","link":"https://..."}
