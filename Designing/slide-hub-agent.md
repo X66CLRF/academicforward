@@ -16,7 +16,7 @@
 | 5 | ออก PDF + ตรวจ | พิมพ์ด้วย Edge headless (ข้อ 1) · ดูภาพรวมทุกหน้า + ซูม 2–3 หน้า · ผ่านเช็กลิสต์ข้อ 6 | ไม่มีข้อตก |
 | 6 | ใบงาน (ถ้าข้อ 2 บอกใช่) | `worksheet.html` ธีม/ฟอนต์เดียวกับสไลด์ → PDF A4 · **ไม่ขึ้น NoteBoard** (จะอยู่ LibPlay) | เช็กลิสต์ข้อ 2 |
 | 7 | ตั้งชื่อไฟล์แจก | `<ชื่อเรื่อง> - สไลด์.pdf` · `<ชื่อเรื่อง> - ใบงาน.pdf` ไม่มีเลขเวอร์ชัน (3.4) | — |
-| 8 | ขึ้น NoteBoard (มีเน็ต) | `lesson.json` (PDF สไลด์ + ลิงก์สำคัญเท่านั้น) → `publish-lesson.ts` (ข้อ 5) → บอกผู้ใช้กด Enter ใน dev tool | ได้รหัสห้อง · ห้องไม่รก |
+| 8 | ขึ้น NoteBoard (มีเน็ต) | `lesson.json` (PDF สไลด์ + ลิงก์สำคัญเท่านั้น) → `publish-lesson.ts` (ข้อ 5) → **ส่ง PDF ขึ้น server เอง (scp)** → เช็ก URL ตอบ 200 | ได้รหัสห้อง · PDF เปิดได้ · ห้องไม่รก |
 | 9 | รายงาน + ชุด LibPlay | ตรวจว่ามี `deck.html` · `worksheet.html` · `game.json` · `lesson.json` ครบ (ข้อ 6) · path PDF · รหัสห้อง · **สิ่งที่แต่งเพิ่มเอง** ให้ผู้ใช้ตรวจ | ชุดครบ |
 
 ไม่มีเน็ต (เช่น เรือนจำ) → จบที่ขั้น 7 · ไม่สร้างห้อง เว้นผู้ใช้สั่ง
@@ -256,9 +256,13 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 **ขั้นตอน**
 1. ทำ PDF สไลด์เสร็จ ผ่านการตรวจ (ข้อ 2)
 2. เขียน `lesson.json` → รัน `publish-lesson.ts`
-3. สคริปต์พิมพ์ `board id`, รหัสห้อง, URL และรายชื่อไฟล์ใน `backend/uploads` ที่ต้อง sync
-4. บอกผู้ใช้: **"กด Enter ในเครื่องมือ dev เพื่อ sync"** + รหัสห้อง — จบ
-5. ใส่รหัสห้องในหน้าปิดท้ายของสไลด์ (เฉพาะงานที่มีเน็ต) แล้วออก PDF ใหม่ถ้าจำเป็น
+3. สคริปต์พิมพ์ `board id`, รหัสห้อง, URL และรายชื่อไฟล์ใน `backend/uploads`
+4. ใส่รหัสห้องในหน้าปิดท้าย (`build_pdf.py --room "ห้องกิจกรรม NoteBoard รหัส XXXXXX"`) แล้วคัดลอก PDF ใหม่ทับไฟล์ใน `backend/uploads/<ชื่อที่สคริปต์พิมพ์>`
+5. **ส่ง PDF ขึ้น server เอง** ไม่ต้องรอผู้ใช้กด sync:
+   ```powershell
+   scp -o BatchMode=yes -p -i "$env:USERPROFILE\.ssh\nsru72_ed25519" "<noteboard>\backend\uploads\<file>.pdf" "Gasidid@192.168.0.72:C:/Websites/apps/noteboard/backend/uploads/<file>.pdf"
+   ```
+6. เช็ก `https://noteboard.nsru.ac.th/uploads/<file>.pdf` ต้องตอบ **200** ก่อนรายงานว่าเสร็จ (404 = ยังไม่ขึ้น)
 
 **ห้าม**
 * ห้ามใช้ `externalInjection` (ปิดแล้ว ต้องมี token ผู้จัด)
