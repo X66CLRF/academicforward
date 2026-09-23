@@ -166,7 +166,7 @@ const HUB = {
 * โลโก้ ARITC (PNG ใส) มุมขวาบน
 
 **ไฟล์ประจำ** (ฝังเป็น base64 ในไฟล์ทุกครั้ง ห้ามลิงก์ออกนอก)
-* รูปวิทยากร: `C:\Users\Burt\Documents\GitHub\aritc-audit\public\avatars\personnel\kasidit.p.jpg` (256px — วงกลม ≤ 90px)
+* **รูปวิทยากร — ใช้รูปนี้เสมอ ห้ามใช้รูปอื่น:** `G:\My Drive\อบรม\assets\speaker.jpg` (400px ครอปหัวถึงไหล่ · ต้นฉบับ `C:\Users\Burt\Desktop\001146.jpg`) แสดงเป็นวงกลม ≤ 90px
 * โลโก้ ARITC: `C:\Users\Burt\Documents\GitHub\aritc-audit\public\aritc-logo.png` (PNG ใส มีขอบว่างเยอะ — ครอป bbox ก่อน) · สำเนาครอปแล้ว `G:\My Drive\อบรม\assets\aritc-logo.png`
 * ตำแหน่งโลโก้: ปก = เหนือป้ายหัวเรื่องซ้ายบน · หน้าเนื้อหา = มุมขวาบน สูง ~46px · หน้าคั่นส่วน = ไม่ใส่ (ชนแผงกราฟิก)
 
