@@ -1,4 +1,4 @@
-﻿# Slide Hub — สไลด์ + ใบงาน + ห้อง NoteBoard
+# Slide Hub — สไลด์ + ใบงาน + ห้อง NoteBoard
 
 > **ใช้ร่วมกับ**: [textbook-structure-agent.md](textbook-structure-agent.md) (โครงเนื้อหาก่อนทำสไลด์) · [flowchart-diagram-agent.md](flowchart-diagram-agent.md) (ผังในสไลด์)
 > ผู้ใช้คนเดียว (กษิดิศ) · ผลลัพธ์หลักคือ **PDF** · ห้องกิจกรรมขึ้น **NoteBoard** · ห้ามใช้ Google Drive
