@@ -1,4 +1,4 @@
-# Slide Hub — สไลด์ + ใบงาน + ห้อง NoteBoard
+﻿# Slide Hub — สไลด์ + ใบงาน + ห้อง NoteBoard
 
 > **ใช้ร่วมกับ**: [textbook-structure-agent.md](textbook-structure-agent.md) (โครงเนื้อหาก่อนทำสไลด์) · [flowchart-diagram-agent.md](flowchart-diagram-agent.md) (ผังในสไลด์)
 > ผู้ใช้คนเดียว (กษิดิศ) · ผลลัพธ์หลักคือ **PDF** · ห้องกิจกรรมขึ้น **NoteBoard** · ห้ามใช้ Google Drive
@@ -163,7 +163,7 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 * **คำอธิบายสกิล = คำทางการ/ศัพท์วิชาชีพ** (ชื่อเครื่องมือคั่นด้วย · หรือคำนามไทยทางการ) · ห้ามภาษาพูด เช่น "Deploy เอง" "ทำเองได้" "เก่ง"
   * **Library Science:** Database Searching (CINAHL · ScienceDirect · TCI · ThaiLIS) · Search Strategy (Boolean Operators · Subject Headings) · Thesis Formatting (รูปแบบวิทยานิพนธ์ตามคู่มือมหาวิทยาลัย) · Electronic Resources (ฐานข้อมูล · E-Book · สถิติการใช้งาน)
   * **AI in Education:** AI-assisted Research (การสังเคราะห์ข้อมูลจากแหล่งที่เชื่อถือได้) · Prompt Engineering (การออกแบบคำสั่งเพื่อการเรียนรู้) · Instructional Design (Active Learning · Gamification) · Google for Education (Google Workspace · ห้องเรียนออนไลน์)
-  * **Digital Technology:** Web Application Development (React · TypeScript · Bun) · IT Infrastructure (Server · Deployment · Custom PC Build — หลักฐาน `GitHub\dev-start.ps1` + ผู้ใช้ประกอบ/คัสตอมคอมพิวเตอร์ได้จริง) · UX/UI & Graphic Design (ส่วนติดต่อผู้ใช้และสื่อกราฟิก) · Digital Media Production (ภาพนิ่ง · วิดีโอ · โสตทัศนูปกรณ์)
+  * **Digital Technology:** Web Application Development (React · TypeScript · Bun) · Self-hosted Tools (PDF Tools · Deployment · Custom PC Build — ติดตั้ง/ดูแลเครื่องมือเว็บบนเซิร์ฟเวอร์เอง เช่น บีบอัด PDF ดู `GitHub\dev-start.ps1` · ประกอบ/คัสตอมคอมได้จริง · ห้ามใช้คำใหญ่เกินเช่น IT Infrastructure / Server Administration) · UX/UI & Graphic Design (ส่วนติดต่อผู้ใช้และสื่อกราฟิก) · Digital Media Production (ภาพนิ่ง · วิดีโอ · โสตทัศนูปกรณ์)
 * **ห้ามใส่:** Citation & Referencing / APA 7th · Library Systems / OPAC / ระบบห้องสมุดอัตโนมัติ (ไม่ใช่สายของผู้ใช้)
 * ชื่อสกิลใช้คำกลาง ๆ ที่ครอบงานจริง ไม่เจาะระบบใดระบบหนึ่ง
 * โค้ดต้นแบบ: บล็อก `/* 2 speaker` ใน `slides\2026-09-nursing-db-notebooklm\deck.html` (คัดลอกไปใช้ + เพิ่มไอคอน db/notebook/cog ที่ขาด และ `.tile.t` ถ้าแม่แบบไม่มี)
