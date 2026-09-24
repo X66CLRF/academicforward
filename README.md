@@ -1,4 +1,4 @@
-﻿﻿# 🤖 AcademicForward — AI Agent & Knowledge Framework Hub
+﻿# 🤖 AcademicForward — AI Agent & Knowledge Framework Hub
 
 ศูนย์รวมสถาปัตยกรรม AI Agent และเครื่องมือส่งเสริมการศึกษา งานวิจัย และการสนับสนุนการทำงานวิชาการ (มรนว. 2568 / APA 7th Edition / มาตรฐาน อว. 2567)
 
@@ -14,10 +14,10 @@
 ```text
 academicforward/
 ├── ✍️ Writing/       # สกิลสำหรับ "เขียน" (ป.ตรี, ป.โท/เอก, นักวิจัย, ผู้เขียนตำรา — เลือกไฟล์ 1-4 ไฟล์เดียวจบ + ไฟล์ 6 ตรวจเนื้อหา และไฟล์ 5 ขัดภาษา)
-├── 🎨 Designing/     # สกิลสำหรับ "ออกแบบ" (สไลด์การสอน, โครงสร้างตำรา, ไดอะแกรม Flowchart, ผังกระบวนการ WP/WI)
+├── 🎨 Designing/     # สกิลสำหรับ "ออกแบบ" (สไลด์การสอน, โครงสร้างตำรา, ไดอะแกรม Flowchart, ผังกระบวนการ WP/WI, ภาพโพสต์โซเชียล 2160×2160)
 ├── 🔍 Searching/     # สกิลสำหรับ "สืบค้น" (คลังคำค้นหาฐานข้อมูลไทย-เทศ, พรอมท์สืบค้น)
 ├── 📋 Evaluation/    # สกิลสำหรับ "ขอตำแหน่งสูงขึ้น" (เอกสารประเมินสายสนับสนุน + สคริปต์ .docx + เทมเพลตตารางหลักฐาน)
-├── 📢 Publishing/    # สกิลสำหรับ "เผยแพร่ & โพสต์" (แต่งโพสต์ Facebook/Social ARITC NSRU)
+├── 📢 Publishing/    # สกิลสำหรับ "เผยแพร่ & โพสต์" (แต่งโพสต์ Facebook/Social ARITC NSRU 9 แบบ + สเปกภาพส่งต่อ Designing)
 └── 💻 Automation/    # สกิลสำหรับ "จัดการไฟล์ & สนับสนุนงาน" (สร้างไฟล์ Word ใหม่, แก้ .docx โดยฟอร์แมตไม่พัง, ล็อกสิทธิ์ GDrive)
 ```
 
@@ -41,10 +41,11 @@ academicforward/
 | 🎨 **Designing** | [Designing/flowchart-diagram-agent.md](Designing/flowchart-diagram-agent.md) | `v3.1` | 📊 **ทุกกลุ่ม** — Flowchart / Diagram / Architecture + กรอบแนวคิดวิจัย + PRISMA + กติกา ISO 5807 + render ด้วย `mmdc` | [📖 เปิดไฟล์](Designing/flowchart-diagram-agent.md) |
 | 🎨 **Designing** | [Designing/wp-wi-flowchart-agent.md](Designing/wp-wi-flowchart-agent.md) | `v1.1` | 🏛️ **สายสนับสนุน / งานประกันคุณภาพ** — ผังกระบวนการชุด WP/WI/SOP + กฎผังตรงกับตารางขั้นตอน + เช็คลิสต์ปิดชุด ๑๒ ข้อ (เปิดคู่ `flowchart-diagram-agent`) | [📖 เปิดไฟล์](Designing/wp-wi-flowchart-agent.md) |
 | 🎨 **Designing** | [Designing/textbook-figure-agent.md](Designing/textbook-figure-agent.md) | `v2.0` | 🖼️ **คณาจารย์ผู้เขียนตำรา** — ผลิตภาพประกอบเวกเตอร์ภาษาไทยทั้งเล่ม + แทรกลง Word + ภาคผนวก ก | [📖 เปิดไฟล์](Designing/textbook-figure-agent.md) |
+| 🎨 **Designing** | [Designing/social-graphic-agent.md](Designing/social-graphic-agent.md) | `v1.0` | 📱 **เจ้าหน้าที่ / ประชาสัมพันธ์** — ภาพโพสต์ 2160×2160 จาก `[GRAPHIC-SPEC]` · แม่แบบ `novel-set.py` (แนะนำนวนิยาย, สติกเกอร์ไดคัท) / `suggest-geo.py` (เชิญเสนอชื่อ, เรขาคณิต, จัตุรัส + A4 มี QR) · ลายต่อกันได้ · ห้ามอีโมจิในภาพ | [📖 เปิดไฟล์](Designing/social-graphic-agent.md) |
 | 🔍 **Searching** | [Searching/academic-search-keywords.md](Searching/academic-search-keywords.md) | `v2.0` | 🔍 **นักศึกษา / นักวิจัย** — คลังสะพานคำค้นภาษาไทย ↔ อังกฤษ 12 ฐานข้อมูล | [📖 เปิดไฟล์](Searching/academic-search-keywords.md) |
 | 🔍 **Searching** | [Searching/academic-database-prompts.md](Searching/academic-database-prompts.md) | `v2.0` | 💡 **นักศึกษา / อาจารย์** — ชุดคำสั่ง Prompt สกัดความรู้และสรุปเปเปอร์ | [📖 เปิดไฟล์](Searching/academic-database-prompts.md) |
 | 📋 **Evaluation** | [Evaluation/promote-doc-agent.md](Evaluation/promote-doc-agent.md) | `v1.0` | 📋 **บุคลากรสายสนับสนุน (ชำนาญการ / ชำนาญการพิเศษ)** — ถ้อยคำเกณฑ์ ๑๒ สมรรถนะ × ๕ ระดับ + จับคู่หลักฐาน + ออกเลขเอกสารแนบ + เช็คลิสต์ปิดเล่ม | [📖 เปิดไฟล์](Evaluation/promote-doc-agent.md) |
-| 📢 **Publishing** | [Publishing/aritc-social-post-agent.md](Publishing/aritc-social-post-agent.md) | `v2.0` | 📱 **เจ้าหน้าที่ / ประชาสัมพันธ์** — แต่งโพสต์ Facebook สื่อสารองค์กร ARITC NSRU | [📖 เปิดไฟล์](Publishing/aritc-social-post-agent.md) |
+| 📢 **Publishing** | [Publishing/aritc-social-post-agent.md](Publishing/aritc-social-post-agent.md) | `v2.5` | 📱 **เจ้าหน้าที่ / ประชาสัมพันธ์** — แต่งโพสต์ Facebook 9 แบบ + คำบรรยายใต้ภาพ + `[GRAPHIC-SPEC]` ส่งต่อ `social-graphic-agent` | [📖 เปิดไฟล์](Publishing/aritc-social-post-agent.md) |
 | 💻 **Automation** | [Automation/docx-builder.md](Automation/docx-builder.md) | `v1.0` | 🧱 **ทุกคนที่ให้ AI ผลิตไฟล์ Word ใหม่** — ตั้งสไตล์แทนการจัดรูปแบบโดยตรง + แก้บั๊กอักษรเชิงซ้อนของภาษาไทย + มาตรฐานตาราง + ด่านตรวจก่อนส่งมอบ | [📖 เปิดไฟล์](Automation/docx-builder.md) |
 | 🐍 **Automation** | [Automation/scripts/](Automation/scripts/) | `v1.0` | 🧰 **ไลบรารีกลางสร้างไฟล์ Word** — `docx_core.py` ตัวสร้างเอกสารพร้อมสไตล์และตาราง · `check_docx.py` ด่านตรวจ 9 ข้อ · `example_report.py` ตัวอย่างพร้อมก๊อปไปแก้ | [📖 เปิดโฟลเดอร์](Automation/scripts/) |
 | 💻 **Automation** | [Automation/docx-safe-edit-agent.md](Automation/docx-safe-edit-agent.md) | `v1.0` | 🧬 **ทุกคนที่ต้องแก้ไฟล์ .docx ที่จัดรูปแบบแล้ว** — แทนที่ข้อความโดยฟอร์แมตไม่พัง + backup อัตโนมัติ + แทนรูปคงเฟรม/สัดส่วน + ยืมเล่มคนอื่นเป็นเทมเพลท | [📖 เปิดไฟล์](Automation/docx-safe-edit-agent.md) |
@@ -63,8 +64,10 @@ academicforward/
 | 3 | ✍️ **เขียนตำรา (สายยาวสุด)** | `textbook-structure-agent` → **`4-textbook-writer`** → `textbook-figure-agent` → **`docx-builder`** (สร้างไฟล์เล่มขึ้นใหม่) หรือ `docx-safe-edit-agent` (แก้เล่มเดิมโดยฟอร์แมตไม่พัง) → `6-argument-auditor` → `5-prose-cleaner` |
 | 4 | 📋 **ขอกำหนดตำแหน่งสูงขึ้น** | **`promote-doc-agent`** + `docx-safe-edit-agent` (กลไกแก้ไฟล์ + ยืมเล่มเป็นเทมเพลท) → `5-prose-cleaner` (ขัดสำนวนช่องบันทึกร่องรอยคุณภาพ) |
 | 5 | 🎮 **สอน / อบรม** | `textbook-structure-agent` (โครงเนื้อหา ถ้ายังไม่มี) → **`slide-hub-agent`** (สไลด์ + ใบงาน + ห้อง NoteBoard) → `flowchart-diagram-agent` (ถ้ามีผังในสไลด์) — ดูโฟลว์เต็มด้านล่าง |
-| 6 | 📢 **เผยแพร่ผลงาน** | ผลงานจากคอมโบ 1–4 → **`aritc-social-post-agent`** → `gdrive-permission-agent` (ล็อกสิทธิ์ไฟล์ที่แจก) |
+| 6 | 📢 **เผยแพร่ผลงาน** | ผลงานจากคอมโบ 1–4 → **`aritc-social-post-agent`** → `social-graphic-agent` (ภาพโพสต์) → `gdrive-permission-agent` (ล็อกสิทธิ์ไฟล์ที่แจก) |
 | 7 | 🏛️ **ทำ/แก้ชุดเอกสารคุณภาพ JD-WP-WI** | **`wp-wi-flowchart-agent`** + `flowchart-diagram-agent` (เปิดคู่ วาดผังทั้งชุด) → `docx-safe-edit-agent` (แก้ถ้อยคำในเล่ม + แทนรูปผัง) → `promote-doc-agent` (ถ้าใช้เป็นหลักฐานขอตำแหน่ง) |
+| 8 | 📚 **แนะนำทรัพยากรประจำเดือน (นวนิยาย / วารสาร)** | ข้อมูลเล่ม (.docx) + ปก (PDF) → **`aritc-social-post-agent`** แบบ 1 หรือ 3 (โพสต์ + คำบรรยายใต้ภาพ + `[GRAPHIC-SPEC]`) → **`social-graphic-agent`** `novel-set.py` (ภาพหน้าชุด + ปกเล่มละใบ) |
+| 9 | 🗳️ **เชิญเสนอชื่อหนังสือ / บอร์ดเกม** | ลิงก์ระบบ + ช่วงเวลาเปิดรับ → **`aritc-social-post-agent`** แบบ 9 (โพสต์ + `[GRAPHIC-SPEC]`) → **`social-graphic-agent`** `suggest-geo.py` (ภาพจัตุรัส + โปสเตอร์ A4 มี QR) |
 
 
 ### 🎮 โฟลว์ทำสื่ออบรม (คอมโบ 5)
@@ -142,7 +145,9 @@ flowchart LR
 | **การผลิตไฟล์ `.docx` ใหม่** | `docx-builder` | โครงสร้างไฟล์ ไม่ใช่เนื้อหา |
 | **การแก้ไฟล์ `.docx` เดิม** | `docx-safe-edit-agent` | รักษาฟอร์แมตเดิม |
 | โครงสร้างเล่มและ CLO | `textbook-structure-agent` | ก่อนเริ่มเขียน |
-| **ชุดสีและธีมของภาพ** | `textbook-figure-agent` | ที่เดียวเท่านั้น ไฟล์อื่นห้ามบันทึกรหัสสี |
+| **ชุดสีและธีมของภาพ (ตำรา / ผัง / เอกสารวิชาการ)** | `textbook-figure-agent` | ที่เดียวเท่านั้น ไฟล์อื่นห้ามบันทึกรหัสสี |
+| **ชุดสี ลาย และสติกเกอร์ของภาพโพสต์โซเชียล** | `aritc-social-post-agent` (ออก `[GRAPHIC-SPEC]`) | ดึงสีจากปกจริง · ชื่อลายต้องตรงกับ `PATTERNS` ใน `social-graphic-agent` |
+| **การผลิตภาพโพสต์โซเชียล 2160×2160** | `social-graphic-agent` | แม่แบบใน `Designing/templates/` · ห้ามอีโมจิในภาพ |
 | สเปกและการผลิตภาพประกอบ | `textbook-figure-agent` | ไฟล์สายเขียนออกสเปก ไฟล์นี้ผลิต |
 | ผังกระบวนการและไดอะแกรม | `flowchart-diagram-agent` | กติกา Mermaid ทั้งหมดอยู่ที่นี่ที่เดียว |
 | **ผังชุดเอกสารคุณภาพ WP/WI/SOP** | `wp-wi-flowchart-agent` | กฎเฉพาะชุดเอกสาร เปิดคู่ `flowchart-diagram-agent` เสมอ |
