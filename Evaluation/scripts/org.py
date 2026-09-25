@@ -2,8 +2,11 @@
 """เติมคอลัมน์หน่วยงานในตารางฝึกอบรม จากการจับคู่ชื่อหลักสูตรกับแพลตฟอร์มผู้จัด"""
 import sys, re, csv; sys.stdout.reconfigure(encoding='utf-8'); sys.path.insert(0,'.')
 import docxkit as k
-DOCX = r'C:\Users\Burt\OneDrive - Nakhon Sawan Rajabhat University\ไฟล์ของ romnalin taengnuanchan - สมรรถนะ3ปี\10-เล่มสมรรถนะ-รมย์นลิน-2569\สมรรถนะ [2569] - รมย์นลิน - ระดับชำนาญการ - ร่าง01.docx'
-REPORT = r'C:\Users\Burt\OneDrive - Nakhon Sawan Rajabhat University\ไฟล์ของ romnalin taengnuanchan - สมรรถนะ3ปี\10-เล่มสมรรถนะ-รมย์นลิน-2569\หน่วยงานจัดอบรม-ที่จับคู่ได้.tsv'
+import os
+# ไฟล์เล่มสมรรถนะ: ตั้งตัวแปร PROMOTE_DOCX=<path .docx> ก่อนรัน (ไม่ผูกเครื่อง/เจ้าของเล่ม)
+DOCX = os.environ.get('PROMOTE_DOCX') or sys.exit('ตั้ง PROMOTE_DOCX=<path เล่ม .docx> ก่อนรัน')
+BOOK_DIR = os.path.dirname(DOCX)
+REPORT = os.path.join(BOOK_DIR, 'หน่วยงานจัดอบรม-ที่จับคู่ได้.tsv')
 WRITE = '--write' in sys.argv
 
 OCSC  = 'สำนักงาน ก.พ. (การอบรมออนไลน์)'

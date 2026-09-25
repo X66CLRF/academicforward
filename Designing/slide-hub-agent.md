@@ -1,7 +1,7 @@
 # Slide Hub — สไลด์ + ใบงาน + ห้อง NoteBoard
 
 > **ใช้ร่วมกับ**: [textbook-structure-agent.md](textbook-structure-agent.md) (โครงเนื้อหาก่อนทำสไลด์) · [flowchart-diagram-agent.md](flowchart-diagram-agent.md) (ผังในสไลด์)
-> ผู้ใช้คนเดียว (กษิดิศ) · ผลลัพธ์หลักคือ **PDF** · ห้องกิจกรรมขึ้น **NoteBoard** · ห้ามใช้ Google Drive
+> ผู้ใช้คนเดียว (กษิดิศ) · ผลลัพธ์หลักคือ **PDF** · ห้องกิจกรรมขึ้น **NoteBoard** · ห้ามแจกผู้เรียนผ่าน Google Drive (Drive ใช้เก็บไฟนอล + หลักฐาน KPI ขั้น 10 เท่านั้น)
 
 ---
 
@@ -9,7 +9,7 @@
 
 | # | ขั้น | ทำอะไร | ผ่านเมื่อ |
 |---|---|---|---|
-| 1 | รับเนื้อหา | บันทึกเป็น `C:\Users\Burt\Documents\slides\<YYYY-MM-slug>\source.txt` (ข้อ 3.5) | มีไฟล์ source |
+| 1 | รับเนื้อหา | บันทึกเป็น `~\Documents\slides\<YYYY-MM-slug>\source.txt` (ข้อ 3.5) | มีไฟล์ source |
 | 2 | ถาม 2 ข้อ (ถ้ายังไม่รู้) | **สถานที่มีเน็ตไหม?** · **มีห้องคอม / ต้องทำใบงานไหม?** | ได้คำตอบ |
 | 3 | วางแผน | เลือกธีม 1 แบบ (3.3.1) · กำหนดเลย์เอาต์ทุกสไลด์ (ห้ามซ้ำเกิน 2 หน้าติด) · เนื้อหาเดิมครบทุกข้อ ห้ามตัด | มีตารางสไลด์ → เลย์เอาต์ |
 | 4 | ทำสไลด์ | คัดลอก CSS + helper จากแม่แบบ (3.3.3) → `deck.html` · ปก (3.3.2) · **Expertise 1 หน้าต่อจากปก** (3.3.2) · หน้าปิดท้าย (3.3.1) | — |
@@ -18,8 +18,9 @@
 | 7 | ตั้งชื่อไฟล์แจก | `<ชื่อเรื่อง> - สไลด์.pdf` · `<ชื่อเรื่อง> - ใบงาน.pdf` ไม่มีเลขเวอร์ชัน (3.4) | — |
 | 8 | ขึ้น NoteBoard (มีเน็ต) | `lesson.json` (PDF สไลด์ + ลิงก์สำคัญเท่านั้น) → `publish-lesson.ts` (ข้อ 5) → **ส่ง PDF ขึ้น server เอง (scp)** → เช็ก URL ตอบ 200 | ได้รหัสห้อง · PDF เปิดได้ · ห้องไม่รก |
 | 9 | รายงาน + ชุด LibPlay | ตรวจว่ามี `deck.html` · `worksheet.html` · `game.json` · `lesson.json` ครบ (ข้อ 6) · path PDF · รหัสห้อง · **สิ่งที่แต่งเพิ่มเอง** ให้ผู้ใช้ตรวจ | ชุดครบ |
+| 10 | ส่งไฟนอล + KPI | คัดลอก PDF แจกเข้า `G:\My Drive\อบรม\<ปี-เดือน ชื่องาน (สถานที่)>\` → ลิงก์ Drive + URL ห้อง NoteBoard เป็นหลักฐาน → `kpi-report.mjs add --kpi design --type "อินโฟกราฟิก/สื่อหลายหน้า"` (ท้ายไฟล์ + [kpi-report.md](../Automation/kpi-report.md)) | ได้ id รายการ KPI |
 
-ไม่มีเน็ต (เช่น เรือนจำ) → จบที่ขั้น 7 · ไม่สร้างห้อง เว้นผู้ใช้สั่ง
+ไม่มีเน็ต (เช่น เรือนจำ) → ข้ามขั้น 8 ไปขั้น 9–10 · ไม่สร้างห้อง เว้นผู้ใช้สั่ง
 
 ---
 
@@ -64,7 +65,7 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
   * ข้อความ 2 ชั้นซ้อนกันทุกจุด (ชื่อ/ตำแหน่ง, kicker/h1) ต้องมีระยะเหลือ — ตรวจด้วยคำทดสอบ "ตั้งไว้ก่อน ไม่ได้ตั้ง" ก่อนส่งมอบ
 
 ### 3.3 สไตล์ภาพรวม: มินิมอล สะอาดตา (บังคับ)
-อ้างอิงระบบ `C:\Users\Burt\Documents\GitHub\design-system` (core/graphite.css, shape.css, paint/aritc.css)
+อ้างอิงระบบ `~\Documents\GitHub\design-system` (core/graphite.css, shape.css, paint/aritc.css)
 
 **พื้นและลาย**
 * พื้นสไลด์สว่าง `#f8f8f6` + ลายจุดเรขาคณิตจาง (dot grid 24px สี `#d4d4d8`)
@@ -170,12 +171,12 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 * สกิลใหม่ → ผู้ใช้บอกแล้วแก้ที่นี่ก่อน แล้วค่อยใส่สไลด์
 
 **ไฟล์ประจำ** (ฝังเป็น base64 ในไฟล์ทุกครั้ง ห้ามลิงก์ออกนอก)
-* **รูปวิทยากร — ใช้รูปนี้เสมอ ห้ามใช้รูปอื่น ห้ามครอป (ต้องเห็นตัว):** `C:\Users\Burt\Documents\slides\assets\speaker.jpg` (900px เต็มภาพ จาก `Desktop\001146.jpg`) แสดงในกรอบสี่เหลี่ยมมุมมน (radius 16–20px) ขนาด 96–132px · ห้ามกรอบวงกลม
-* โลโก้ ARITC: `C:\Users\Burt\Documents\slides\assets\aritc-logo.png` (ครอปขอบแล้ว · ต้นฉบับ `GitHub\aritc-audit\public\aritc-logo.png`)
+* **รูปวิทยากร — ใช้รูปนี้เสมอ ห้ามใช้รูปอื่น ห้ามครอป (ต้องเห็นตัว):** `~\Documents\slides\assets\speaker.jpg` (900px เต็มภาพ จาก `Desktop\001146.jpg`) แสดงในกรอบสี่เหลี่ยมมุมมน (radius 16–20px) ขนาด 96–132px · ห้ามกรอบวงกลม
+* โลโก้ ARITC: `~\Documents\slides\assets\aritc-logo.png` (ครอปขอบแล้ว · ต้นฉบับ `GitHub\aritc-audit\public\aritc-logo.png`)
 * ตำแหน่งโลโก้: ปก = เหนือป้ายหัวเรื่องซ้ายบน · หน้าเนื้อหา = มุมขวาบน สูง ~46px · หน้าคั่นส่วน = ไม่ใส่ (ชนแผงกราฟิก)
 
 ### 3.3.3 ตัวอย่างอ้างอิงที่ผ่านแล้ว
-`C:\Users\Burt\Documents\slides\2026-09-mobile-safety\deck.html` (ธีม soft-blue · Sarabun · แผงกราฟิกเรขาคณิต · UI จำลอง · สลับเลย์เอาต์) — ใช้เป็นแม่แบบโค้ด CSS/helper แทนการเขียนใหม่ทุกครั้ง
+`~\Documents\slides\2026-09-mobile-safety\deck.html` (ธีม soft-blue · Sarabun · แผงกราฟิกเรขาคณิต · UI จำลอง · สลับเลย์เอาต์) — ใช้เป็นแม่แบบโค้ด CSS/helper แทนการเขียนใหม่ทุกครั้ง
 
 ### 3.4 ผลลัพธ์ที่ส่งมอบ
 **การตั้งชื่อ (บังคับ)**
@@ -194,7 +195,7 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 * HTML ต้นฉบับเก็บไว้แก้ไข ไม่ใช่ตัวส่งมอบ
 
 ### 3.5 ที่ทำงาน (บังคับ — ห้ามใช้ Google Drive)
-* ทุกงานอยู่ที่ `C:\Users\Burt\Documents\slides\` (ชั่วคราว — เมื่อ LibPlay เสร็จ ผู้ใช้จะสั่งย้ายเข้า LibPlay)
+* ทุกงานอยู่ที่ `~\Documents\slides\` (ชั่วคราว — เมื่อ LibPlay เสร็จ ผู้ใช้จะสั่งย้ายเข้า LibPlay)
   * `assets\` รูปวิทยากร + โลโก้ (ใช้ร่วมทุกงาน)
   * `<YYYY-MM-slug>\` → `source.txt` (เนื้อหาจากผู้ใช้) · `deck.html` · `worksheet.html` · `game.json` · `lesson.json` · `<ชื่อเรื่อง> - สไลด์.pdf` · `<ชื่อเรื่อง> - ใบงาน.pdf` (**ชุดครบ = ข้อ 6**)
   * `_archive\` ฉบับเก่า
@@ -253,9 +254,9 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 > ห้ามอ้อมผ่าน Google Drive (Drive เป็นแค่ที่ผู้ใช้วางเนื้อหาให้อ่าน ไม่ใช่ที่เก็บไฟล์ส่งมอบ) · ห้ามสร้างทางใหม่ที่ต้องแก้ config บน server
 
 **เครื่องมือ**
-* สคริปต์: `C:\Users\Burt\Documents\GitHub\noteboard\backend\scripts\publish-lesson.ts`
+* สคริปต์: `~\Documents\GitHub\noteboard\backend\scripts\publish-lesson.ts`
 * รัน: `cd noteboard\backend` → `bun scripts/publish-lesson.ts <lesson.json>`
-* ใช้ `backend/.env` ที่ dev tool (`C:\Users\Burt\Documents\GitHub` → dev start) ตั้งไว้แล้ว — DB ในเครื่อง = DB จริง
+* ใช้ `backend/.env` ที่ dev tool (`~\Documents\GitHub` → dev start) ตั้งไว้แล้ว — DB ในเครื่อง = DB จริง
 * เจ้าของห้อง: `ownerEmail: "kasiditprn@gmail.com"` เสมอ (ห้องจะขึ้นใน Dashboard ของผู้ใช้)
 
 **lesson.json** (วางคู่กับไฟล์สไลด์)
@@ -336,3 +337,12 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 * source มีโจทย์เกม → ยกตรงตัว `status: approved`
 * source ไม่มี → `status: empty` แล้ว **ถามผู้ใช้** ว่าจะให้ร่างไหม · ร่างเอง = `draft` และแจ้งในรายงานขั้น 9
 * ใบงานกับเกมต้องอ้างเนื้อหาในสไลด์ชุดเดียวกันเท่านั้น
+
+---
+
+## ขั้นปิดงาน: ส่งไฟนอล + รายงาน KPI (บังคับ งานของกษิดิศ)
+
+งานออกแบบเสร็จเป็นไฟนอลแล้ว ต้องทำต่อทุกครั้ง ตาม [Automation/kpi-report.md](../Automation/kpi-report.md):
+1. คัดลอกไฟล์ไฟนอลเข้า `G:\My Drive\อบรม\<ปี-เดือน ชื่องาน (สถานที่)>\` → หาลิงก์ Drive เป็นหลักฐาน
+2. `node scripts/kpi-report.mjs add --kpi design --type "<ประเภทงาน>" ...` ใน repo `aritc-audit` (dry run ก่อน → ผู้ใช้ยืนยัน → `--commit`)
+3. รายงาน path ไฟล์ · ลิงก์หลักฐาน · id รายการ KPI · ตรงเวลาไหม

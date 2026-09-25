@@ -2,7 +2,10 @@
 """ลบย่อหน้าโน้ตทำงานที่หลุดลงเล่ม (ขึ้นต้นด้วย * และมี ⚠)"""
 import sys, re; sys.stdout.reconfigure(encoding='utf-8'); sys.path.insert(0,'.')
 import docxkit as k
-DOCX = r'C:\Users\Burt\OneDrive - Nakhon Sawan Rajabhat University\ไฟล์ของ romnalin taengnuanchan - สมรรถนะ3ปี\10-เล่มสมรรถนะ-รมย์นลิน-2569\สมรรถนะ [2569] - รมย์นลิน - ระดับชำนาญการ - ร่าง01.docx'
+import os
+# ไฟล์เล่มสมรรถนะ: ตั้งตัวแปร PROMOTE_DOCX=<path .docx> ก่อนรัน (ไม่ผูกเครื่อง/เจ้าของเล่ม)
+DOCX = os.environ.get('PROMOTE_DOCX') or sys.exit('ตั้ง PROMOTE_DOCX=<path เล่ม .docx> ก่อนรัน')
+BOOK_DIR = os.path.dirname(DOCX)
 WRITE = '--write' in sys.argv
 
 def is_note(t):

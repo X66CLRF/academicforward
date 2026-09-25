@@ -13,7 +13,7 @@ and the fonts found in the PDF so a Prompt/fallback leak is caught.
 import base64, subprocess, sys, tempfile
 from pathlib import Path
 
-ASSETS = Path(r"C:\Users\Burt\Documents\slides\assets")
+ASSETS = Path.home() / "Documents" / "slides" / "assets"
 EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
 

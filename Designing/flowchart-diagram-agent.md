@@ -220,3 +220,12 @@ mmdc -i chart.mmd -o chart.svg -b transparent
 4. วาด แล้วตรวจกฎความสอดคล้อง 4 ข้อ
 5. ถ้าต้อง render ให้เช็คฟอนต์ แล้ว `mmdc` แล้วเช็ค `ratio` ทุกใบ
 6. ถ้าต้องลง Word ให้ส่งต่อ `docx-safe-edit-agent` พร้อมตารางกำกับ
+
+---
+
+## ขั้นปิดงาน: ส่งไฟนอล + รายงาน KPI (บังคับ งานของกษิดิศ)
+
+งานออกแบบเสร็จเป็นไฟนอลแล้ว ต้องทำต่อทุกครั้ง ตาม [Automation/kpi-report.md](../Automation/kpi-report.md):
+1. คัดลอกไฟล์ไฟนอลเข้า `G:\My Drive\อบรม\<ปี-เดือน ชื่องาน (สถานที่)>\` → หาลิงก์ Drive เป็นหลักฐาน
+2. `node scripts/kpi-report.mjs add --kpi design --type "<ประเภทงาน>" ...` ใน repo `aritc-audit` (dry run ก่อน → ผู้ใช้ยืนยัน → `--commit`)
+3. รายงาน path ไฟล์ · ลิงก์หลักฐาน · id รายการ KPI · ตรงเวลาไหม

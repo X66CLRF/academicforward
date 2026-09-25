@@ -534,6 +534,8 @@ E004	ภาพปฏิบัติงาน\work-014.jpg	ภาพปฏิบ�
 
 อยู่ใน `Evaluation/scripts/` ใช้เมื่อมีไฟล์เล่มอยู่แล้วและต้องเขียนเลขอ้างลงไป
 
+สคริปต์ที่แก้เล่ม (`bold_lead` `cite` `clean_notes` `org` `slots` `split_appendix`) อ่าน path เล่มจากตัวแปร `PROMOTE_DOCX` — ตั้งก่อนรันทุกครั้ง เช่น PowerShell `$env:PROMOTE_DOCX = "<path เล่ม .docx>"`
+
 ```bash
 pip install python-docx        # จำเป็น
 pip install pymupdf            # เฉพาะงานอ่านเลขหน้าจาก PDF
