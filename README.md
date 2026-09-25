@@ -36,7 +36,7 @@ academicforward/
 | 📖 **Reference** | [Writing/nsru-2568-manual-reference.md](Writing/nsru-2568-manual-reference.md) | `v5.6` | 📌 **คู่มืออ้างอิงกลาง** — กฎวิจัย มรนว. 2568 ฉบับเต็ม (สำหรับเปิดอ่าน ไม่ต้องอัปโหลด) | [📖 เปิดอ่านคู่มือ](Writing/nsru-2568-manual-reference.md) |
 | 📖 **Reference** | [Writing/thai-academic-language-guard.md](Writing/thai-academic-language-guard.md) | `v1.0` | 🧬 **คู่มือภาษาไทยวิชาการต้นฉบับ** — ตารางกับดักคำแปล + กฎวงเล็บอังกฤษ + ด่านคุมความซ้ำ | [📖 เปิดอ่านคู่มือ](Writing/thai-academic-language-guard.md) |
 | 📖 **Reference** | [Writing/writing-development-research-brief.md](Writing/writing-development-research-brief.md) | `2026-08-31` | 🔬 **บันทึกรีเสิร์ชเบื้องหลังกฎชุดเขียน** — ความแม่นยำเครื่องตรวจ AI + นโยบายวารสาร/สำนักพิมพ์ + หลักฐานพัฒนางานเขียน (ระบุระดับความเชื่อถือรายข้อ) | [📖 เปิดอ่านบันทึก](Writing/writing-development-research-brief.md) |
-| 🎨 **Designing** | [Designing/slide-hub-agent.md](Designing/slide-hub-agent.md) | `v3.0` | 🚀 **วิทยากร / ผู้สอน** — เนื้อหา → สไลด์ PDF 16:9 + ใบงาน A4 + ห้อง NoteBoard · โฟลว์ 9 ขั้น · ใช้ offline ได้ | [📖 เปิดไฟล์](Designing/slide-hub-agent.md) |
+| 🎨 **Designing** | [Designing/slide-hub-agent.md](Designing/slide-hub-agent.md) | `v3.1` | 🚀 **วิทยากร / ผู้สอน** — เนื้อหา → สไลด์ PDF 16:9 + ใบงาน A4 + ห้อง NoteBoard + ปกห้อง → ไฟนอลเข้า Drive → KPI · โฟลว์ 10 ขั้น · ใช้ offline ได้ | [📖 เปิดไฟล์](Designing/slide-hub-agent.md) |
 | 🎨 **Designing** | [Designing/textbook-structure-agent.md](Designing/textbook-structure-agent.md) | `v1.6` | 🗂️ **ผู้พัฒนาหลักสูตร** — วางโครงสร้างเล่มตำรา & CLO & คีย์เวิร์ด | [📖 เปิดไฟล์](Designing/textbook-structure-agent.md) |
 | 🎨 **Designing** | [Designing/flowchart-diagram-agent.md](Designing/flowchart-diagram-agent.md) | `v3.1` | 📊 **ทุกกลุ่ม** — Flowchart / Diagram / Architecture + กรอบแนวคิดวิจัย + PRISMA + กติกา ISO 5807 + render ด้วย `mmdc` | [📖 เปิดไฟล์](Designing/flowchart-diagram-agent.md) |
 | 🎨 **Designing** | [Designing/wp-wi-flowchart-agent.md](Designing/wp-wi-flowchart-agent.md) | `v1.1` | 🏛️ **สายสนับสนุน / งานประกันคุณภาพ** — ผังกระบวนการชุด WP/WI/SOP + กฎผังตรงกับตารางขั้นตอน + เช็คลิสต์ปิดชุด ๑๒ ข้อ (เปิดคู่ `flowchart-diagram-agent`) | [📖 เปิดไฟล์](Designing/wp-wi-flowchart-agent.md) |
@@ -52,6 +52,8 @@ academicforward/
 | 💻 **Automation** | [Automation/docx-safe-edit-agent.md](Automation/docx-safe-edit-agent.md) | `v1.0` | 🧬 **ทุกคนที่ต้องแก้ไฟล์ .docx ที่จัดรูปแบบแล้ว** — แทนที่ข้อความโดยฟอร์แมตไม่พัง + backup อัตโนมัติ + แทนรูปคงเฟรม/สัดส่วน + ยืมเล่มคนอื่นเป็นเทมเพลท | [📖 เปิดไฟล์](Automation/docx-safe-edit-agent.md) |
 | 🔒 **Automation** | [Automation/gdrive-permission-agent.md](Automation/gdrive-permission-agent.md) | `v2.0` | 🔒 **อาจารย์ / เจ้าหน้าที่** — สคริปต์ควบคุมสิทธิ์ดาวน์โหลดไฟล์ Google Drive | [📖 เปิดไฟล์](Automation/gdrive-permission-agent.md) |
 
+> 🖥️ **ย้ายเครื่อง / เครื่องใหม่:** ดู [SETUP.md](SETUP.md) · คำสั่ง `/ชื่อสกิล` สร้างจากไฟล์ในนี้ด้วย `claude-config/gen-commands.py`
+
 ---
 
 ## 🔗 คอมโบสกิล — หยิบไฟล์ไหนต่อไฟล์ไหน
@@ -64,12 +66,13 @@ academicforward/
 | 2 | 🧪 **บทความตีพิมพ์วารสาร** | `academic-search-keywords` → **`3-researcher-manuscript`** → `6-argument-auditor` → `5-prose-cleaner` |
 | 3 | ✍️ **เขียนตำรา (สายยาวสุด)** | `textbook-structure-agent` → **`4-textbook-writer`** → `textbook-figure-agent` → **`docx-builder`** (สร้างไฟล์เล่มขึ้นใหม่) หรือ `docx-safe-edit-agent` (แก้เล่มเดิมโดยฟอร์แมตไม่พัง) → `6-argument-auditor` → `5-prose-cleaner` |
 | 4 | 📋 **ขอกำหนดตำแหน่งสูงขึ้น** | **`promote-doc-agent`** + `docx-safe-edit-agent` (กลไกแก้ไฟล์ + ยืมเล่มเป็นเทมเพลท) → `5-prose-cleaner` (ขัดสำนวนช่องบันทึกร่องรอยคุณภาพ) |
-| 5 | 🎮 **สอน / อบรม** | `textbook-structure-agent` (โครงเนื้อหา ถ้ายังไม่มี) → **`slide-hub-agent`** (สไลด์ + ใบงาน + ห้อง NoteBoard) → `flowchart-diagram-agent` (ถ้ามีผังในสไลด์) — ดูโฟลว์เต็มด้านล่าง |
-| 6 | 📢 **เผยแพร่ผลงาน** | ผลงานจากคอมโบ 1–4 → **`aritc-social-post-agent`** → `social-graphic-agent` (ภาพโพสต์) → `gdrive-permission-agent` (ล็อกสิทธิ์ไฟล์ที่แจก) |
-| 7 | 🏛️ **ทำ/แก้ชุดเอกสารคุณภาพ JD-WP-WI** | **`wp-wi-flowchart-agent`** + `flowchart-diagram-agent` (เปิดคู่ วาดผังทั้งชุด) → `docx-safe-edit-agent` (แก้ถ้อยคำในเล่ม + แทนรูปผัง) → `promote-doc-agent` (ถ้าใช้เป็นหลักฐานขอตำแหน่ง) |
-| 8 | 📚 **แนะนำทรัพยากรประจำเดือน (นวนิยาย / วารสาร)** | ข้อมูลเล่ม (.docx) + ปก (PDF) → **`aritc-social-post-agent`** แบบ 1 หรือ 3 (โพสต์ + คำบรรยายใต้ภาพ + `[GRAPHIC-SPEC]`) → **`social-graphic-agent`** `novel-set.py` (ภาพหน้าชุด + ปกเล่มละใบ) |
-| 9 | 🗳️ **เชิญเสนอชื่อหนังสือ / บอร์ดเกม** | ลิงก์ระบบ + ช่วงเวลาเปิดรับ → **`aritc-social-post-agent`** แบบ 9 (โพสต์ + `[GRAPHIC-SPEC]`) → **`social-graphic-agent`** `suggest-geo.py` (ภาพจัตุรัส + โปสเตอร์ A4 มี QR) |
+| 5 | 🎮 **สอน / อบรม** | `textbook-structure-agent` (โครงเนื้อหา ถ้ายังไม่มี) → **`slide-hub-agent`** (สไลด์ + ใบงาน + ห้อง NoteBoard) → `flowchart-diagram-agent` (ถ้ามีผังในสไลด์) → ห้อง NoteBoard + **ปกห้อง** (`build_cover.py`) → **`kpi-report`** (ไฟนอลเข้า Drive + KPI) — ดูโฟลว์เต็มด้านล่าง |
+| 6 | 📢 **เผยแพร่ผลงาน** | ผลงานจากคอมโบ 1–4 → **`aritc-social-post-agent`** → `social-graphic-agent` (ภาพโพสต์) → `gdrive-permission-agent` (ล็อกสิทธิ์ไฟล์ที่แจก) → **`kpi-report`** (ไฟนอลเข้า Drive + KPI) |
+| 7 | 🏛️ **ทำ/แก้ชุดเอกสารคุณภาพ JD-WP-WI** | **`wp-wi-flowchart-agent`** + `flowchart-diagram-agent` (เปิดคู่ วาดผังทั้งชุด) → `docx-safe-edit-agent` (แก้ถ้อยคำในเล่ม + แทนรูปผัง) → `promote-doc-agent` (ถ้าใช้เป็นหลักฐานขอตำแหน่ง) → **`kpi-report`** (ไฟนอลเข้า Drive + KPI) |
+| 8 | 📚 **แนะนำทรัพยากรประจำเดือน (นวนิยาย / วารสาร)** | ข้อมูลเล่ม (.docx) + ปก (PDF) → **`aritc-social-post-agent`** แบบ 1 หรือ 3 (โพสต์ + คำบรรยายใต้ภาพ + `[GRAPHIC-SPEC]`) → **`social-graphic-agent`** `novel-set.py` (ภาพหน้าชุด + ปกเล่มละใบ) → **`kpi-report`** (ไฟนอลเข้า Drive + KPI) |
+| 9 | 🗳️ **เชิญเสนอชื่อหนังสือ / บอร์ดเกม** | ลิงก์ระบบ + ช่วงเวลาเปิดรับ → **`aritc-social-post-agent`** แบบ 9 (โพสต์ + `[GRAPHIC-SPEC]`) → **`social-graphic-agent`** `suggest-geo.py` (ภาพจัตุรัส + โปสเตอร์ A4 มี QR) → **`kpi-report`** (ไฟนอลเข้า Drive + KPI) |
 
+> 🔗 **ทุกสายงานออกแบบจบที่ขั้นปิดงานเดียวกัน** — สกิลออกแบบ 6 ตัว (`slide-hub` · `social-graphic` · `aritc-social-post` · `flowchart` · `wp-wi` · `textbook-figure`) มีหัวข้อ "ขั้นปิดงาน" ท้ายไฟล์ ชี้ไป [Automation/kpi-report.md](Automation/kpi-report.md): คัดลอกไฟนอลเข้า `G:\My Drive\อบรม\<ปี-เดือน งาน (สถานที่)>\` → บันทึกผลงานเข้า KPI aritc-audit (dry run → ผู้ใช้ยืนยัน → `--commit`) · หลักฐาน = ลิงก์ห้อง NoteBoard / ลิงก์โพสต์จริง
 
 ### 🎮 โฟลว์ทำสื่ออบรม (คอมโบ 5)
 
@@ -79,15 +82,21 @@ flowchart LR
     B --> C["สไลด์ PDF 16:9<br/>ใบงาน PDF A4"]
     C --> D{"สถานที่<br/>มีเน็ต?"}
     D -- "ไม่มี (เช่น เรือนจำ)" --> E["แจก PDF / พิมพ์ใบงาน"]
-    D -- "มี" --> F["ห้อง NoteBoard<br/>PDF สไลด์ + ลิงก์สำคัญ"]
-    F --> G["กด Enter ใน dev tool<br/>sync ไฟล์ขึ้น server"]
+    D -- "มี" --> F["ห้อง NoteBoard<br/>PDF สไลด์ + ลิงก์สำคัญ<br/>scp PDF ขึ้น server"]
+    F --> G["ปกห้อง<br/>build_cover.py + set-cover.ts"]
+    E --> H["ไฟนอลเข้า Drive<br/>G:/My Drive/อบรม/งาน"]
+    G --> H
+    H --> I["บันทึก KPI<br/>kpi-report.mjs (dry run → ยืนยัน → commit)"]
 ```
 
 | ขั้น | อะไร | อยู่ที่ |
 | :--- | :--- | :--- |
-| ที่ทำงาน | ทุกงานอยู่ `Documents\slides\YYYY-MM-slug\` — ไม่ใช้ Google Drive | ในเครื่อง |
+| ที่ทำงาน | ไฟล์ทำงานอยู่ `~\Documents\slides\YYYY-MM-slug\` — ไม่แจกผู้เรียนผ่าน Google Drive | ในเครื่อง |
 | ออก PDF | `python Designing/scripts/build_pdf.py deck.html "<ชื่อเรื่อง> - สไลด์.pdf"` ฝังรูปวิทยากร + โลโก้ + ฟอนต์ Sarabun | [Designing/scripts/](Designing/scripts/) |
 | ขึ้นห้อง | `bun scripts/publish-lesson.ts lesson.json` ห้องแบบอิสระ ปักหมุด ≤ 3 (สไลด์ก่อน) | repo `noteboard` |
+| ปกห้อง | `python Designing/scripts/build_cover.py --title "บรรทัด 1\|*บรรทัด 2*" --theme <ธีมสไลด์> --icon <ไอคอน>` → `bun backend/scripts/set-cover.ts <รหัสห้อง> cover.jpg` ห้ามปล่อยปกค่าเริ่มต้น | [Designing/scripts/](Designing/scripts/) + repo `noteboard` |
+| ไฟนอล | คัดลอก PDF แจกเข้า `G:\My Drive\อบรม\<ปี-เดือน งาน (สถานที่)>\` | Google Drive |
+| KPI | `node scripts/kpi-report.mjs add --kpi design --type "อินโฟกราฟิก/สื่อหลายหน้า" --evidence "ห้อง NoteBoard\|<url>"` | repo `aritc-audit` · [kpi-report.md](Automation/kpi-report.md) |
 | ห้ามใส่ในห้อง | โจทย์เกม · ใบงาน (อยู่ LibPlay) · ข้อความที่มีในสไลด์แล้ว | — |
 | ถ้อยคำ | ใช้คำจากเนื้อหาของผู้สอนตรงตัว ตรวจส่วนที่เพิ่มเองด้วย `5-prose-cleaner` โหมด 1 | [Writing/5-prose-cleaner.md](Writing/5-prose-cleaner.md) |
 | ถัดไป | เกม + ใบงานย้ายเข้า **LibPlay** (ดึงห้องจาก NoteBoard ผ่าน API) | repo `libplay` |
