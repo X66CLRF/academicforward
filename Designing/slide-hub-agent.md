@@ -16,9 +16,9 @@
 | 5 | ออก PDF + ตรวจ | พิมพ์ด้วย Edge headless (ข้อ 1) · ดูภาพรวมทุกหน้า + ซูม 2–3 หน้า · ผ่านเช็กลิสต์ข้อ 6 | ไม่มีข้อตก |
 | 6 | ใบงาน (ถ้าข้อ 2 บอกใช่) | `worksheet.html` ธีม/ฟอนต์เดียวกับสไลด์ → PDF A4 · **ไม่ขึ้น NoteBoard** (จะอยู่ LibPlay) | เช็กลิสต์ข้อ 2 |
 | 7 | ตั้งชื่อไฟล์แจก | `<ชื่อเรื่อง> - สไลด์.pdf` · `<ชื่อเรื่อง> - ใบงาน.pdf` ไม่มีเลขเวอร์ชัน (3.4) | — |
-| 8 | ขึ้น NoteBoard (มีเน็ต) | `lesson.json` (PDF สไลด์ + ลิงก์สำคัญเท่านั้น) → `publish-lesson.ts` (ข้อ 5) → **ส่ง PDF ขึ้น server เอง (scp)** → เช็ก URL ตอบ 200 | ได้รหัสห้อง · PDF เปิดได้ · ห้องไม่รก |
+| 8 | ขึ้น NoteBoard (มีเน็ต) | `lesson.json` (PDF สไลด์ + ลิงก์สำคัญเท่านั้น) → `publish-lesson.ts` (ข้อ 5) → **ส่ง PDF ขึ้น server เอง (scp)** → เช็ก URL ตอบ 200 → **ทำปกห้อง** `build_cover.py` + `set-cover.ts` (ข้อ 5 ขั้น 7) | ได้รหัสห้อง · PDF เปิดได้ · ห้องไม่รก · ปกออกแบบแล้ว |
 | 9 | รายงาน + ชุด LibPlay | ตรวจว่ามี `deck.html` · `worksheet.html` · `game.json` · `lesson.json` ครบ (ข้อ 6) · path PDF · รหัสห้อง · **สิ่งที่แต่งเพิ่มเอง** ให้ผู้ใช้ตรวจ | ชุดครบ |
-| 10 | ส่งไฟนอล + KPI | คัดลอก PDF แจกเข้า `G:\My Drive\อบรม\<ปี-เดือน ชื่องาน (สถานที่)>\` → ลิงก์ Drive + URL ห้อง NoteBoard เป็นหลักฐาน → `kpi-report.mjs add --kpi design --type "อินโฟกราฟิก/สื่อหลายหน้า"` (ท้ายไฟล์ + [kpi-report.md](../Automation/kpi-report.md)) | ได้ id รายการ KPI |
+| 10 | ส่งไฟนอล + KPI | คัดลอก PDF แจกเข้า `G:\My Drive\อบรม\<ปี-เดือน ชื่องาน (สถานที่)>\` → หลักฐาน = **URL ห้อง NoteBoard** (มีเน็ต) หรือลิงก์ Drive ที่เปิดแชร์แล้ว (ไม่มีห้อง) → `kpi-report.mjs add --kpi design --type "อินโฟกราฟิก/สื่อหลายหน้า"` (ท้ายไฟล์ + [kpi-report.md](../Automation/kpi-report.md)) | ได้ id รายการ KPI |
 
 ไม่มีเน็ต (เช่น เรือนจำ) → ข้ามขั้น 8 ไปขั้น 9–10 · ไม่สร้างห้อง เว้นผู้ใช้สั่ง
 
@@ -299,6 +299,17 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
    scp -o BatchMode=yes -p -i "$env:USERPROFILE\.ssh\nsru72_ed25519" "<noteboard>\backend\uploads\<file>.pdf" "Gasidid@192.168.0.72:C:/Websites/apps/noteboard/backend/uploads/<file>.pdf"
    ```
 6. เช็ก `https://noteboard.nsru.ac.th/uploads/<file>.pdf` ต้องตอบ **200** ก่อนรายงานว่าเสร็จ (404 = ยังไม่ขึ้น)
+7. **ทำปกห้อง (บังคับ ห้ามปล่อยปกค่าเริ่มต้น / ภาพสไลด์สุ่ม)** — ปกโชว์เป็นการ์ด 16:9 (~300px) และรูปย่อ 64px จึงออกแบบแยกจากปกสไลด์:
+   ```powershell
+   python ~\Documents\GitHub\academicforward\Designing\scripts\build_cover.py `
+     --title "ชื่องานสั้น|*บรรทัดที่ 2 คำเน้น*" --kicker "หน่วยงาน/กลุ่มผู้เรียน" `
+     --theme <ธีมเดียวกับสไลด์> --icon <shield|search|book|sparkles|library|smartphone|graduation|presentation> `
+     --out <โฟลเดอร์งาน>\cover.jpg
+   cd ~\Documents\GitHub\noteboard; bun backend/scripts/set-cover.ts <รหัสห้อง> <โฟลเดอร์งาน>\cover.jpg
+   ```
+   * หัวเรื่อง ≤ 2 บรรทัด ใช้ `|` ตัดบรรทัดเอง (ห้ามปล่อยคำหลุดท้ายบรรทัด) · ไม่มีเลขหน้า/ชื่อวิทยากร/ข้อความเล็ก
+   * เปิดดู `cover.jpg` ก่อนตั้งทุกครั้ง · ปกเดิมสำรองอัตโนมัติเป็น `cover.jpg.prev-<รหัส>.json`
+   * URL ห้อง = `https://noteboard.nsru.ac.th/board/<board id>` → ใช้เป็นหลักฐาน KPI ขั้น 10
 
 **ห้าม**
 * ห้ามใช้ `externalInjection` (ปิดแล้ว ต้องมี token ผู้จัด)

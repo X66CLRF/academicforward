@@ -8,7 +8,8 @@
 * ปลายทาง: `G:\My Drive\อบรม\<ปี-เดือน ชื่องาน (สถานที่)>\` เช่น `2569-09 ห้องสมุดยุคดิจิทัล (มจร)`
 * ใส่เฉพาะ **ไฟล์แจก/ไฟล์ส่งมอบ** (PDF สไลด์ · PDF ใบงาน · PNG ภาพโพสต์ · ผัง) — ไฟล์ทำงาน (`deck.html`, `source.txt`, `lesson.json`) อยู่ที่ `Documents\slides\` ตามเดิม
 * **คัดลอก** ไม่ย้าย · ชื่อไฟล์ไม่มีเลขเวอร์ชัน · ฉบับเก่าเข้า `_archive\`
-* รอ Drive sync แล้วหาลิงก์ด้วย Drive connector (`search_files` ตามชื่อไฟล์) → ได้ `https://drive.google.com/file/d/<id>/view` ใช้เป็นหลักฐาน
+* **หลักฐาน KPI ใช้ URL ห้อง NoteBoard เป็นหลัก** (`https://noteboard.nsru.ac.th/board/<board id>` — กรรมการเปิดได้) · ไฟล์ใน Drive เป็นส่วนตัว กรรมการเปิดไม่ได้
+* งานที่ไม่มีห้อง NoteBoard (ภาพโพสต์ ผัง) → ใช้ลิงก์โพสต์จริง (Facebook) หรือถามผู้ใช้ก่อนเปิดแชร์ไฟล์ Drive (`search_files` ตามชื่อไฟล์ → `https://drive.google.com/file/d/<id>/view`)
 
 ## 2. รายงาน KPI
 
@@ -20,8 +21,7 @@ node scripts/kpi-report.mjs list        # ดู KPI + ประเภทงา�
 node scripts/kpi-report.mjs add --kpi design --type "อินโฟกราฟิก/สื่อหลายหน้า" `
   --title "สไลด์และใบงาน อบรมห้องสมุดในยุคดิจิทัล (มจร นครสวรรค์)" `
   --request 2026-09-21 --delivered 2026-09-25 `
-  --evidence "สไลด์ PDF|https://drive.google.com/file/d/.../view" `
-  --evidence "ห้อง NoteBoard|https://..."
+  --evidence "ห้อง NoteBoard|https://noteboard.nsru.ac.th/board/<board id>"
 # ตรวจผล dry run กับผู้ใช้ → ผู้ใช้ยืนยัน → รันซ้ำพร้อม --commit
 ```
 
