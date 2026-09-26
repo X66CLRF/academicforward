@@ -1,0 +1,69 @@
+# คลังคำตรวจภาษาไทยวิชาการ — lint_thai.py อ่านไฟล์นี้
+# คอลัมน์: pattern(regex) <TAB> ใช้แทน <TAB> ประเภท <TAB> ระดับ <TAB> ยกเว้น(regex ของคำที่ครอบจุดเจอ) <TAB> ที่มา
+# ประเภท: register=ภาษาพูด · translation=แปลตรง/ศัพท์บัญญัติ · ai-tell=วลีสำเร็จรูป · domain=คำเฉพาะเรื่อง · syntax=นับโครงอังกฤษ (ใช้คอลัมน์ ใช้แทน เป็นเพดานต่อย่อหน้า)
+# ระดับ: warn=ต้องแก้ · info=ดูบริบทก่อน
+# เพิ่มคำใหม่ทุกครั้งที่ผู้ใช้ติภาษา: ใส่ที่มา "ผู้ใช้แก้ YYYY-MM-DD"
+pattern	replace	type	level	except	source
+ก็	ตัดทิ้ง หรือใส่ประธานให้ชัด	register	warn	เก็บ|ก็ตาม|ถึงกระนั้นก็	prose-cleaner ด้าน 7
+เลย	ตัดทิ้ง	register	warn	ละเลย|เลยไป|เลยเถิด|เลยตาม	prose-cleaner ด้าน 7
+แค่	เพียง	register	warn		prose-cleaner ด้าน 7
+เยอะ	จำนวนมาก	register	warn		prose-cleaner ด้าน 7
+นิดหน่อย	เล็กน้อย	register	warn		prose-cleaner ด้าน 7
+ค่อนข้าง|พอสมควร|ไม่ค่อย	ระบุปริมาณจริง หรือตัดทิ้ง	register	info		prose-cleaner ด้าน 7
+ต้องมา|ต้องไป	ตัด มา / ไป ออก	register	warn	ต้องไปรษณีย์|ต้องมาจาก|ต้องมาก่อน	prose-cleaner ด้าน 7
+นั่นเอง|ด้วยซ้ำ|อีกต่างหาก|แถม	ตัดทิ้ง	register	warn	แถมพก	prose-cleaner ด้าน 7
+จริง ?ๆ|ทีเดียว|แหละ|เอาไว้	ตัดทิ้ง	register	warn	ความจริง|ข้อเท็จจริง|จริงจัง	prose-cleaner ด้าน 7
+อะไร	สิ่งใด	register	warn		prose-cleaner ด้าน 7
+ยังไง	อย่างไร	register	warn		prose-cleaner ด้าน 7
+แบบ	ลักษณะ / ตัดทิ้ง	register	info	ออกแบบ|รูปแบบ|แบบฝึก|แบบสอบถาม|แบบทดสอบ|แบบจำลอง|แบบแผน|แบบประเมิน|แบบวัด|แบบสัมภาษณ์|แบบสังเกต|ต้นแบบ|แบบบันทึก|แบบเสียง|แบบเจาะจง	prose-cleaner ด้าน 7
+พวก	กลุ่ม	register	info	พวกเขา|พรรคพวก	prose-cleaner ด้าน 7
+เท่าไร|เท่าไหร่|แค่ไหน	เท่าใด · เพียงใด	register	warn		prose-cleaner ด้าน 7
+อยากรู้|อยากทราบ	ต้องการทราบ	register	warn		prose-cleaner ด้าน 7
+ทำให้เห็นว่า	แสดงให้เห็นว่า	register	warn		prose-cleaner ด้าน 7
+กว่าจะ	จนกระทั่ง · ก่อนที่จะ	register	warn		prose-cleaner ด้าน 7
+ขนาดนั้น|ตรงนี้|ตรงนั้น	ในระดับดังกล่าว · ในประเด็นนี้	register	warn		prose-cleaner ด้าน 7
+ไม่ได้หายไปไหน|อะไรบางอย่าง	มิได้สูญหายไป · ปัจจัยบางประการ	register	warn		prose-cleaner ด้าน 7
+ลองนึกภาพ|ลองคิดดูว่า|เรามาดูกัน	พิจารณากรณี… · ตัวอย่างเช่น	register	warn		prose-cleaner ด้าน 7
+เจอ	พบ	register	warn		prose-cleaner ด้าน 7
+โดน	ได้รับ / ถูก	register	warn		prose-cleaner ด้าน 7
+เอามา	นำมา	register	warn		prose-cleaner ด้าน 7
+แล้วก็|ทีนี้	และ · ลำดับต่อไป	register	warn		prose-cleaner ด้าน 7
+นี่คือ|นี่	ตัดทิ้ง ขึ้นด้วยคำนามเลย	register	warn		ผู้ใช้แก้ 2026-09-25
+ไปต่อที่	เขียนสิ่งที่ได้ตรง ๆ เช่น ทางเข้า…	register	warn		ผู้ใช้แก้ 2026-09-26
+โผล่	ปรากฏ · อยู่ใน · เข้า…โดยอัตโนมัติ	register	warn		ผู้ใช้แก้ 2026-09-26
+มาใส่	หา…เอง · นำเข้า	register	warn		ผู้ใช้แก้ 2026-09-26
+ใส่ไป	เพิ่มเข้า…	register	warn		ผู้ใช้แก้ 2026-09-26
+ให้รู้เรื่อง	ระบุรูปแบบตรง ๆ เช่น ตั้งชื่อไฟล์เป็น ปี ผู้แต่ง คำสำคัญ	register	warn		ผู้ใช้แก้ 2026-09-26
+ยืม\S*ไปค้น	ใช้เป็นคำค้นต่อได้	register	warn		ผู้ใช้แก้ 2026-09-26
+เอง	ด้วยตนเอง · โดยอัตโนมัติ · ตัดทิ้ง	register	info	ตัวเอง|ตนเอง|เช่นกันเอง	ผู้ใช้แก้ 2026-09-26
+ประสิทธิภาพแห่งตน	การรับรู้ความสามารถของตนเอง (self-efficacy)	translation	warn		language-guard 2.4
+การสุ่มแบบเจาะจง	การเลือกกลุ่มตัวอย่างแบบเจาะจง	translation	warn		language-guard 2.4
+สเกลการให้คะแนน	มาตรประมาณค่า	translation	warn		language-guard 2.4
+ขนาดผล	ขนาดอิทธิพล	translation	warn		language-guard 2.4
+กรอบงาน	กรอบแนวคิด / กรอบทฤษฎี	translation	warn		language-guard 2.4
+การแทรกแซง	สิ่งทดลอง / โปรแกรมที่ใช้ทดลอง / มาตรการ	translation	info		language-guard 2.4
+การปฏิบัติที่ดีที่สุด	แนวปฏิบัติที่ดี	translation	warn		language-guard 2.4
+ฟีดแบ็ก|ฟีดแบ็ค	ข้อมูลย้อนกลับ / ผลป้อนกลับ	translation	warn		language-guard 2.4
+นั่งร้าน	การเสริมต่อการเรียนรู้ (scaffolding)	translation	warn		language-guard 2.4
+ภาระการรับรู้	ภาระทางปัญญา	translation	warn		language-guard 2.4
+การรีวิววรรณกรรม	การทบทวนเอกสารและงานวิจัยที่เกี่ยวข้อง	translation	warn		language-guard 2.4 · มรนว. 2568
+ผู้ถือหุ้น	ผู้มีส่วนได้ส่วนเสีย (ถ้าแปลจาก stakeholder)	translation	info		language-guard 2.4
+ทัศนคติ	เจตคติ (สายศึกษาศาสตร์)	translation	info		language-guard 2.4
+ความฉลาดรู้|การรู้หนังสือดิจิทัล	การรู้ดิจิทัล (digital literacy)	translation	info		language-guard 2.4
+คอนเทนต์	เนื้อหา	translation	warn		language-guard 2.5
+เอาต์พุต	ผลผลิต	translation	warn		language-guard 2.5
+อิมพลีเมนต์	การนำไปใช้	translation	warn		language-guard 2.5
+ทำการ	ตัดทิ้ง (แปลตรงจาก do/perform)	translation	info	วันทำการ|เวลาทำการ	prose-cleaner ด้าน 8
+ในโลกยุคปัจจุบัน|ในยุคดิจิทัลที่	เปิดด้วยข้อเท็จจริงของเรื่องเลย	ai-tell	warn		language-guard 3.1
+มีบทบาทสำคัญอย่างยิ่ง|ถือเป็นสิ่งที่มีความสำคัญ|นับเป็นหัวใจสำคัญ	บอกว่าสำคัญอย่างไร พร้อมหลักฐาน	ai-tell	warn		language-guard 3.1
+ไม่เพียงแต่	เขียนสองประโยคแยก	ai-tell	warn		language-guard 3.1
+อย่างมีประสิทธิภาพและประสิทธิผล|อย่างยั่งยืนต่อไปในอนาคต	ตัดทิ้ง หรือระบุผลที่วัดได้	ai-tell	warn		language-guard 3.1
+ยิ่งไปกว่านั้น|ดังนั้นจึงกล่าวได้ว่า|อาจกล่าวได้ว่า|กล่าวโดยสรุปได้ว่า	ตัดคำเชื่อม ให้เนื้อหาเชื่อมเอง	ai-tell	info		language-guard 3.1
+เป็นอย่างมาก|อย่างแท้จริง|อย่างครอบคลุมและรอบด้าน	ตัดทิ้ง	ai-tell	warn		language-guard 3.1
+อย่างมีนัยสำคัญ	ใช้เฉพาะบริบทสถิติ (อย่างมีนัยสำคัญทางสถิติ)	ai-tell	info	อย่างมีนัยสำคัญทางสถิติ	language-guard 3.1
+Notebook\s*เล่ม|เล่มเดียวกับ	Notebook เดียวกับ… (Notebook ไม่ใช้ลักษณนาม เล่ม)	domain	warn		ผู้ใช้แก้ 2026-09-26
+ซึ่ง	1	syntax	info		prose-cleaner ด้าน 8 (ต่อประโยค)
+ของ	2	syntax	info		prose-cleaner ด้าน 8 (ต่อประโยค)
+ถูก(?!ต้อง|ใจ|กว่า)|ได้รับการ	2	syntax	info		prose-cleaner ด้าน 8 (passive ต่อย่อหน้า)
+สามารถ	2	syntax	info		prose-cleaner ด้าน 8
+ต่าง ?ๆ|ทั้งหลาย	1	syntax	info		prose-cleaner ด้าน 8

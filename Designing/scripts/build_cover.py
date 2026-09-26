@@ -18,6 +18,7 @@ THEMES = {  # พื้น, ลาย, สีเน้นหลัก, สีเ
     "library-warm": ("#faf7f0", "#e4dccb", "#5f7f67", "#d0694a", "#e8efe6"),
     "craft-paper":  ("#f8f5ee", "#e3d9c8", "#8b6b52", "#c9a27e", "#efe6da"),
     "graphite":     ("#f8f8f6", "#d4d4d8", "#18181b", "#71717a", "#ececec"),
+    "mcu":          ("#fbf8f3", "#e8dccb", "#a51c2c", "#b8862b", "#f9e9ea"),
 }
 
 # lucide (MIT) — path ของไอคอนที่ใช้บ่อยในงานอบรม

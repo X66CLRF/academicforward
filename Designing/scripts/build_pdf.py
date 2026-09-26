@@ -41,6 +41,15 @@ def main():
     print(f"{out.name}: {doc.page_count} pages · fonts: {', '.join(fonts)}")
     if any("Prompt" in f for f in fonts):
         print("!! Prompt font found — must be Sarabun only")
+    if any("Arial" in f for f in fonts):
+        print("!! Arial fallback — some glyph (e.g. →) missing from Sarabun, replace it")
+    # ตรวจภาษาไทยทุกครั้งที่ build (คลังคำ Writing/lexicon/thai-lexicon.tsv) — ไม่หยุด build แค่รายงาน
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "Writing" / "lexicon"))
+    import lint_thai
+    hits = [h for h in lint_thai.lint(out, lint_thai.load(), "warn")]
+    print(f"thai-lint: {len(hits)} warn" + ("" if not hits else " — แก้ก่อนส่ง:"))
+    for loc, r, ctx in hits:
+        print(f"  [{r['type']}] {loc} | {ctx} → {r['rep']}")
     dpi = 30 if "--sheet" not in sys.argv else 40
     ims = []
     for p in doc:
