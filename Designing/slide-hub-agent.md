@@ -337,10 +337,11 @@ Start-Process $e -ArgumentList "--headless=new","--disable-gpu","--no-pdf-header
 2. เขียน `lesson.json` → รัน `publish-lesson.ts`
 3. สคริปต์พิมพ์ `board id`, รหัสห้อง, URL และรายชื่อไฟล์ใน `backend/uploads`
 4. ใส่รหัสห้องในหน้าปิดท้าย (`build_pdf.py --room "ห้องกิจกรรม NoteBoard รหัส XXXXXX"`) แล้วคัดลอก PDF ใหม่ทับไฟล์ใน `backend/uploads/<ชื่อที่สคริปต์พิมพ์>`
-5. **ส่ง PDF ขึ้น server เอง** ไม่ต้องรอผู้ใช้กด sync:
+5. **ส่ง PDF ขึ้น server เอง** ไม่ต้องรอผู้ใช้กด sync (host alias `nsru72` ตั้งไว้ใน `~/.ssh/config` ของเครื่อง — ที่อยู่ server ผู้ใช้ และ key ไม่เก็บใน repo นี้):
    ```powershell
-   scp -o BatchMode=yes -p -i "$env:USERPROFILE\.ssh\nsru72_ed25519" "<noteboard>\backend\uploads\<file>.pdf" "Gasidid@192.168.0.72:C:/Websites/apps/noteboard/backend/uploads/<file>.pdf"
+   scp -o BatchMode=yes -p "<noteboard>\backend\uploads\<file>.pdf" "nsru72:C:/Websites/apps/noteboard/backend/uploads/<file>.pdf"
    ```
+   ไม่มี alias ในเครื่อง → ถามผู้ใช้ ห้ามเดาที่อยู่ server
 6. เช็ก `https://noteboard.nsru.ac.th/uploads/<file>.pdf` ต้องตอบ **200** ก่อนรายงานว่าเสร็จ (404 = ยังไม่ขึ้น)
 7. **ทำปกห้อง (บังคับ ห้ามปล่อยปกค่าเริ่มต้น / ภาพสไลด์สุ่ม)** — ปกโชว์เป็นการ์ด 16:9 (~300px) และรูปย่อ 64px จึงออกแบบแยกจากปกสไลด์:
    ```powershell

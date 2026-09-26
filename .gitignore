@@ -32,3 +32,5 @@ credentials.json
 .idea/
 *.swp
 *.swo
+Writing/lexicon/__pycache__/
+__pycache__/
