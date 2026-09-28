@@ -353,5 +353,5 @@
 
 งานออกแบบเสร็จเป็นไฟนอลแล้ว ต้องทำต่อทุกครั้ง ตาม [Automation/kpi-report.md](../Automation/kpi-report.md):
 1. คัดลอกไฟล์ไฟนอลเข้า `G:\My Drive\อบรม\<ปี-เดือน ชื่องาน (สถานที่)>\` → หาลิงก์ Drive เป็นหลักฐาน
-2. `node scripts/kpi-report.mjs add --kpi design --type "<ประเภทงาน>" ...` ใน repo `aritc-audit` (dry run ก่อน → ผู้ใช้ยืนยัน → `--commit`)
+2. `node scripts/kpi-report.mjs add --kpi <design | wp05 | wp06 | …> ...` เลือกที่ลงจากตารางใน kpi-report.md — งานเดียวหลายบทบาท = หลายรายการ · โพสต์แนะนำที่คนอื่นส่งเนื้อหา = `wp05` ไม่ใช่ `design` ใน repo `aritc-audit` (dry run ก่อน → ผู้ใช้ยืนยัน → `--commit`)
 3. รายงาน path ไฟล์ · ลิงก์หลักฐาน · id รายการ KPI · ตรงเวลาไหม

@@ -1,5 +1,7 @@
 # 🖼️ social-graphic-agent — ภาพโพสต์โซเชียลสี่เหลี่ยมจัตุรัส (2160×2160) จากปกหนังสือจริง
 
+> **ภาพจากกิจกรรมจริง** (ภาพถ่ายหลายใบ + โพสต์สรุปกิจกรรม) → ใช้สกิล **photo-post** ก่อน (`~/Documents/GitHub/desk-utils/tools/photo_post/SKILL.md`): คัดรูป ปรับสี ใส่โลโก้ ARITC ร่างโพสต์ ลงหลักฐานรูปชุดเดียวหลายรายการ · สไตล์ฟุตเตอร์ของเพจ Library.NSRU / ARITC อยู่ในสกิลนั้น
+
 > **รับงานต่อจาก**: [../Publishing/aritc-social-post-agent.md](../Publishing/aritc-social-post-agent.md) — ใช้ข้อความโพสต์ ชุดสี และเลขหมู่จากไฟล์นั้นเป็นอินพุต
 > **กฎภาษาไทยในภาพ**: ตาม [textbook-figure-agent.md](textbook-figure-agent.md) กฎเหล็กข้อ 1 — ข้อความไทยต้องเรนเดอร์ด้วยฟอนต์จริง (HTML/SVG) ห้ามใช้ตัวสร้างภาพ raster
 > **เวอร์ชัน**: v1.0 (2569-09-24)
@@ -94,5 +96,5 @@ social-graphic-agent      →  ชุดภาพ PNG 2160×2160 (ภาพห�
 
 งานออกแบบเสร็จเป็นไฟนอลแล้ว ต้องทำต่อทุกครั้ง ตาม [Automation/kpi-report.md](../Automation/kpi-report.md):
 1. คัดลอกไฟล์ไฟนอลเข้า `G:\My Drive\อบรม\<ปี-เดือน ชื่องาน (สถานที่)>\` → หาลิงก์ Drive เป็นหลักฐาน
-2. `node scripts/kpi-report.mjs add --kpi design --type "<ประเภทงาน>" ...` ใน repo `aritc-audit` (dry run ก่อน → ผู้ใช้ยืนยัน → `--commit`)
+2. `node scripts/kpi-report.mjs add --kpi <design | wp05 | wp06 | …> ...` เลือกที่ลงจากตารางใน kpi-report.md — งานเดียวหลายบทบาท = หลายรายการ · โพสต์แนะนำที่คนอื่นส่งเนื้อหา = `wp05` ไม่ใช่ `design` ใน repo `aritc-audit` (dry run ก่อน → ผู้ใช้ยืนยัน → `--commit`)
 3. รายงาน path ไฟล์ · ลิงก์หลักฐาน · id รายการ KPI · ตรงเวลาไหม

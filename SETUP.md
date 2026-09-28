@@ -11,6 +11,8 @@
 | `aritc-audit` | สคริปต์รายงาน KPI `scripts/kpi-report.mjs` |
 | `noteboard` | สคริปต์ขึ้นห้อง `backend/scripts/publish-lesson.ts` |
 | `design-system` | CSS อ้างอิงของสไลด์ |
+| `desk-utils` | สกิล **photo-post** (คัดรูปกิจกรรม → โพสต์ → หลักฐาน) — รัน `python bootstrap.py --yes` ลงไลบรารี + ลงทะเบียนสกิล + ทางลัดคลิกขวา |
+| `dev-tools` (= โฟลเดอร์ `GitHub` เอง) | `dev-start` + `dev-tunnel-watch.ps1 -Install` (tunnel DB ต่อเองตอน login แบบเงียบ) + `CLAUDE.md` กฎหลักฐานทุกงาน |
 
 เพิ่ม/แก้สกิลใน academicforward แล้ว → `python ~\Documents\GitHub\claude-config\gen-commands.py` → commit ทั้ง 2 repo
 
@@ -26,7 +28,7 @@
 * `aritc-audit\.env.local` — `DATABASE_URL` (DB จริงบน server สำนัก ผ่าน tunnel ของ dev-start)
 * `noteboard\backend\.env`
 * `~\Documents\slides\` ทั้งโฟลเดอร์ — โดยเฉพาะ `assets\speaker.jpg` `assets\aritc-logo.png` และงานเก่าที่ใช้เป็นแม่แบบ
-* memory ของ Claude: `~\.claude\projects\<โปรเจกต์>\memory\` (ถ้าต้องการให้จำบริบทเดิม)
+* memory ของ Claude **ไม่ต้องคัดลอก** — กฎที่เจ้าของตั้งย้ายเข้า repo แล้ว (CLAUDE.md / AGENTS.md / SKILL.md) เพิ่มกฎใหม่ที่ repo เสมอ
 * API keys ตั้งเป็น environment variable ของเครื่อง (ดู claude-config/README)
 
 ## 4. เครือข่าย
