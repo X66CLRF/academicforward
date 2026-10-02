@@ -73,7 +73,8 @@ def main():
 
     # ลบคำสั่งย่อยรายตัวที่สคริปต์รุ่นก่อนสร้างไว้
     for d in OUT.glob("*/SKILL.md"):
-        if d.parent.name != NAME and MARK in d.read_text(encoding="utf-8"):
+        link = d.parent.is_symlink() or getattr(d.parent, "is_junction", lambda: False)()
+        if d.parent.name != NAME and not link and MARK in d.read_text(encoding="utf-8"):
             shutil.rmtree(d.parent)
             print(f"ลบคำสั่งเก่า /{d.parent.name}")
 
