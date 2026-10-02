@@ -69,6 +69,7 @@ for name, html in layers.items():
     subprocess.run([B.EDGE, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1",
                     "--default-background-color=00000000", "--window-size=2160,2160", "--virtual-time-budget=15000",
                     rf"--user-data-dir={os.environ['TEMP']}\edgeshot", f"--screenshot={png}", src.as_uri()], check=True)
+    B.wait_file(png)
     im = Image.open(png).convert("RGBA")
     box = im.getchannel("A").getbbox()
     if name.startswith("shadow"):  # เงา: ลบตัวกล่องขาวออก เหลือแต่เงา (ปกจริงวางทับตรงกลาง)

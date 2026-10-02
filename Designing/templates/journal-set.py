@@ -6,6 +6,18 @@ from PIL import Image
 S = Path(__file__).parent
 EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
+
+def wait_file(path, timeout=40):
+    """msedge.exe คืนค่าก่อนเขียนภาพเสร็จ (เครื่องนี้) — รอจนไฟล์มีและขนาดนิ่ง"""
+    import time
+    path, last, t0 = Path(path), -1, time.time()
+    while time.time() - t0 < timeout:
+        if path.exists() and path.stat().st_size == last > 0:
+            return
+        last = path.stat().st_size if path.exists() else -1
+        time.sleep(0.5)
+    raise SystemExit(f"Edge ไม่เขียน {path} ภายใน {timeout} วินาที")
+
 # [GRAPHIC-SPEC] จากปกทั้ง 4 เล่ม
 BG, LINE = "#F1F5EE", "#E2EBDF"          # เขียวใบไม้จาง (แปลงผัก เกษตรผสม-ผสาน)
 NAVY = "#2B3A55"
@@ -56,7 +68,7 @@ h1{{position:absolute;top:400px;width:100%;text-align:center;margin:0;font-famil
 .chip{{position:absolute;top:800px;left:50%;transform:translateX(-50%);background:#fff;padding:10px 56px;border-radius:999px;
  font-family:Pattaya;font-size:116px;line-height:1.3;color:{MAROON};white-space:nowrap;box-shadow:0 12px 30px rgba(43,58,85,.10)}}
 .shadow{{position:absolute;box-shadow:0 40px 80px rgba(43,58,85,.28)}}
-.num{{position:absolute;right:150px;bottom:150px;width:220px;height:220px;border-radius:50%;background:#fff;
+.num{{position:absolute;right:190px;bottom:205px;width:220px;height:220px;border-radius:50%;background:#fff;
  box-shadow:0 20px 45px -10px rgba(43,58,85,.25);display:flex;align-items:center;justify-content:center;
  font-family:Pattaya;font-size:120px;color:var(--c)}}
 </style></head><body>
@@ -119,6 +131,7 @@ for name, html in pages.items():
     subprocess.run([EDGE, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1",
                     "--window-size=2160,2160", "--virtual-time-budget=15000", rf"--user-data-dir={os.environ['TEMP']}\edgeshot",
                     f"--screenshot={S / (name + '.png')}", src.as_uri()], check=True)
+    wait_file(S / (name + ".png"))
 print(layout)
 
 ims = [Image.open(S / f).convert("RGB").resize((540, 540)) for f in ["p1.png", "prev2.png", "prev3.png", "prev5.png"]]
