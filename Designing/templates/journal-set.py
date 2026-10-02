@@ -63,9 +63,9 @@ html,body{{margin:0;width:2160px;height:2160px;overflow:hidden;background:{BG};p
 .tab{{position:absolute;left:918px;top:0;width:324px;height:336px;background:#fff;border-radius:0 0 22px 22px;
  display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(43,58,85,.10)}}
 .tab img{{width:260px}}
-h1{{position:absolute;top:400px;width:100%;text-align:center;margin:0;font-family:Pattaya;font-weight:400;
+h1{{position:absolute;top:430px;width:100%;text-align:center;margin:0;font-family:Pattaya;font-weight:400;
  font-size:280px;line-height:1.25;color:{NAVY};-webkit-text-stroke:38px #fff;paint-order:stroke fill}}
-.chip{{position:absolute;top:800px;left:50%;transform:translateX(-50%);background:#fff;padding:10px 56px;border-radius:999px;
+.chip{{position:absolute;top:804px;left:50%;transform:translateX(-50%);background:#fff;padding:10px 56px;border-radius:999px;
  font-family:Pattaya;font-size:116px;line-height:1.3;color:{MAROON};white-space:nowrap;box-shadow:0 12px 30px rgba(43,58,85,.10)}}
 .shadow{{position:absolute;box-shadow:0 40px 80px rgba(43,58,85,.28)}}
 .num{{position:absolute;right:190px;bottom:205px;width:220px;height:220px;border-radius:50%;background:#fff;
