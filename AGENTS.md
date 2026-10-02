@@ -18,7 +18,7 @@
 
 ## คำสั่ง `/academicforward`
 
-- คำสั่งเดียวครอบทุกสกิล เลือกคู่มือให้เองตามงาน ใช้ได้ทั้ง Antigravity และ Claude Code
+- คำสั่งเดียวครอบทุกสกิล เลือกคู่มือให้เองตามงาน ใช้ได้ทั้ง Antigravity และ Claude Code · ชื่อย่อ `/academicfw` (ตั้งใน `ALIASES` ของสคริปต์)
 - สร้างจาก `.claude/commands/*.md` ด้วย `python gen-antigravity.py` (สำเนาเดียวกับ `claude-config/gen-antigravity.py`)
   - Antigravity: `~/.gemini/config/skills/academicforward/SKILL.md` — อยู่นอก git ต้องรันใหม่ทุกเครื่อง
   - Claude Code: `~/.claude/commands/academicforward.md` (= `claude-config/commands/`, อยู่ใน git)
