@@ -11,6 +11,7 @@
 | ใช้ทำอะไร | ไฟล์ |
 | :--- | :--- |
 | ข้อความโพสต์ + **ชุดสีจากเนื้อหา + `[GRAPHIC-SPEC]` + พรอมท์ภาพ** (ขั้นก่อนหน้าไฟล์นี้ — บังคับ) | `academicforward/Publishing/aritc-social-post-agent.md` ส่วน "กฎการวิเคราะห์รูปภาพ" |
+| **เลือกสไตล์ตามข้อมูลที่ได้รับ** (กรอบหน้า ฟอนต์ Mitr สี 5 สไตล์ A–E) — เลือกก่อนวาดทุกงาน | `academicforward/Designing/style-library.md` |
 | ส่งงานขึ้น Canva แบบแยกชั้น + ระยะห่าง + สติกเกอร์ AI (ใช้ร่วมกับสไลด์) | `academicforward/Designing/canva-handover.md` |
 | ภาษาภาพเรขาคณิต ธีมสี เลย์เอาต์ ตัวช่วยวาด (`motif.py`, `ui_mockups.js`) — งานวาดที่ผ่านมาตรฐานผู้ใช้แล้ว | `academicforward/Designing/slide-hub-agent.md` ข้อ 3.3–3.3.3 |
 | ปกโพสต์จากภาพกิจกรรม · คัดรูป · ลงหลักฐาน | `desk-utils/tools/photo_post/SKILL.md` (`photo_post cover` / `evidence`) |

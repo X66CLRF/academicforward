@@ -43,6 +43,7 @@ academicforward/
 | 🎨 **Designing** | [Designing/textbook-figure-agent.md](Designing/textbook-figure-agent.md) | `v2.0` | 🖼️ **คณาจารย์ผู้เขียนตำรา** — ผลิตภาพประกอบเวกเตอร์ภาษาไทยทั้งเล่ม + แทรกลง Word + ภาคผนวก ก | [📖 เปิดไฟล์](Designing/textbook-figure-agent.md) |
 | 🎨 **Designing** | [Designing/social-graphic-agent.md](Designing/social-graphic-agent.md) | `v1.1` | 📱 **เจ้าหน้าที่ / ประชาสัมพันธ์** — ภาพโพสต์ 2160×2160 จาก `[GRAPHIC-SPEC]` (ด่านบังคับ: ชุดสี+สเปก+พรอมท์ก่อนวาด) · แม่แบบ `novel-set.py` / `journal-set.py` (+ `-layers` แยกชั้น) / `suggest-geo.py` · ส่งขึ้น Canva ตาม `canva-handover` | [📖 เปิดไฟล์](Designing/social-graphic-agent.md) |
 | 🎨 **Designing** | [Designing/canva-handover.md](Designing/canva-handover.md) | `v1.0` | 🤝 **ทุกงานกราฟิก/สไลด์ที่ผู้ใช้แก้ต่อ** — ออกแบบเสร็จ commit ลง Canva ส่งลิงก์ · รอบแก้เพิ่มหน้าต่อท้าย · แยกชั้นทีละชิ้นที่ขนาดจริง · ภาพประกอบให้ Canva AI วาด (Pro) · ตารางระยะห่าง 24px | [📖 เปิดไฟล์](Designing/canva-handover.md) |
+| 🎨 **Designing** | [Designing/style-library.md](Designing/style-library.md) | `v1.0` | 🗂️ **ก่อนวาดทุกงาน** — เลือกสไตล์ A–E ตามข้อมูลที่ได้รับ (ปกจริง / ภาพหน้าจอ / ตัวเลข / ขั้นตอน) · กรอบหน้าร่วม หัว-ท้าย-เลขหน้า · ฟอนต์ Mitr | [📖 เปิดไฟล์](Designing/style-library.md) |
 | 🔍 **Searching** | [Searching/academic-search-keywords.md](Searching/academic-search-keywords.md) | `v2.0` | 🔍 **นักศึกษา / นักวิจัย** — คลังสะพานคำค้นภาษาไทย ↔ อังกฤษ 12 ฐานข้อมูล | [📖 เปิดไฟล์](Searching/academic-search-keywords.md) |
 | 🔍 **Searching** | [Searching/academic-database-prompts.md](Searching/academic-database-prompts.md) | `v2.0` | 💡 **นักศึกษา / อาจารย์** — ชุดคำสั่ง Prompt สกัดความรู้และสรุปเปเปอร์ | [📖 เปิดไฟล์](Searching/academic-database-prompts.md) |
 | 📋 **Evaluation** | [Evaluation/promote-doc-agent.md](Evaluation/promote-doc-agent.md) | `v1.0` | 📋 **บุคลากรสายสนับสนุน (ชำนาญการ / ชำนาญการพิเศษ)** — ถ้อยคำเกณฑ์ ๑๒ สมรรถนะ × ๕ ระดับ + จับคู่หลักฐาน + ออกเลขเอกสารแนบ + เช็คลิสต์ปิดเล่ม | [📖 เปิดไฟล์](Evaluation/promote-doc-agent.md) |
@@ -160,6 +161,7 @@ flowchart LR
 | **ชุดสี ลาย และสติกเกอร์ของภาพโพสต์โซเชียล** | `aritc-social-post-agent` (ออก `[GRAPHIC-SPEC]`) | ดึงสีจากปกจริง · ชื่อลายต้องตรงกับ `PATTERNS` ใน `social-graphic-agent` |
 | **การผลิตภาพโพสต์โซเชียล 2160×2160** | `social-graphic-agent` | แม่แบบใน `Designing/templates/` · ห้ามอีโมจิในภาพ |
 | **ส่งงานขึ้น Canva · แยกชั้น · ระยะห่าง · ใครวาดอะไร (AI vs โค้ด)** | `canva-handover` | ใช้ร่วมทุกสกิลออกแบบ ไฟล์อื่นห้ามเขียนกติกานี้ซ้ำ — ลิงก์มาที่นี่ |
+| **เลือกสไตล์ · กรอบหน้า · ฟอนต์/สีในภาพโพสต์** | `style-library` | ค่าสี/ฟอนต์หน่วยงานอ้าง `design-system` ไม่ตั้งใหม่ |
 | สเปกและการผลิตภาพประกอบ | `textbook-figure-agent` | ไฟล์สายเขียนออกสเปก ไฟล์นี้ผลิต |
 | ผังกระบวนการและไดอะแกรม | `flowchart-diagram-agent` | กติกา Mermaid ทั้งหมดอยู่ที่นี่ที่เดียว |
 | **ผังชุดเอกสารคุณภาพ WP/WI/SOP** | `wp-wi-flowchart-agent` | กฎเฉพาะชุดเอกสาร เปิดคู่ `flowchart-diagram-agent` เสมอ |
