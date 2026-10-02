@@ -16,6 +16,8 @@
 
 เพิ่ม/แก้สกิลใน academicforward แล้ว → `python ~\Documents\GitHub\claude-config\gen-commands.py` → commit ทั้ง 2 repo
 
+Antigravity: `python gen-antigravity.py` (หรือ `python ~\Documents\GitHub\claude-config\gen-antigravity.py`) → ได้คำสั่งเดียว `/academicforward` (เลือกคู่มือให้เองตามงาน) ที่ `~\.gemini\config\skills\academicforward\` (รันซ้ำเมื่อเพิ่มสกิลใหม่ · ต้องรันทุกเครื่อง ไม่อยู่ใน git)
+
 ## 2. ติดตั้งโปรแกรม
 
 * Node.js ≥ 20.12 · Python 3.12 + `pip install python-docx pymupdf pillow opencv-python`
