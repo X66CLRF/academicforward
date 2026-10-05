@@ -34,3 +34,7 @@ credentials.json
 *.swo
 Writing/lexicon/__pycache__/
 __pycache__/
+
+# เอาท์พุตเรนเดอร์ชั่วคราวของสคริปต์ชั้นกราฟิก
+Designing/templates/layers_*/
+Designing/patterns/tryout/
