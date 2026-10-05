@@ -35,6 +35,7 @@
 | `desk-utils` | เครื่องมือ Python: `photo_post`, `file_organizer`, `cutdesk`, `premierekit`, `paper_tiler`, `format_converter`, `watcher` | `tools/<ชื่อ>/SKILL.md` |
 | `design-system` | มาตรฐานดีไซน์ ARITC/NSRU (กฎเหล็ก 17 ข้อ, tokens, skins) — ใช้ทุกครั้งที่ทำ/แก้ UI | `SKILL.md` (`/design-system`) |
 | `libdesk`, `noteboard`, `aritc-duty`, `aritc-audit` | เว็บแอป — ต้องทำตาม design-system | `CLAUDE.md` ในแต่ละ repo |
+| `lab-setup` | ตั้งค่า/ติดตั้งเครื่องแล็บ Windows 11 ของ มรนว. (ทำลายข้อมูลได้ — ห้ามรันเองถ้าผู้ใช้ไม่สั่ง) | `AGENTS.md` |
 
 - งานคัดรูป/ล้างไฟล์ซ้ำ/ตัดต่อวิดีโอ → อ่าน `desk-utils/tools/<ชื่อ>/SKILL.md` แล้วรัน `py -X utf8 -m <module>` ได้จากทุกโฟลเดอร์ (ตั้ง `desk_utils.pth` ไว้แล้วโดย `claude-config/sync-claude.ps1`)
 - งานกราฟิก/สไลด์/หน้าเว็บ → อ่าน `design-system` ก่อน อย่าเดาสี/ฟอนต์
