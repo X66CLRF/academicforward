@@ -1,5 +1,7 @@
 # 🖼️ social-graphic-agent — ภาพโพสต์โซเชียลสี่เหลี่ยมจัตุรัส (2160×2160) จากปกหนังสือจริง
 
+> **อ่านก่อน: [owner-design-principles.md](owner-design-principles.md)** — หลักการที่เจ้าของสอนจากการแก้งานจริง
+
 > **ภาพจากกิจกรรมจริง** (ภาพถ่ายหลายใบ + โพสต์สรุปกิจกรรม) → ใช้สกิล **photo-post** ก่อน (`~/Documents/GitHub/desk-utils/tools/photo_post/SKILL.md`): คัดรูป ปรับสี ใส่โลโก้ ARITC ร่างโพสต์ ลงหลักฐานรูปชุดเดียวหลายรายการ · สไตล์ฟุตเตอร์ของเพจ Library.NSRU / ARITC อยู่ในสกิลนั้น
 
 > **รับงานต่อจาก**: [../Publishing/aritc-social-post-agent.md](../Publishing/aritc-social-post-agent.md) — ใช้ข้อความโพสต์ ชุดสี และเลขหมู่จากไฟล์นั้นเป็นอินพุต

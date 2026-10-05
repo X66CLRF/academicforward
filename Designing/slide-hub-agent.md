@@ -1,5 +1,7 @@
 # Slide Hub — สไลด์ + ใบงาน + ห้อง NoteBoard
 
+> **อ่านก่อน: [owner-design-principles.md](owner-design-principles.md)** — หลักการที่เจ้าของสอนจากการแก้งานจริง
+
 > **ใช้ร่วมกับ**: [textbook-structure-agent.md](textbook-structure-agent.md) (โครงเนื้อหาก่อนทำสไลด์) · [flowchart-diagram-agent.md](flowchart-diagram-agent.md) (ผังในสไลด์)
 > ผู้ใช้คนเดียว (กษิดิศ) · ผลลัพธ์หลักคือ **PDF** · ห้องกิจกรรมขึ้น **NoteBoard** · ห้ามแจกผู้เรียนผ่าน Google Drive (Drive ใช้เก็บไฟนอล + หลักฐาน KPI ขั้น 10 เท่านั้น)
 
