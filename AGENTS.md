@@ -24,3 +24,19 @@
   - Claude Code: `~/.claude/commands/academicforward.md` (= `claude-config/commands/`, อยู่ใน git)
 - **ห้ามแก้ไฟล์ที่สร้างอัตโนมัติด้วยมือ** — แก้คู่มือต้นทางหรือ `.claude/commands/` แล้วรันสคริปต์ใหม่
 - เพิ่มสกิลใหม่ → เพิ่มคู่มือ + ไฟล์ใน `.claude/commands/` → รัน `gen-antigravity.py` และ `claude-config/gen-commands.py` → commit + push ทั้ง 2 repo
+
+## ระบบนิเวศข้าม repo (อ่านก่อนเรียกข้าม repo)
+
+ทุก repo อยู่ใน `~/Documents/GitHub/` และเรียกหากันได้ด้วยพาธนี้:
+
+| repo | ใช้ทำอะไร | จุดเข้า |
+|---|---|---|
+| `academicforward` | สกิลวิชาการ/เอกสาร/โพสต์ (`/academicforward`) | `README.md`, `AGENTS.md` |
+| `desk-utils` | เครื่องมือ Python: `photo_post`, `file_organizer`, `cutdesk`, `premierekit`, `paper_tiler`, `format_converter`, `watcher` | `tools/<ชื่อ>/SKILL.md` |
+| `design-system` | มาตรฐานดีไซน์ ARITC/NSRU (กฎเหล็ก 17 ข้อ, tokens, skins) — ใช้ทุกครั้งที่ทำ/แก้ UI | `SKILL.md` (`/design-system`) |
+| `libdesk`, `noteboard`, `aritc-duty`, `aritc-audit` | เว็บแอป — ต้องทำตาม design-system | `CLAUDE.md` ในแต่ละ repo |
+
+- งานคัดรูป/ล้างไฟล์ซ้ำ/ตัดต่อวิดีโอ → อ่าน `desk-utils/tools/<ชื่อ>/SKILL.md` แล้วรัน `py -X utf8 -m <module>` ได้จากทุกโฟลเดอร์ (ตั้ง `desk_utils.pth` ไว้แล้วโดย `claude-config/sync-claude.ps1`)
+- งานกราฟิก/สไลด์/หน้าเว็บ → อ่าน `design-system` ก่อน อย่าเดาสี/ฟอนต์
+- repo ไหนหาย → `git clone https://github.com/X66CLRF/<ชื่อ>.git` ใน `~/Documents/GitHub`
+- ใช้พาธแบบ `~/...` เสมอ ห้ามฝังชื่อผู้ใช้เครื่อง
