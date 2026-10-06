@@ -1,5 +1,9 @@
 # 🖼️ social-graphic-agent — ภาพโพสต์โซเชียลสี่เหลี่ยมจัตุรัส (2160×2160) จากปกหนังสือจริง
 
+> **⛔ ด่านบังคับ — อ่าน "ทั้งไฟล์" ตามลำดับนี้ก่อนวาดหรือส่ง Canva (ข้ามไม่ได้ ผู้ใช้ไม่ควรต้องเตือน):**
+> 1. [owner-design-principles.md](owner-design-principles.md) → 2. [content-to-visual.md](content-to-visual.md) → 3. [style-library.md](style-library.md) → 4. [pattern-library.md](pattern-library.md) (เทียบ 4–6 ลายบนปกจริง · ห้ามซ้ำ 3 งานล่าสุด · จดลายลง handover) → 5. [typography-library.md](typography-library.md) → 6. ไฟล์นี้ → 7. [canva-handover.md](canva-handover.md) (เพิ่มหน้าในดีไซน์ประจำเดือน ขนาด 2160 แยกชั้น · ห้ามภาพแบน · ห้ามวาง png ลงโฟลเดอร์รอบ · ส่งลิงก์ให้ผู้ใช้)
+> ตรวจว่าอ่านครบ: `py -X utf8 scripts/skill_preflight.py --task "<งาน>" --dir .. --read <ไฟล์ที่อ่านแล้ว>` (ใช้ Jev · ต้องมี `TYPESAFE_API_KEY` ในตัวแปรสภาพแวดล้อม)
+
 > **อ่านก่อน: [owner-design-principles.md](owner-design-principles.md)** — หลักการที่เจ้าของสอนจากการแก้งานจริง
 
 > **ภาพจากกิจกรรมจริง** (ภาพถ่ายหลายใบ + โพสต์สรุปกิจกรรม) → ใช้สกิล **photo-post** ก่อน (`~/Documents/GitHub/desk-utils/tools/photo_post/SKILL.md`): คัดรูป ปรับสี ใส่โลโก้ ARITC ร่างโพสต์ ลงหลักฐานรูปชุดเดียวหลายรายการ · สไตล์ฟุตเตอร์ของเพจ Library.NSRU / ARITC อยู่ในสกิลนั้น
