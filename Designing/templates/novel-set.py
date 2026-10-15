@@ -2,7 +2,7 @@ import subprocess, os
 from pathlib import Path
 
 S = Path(__file__).parent
-OUT = Path(r"G:\Shared drives\งานแนะนำทรัพยากรสารสนเทศ\นิยาย\ก.ย.69รอบ2")
+OUT = Path(r"G:\Shared drives\คลังสื่อดิจิทัลห้องสมุด\นิยาย\ก.ย.69รอบ2")
 EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
 BG = "#EFEAF6"      # ม่วงอ่อนโทนพลบค่ำ (รอบ 1 ใช้ชมพู)

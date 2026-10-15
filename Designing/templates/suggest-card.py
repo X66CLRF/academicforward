@@ -6,7 +6,7 @@ import subprocess, os
 from pathlib import Path
 
 S = Path(__file__).parent
-OUT = Path(r"G:\Shared drives\งานแนะนำทรัพยากรสารสนเทศ\เสนอหนังสือ\2569\เสนอบอร์ดเกม.png")
+OUT = Path(r"G:\Shared drives\คลังสื่อดิจิทัลห้องสมุด\เสนอหนังสือ\2569\เสนอบอร์ดเกม.png")
 
 # [GRAPHIC-SPEC]
 BG = "#4E6FB3"      # ส่วนบน น้ำเงิน

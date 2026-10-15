@@ -373,7 +373,7 @@ def render_boardgame_set(games_data, month_text, out_dir, title="แนะนำ
 
 if __name__ == "__main__":
     # Test / Default Execution for October 2569
-    OCT_DIR = Path(r"G:\Shared drives\งานแนะนำทรัพยากรสารสนเทศ\สื่อโสตทัศน์\2569 (New)\ตุลาคม NEW")
+    OCT_DIR = Path(r"G:\Shared drives\คลังสื่อดิจิทัลห้องสมุด\สื่อโสตทัศน์\2569 (New)\ตุลาคม NEW")
     games = [
         {
             "image": OCT_DIR / "BG-69-006.jpg",

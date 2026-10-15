@@ -12,7 +12,7 @@ from pathlib import Path
 import qrcode
 
 S = Path(__file__).parent
-OUT_DIR = Path(r"G:\Shared drives\งานแนะนำทรัพยากรสารสนเทศ\เสนอหนังสือ\2569")
+OUT_DIR = Path(r"G:\Shared drives\คลังสื่อดิจิทัลห้องสมุด\เสนอหนังสือ\2569")
 LOGO = S / "nsru-library-logo.png"
 
 # ---- เนื้อหา -------------------------------------------------------------
