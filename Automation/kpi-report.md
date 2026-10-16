@@ -7,11 +7,10 @@
 
 > ⚠ ที่เก็บยังไม่ลงตัว (Drive gmail / Drive gasidid.p / OneDrive) — อ่าน `evidence-storage-plan.md` แล้วถามเจ้าของก่อนคัดลอก/แชร์
 
-* ปลายทาง: `G:\My Drive\อบรม\<ปี-เดือน ชื่องาน (สถานที่)>\` เช่น `2569-09 ห้องสมุดยุคดิจิทัล (มจร)`
-* ใส่เฉพาะ **ไฟล์แจก/ไฟล์ส่งมอบ** (PDF สไลด์ · PDF ใบงาน · PNG ภาพโพสต์ · ผัง) — ไฟล์ทำงาน (`deck.html`, `source.txt`, `lesson.json`) อยู่ที่ `Documents\slides\` ตามเดิม
+* ปลายทาง: `G:\My Drive\อบรม\<ปี-เดือน ชื่องาน (สถานที่)>\`* ใส่เฉพาะ **ไฟล์แจก/ไฟล์ส่งมอบ** (PDF สไลด์ · PDF ใบงาน · PNG ภาพโพสต์ · ผัง) — ไฟล์ทำงาน (`deck.html`, `source.txt`, `lesson.json`) อยู่ที่ `Documents\slides\` ตามเดิม
 * **คัดลอก** ไม่ย้าย · ชื่อไฟล์ไม่มีเลขเวอร์ชัน · ฉบับเก่าเข้า `_archive\`
-* **หลักฐาน KPI ใช้ URL ห้อง NoteBoard เป็นหลัก** (`https://noteboard.nsru.ac.th/board/<board id>` — กรรมการเปิดได้) · ไฟล์ใน Drive เป็นส่วนตัว กรรมการเปิดไม่ได้
-* งานที่ไม่มีห้อง NoteBoard (ภาพโพสต์ ผัง) → ใช้ลิงก์โพสต์จริง (Facebook) หรือถามผู้ใช้ก่อนเปิดแชร์ไฟล์ Drive (`search_files` ตามชื่อไฟล์ → `https://drive.google.com/file/d/<id>/view`)
+* **หลักฐาน KPI ใช้ URL ห้อง NoteBoard เป็นหลัก** (`https://noteboard.nsru.ac.th/board/<board id>` — กรรมการเปิดได้)
+* งานที่ไม่มีห้อง NoteBoard (ภาพโพสต์ ผัง) → ใช้ลิงก์โพสต์จริง (Facebook) หรือลิงก์ไฟล์ Drive `https://drive.google.com/file/d/<id>/view` · id: `search_files` (Shared drive หาไม่เจอ → `items.local_title` ใน `%LOCALAPPDATA%\Google\DriveFS\*\metadata_sqlite_db`) · `get_file_permissions` ไม่มี `anyone` = ถามก่อนแชร์
 
 ## 2. รายงาน KPI
 
