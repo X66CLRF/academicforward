@@ -22,7 +22,7 @@ def b64(path, mime):
 
 
 def main():
-    src, out = Path(sys.argv[1]), Path(sys.argv[2])
+    src, out = Path(sys.argv[1]).resolve(), Path(sys.argv[2]).resolve()
     room = sys.argv[sys.argv.index("--room") + 1] if "--room" in sys.argv else ""
     html = (src.read_text(encoding="utf-8")
             .replace("__LOGO__", b64(ASSETS / "aritc-logo.png", "image/png"))
@@ -33,6 +33,15 @@ def main():
     subprocess.run([EDGE, "--headless=new", "--disable-gpu", "--no-pdf-header-footer",
                     "--virtual-time-budget=15000", rf"--user-data-dir={tempfile.gettempdir()}\edgepdf",
                     f"--print-to-pdf={out}", tmp.as_uri()], check=True)
+    # msedge.exe may return before the PDF is written — wait until the file size settles
+    import time
+    last = -1
+    for _ in range(120):
+        size = out.stat().st_size if out.exists() else -1
+        if size > 0 and size == last:
+            break
+        last = size
+        time.sleep(0.5)
 
     import pymupdf
     from PIL import Image
