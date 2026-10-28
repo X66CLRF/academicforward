@@ -22,7 +22,7 @@
   * **Digital Technology:** Web Application Development (React · TypeScript · Bun) · Self-hosting & Deployment (IIS · NSSM Service · SSL · SSH Tunnel · ห้ามคำใหญ่เกินเช่น IT Infrastructure / Server Administration) · UX/UI & Graphic Design (ส่วนติดต่อผู้ใช้และสื่อกราฟิก) · Digital Media Production (ภาพนิ่ง · วิดีโอ · โสตทัศนูปกรณ์)
 * **ห้ามใส่:** Citation & Referencing / APA 7th · Library Systems / OPAC / ระบบห้องสมุดอัตโนมัติ (ไม่ใช่สายของผู้ใช้)
 * ชื่อสกิลใช้คำกลาง ๆ ไม่เจาะระบบใดระบบหนึ่ง · โค้ดต้นแบบ: บล็อก `/* 2 speaker` ใน `slides\2026-09-nursing-db-notebooklm\deck.html`
-* สกิลใหม่ → ผู้ใช้บอกแล้วแก้ที่นี่ก่อน แล้วค่อยใส่สไลด์
+* สกิลใหม่: แก้ที่นี่ก่อนใส่สไลด์
 
 **ไฟล์ประจำ** (ฝังเป็น base64 ในไฟล์ทุกครั้ง ห้ามลิงก์ออกนอก)
 * **รูปวิทยากร — ใช้รูปนี้เสมอ ห้ามใช้รูปอื่น ห้ามครอป (ต้องเห็นตัว):** `~\Documents\slides\assets\speaker.jpg` (900px เต็มภาพ จาก `Desktop\001146.jpg`) แสดงในกรอบสี่เหลี่ยมมุมมน (radius 16–20px) ขนาด 96–132px · ห้ามกรอบวงกลม
