@@ -118,7 +118,7 @@ social-graphic-agent      →  ชุดภาพ PNG 2160×2160 (ภาพห�
    import pymupdf
    pymupdf.open("1.pdf")[0].get_pixmap(dpi=200).save("h1.jpg")
    ```
-2. เลือกแม่แบบ คัดลอกไว้ข้างไฟล์ปกพร้อมโลโก้: [templates/journal-set.py](templates/journal-set.py) (ลาย topo · มาตรฐานใหม่) หรือ [templates/novel-set.py](templates/novel-set.py) (ลาย wave) · ใส่สีจาก `[GRAPHIC-SPEC]` · ภาพประกอบหลักเจนด้วย Canva AI ไม่วาดใน `MOON`/`STICKER` แล้ว
+2. เลือกแม่แบบ (ชุดปกจริง พื้นขาว+ลาย 20/24 ย้อมสีปก+เงา: [templates/cover-set-v2.py](templates/cover-set-v2.py) ตั้ง `TILE` ให้ 2160 หารลงตัว · ลายใน Canva opacity 0.18) คัดลอกไว้ข้างไฟล์ปกพร้อมโลโก้: [templates/journal-set.py](templates/journal-set.py) (ลาย topo · มาตรฐานใหม่) หรือ [templates/novel-set.py](templates/novel-set.py) (ลาย wave) · ใส่สีจาก `[GRAPHIC-SPEC]` · ภาพประกอบหลักเจนด้วย Canva AI ไม่วาดใน `MOON`/`STICKER` แล้ว
 3. แยกชั้น: [templates/journal-set-layers.py](templates/journal-set-layers.py) → `layers/*.png` + `layers.json`
    ตรวจระยะ: `python scripts/check_layers.py layers --pages "title,chip,sticker|num1"` ต้องขึ้น "ผ่าน" ก่อนขึ้น Canva (ชิ้นตกแต่ง/เงาข้ามได้ด้วย `--skip`)
    ตรวจตา: ขนาดจริง · สระ/วรรณยุกต์ไม่ลอย · ปกไม่ขาด · เลขหมู่ตรงระเบียน
