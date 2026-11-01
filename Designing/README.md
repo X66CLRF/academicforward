@@ -9,3 +9,4 @@
 - 🔷 **[pattern-library.md](pattern-library.md)** — คลังลายพื้นหลังเวกเตอร์ 100 แบบ (ต่อเนียน จานสี A–E) + ตารางเลือกลายตามงาน — ใช้ต่อจาก style-library
 - 🤝 **[canva-handover.md](canva-handover.md)** — ส่งงานขึ้น Canva แบบแยกชั้นให้ผู้ใช้แก้ร่วม + ระยะห่าง + ภาพประกอบด้วย Canva AI (ใช้ร่วมกับสไลด์)
 - 🖼️ **[textbook-figure-agent.md](textbook-figure-agent.md)** — ผลิตภาพประกอบตำราแบบเวกเตอร์ภาษาไทย + แทรกลง Word + ภาคผนวก ก
+- 🎬 **[motion-graphic-notes.md](motion-graphic-notes.md)** — บันทึกเรียนรู้: วิดีโอ Motion Graphic ที่ AI สร้างด้วยโค้ด (HTML/SVG → MP4) · ยังไม่ใช่สกิล รอยืนยันจากแหล่ง genhaha
