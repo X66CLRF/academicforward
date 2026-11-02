@@ -9,6 +9,7 @@
 - 🧱 **[docx-builder.md](docx-builder.md)** — **สร้าง** ไฟล์ `.docx` ขึ้นใหม่จากศูนย์ ผูกทุกค่าไว้ที่ Word Styles แทนการจัดรูปแบบโดยตรง แก้บั๊กอักษรเชิงซ้อนของ `python-docx` ที่ทำให้ Word ตัดคำภาษาไทยผิด มาตรฐานตารางและคำบรรยาย พร้อมด่านตรวจ 10 ข้อก่อนส่งมอบ
 - 🔎 **[scan-ocr-agent.md](scan-ocr-agent.md)** — สร้างคลังข้อความจากไฟล์อ้างอิงทั้งโฟลเดอร์ (docx/pdf/xlsx/pptx) พร้อม `INDEX.md` และ `manifest.json` ติดธงไฟล์สแกนที่ต้อง OCR · อ่านหน้าสแกนด้วยภาพผ่าน PyMuPDF (ไม่ต้องมี poppler) · ถอดบรรณานุกรมจากหน้าลิขสิทธิ์ · ลองอ่านซ้ำเมื่อไฟล์ Google Drive ยังสตรีมไม่เสร็จ
 - 🧬 **[docx-safe-edit-agent.md](docx-safe-edit-agent.md)** — แก้ข้อความในไฟล์ `.docx` ที่จัดรูปแบบไว้แล้วโดยฟอร์แมตไม่พัง (แทนที่เฉพาะ `<w:t>` โคลนย่อหน้าเดิมเมื่อเพิ่มรายการ) + snapshot/restore อัตโนมัติ + แทนรูปโดยคงเฟรมและสัดส่วน + แนวทางยืมเล่มคนอื่นมาเป็นเทมเพลท
+- 🖱️ **[agent-desktop-notes.md](agent-desktop-notes.md)** — บันทึกเรียนรู้: ให้ AI กดโปรแกรมบนเดสก์ท็อปผ่าน accessibility tree (agent-desktop ของ Vercel Labs) + วิธีเขียนสกิลที่ควรยืมมาใช้ · ยังไม่ได้ลองใช้
 
 > 🐍 **ไลบรารีกลาง** [`Automation/scripts/`](scripts/) — `docx_core.py` (ตัวสร้าง) · `check_docx.py` (ด่านตรวจ) · `example_report.py` (ตัวอย่างพร้อมก๊อป) · `extract_sources.py` (คลังข้อความ) · `render_scan_pages.py` (หน้าสแกนเป็นภาพ)
 > ใช้ร่วมกันได้ทุกงานเอกสาร ไม่ผูกกับวิชาหรือสถาบันใด
