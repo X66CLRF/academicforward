@@ -133,9 +133,9 @@ Cartoon 3D + ฟิสิกส์ (Matter.js) · การ์ตูนเส้
 1. เปิด https://videos.genhaha.com/skills#free ให้ได้ (เพิ่มโดเมนใน network ของ cloud session หรือทำบนเครื่องเจ้าของ) แล้วอ่าน SKILL.md จริงของสไตล์ในข้อ 4 → เติมข้อ 3–4 ให้ยืนยัน
 2. ตรวจสัญญาอนุญาตของสกิลเขาก่อนนำโค้ด/asset มาใช้ซ้ำในงานหน่วยงาน
 3. ~~คลิปทดลอง~~ ทำแล้ว: `motionkit/examples/ai-video-intro` (15 วินาที 4 ฉาก ยังไม่มีเสียง) — เหลือ: เลือก TTS ภาษาไทย แล้วทำคลิปจริงชิ้นแรกที่มีเสียงพากย์
-5. ลอง HyperFrames บนเครื่องเจ้าของ (ข้อ 7): ซับไทย + ฟอนต์ Mitr + ถอดเสียงไทยด้วย `--model small --language th` → ตัดสินว่าจะใช้เป็นตัวหลักแทน motionkit หรือไม่
-4. ใช้จริงสัก 2–3 คลิปแล้วค่อยยกเป็นคำสั่ง `/academicforward`: `.claude/commands/<ชื่อ>.md` ชี้ไป `desk-utils/tools/motionkit/SKILL.md`
+5. ใช้จริงสัก 2–3 คลิปแล้วค่อยยกเป็นคำสั่ง `/academicforward`: `.claude/commands/<ชื่อ>.md` ชี้ไป `desk-utils/tools/motionkit/SKILL.md`
    → `python gen-antigravity.py` + `claude-config/gen-commands.py` → commit ทั้ง 2 repo (ตาม `AGENTS.md`)
+4. ลอง HyperFrames บนเครื่องเจ้าของ (ข้อ 7): ซับไทย + ฟอนต์ Mitr + ถอดเสียงไทยด้วย `--model small --language th` → ตัดสินว่าจะใช้เป็นตัวหลักแทน motionkit หรือไม่
 
 ## ประวัติ
 
