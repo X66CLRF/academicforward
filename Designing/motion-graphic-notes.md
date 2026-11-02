@@ -97,11 +97,43 @@ Cartoon 3D + ฟิสิกส์ (Matter.js) · การ์ตูนเส้
 - ตัดต่อปิดงานใน Premiere: `desk-utils/tools/premierekit` (ซับ .srt, timeline XML) ใช้ต่อจาก MP4 ได้
 - ลงหลักฐาน: คลิปที่คิดเองตามโจทย์ = KPI กราฟิก (`kpi-report.mjs --kpi design`) · คลิปแนะนำทรัพยากรที่คนอื่นส่งเนื้อหามา = `wp-it-05_gasidid` · ก้ำกึ่งถามเจ้าของ (ตาม `dev-tools/CLAUDE.md`)
 
+## 7. HyperFrames (HeyGen) — อ่านจาก repo จริง v0.8.230 เมื่อ 2026-11-02
+
+ที่มา: โพสต์ Facebook "GOODBYE CAPCUT — CLAUDE + HyperFrames ตัดต่อวิดีโอได้แล้ว" · repo `github.com/heygen-com/hyperframes`
+ยังไม่ได้ลองรันจริง (cloud session ไม่อนุญาตให้รันโค้ดที่ดาวน์โหลดมา) — ข้อด้านล่างมาจากการอ่าน README / SKILL.md / references
+
+**คืออะไร:** แนวคิดเดียวกับ motionkit ทุกข้อ (HTML → หยุด timeline → เลื่อนทีละเฟรม → MP4) แต่ครบกว่ามาก
+สัญญาอนุญาต Apache-2.0 · ต้องมี Node 22+ และ FFmpeg · คำสั่ง `npx hyperframes init / preview / render` · มีแอปเดสก์ท็อป (Studio) แก้ timeline ด้วยมือได้
+
+| ส่วน | มีอะไร |
+|---|---|
+| สกิลให้ agent | 4 ตัวหลัก `/hyperframes` (กติกา + วิธีทำงาน) `/hyperframes-cli` `/hyperframes-registry` `/media-use` + เสริม figma / slideshow / remotion |
+| registry | ~450 บล็อกสำเร็จ (transition, ตัวหนังสือเคลื่อนไหว, ซับ, กราฟ, แผนที่, 3D) ติดตั้งเป็นซอร์สแก้ได้ |
+| **"ตัดต่อแทน CapCut"** | `transcribe` ถอดคำพร้อมเวลารายคำ → agent เลือกช่วงตัดจากข้อความ → `transcript-cut.mjs` ตัดคำเติม/ช่วงเงียบ (`--cut-silence 0.8`) → ใส่ซับ/การ์ดซ้อนวิดีโอคนพูด · ปรับสี/LUT · ducking เพลงใต้เสียงพูด |
+| ตรวจงาน | `check --json` (lint) · `snapshot --review` ดูเฟรม · `timeline --json` |
+
+**กับดักสำหรับงานเรา (ภาษาไทย / หน่วยงาน):**
+- **ถอดเสียงไทย:** ค่าเริ่มต้นเป็น whisper `small.en` ซึ่ง **แปลเสียงไทยเป็นอังกฤษเงียบ ๆ** ต้องสั่ง `--model small --language th` ทุกครั้ง (งานจริงใช้ `medium`/`large-v3`) · Parakeet ที่เขาแนะนำไม่รองรับไทย
+- **เสียงพากย์ไทย:** ตัวฟรีในเครื่องคือ Kokoro ซึ่งไม่มีเสียงไทย → ต้องใช้ HeyGen (ต้องล็อกอิน/เครดิต) หรือ TTS ไทยภายนอก
+- **สกิลพาเข้าบริการเสียเงิน:** `/media-use` สั่ง agent ให้ชวนล็อกอิน HeyGen ก่อน ใช้เครื่องมือฟรีเฉพาะเมื่อผู้ใช้ขอ "วางแผนเพื่อผลดีสุด อย่าเปลี่ยนเป็นตัวถูก" และ **ห้ามบอกราคา**
+  → งานหน่วยงานต้องสั่งชัด ๆ ว่า "ใช้เครื่องมือฟรีในเครื่องเท่านั้น" และตั้ง `--max-credits` ถ้าจะใช้เครดิต
+- **telemetry:** CLI ส่งสถิติการใช้งาน ปิดด้วย `HYPERFRAMES_NO_TELEMETRY=1` หรือ `DO_NOT_TRACK=1`
+- ฟอนต์ที่ไม่ได้มากับแพ็กเกจ (Mitr) ต้อง `@font-face` จาก `assets/fonts/` · สี/ไอคอนยังต้องทำตามข้อ 5
+
+**เทียบกับของที่เรามี:**
+
+| งาน | ใช้อะไร |
+|---|---|
+| ตัดฟุตเทจกิจกรรมตามสตอรี่ไลน์ แล้วแก้ต่อใน Premiere | `premierekit` (มีอยู่แล้ว ได้ timeline XML + .srt ไทยด้วย faster-whisper) |
+| คลิปคนพูด/สัมภาษณ์ ตัดคำเติม-ช่วงเงียบ + ซับเคลื่อนไหว ออก MP4 เลย | HyperFrames (`transcript-cut` + captions) — จุดที่โพสต์เรียกว่าแทน CapCut |
+| motion graphic อธิบายเรื่อง | HyperFrames ครบกว่า (registry, Studio, lint) · `motionkit` เล็ก ไม่มี dependency ภายนอก ไม่ผูกบริการใคร |
+
 ## 6. งานค้าง
 
 1. เปิด https://videos.genhaha.com/skills#free ให้ได้ (เพิ่มโดเมนใน network ของ cloud session หรือทำบนเครื่องเจ้าของ) แล้วอ่าน SKILL.md จริงของสไตล์ในข้อ 4 → เติมข้อ 3–4 ให้ยืนยัน
 2. ตรวจสัญญาอนุญาตของสกิลเขาก่อนนำโค้ด/asset มาใช้ซ้ำในงานหน่วยงาน
 3. ~~คลิปทดลอง~~ ทำแล้ว: `motionkit/examples/ai-video-intro` (15 วินาที 4 ฉาก ยังไม่มีเสียง) — เหลือ: เลือก TTS ภาษาไทย แล้วทำคลิปจริงชิ้นแรกที่มีเสียงพากย์
+5. ลอง HyperFrames บนเครื่องเจ้าของ (ข้อ 7): ซับไทย + ฟอนต์ Mitr + ถอดเสียงไทยด้วย `--model small --language th` → ตัดสินว่าจะใช้เป็นตัวหลักแทน motionkit หรือไม่
 4. ใช้จริงสัก 2–3 คลิปแล้วค่อยยกเป็นคำสั่ง `/academicforward`: `.claude/commands/<ชื่อ>.md` ชี้ไป `desk-utils/tools/motionkit/SKILL.md`
    → `python gen-antigravity.py` + `claude-config/gen-commands.py` → commit ทั้ง 2 repo (ตาม `AGENTS.md`)
 
@@ -109,3 +141,4 @@ Cartoon 3D + ฟิสิกส์ (Matter.js) · การ์ตูนเส้
 
 - 2026-11-01 · สร้างจากโพสต์ของริว (genhaha) — เปิดแหล่งอ้างอิงไม่ได้เพราะเครือข่าย session บล็อก จึงบันทึกเฉพาะที่โพสต์บอก + ทางเลือก render ที่ค้นได้
 - 2026-11-01 · สร้าง `desk-utils/tools/motionkit` + คลิปตัวอย่าง (เลือกทาง Chromium + ffmpeg ทำเอง) แก้ข้อ 3 และงานค้าง
+- 2026-11-02 · เพิ่มข้อ 7 HyperFrames จากโพสต์ "GOODBYE CAPCUT" — อ่านจาก repo จริง (ยังไม่ได้รัน) จดกับดักภาษาไทย/เครดิต/telemetry
