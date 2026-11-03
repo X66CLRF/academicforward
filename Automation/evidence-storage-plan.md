@@ -11,8 +11,8 @@
 | ที่ | บัญชี | บนเครื่อง | ใช้กับ | แชร์ให้กรรมการ |
 |---|---|---|---|---|
 | OneDrive `รูปศูนย์วิทยบริการ` | NSRU (Microsoft) | `C:\Users\<ชื่อ>\OneDrive - Nakhon Sawan Rajabhat University\` | รูปกิจกรรม (สกิล photo-post) | ไม่ต้อง — รูปอัปโหลดเข้า aritc-audit เอง |
-| Google Drive `แนะนำทรัพยากร` | gasidid.p@nsru.ac.th | ไม่รู้ว่าซิงก์ลงเครื่องไหม | ภาพแนะนำทรัพยากร (wp05) | แชร์ภายใน nsru.ac.th ได้ |
-| Google Drive `G:\My Drive` | kasiditprn@gmail.com (ส่วนตัว) | `G:` | Library Training, รายงานการประชุม ฯลฯ | แชร์ทั้งโดเมน nsru ไม่ได้ |
+| Google Drive gasidid.p (`กราฟิก/<ปี-เดือน>/` ใช้แล้ว) | gasidid.p@nsru.ac.th | ซิงก์ อักษรไดรฟ์ต่างกันแต่ละเครื่อง หา: `Get-PSDrive` ดูช่อง Description | ภาพแนะนำทรัพยากร (wp05), กราฟิก | แชร์ภายใน nsru.ac.th ได้ |
+| Google Drive ส่วนตัว | kasiditprn@gmail.com | หาแบบเดียวกัน | Library Training, รายงานการประชุม ฯลฯ | แชร์ทั้งโดเมน nsru ไม่ได้ |
 | `Downloads` | — | เครื่อง | ที่ Canva ดาวน์โหลดลงมา (ชั่วคราว) | — |
 
 - เครื่องมือ Drive ของ Claude (connector) = บัญชี **gmail** — เข้า Drive ของ gasidid.p ไม่ได้, แชร์ได้ทีละอีเมลเท่านั้น (ตั้ง "ทุกคนในองค์กรที่มีลิงก์" ไม่ได้)
@@ -30,7 +30,7 @@
 
 ## ต้องตอบก่อนเป็นกฎ
 
-1. Drive gasidid.p ซิงก์ลงเครื่องไหม ไดรฟ์อะไร (ถ้าไม่ → Claude เตรียมไฟล์ เจ้าของลากขึ้นเอง หรือเพิ่มบัญชีใน Google Drive for desktop)
+1. ~~Drive gasidid.p ซิงก์ไหม~~ ซิงก์แล้ว (3 พ.ย. 69) · หลักฐาน KPI ใช้ลิงก์ Canva ได้ (เจ้าของสั่ง) ไม่ต้องรอลิงก์ Drive
 2. OneDrive NSRU ใช้เก็บกราฟิกแทน Google Drive ได้ไหม (แชร์ภายในองค์กรได้เหมือนกัน และซิงก์ลงเครื่องอยู่แล้ว)
 3. ตัดสินแล้ว → แก้ `kpi-report.md` ข้อ 1 ให้ตรง แล้วลบไฟล์นี้หรือเปลี่ยนเป็นกฎ
 
