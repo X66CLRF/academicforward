@@ -98,6 +98,7 @@ SPEC_TH_ACADEMIC = {
         "ชื่อตาราง":        {"align": "left", "keep_next": True},
         "ข้อความในตาราง":   {"align": "center"},
         "ชื่อภาพ":          {"align": "center"},
+        "ภาพ":              {"align": "center", "keep_next": True},
     },
 }
 
@@ -334,6 +335,12 @@ class DocBuilder:
         for ln in lines:
             self.p(ln, "หมายเหตุ")
         self.blank()
+
+    def figure(self, image_path, caption, width_cm=10):
+        """ภาพจริง + คำบรรยายใต้ภาพ กึ่งกลาง (ย่อหน้าภาพผูกกับคำบรรยาย ไม่แยกหน้า)"""
+        par = self.p("", "ภาพ")
+        par.add_run().add_picture(str(image_path), width=Cm(width_cm))
+        return self.p(caption, "ชื่อภาพ")
 
     # -- บันทึก ---------------------------------------------------------
     def save(self, path, overwrite=True):
