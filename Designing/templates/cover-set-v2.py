@@ -40,7 +40,8 @@ def pattern_svg(family, base_tile, repl):
     s = (LIB / f"patterns/svg/{family}.svg").read_text(encoding="utf-8")
     for a, b in repl.items():
         s = s.replace(a, b)
-    s = re.sub(r'<rect width="100%" height="100%" fill="#[0-9A-Fa-f]{6}"/>', "", s, count=1)  # ตัดพื้น เหลือแต่ลาย
+    s = re.sub(r'<rect width="100%" height="100%" fill="#[0-9A-Fa-f]{6}"/>|<rect [^>]*fill="url\(#g\)"[^>]*/>', "", s)  # ตัดพื้นเรียบ/ไล่สี (จานสี C) เหลือแต่ลาย
+    # ลายจานสี C เส้นจางมาก (opacity 0.15 ในไฟล์) ใช้บนพื้นขาวให้ปรับเป็น 0.9 ก่อน แล้วค่อยลดทั้งชั้นใน Canva
     k = TILE / base_tile
     s = s.replace('<pattern id="p"', f'<pattern id="p" patternTransform="scale({k})"')
     return s.replace('viewBox="0 0 1200 1200" width="1200" height="1200"', 'viewBox="0 0 2160 2160" width="2160" height="2160"')
